@@ -6,20 +6,129 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1645BDD1D9908FB00AC5FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */; };
+		A1645BE01D9908FB00AC5FE2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */; };
+		A1645BF11D9910E600AC5FE2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645BF01D9910E600AC5FE2 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1645BEA1D99093000AC5FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A13E1BAF1D8E912F0097E85B;
+			remoteInfo = "Candy Mac";
+		};
+		A1645BEC1D99093000AC5FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A13E1BB91D8E93FB0097E85B;
+			remoteInfo = "Candy iOS";
+		};
+		A1645BEE1D99095300AC5FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A13E1BAE1D8E912F0097E85B;
+			remoteInfo = "Candy Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1645BD71D9908FB00AC5FE2 /* Samples_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1645BDF1D9908FB00AC5FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A1645BE11D9908FB00AC5FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Candy.xcodeproj; path = ../Candy/Candy.xcodeproj; sourceTree = "<group>"; };
+		A1645BF01D9910E600AC5FE2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1645BD41D9908FB00AC5FE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		A1645BCC1D9908BB00AC5FE2 = {
 			isa = PBXGroup;
 			children = (
+				A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */,
+				A1645BD91D9908FB00AC5FE2 /* Samples_Mac */,
+				A1645BD81D9908FB00AC5FE2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		A1645BD81D9908FB00AC5FE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1645BD71D9908FB00AC5FE2 /* Samples_Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1645BD91D9908FB00AC5FE2 /* Samples_Mac */ = {
+			isa = PBXGroup;
+			children = (
+				A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */,
+				A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */,
+				A1645BE11D9908FB00AC5FE2 /* Info.plist */,
+				A1645BF01D9910E600AC5FE2 /* main.cpp */,
+			);
+			path = Samples_Mac;
+			sourceTree = "<group>";
+		};
+		A1645BE61D99093000AC5FE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1645BEB1D99093000AC5FE2 /* libCandy Mac.a */,
+				A1645BED1D99093000AC5FE2 /* libCandy iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1645BD61D9908FB00AC5FE2 /* Samples_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1645BE21D9908FB00AC5FE2 /* Build configuration list for PBXNativeTarget "Samples_Mac" */;
+			buildPhases = (
+				A1645BD31D9908FB00AC5FE2 /* Sources */,
+				A1645BD41D9908FB00AC5FE2 /* Frameworks */,
+				A1645BD51D9908FB00AC5FE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1645BEF1D99095300AC5FE2 /* PBXTargetDependency */,
+			);
+			name = Samples_Mac;
+			productName = Samples_Mac;
+			productReference = A1645BD71D9908FB00AC5FE2 /* Samples_Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A1645BCD1D9908BB00AC5FE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					A1645BD61D9908FB00AC5FE2 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QGMMQ4HULR;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = A1645BD01D9908BB00AC5FE2 /* Build configuration list for PBXProject "Candy_Samples" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -27,14 +136,82 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A1645BCC1D9908BB00AC5FE2;
+			productRefGroup = A1645BD81D9908FB00AC5FE2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A1645BE61D99093000AC5FE2 /* Products */;
+					ProjectRef = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
+				A1645BD61D9908FB00AC5FE2 /* Samples_Mac */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A1645BEB1D99093000AC5FE2 /* libCandy Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCandy Mac.a";
+			remoteRef = A1645BEA1D99093000AC5FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A1645BED1D99093000AC5FE2 /* libCandy iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCandy iOS.a";
+			remoteRef = A1645BEC1D99093000AC5FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1645BD51D9908FB00AC5FE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1645BDD1D9908FB00AC5FE2 /* Assets.xcassets in Resources */,
+				A1645BE01D9908FB00AC5FE2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1645BD31D9908FB00AC5FE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1645BF11D9910E600AC5FE2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1645BEF1D99095300AC5FE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Candy Mac";
+			targetProxy = A1645BEE1D99095300AC5FE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1645BDF1D9908FB00AC5FE2 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A1645BD11D9908BB00AC5FE2 /* Debug */ = {
@@ -49,6 +226,112 @@
 			};
 			name = Release;
 		};
+		A1645BE31D9908FB00AC5FE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Samples_Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Samples-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A1645BE41D9908FB00AC5FE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Samples_Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Samples-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -60,6 +343,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A1645BE21D9908FB00AC5FE2 /* Build configuration list for PBXNativeTarget "Samples_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1645BE31D9908FB00AC5FE2 /* Debug */,
+				A1645BE41D9908FB00AC5FE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

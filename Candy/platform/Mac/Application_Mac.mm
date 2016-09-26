@@ -6,4 +6,26 @@
 //
 //
 
-#include "Application_Mac.hpp"
+#include "Application_Mac.h"
+
+NS_DY_BEGIN
+
+Application::Application()
+{
+    
+}
+
+Application::~Application()
+{
+    
+}
+
+bool Application::run()
+{
+    
+    
+    
+    return true;
+}
+
+NS_DY_END
