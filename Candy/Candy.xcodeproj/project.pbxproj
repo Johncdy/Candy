@@ -6,20 +6,156 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1645BC41D98FF5000AC5FE2 /* PlatformConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BC31D98FF5000AC5FE2 /* PlatformConfig.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A13E1BB71D8E93FB0097E85B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1645BC31D98FF5000AC5FE2 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformConfig.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A13E1BAC1D8E912F0097E85B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13E1BB61D8E93FB0097E85B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		A13E1BA41D8E8D530097E85B = {
 			isa = PBXGroup;
 			children = (
+				A178E3E31D98C4A8006D2DC8 /* platform */,
+				A1645BC31D98FF5000AC5FE2 /* PlatformConfig.h */,
+				A13E1BB01D8E912F0097E85B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		A13E1BB01D8E912F0097E85B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */,
+				A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A178E3E31D98C4A8006D2DC8 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				A178E3E51D98C4D8006D2DC8 /* iOS */,
+				A178E3E41D98C4CB006D2DC8 /* Mac */,
+			);
+			name = platform;
+			sourceTree = "<group>";
+		};
+		A178E3E41D98C4CB006D2DC8 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mac;
+			path = platform/Mac;
+			sourceTree = "<group>";
+		};
+		A178E3E51D98C4D8006D2DC8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iOS;
+			path = platform/iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A13E1BAD1D8E912F0097E85B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1645BC41D98FF5000AC5FE2 /* PlatformConfig.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A13E1BAE1D8E912F0097E85B /* Candy Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13E1BB11D8E912F0097E85B /* Build configuration list for PBXNativeTarget "Candy Mac" */;
+			buildPhases = (
+				A13E1BAB1D8E912F0097E85B /* Sources */,
+				A13E1BAC1D8E912F0097E85B /* Frameworks */,
+				A13E1BAD1D8E912F0097E85B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Candy Mac";
+			productName = "Candy Mac";
+			productReference = A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A13E1BB81D8E93FB0097E85B /* Candy iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13E1BBF1D8E93FB0097E85B /* Build configuration list for PBXNativeTarget "Candy iOS" */;
+			buildPhases = (
+				A13E1BB51D8E93FB0097E85B /* Sources */,
+				A13E1BB61D8E93FB0097E85B /* Frameworks */,
+				A13E1BB71D8E93FB0097E85B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Candy iOS";
+			productName = "Candy iOS";
+			productReference = A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A13E1BA51D8E8D530097E85B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					A13E1BAE1D8E912F0097E85B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QGMMQ4HULR;
+						ProvisioningStyle = Automatic;
+					};
+					A13E1BB81D8E93FB0097E85B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QGMMQ4HULR;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = A13E1BA81D8E8D530097E85B /* Build configuration list for PBXProject "Candy" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -29,12 +165,32 @@
 				en,
 			);
 			mainGroup = A13E1BA41D8E8D530097E85B;
+			productRefGroup = A13E1BB01D8E912F0097E85B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A13E1BAE1D8E912F0097E85B /* Candy Mac */,
+				A13E1BB81D8E93FB0097E85B /* Candy iOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A13E1BAB1D8E912F0097E85B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13E1BB51D8E93FB0097E85B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		A13E1BA91D8E8D530097E85B /* Debug */ = {
@@ -85,6 +241,139 @@
 			};
 			name = Release;
 		};
+		A13E1BB21D8E912F0097E85B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		A13E1BB31D8E912F0097E85B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		A13E1BC01D8E93FB0097E85B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A13E1BC11D8E93FB0097E85B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -93,6 +382,24 @@
 			buildConfigurations = (
 				A13E1BA91D8E8D530097E85B /* Debug */,
 				A13E1BAA1D8E8D530097E85B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A13E1BB11D8E912F0097E85B /* Build configuration list for PBXNativeTarget "Candy Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13E1BB21D8E912F0097E85B /* Debug */,
+				A13E1BB31D8E912F0097E85B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A13E1BBF1D8E93FB0097E85B /* Build configuration list for PBXNativeTarget "Candy iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13E1BC01D8E93FB0097E85B /* Debug */,
+				A13E1BC11D8E93FB0097E85B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
