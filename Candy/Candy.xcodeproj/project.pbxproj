@@ -13,9 +13,12 @@
 		A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BFB1D99149100AC5FE2 /* Application_Mac.h */; };
 		A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BFF1D991E5F00AC5FE2 /* ApplicationProtocol.h */; };
 		A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C011D9921F800AC5FE2 /* PlatformMacros.h */; };
-		A1645C0A1D993F1C00AC5FE2 /* glfw3.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C081D993F1C00AC5FE2 /* glfw3.h */; };
-		A1645C0B1D993F1C00AC5FE2 /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C091D993F1C00AC5FE2 /* glfw3native.h */; };
-		A1645C0E1D993F2A00AC5FE2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C0D1D993F2A00AC5FE2 /* libglfw3.a */; };
+		A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C121D99457C00AC5FE2 /* glfw3.h */; };
+		A1645C171D99457C00AC5FE2 /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C131D99457C00AC5FE2 /* glfw3native.h */; };
+		A1645C181D99457C00AC5FE2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C151D99457C00AC5FE2 /* libglfw3.a */; };
+		A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C271D9A105100AC5FE2 /* CandyMacros.h */; };
+		A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2B1D9A127000AC5FE2 /* platform.h */; };
+		A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2D1D9A154700AC5FE2 /* Candy.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,9 +42,15 @@
 		A1645BFB1D99149100AC5FE2 /* Application_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application_Mac.h; sourceTree = "<group>"; };
 		A1645BFF1D991E5F00AC5FE2 /* ApplicationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationProtocol.h; path = platform/ApplicationProtocol.h; sourceTree = "<group>"; };
 		A1645C011D9921F800AC5FE2 /* PlatformMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformMacros.h; path = platform/PlatformMacros.h; sourceTree = "<group>"; };
-		A1645C081D993F1C00AC5FE2 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
-		A1645C091D993F1C00AC5FE2 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
-		A1645C0D1D993F2A00AC5FE2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		A1645C121D99457C00AC5FE2 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		A1645C131D99457C00AC5FE2 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		A1645C151D99457C00AC5FE2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		A1645C271D9A105100AC5FE2 /* CandyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandyMacros.h; path = include/CandyMacros.h; sourceTree = "<group>"; };
+		A1645C2B1D9A127000AC5FE2 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = platform/platform.h; sourceTree = "<group>"; };
+		A1645C2D1D9A154700AC5FE2 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candy.h; path = include/Candy.h; sourceTree = "<group>"; };
+		A1645C311D9A67A200AC5FE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A1645C331D9A67AC00AC5FE2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A1645C351D9A67EB00AC5FE2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645C0E1D993F2A00AC5FE2 /* libglfw3.a in Frameworks */,
+				A1645C181D99457C00AC5FE2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +75,11 @@
 		A13E1BA41D8E8D530097E85B = {
 			isa = PBXGroup;
 			children = (
+				A1645C221D994F7300AC5FE2 /* include */,
 				A1645C031D993B6100AC5FE2 /* external */,
 				A178E3E31D98C4A8006D2DC8 /* platform */,
 				A13E1BB01D8E912F0097E85B /* Products */,
+				A1645C301D9A67A200AC5FE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,50 +103,61 @@
 		A1645C041D993ECE00AC5FE2 /* glfw3 */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C051D993EFE00AC5FE2 /* include */,
-				A1645C061D993F0400AC5FE2 /* libs */,
+				A1645C101D99457C00AC5FE2 /* mac */,
 			);
 			name = glfw3;
 			sourceTree = "<group>";
 		};
-		A1645C051D993EFE00AC5FE2 /* include */ = {
+		A1645C101D99457C00AC5FE2 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C071D993F1C00AC5FE2 /* mac */,
+				A1645C111D99457C00AC5FE2 /* include */,
+				A1645C141D99457C00AC5FE2 /* libs */,
+			);
+			name = mac;
+			path = external/glfw/mac;
+			sourceTree = "<group>";
+		};
+		A1645C111D99457C00AC5FE2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C121D99457C00AC5FE2 /* glfw3.h */,
+				A1645C131D99457C00AC5FE2 /* glfw3native.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A1645C141D99457C00AC5FE2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C151D99457C00AC5FE2 /* libglfw3.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A1645C221D994F7300AC5FE2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C2D1D9A154700AC5FE2 /* Candy.h */,
+				A1645C271D9A105100AC5FE2 /* CandyMacros.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
 		};
-		A1645C061D993F0400AC5FE2 /* libs */ = {
+		A1645C301D9A67A200AC5FE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C0C1D993F2A00AC5FE2 /* mac */,
+				A1645C351D9A67EB00AC5FE2 /* IOKit.framework */,
+				A1645C331D9A67AC00AC5FE2 /* OpenGL.framework */,
+				A1645C311D9A67A200AC5FE2 /* Cocoa.framework */,
 			);
-			name = libs;
-			sourceTree = "<group>";
-		};
-		A1645C071D993F1C00AC5FE2 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				A1645C081D993F1C00AC5FE2 /* glfw3.h */,
-				A1645C091D993F1C00AC5FE2 /* glfw3native.h */,
-			);
-			name = mac;
-			path = external/glfw/include/mac;
-			sourceTree = "<group>";
-		};
-		A1645C0C1D993F2A00AC5FE2 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				A1645C0D1D993F2A00AC5FE2 /* libglfw3.a */,
-			);
-			name = mac;
-			path = external/glfw/libs/mac;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A178E3E31D98C4A8006D2DC8 /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				A1645C2B1D9A127000AC5FE2 /* platform.h */,
 				A178E3E51D98C4D8006D2DC8 /* iOS */,
 				A178E3E41D98C4CB006D2DC8 /* Mac */,
 				A1645BF81D9913D900AC5FE2 /* Application.h */,
@@ -171,12 +193,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645C0A1D993F1C00AC5FE2 /* glfw3.h in Headers */,
+				A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */,
+				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
 				A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */,
+				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */,
-				A1645C0B1D993F1C00AC5FE2 /* glfw3native.h in Headers */,
+				A1645C171D99457C00AC5FE2 /* glfw3native.h in Headers */,
 				A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */,
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
+				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,13 +379,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/external/glfw/libs/mac",
+					"$(PROJECT_DIR)/external/glfw/mac/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/external/glfw/mac/include";
 			};
 			name = Debug;
 		};
@@ -388,13 +413,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/external/glfw/libs/mac",
+					"$(PROJECT_DIR)/external/glfw/mac/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(PROJECT_DIR)/external/glfw/mac/include";
 			};
 			name = Release;
 		};

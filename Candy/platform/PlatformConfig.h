@@ -10,14 +10,14 @@
 #define PlatformConfig_h
 
 // Define supported target platform macro with DY uses.
-#define DY_TARGET_UNKNOW        0
-#define DY_TARGET_IOS           1
-#define DY_TARGET_ANDROID       2
-#define DY_TARGET_WIN           3
-#define DY_TARGET_MAC           4
+#define DY_PLATFORM_UNKNOW        0
+#define DY_PLATFORM_IOS           1
+#define DY_PLATFORM_ANDROID       2
+#define DY_PLATFORM_WIN           3
+#define DY_PLATFORM_MAC           4
 
 // Determine target platform by compile environment macro.
-#define DY_TARGET_PLATFORM  DY_TARGET_UNKNOWN
+#define DY_TARGET_PLATFORM  DY_PLATFORM_UNKNOWN
 
 // Apple: Mac and iOS
 /**
@@ -27,23 +27,23 @@
     #include <TargetConditionals.h>
     #if TARGET_OS_IPHONE
         #undef DY_TARGET_PLATFORM
-        #define DY_TARGET_PLATFORM      DY_TARGET_IOS
+        #define DY_TARGET_PLATFORM      DY_PLATFORM_IOS
     #elif TARGET_OS_MAC
         #undef DY_TARGET_PLATFORM
-        #define DY_TARGET_PLATFORM      DY_TARGET_MAC
+        #define DY_TARGET_PLATFORM      DY_PLATFORM_MAC
     #endif
 #endif
 
 // Android
 #if defined(ANDROID)
     #undef DY_TARGET_PLATFORM
-    #define DY_TARGET_PLATFORM      DY_TARGET_ANDROID
+    #define DY_TARGET_PLATFORM      DY_PLATFORM_ANDROID
 #endif
 
 // Win
 #if defined(_WIN32) && defined(_WINDOWS)
     #undef DY_TARGET_PLATFORM
-    #define DY_TARGET_PLATFORM      DY_TARGET_WIN
+    #define DY_TARGET_PLATFORM      DY_PLATFORM_WIN
 #endif
 
 #endif /* PlatformConfig_h */

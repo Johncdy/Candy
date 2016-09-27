@@ -19,17 +19,7 @@ public:
     /**
      Application destructor.
      */
-    virtual ~ApplicationProtocol() {
-        
-    }
-    
-    /**
-     Application run loop.
-     
-     @return bool   true: Application run success.
-     false: Application run failed.
-     */
-    virtual bool run();
+    virtual ~ApplicationProtocol() {}
 };
 
 NS_DY_END

@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		A1645BDD1D9908FB00AC5FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */; };
 		A1645BE01D9908FB00AC5FE2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */; };
-		A1645BF11D9910E600AC5FE2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645BF01D9910E600AC5FE2 /* main.cpp */; };
+		A1645C1D1D994C6400AC5FE2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C1C1D994C6400AC5FE2 /* main.cpp */; };
+		A1645C211D994E1100AC5FE2 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */; };
+		A1645C2F1D9A66D700AC5FE2 /* libCandy Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645BEB1D99093000AC5FE2 /* libCandy Mac.a */; };
+		A1645C391D9A691B00AC5FE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C381D9A691B00AC5FE2 /* Cocoa.framework */; };
+		A1645C3B1D9A692100AC5FE2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3A1D9A692100AC5FE2 /* IOKit.framework */; };
+		A1645C3D1D9A693700AC5FE2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */; };
+		A1645C3F1D9A696700AC5FE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,13 @@
 		A1645BDF1D9908FB00AC5FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A1645BE11D9908FB00AC5FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Candy.xcodeproj; path = ../Candy/Candy.xcodeproj; sourceTree = "<group>"; };
-		A1645BF01D9910E600AC5FE2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A1645C1C1D994C6400AC5FE2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
+		A1645C201D994E1100AC5FE2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1645C381D9A691B00AC5FE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A1645C3A1D9A692100AC5FE2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1645C3F1D9A696700AC5FE2 /* QuartzCore.framework in Frameworks */,
+				A1645C3D1D9A693700AC5FE2 /* OpenGL.framework in Frameworks */,
+				A1645C3B1D9A692100AC5FE2 /* IOKit.framework in Frameworks */,
+				A1645C391D9A691B00AC5FE2 /* Cocoa.framework in Frameworks */,
+				A1645C2F1D9A66D700AC5FE2 /* libCandy Mac.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */,
+				A1645C1E1D994E1100AC5FE2 /* src */,
 				A1645BD91D9908FB00AC5FE2 /* Samples_Mac */,
 				A1645BD81D9908FB00AC5FE2 /* Products */,
+				A1645C371D9A691A00AC5FE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,7 +98,7 @@
 				A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */,
 				A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */,
 				A1645BE11D9908FB00AC5FE2 /* Info.plist */,
-				A1645BF01D9910E600AC5FE2 /* main.cpp */,
+				A1645C1C1D994C6400AC5FE2 /* main.cpp */,
 			);
 			path = Samples_Mac;
 			sourceTree = "<group>";
@@ -91,6 +110,26 @@
 				A1645BED1D99093000AC5FE2 /* libCandy iOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A1645C1E1D994E1100AC5FE2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */,
+				A1645C201D994E1100AC5FE2 /* AppDelegate.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A1645C371D9A691A00AC5FE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */,
+				A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */,
+				A1645C3A1D9A692100AC5FE2 /* IOKit.framework */,
+				A1645C381D9A691B00AC5FE2 /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645BF11D9910E600AC5FE2 /* main.cpp in Sources */,
+				A1645C211D994E1100AC5FE2 /* AppDelegate.cpp in Sources */,
+				A1645C1D1D994C6400AC5FE2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,19 +257,21 @@
 		A1645BD11D9908BB00AC5FE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Candy";
 			};
 			name = Debug;
 		};
 		A1645BD21D9908BB00AC5FE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Candy";
 			};
 			name = Release;
 		};
 		A1645BE31D9908FB00AC5FE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -286,7 +328,7 @@
 		A1645BE41D9908FB00AC5FE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

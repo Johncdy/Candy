@@ -9,20 +9,43 @@
 #ifndef Application_Mac_h
 #define Application_Mac_h
 
+#include "platform/PlatformConfig.h"
+
+#if DY_TARGET_PLATFORM == DY_PLATFORM_MAC
+
 #include "platform/ApplicationProtocol.h"
 
 NS_DY_BEGIN
 
 class Application : public ApplicationProtocol {
 public:
-    
+
     Application();
     
-    ~Application();
+    virtual ~Application();
     
-    bool run() override;
+    
+    /**
+     Get current application instance.
+     
+     @return Current application instance pointer.
+     */
+    static Application* getInstance();
+    
+    /**
+     Application run loop.
+
+     @return int   0: Application run success.
+     */
+    int run();
+    
+protected:
+    
+    static Application* s_application;
 };
 
 NS_DY_END
 
-#endif /* Application_Mac_hpp */
+#endif
+
+#endif /* Application_Mac_h */

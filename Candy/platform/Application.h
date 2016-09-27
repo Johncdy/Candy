@@ -11,7 +11,7 @@
 
 #include "platform/PlatformConfig.h"
 
-#if DY_TARGET_PLATFORM == DY_TARGET_MAC
+#if DY_TARGET_PLATFORM == DY_PLATFORM_MAC
     #include "platform/Mac/Application_Mac.h"
 #endif
 
