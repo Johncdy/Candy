@@ -19,6 +19,19 @@
 		A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C271D9A105100AC5FE2 /* CandyMacros.h */; };
 		A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2B1D9A127000AC5FE2 /* platform.h */; };
 		A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2D1D9A154700AC5FE2 /* Candy.h */; };
+		A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C401D9BB95700AC5FE2 /* GLView_Mac.cpp */; };
+		A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C401D9BB95700AC5FE2 /* GLView_Mac.cpp */; };
+		A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C411D9BB95700AC5FE2 /* GLView_Mac.h */; };
+		A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */; };
+		A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */; };
+		A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C471D9BC3C700AC5FE2 /* Vec2.h */; };
+		A1645C4C1D9BC8FB00AC5FE2 /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C4B1D9BC8FB00AC5FE2 /* math.h */; };
+		A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C4D1D9BC94500AC5FE2 /* Size.cpp */; };
+		A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C4D1D9BC94500AC5FE2 /* Size.cpp */; };
+		A1645C511D9BC94500AC5FE2 /* Size.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C4E1D9BC94500AC5FE2 /* Size.h */; };
+		A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C521D9BC95D00AC5FE2 /* Rect.cpp */; };
+		A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C521D9BC95D00AC5FE2 /* Rect.cpp */; };
+		A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C531D9BC95D00AC5FE2 /* Rect.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +64,15 @@
 		A1645C311D9A67A200AC5FE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A1645C331D9A67AC00AC5FE2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		A1645C351D9A67EB00AC5FE2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		A1645C401D9BB95700AC5FE2 /* GLView_Mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLView_Mac.cpp; sourceTree = "<group>"; };
+		A1645C411D9BB95700AC5FE2 /* GLView_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView_Mac.h; sourceTree = "<group>"; };
+		A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec2.cpp; path = math/Vec2.cpp; sourceTree = "<group>"; };
+		A1645C471D9BC3C700AC5FE2 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec2.h; path = math/Vec2.h; sourceTree = "<group>"; };
+		A1645C4B1D9BC8FB00AC5FE2 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = math.h; path = math/math.h; sourceTree = "<group>"; };
+		A1645C4D1D9BC94500AC5FE2 /* Size.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Size.cpp; path = math/Size.cpp; sourceTree = "<group>"; };
+		A1645C4E1D9BC94500AC5FE2 /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Size.h; path = math/Size.h; sourceTree = "<group>"; };
+		A1645C521D9BC95D00AC5FE2 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rect.cpp; path = math/Rect.cpp; sourceTree = "<group>"; };
+		A1645C531D9BC95D00AC5FE2 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rect.h; path = math/Rect.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A1645C221D994F7300AC5FE2 /* include */,
+				A1645C451D9BC33C00AC5FE2 /* math */,
 				A1645C031D993B6100AC5FE2 /* external */,
 				A178E3E31D98C4A8006D2DC8 /* platform */,
 				A13E1BB01D8E912F0097E85B /* Products */,
@@ -154,6 +177,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1645C451D9BC33C00AC5FE2 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				A1645C4B1D9BC8FB00AC5FE2 /* math.h */,
+				A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */,
+				A1645C471D9BC3C700AC5FE2 /* Vec2.h */,
+				A1645C4D1D9BC94500AC5FE2 /* Size.cpp */,
+				A1645C4E1D9BC94500AC5FE2 /* Size.h */,
+				A1645C521D9BC95D00AC5FE2 /* Rect.cpp */,
+				A1645C531D9BC95D00AC5FE2 /* Rect.h */,
+			);
+			name = math;
+			sourceTree = "<group>";
+		};
 		A178E3E31D98C4A8006D2DC8 /* platform */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +210,8 @@
 			children = (
 				A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */,
 				A1645BFB1D99149100AC5FE2 /* Application_Mac.h */,
+				A1645C401D9BB95700AC5FE2 /* GLView_Mac.cpp */,
+				A1645C411D9BB95700AC5FE2 /* GLView_Mac.h */,
 			);
 			name = Mac;
 			path = platform/Mac;
@@ -193,7 +232,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1645C4C1D9BC8FB00AC5FE2 /* math.h in Headers */,
+				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */,
+				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
+				A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */,
+				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
 				A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
@@ -286,7 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
+				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
+				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
+				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
+				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
+				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

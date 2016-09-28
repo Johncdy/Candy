@@ -1,5 +1,5 @@
 //
-//  Application_Mac.hpp
+//  Application_Mac.h
 //  Candy
 //
 //  Created by Dongyang.Cai on 26/09/2016.

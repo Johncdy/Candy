@@ -6,12 +6,12 @@
 //
 //
 
-#include "AppDelegate.h"
+#include "ApplicationDelegate.h"
 
 NS_DY_USE
 
 int main(int argc, char** argv)
 {
-    AppDelegate app;
+    ApplicationDelegate app;
     return Application::getInstance()->run();
 }

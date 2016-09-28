@@ -10,7 +10,7 @@
 		A1645BDD1D9908FB00AC5FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */; };
 		A1645BE01D9908FB00AC5FE2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */; };
 		A1645C1D1D994C6400AC5FE2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C1C1D994C6400AC5FE2 /* main.cpp */; };
-		A1645C211D994E1100AC5FE2 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */; };
+		A1645C211D994E1100AC5FE2 /* ApplicationDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C1F1D994E1100AC5FE2 /* ApplicationDelegate.cpp */; };
 		A1645C2F1D9A66D700AC5FE2 /* libCandy Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645BEB1D99093000AC5FE2 /* libCandy Mac.a */; };
 		A1645C391D9A691B00AC5FE2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C381D9A691B00AC5FE2 /* Cocoa.framework */; };
 		A1645C3B1D9A692100AC5FE2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3A1D9A692100AC5FE2 /* IOKit.framework */; };
@@ -49,8 +49,8 @@
 		A1645BE11D9908FB00AC5FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Candy.xcodeproj; path = ../Candy/Candy.xcodeproj; sourceTree = "<group>"; };
 		A1645C1C1D994C6400AC5FE2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
-		A1645C201D994E1100AC5FE2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1645C1F1D994E1100AC5FE2 /* ApplicationDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationDelegate.cpp; sourceTree = "<group>"; };
+		A1645C201D994E1100AC5FE2 /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
 		A1645C381D9A691B00AC5FE2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A1645C3A1D9A692100AC5FE2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -115,8 +115,8 @@
 		A1645C1E1D994E1100AC5FE2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C1F1D994E1100AC5FE2 /* AppDelegate.cpp */,
-				A1645C201D994E1100AC5FE2 /* AppDelegate.h */,
+				A1645C1F1D994E1100AC5FE2 /* ApplicationDelegate.cpp */,
+				A1645C201D994E1100AC5FE2 /* ApplicationDelegate.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645C211D994E1100AC5FE2 /* AppDelegate.cpp in Sources */,
+				A1645C211D994E1100AC5FE2 /* ApplicationDelegate.cpp in Sources */,
 				A1645C1D1D994C6400AC5FE2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

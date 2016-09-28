@@ -14,4 +14,7 @@
 // platform
 #include "platform/platform.h"
 
+// math
+#include "math/math.h"
+
 #endif /* candy_h */
