@@ -22,7 +22,52 @@ public:
      @param x   The x coordinate.
      @param y   The y coordinate.
      */
-    Vec2(float x, float y);
+    inline Vec2(float x, float y);
+    
+    /**
+     Operator equal.
+
+     @param other Refrence from other vec2.
+
+     @return Vec2.
+     */
+    inline const Vec2& operator= (const Vec2 &other);
+    
+    /**
+     Operator plus.
+
+     @param other Refrence from other vec2.
+
+     @return Vec2.
+     */
+    inline const Vec2 operator+ (const Vec2 &other) const;
+    
+    /**
+     Operator minus.
+
+     @param other Refrence from other vec2.
+
+     @return Vec2.
+     */
+    inline const Vec2 operator- (const Vec2 &other) const;
+    
+    /**
+     Operator multipy.
+
+     @param a Float number.
+
+     @return Vec2.
+     */
+    inline const Vec2 operator* (float a) const;
+    
+    /**
+     Operator division.
+
+     @param a Float nubmer.
+
+     @return Vec2.
+     */
+    inline const Vec2 operator/ (float a) const;
     
 public:
     // The x coordinate.
@@ -32,5 +77,7 @@ public:
 };
 
 NS_DY_END
+
+#include "math/Vec2.inl"
 
 #endif /* Vec2_h */

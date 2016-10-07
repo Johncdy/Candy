@@ -49,6 +49,8 @@
 /* Begin PBXFileReference section */
 		A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
+		A13F18AA1DA750E6006E9019 /* Rect.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rect.inl; path = math/Rect.inl; sourceTree = "<group>"; };
 		A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = platform/PlatformConfig.h; sourceTree = "<group>"; };
 		A1645BF81D9913D900AC5FE2 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = platform/Application.h; sourceTree = "<group>"; };
 		A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Application_Mac.mm; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		A1645C4E1D9BC94500AC5FE2 /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Size.h; path = math/Size.h; sourceTree = "<group>"; };
 		A1645C521D9BC95D00AC5FE2 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rect.cpp; path = math/Rect.cpp; sourceTree = "<group>"; };
 		A1645C531D9BC95D00AC5FE2 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rect.h; path = math/Rect.h; sourceTree = "<group>"; };
+		A1BB92F61D9CC4110082CE12 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec2.inl; path = math/Vec2.inl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,10 +186,13 @@
 				A1645C4B1D9BC8FB00AC5FE2 /* math.h */,
 				A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */,
 				A1645C471D9BC3C700AC5FE2 /* Vec2.h */,
+				A1BB92F61D9CC4110082CE12 /* Vec2.inl */,
 				A1645C4D1D9BC94500AC5FE2 /* Size.cpp */,
 				A1645C4E1D9BC94500AC5FE2 /* Size.h */,
+				A13F18A91DA737BB006E9019 /* Size.inl */,
 				A1645C521D9BC95D00AC5FE2 /* Rect.cpp */,
 				A1645C531D9BC95D00AC5FE2 /* Rect.h */,
+				A13F18AA1DA750E6006E9019 /* Rect.inl */,
 			);
 			name = math;
 			sourceTree = "<group>";

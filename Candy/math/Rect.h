@@ -9,8 +9,8 @@
 #ifndef Rect_h
 #define Rect_h
 
-#include "Size.h"
-#include "Vec2.h"
+#include "math/Size.h"
+#include "math/Vec2.h"
 
 NS_DY_BEGIN
 
@@ -25,7 +25,16 @@ public:
      @param width  The width of rect.
      @param height The height of rect.
      */
-    Rect(float x, float y, float width, float height);
+    inline Rect(float x, float y, float width, float height);
+    
+    /**
+     Operator equal.
+
+     @param other Refrence from other rect.
+
+     @return Rect.
+     */
+    inline const Rect& operator= (const Rect& other);
     
 public:
     // Low left point of rect.
@@ -35,5 +44,7 @@ public:
 };
 
 NS_DY_END
+
+#include "math/Rect.inl"
 
 #endif /* Rect_h */

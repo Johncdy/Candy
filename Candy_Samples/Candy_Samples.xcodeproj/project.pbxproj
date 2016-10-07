@@ -393,6 +393,7 @@
 				A1645BE41D9908FB00AC5FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

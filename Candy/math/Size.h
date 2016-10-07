@@ -19,10 +19,50 @@ public:
     /**
      Constructs a new size initialized to the specified values.
 
-     @param width   The width of size.
-     @param height  The height of size.
+     @param w   The width of size.
+     @param h  The height of size.
      */
-    Size(float width, float height);
+    inline Size(float w, float h);
+    
+    /**
+     Operator equal.
+
+     @param other Refrence from other size.
+     @return Size.
+     */
+    inline const Size& operator= (const Size &other);
+    
+    /**
+     Opeartor plus.
+
+     @param other Refrence from other size.
+     @return A plus size.
+     */
+    inline const Size operator+ (const Size &other) const;
+    
+    /**
+     Operator minus.
+
+     @param other Refrence form other size.
+     @return A minus size.
+     */
+    inline const Size operator- (const Size &other) const;
+
+    /**
+     Operator multiply.
+
+     @param a Float number.
+     @return A multiply size.
+     */
+    inline const Size operator* (float a) const;
+    
+    /**
+     Operator division.
+
+     @param a Float number.
+     @return A divide size.
+     */
+    inline const Size operator/ (float a) const;
     
 public:
     // Width of size.
@@ -32,5 +72,7 @@ public:
 };
 
 NS_DY_END
+
+#include "math/Size.inl"
 
 #endif /* Size_h */
