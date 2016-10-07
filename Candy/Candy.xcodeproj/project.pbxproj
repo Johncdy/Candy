@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
+		A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
+		A13F18B01DA788D5006E9019 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18AD1DA788D5006E9019 /* Ref.h */; };
+		A13F18B21DA78917006E9019 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B11DA78917006E9019 /* memory.h */; };
+		A13F18B51DA7C459006E9019 /* AutoReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */; };
+		A13F18B61DA7C459006E9019 /* AutoReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */; };
+		A13F18B71DA7C459006E9019 /* AutoReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B41DA7C459006E9019 /* AutoReleasePool.h */; };
 		A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */; };
 		A1645BF91D9913D900AC5FE2 /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF81D9913D900AC5FE2 /* Application.h */; };
 		A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */; };
@@ -51,6 +58,11 @@
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
 		A13F18AA1DA750E6006E9019 /* Rect.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rect.inl; path = math/Rect.inl; sourceTree = "<group>"; };
+		A13F18AC1DA788D5006E9019 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ref.cpp; path = memory/Ref.cpp; sourceTree = "<group>"; };
+		A13F18AD1DA788D5006E9019 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ref.h; path = memory/Ref.h; sourceTree = "<group>"; };
+		A13F18B11DA78917006E9019 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memory.h; path = memory/memory.h; sourceTree = "<group>"; };
+		A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AutoReleasePool.cpp; path = memory/AutoReleasePool.cpp; sourceTree = "<group>"; };
+		A13F18B41DA7C459006E9019 /* AutoReleasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoReleasePool.h; path = memory/AutoReleasePool.h; sourceTree = "<group>"; };
 		A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = platform/PlatformConfig.h; sourceTree = "<group>"; };
 		A1645BF81D9913D900AC5FE2 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = platform/Application.h; sourceTree = "<group>"; };
 		A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Application_Mac.mm; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 			children = (
 				A1645C221D994F7300AC5FE2 /* include */,
 				A1645C451D9BC33C00AC5FE2 /* math */,
+				A13F18AB1DA787D4006E9019 /* memory */,
 				A1645C031D993B6100AC5FE2 /* external */,
 				A178E3E31D98C4A8006D2DC8 /* platform */,
 				A13E1BB01D8E912F0097E85B /* Products */,
@@ -116,6 +129,18 @@
 				A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A13F18AB1DA787D4006E9019 /* memory */ = {
+			isa = PBXGroup;
+			children = (
+				A13F18AC1DA788D5006E9019 /* Ref.cpp */,
+				A13F18AD1DA788D5006E9019 /* Ref.h */,
+				A13F18B11DA78917006E9019 /* memory.h */,
+				A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */,
+				A13F18B41DA7C459006E9019 /* AutoReleasePool.h */,
+			);
+			name = memory;
 			sourceTree = "<group>";
 		};
 		A1645C031D993B6100AC5FE2 /* external */ = {
@@ -243,9 +268,12 @@
 				A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */,
 				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
 				A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */,
+				A13F18B71DA7C459006E9019 /* AutoReleasePool.h in Headers */,
+				A13F18B21DA78917006E9019 /* memory.h in Headers */,
 				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
 				A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */,
+				A13F18B01DA788D5006E9019 /* Ref.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */,
 				A1645C171D99457C00AC5FE2 /* glfw3native.h in Headers */,
@@ -337,8 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A13F18B51DA7C459006E9019 /* AutoReleasePool.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
+				A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
@@ -350,7 +380,9 @@
 			files = (
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
+				A13F18B61DA7C459006E9019 /* AutoReleasePool.cpp in Sources */,
 				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
+				A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */,
 				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
