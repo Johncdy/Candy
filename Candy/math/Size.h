@@ -66,9 +66,9 @@ public:
     
 public:
     // Width of size.
-    float width;
+    float _width;
     // Height of size.
-    float height;
+    float _height;
 };
 
 NS_DY_END

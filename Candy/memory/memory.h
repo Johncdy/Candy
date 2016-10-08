@@ -10,5 +10,7 @@
 #define memory_h
 
 #include "memory/Ref.h"
+#include "memory/ObjectPool.h"
+#include "memory/PoolManager.h"
 
 #endif /* memory_h */

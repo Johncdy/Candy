@@ -38,9 +38,9 @@ public:
     
 public:
     // Low left point of rect.
-    Vec2 origin;
+    Vec2 _origin;
     // Width and height of the rect.
-    Size size;
+    Size _size;
 };
 
 NS_DY_END

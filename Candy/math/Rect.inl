@@ -14,15 +14,15 @@
 NS_DY_BEGIN
 
 inline Rect::Rect(float x, float y, float width, float height)
-: origin(Vec2(x, y))
-, size(Size(width, height))
+: _origin(Vec2(x, y))
+, _size(Size(width, height))
 {
 }
 
 inline const Rect& Rect::operator=(const Rect &other)
 {
-    this->origin = other.origin;
-    this->size = other.size;
+    this->_origin = other._origin;
+    this->_size = other._size;
     return *this;
 }
 

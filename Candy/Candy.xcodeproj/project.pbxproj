@@ -11,9 +11,12 @@
 		A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
 		A13F18B01DA788D5006E9019 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18AD1DA788D5006E9019 /* Ref.h */; };
 		A13F18B21DA78917006E9019 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B11DA78917006E9019 /* memory.h */; };
-		A13F18B51DA7C459006E9019 /* AutoReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */; };
-		A13F18B61DA7C459006E9019 /* AutoReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */; };
-		A13F18B71DA7C459006E9019 /* AutoReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B41DA7C459006E9019 /* AutoReleasePool.h */; };
+		A15853B71DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
+		A15853B81DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
+		A15853B91DA8C27800FB190D /* PoolManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A15853B61DA8C27800FB190D /* PoolManager.h */; };
+		A15853BC1DA8CCB400FB190D /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */; };
+		A15853BD1DA8CCB400FB190D /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */; };
+		A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */ = {isa = PBXBuildFile; fileRef = A15853BB1DA8CCB400FB190D /* ObjectPool.h */; };
 		A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */; };
 		A1645BF91D9913D900AC5FE2 /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF81D9913D900AC5FE2 /* Application.h */; };
 		A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */; };
@@ -61,8 +64,10 @@
 		A13F18AC1DA788D5006E9019 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ref.cpp; path = memory/Ref.cpp; sourceTree = "<group>"; };
 		A13F18AD1DA788D5006E9019 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ref.h; path = memory/Ref.h; sourceTree = "<group>"; };
 		A13F18B11DA78917006E9019 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memory.h; path = memory/memory.h; sourceTree = "<group>"; };
-		A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AutoReleasePool.cpp; path = memory/AutoReleasePool.cpp; sourceTree = "<group>"; };
-		A13F18B41DA7C459006E9019 /* AutoReleasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoReleasePool.h; path = memory/AutoReleasePool.h; sourceTree = "<group>"; };
+		A15853B51DA8C27800FB190D /* PoolManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PoolManager.cpp; path = memory/PoolManager.cpp; sourceTree = "<group>"; };
+		A15853B61DA8C27800FB190D /* PoolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoolManager.h; path = memory/PoolManager.h; sourceTree = "<group>"; };
+		A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectPool.cpp; path = memory/ObjectPool.cpp; sourceTree = "<group>"; };
+		A15853BB1DA8CCB400FB190D /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectPool.h; path = memory/ObjectPool.h; sourceTree = "<group>"; };
 		A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = platform/PlatformConfig.h; sourceTree = "<group>"; };
 		A1645BF81D9913D900AC5FE2 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = platform/Application.h; sourceTree = "<group>"; };
 		A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Application_Mac.mm; sourceTree = "<group>"; };
@@ -136,9 +141,11 @@
 			children = (
 				A13F18AC1DA788D5006E9019 /* Ref.cpp */,
 				A13F18AD1DA788D5006E9019 /* Ref.h */,
+				A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */,
+				A15853BB1DA8CCB400FB190D /* ObjectPool.h */,
 				A13F18B11DA78917006E9019 /* memory.h */,
-				A13F18B31DA7C459006E9019 /* AutoReleasePool.cpp */,
-				A13F18B41DA7C459006E9019 /* AutoReleasePool.h */,
+				A15853B51DA8C27800FB190D /* PoolManager.cpp */,
+				A15853B61DA8C27800FB190D /* PoolManager.h */,
 			);
 			name = memory;
 			sourceTree = "<group>";
@@ -264,11 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1645C4C1D9BC8FB00AC5FE2 /* math.h in Headers */,
+				A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */,
 				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
+				A15853B91DA8C27800FB190D /* PoolManager.h in Headers */,
 				A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */,
-				A13F18B71DA7C459006E9019 /* AutoReleasePool.h in Headers */,
 				A13F18B21DA78917006E9019 /* memory.h in Headers */,
 				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
@@ -364,11 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15853BC1DA8CCB400FB190D /* ObjectPool.cpp in Sources */,
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
-				A13F18B51DA7C459006E9019 /* AutoReleasePool.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */,
+				A15853B71DA8C27800FB190D /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
@@ -378,9 +387,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15853BD1DA8CCB400FB190D /* ObjectPool.cpp in Sources */,
+				A15853B81DA8C27800FB190D /* PoolManager.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
-				A13F18B61DA7C459006E9019 /* AutoReleasePool.cpp in Sources */,
 				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */,
 				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,

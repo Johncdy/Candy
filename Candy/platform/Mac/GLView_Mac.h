@@ -13,12 +13,12 @@
 #include <string>
 
 #include "math/math.h"
+#include "memory/Ref.h"
 
 NS_DY_BEGIN
 
-class GLView {
+class GLView : public Ref {
 public:
-    
     /**
      GLView ctor.
      */
@@ -53,7 +53,9 @@ public:
      */
     bool init(const std::string& viewName, Rect rect, float frameZoomFactor, bool resizable);
     
-    
+private:
+    // View name
+    std::string _viewName;
 };
 
 NS_DY_END

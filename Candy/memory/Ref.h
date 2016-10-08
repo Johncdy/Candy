@@ -54,7 +54,7 @@ public:
     
 protected:
     // count of references
-    unsigned int referenceCount;
+    unsigned int _referenceCount;
 };
 
 NS_DY_END

@@ -14,36 +14,36 @@
 NS_DY_BEGIN
 
 inline Size::Size(float w, float h)
-: width(w)
-, height(h)
+: _width(w)
+, _height(h)
 {
 }
 
 inline const Size& Size::operator=(const Size &other)
 {
-    this->width = other.width;
-    this->height = other.height;
+    this->_width = other._width;
+    this->_height = other._height;
     return *this;
 }
 
 inline const Size Size::operator+(const candy::Size &other) const
 {
-    return Size(this->width + other.width, this->height + other.height);
+    return Size(this->_width + other._width, this->_height + other._height);
 }
 
 inline const Size Size::operator-(const candy::Size &other) const
 {
-    return Size(this->width - other.width, this->height - other.height);
+    return Size(this->_width - other._width, this->_height - other._height);
 }
 
 inline const Size Size::operator*(float a) const
 {
-    return Size(this->width * a, this->height * a);
+    return Size(this->_width * a, this->_height * a);
 }
 
 inline const Size Size::operator/(float a) const
 {
-    return Size(this->width / a, this->height /a);
+    return Size(this->_width / a, this->_height /a);
 }
 
 NS_DY_END

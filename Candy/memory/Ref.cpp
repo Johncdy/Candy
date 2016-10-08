@@ -6,14 +6,15 @@
 //
 //
 
-#include "memory/memory.h"
+#include "memory/Ref.h"
+#include "memory/PoolManager.h"
 
 #include <assert.h>
 
 NS_DY_BEGIN
 
 Ref::Ref()
-: referenceCount(1)
+: _referenceCount(1)
 {
 }
 
@@ -23,23 +24,29 @@ Ref::~Ref()
 
 void Ref::retain()
 {
-    assert(referenceCount > 0);
-    referenceCount++;
+    assert(_referenceCount > 0);
+    _referenceCount++;
 }
 
 void Ref::release()
 {
-    assert(referenceCount > 0);
-    referenceCount--;
+    assert(_referenceCount > 0);
+    _referenceCount--;
     
-    if (0 == referenceCount) {
+    if (0 == _referenceCount) {
         delete this;
     }
 }
 
+Ref* Ref::autoRelease()
+{
+    PoolManager::getInstance()->getDefaultPool()->addObject(this);
+    return this;
+}
+
 unsigned int Ref::getReferenceCount()
 {
-    return referenceCount;
+    return _referenceCount;
 }
 
 NS_DY_END

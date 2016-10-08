@@ -17,4 +17,7 @@
 // math
 #include "math/math.h"
 
+// memory
+#include "memory/memory.h"
+
 #endif /* candy_h */

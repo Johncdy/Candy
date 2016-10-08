@@ -71,9 +71,9 @@ public:
     
 public:
     // The x coordinate.
-    float x;
+    float _x;
     // The y coordinate.
-    float y;
+    float _y;
 };
 
 NS_DY_END
