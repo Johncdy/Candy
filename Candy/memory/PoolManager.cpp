@@ -13,6 +13,8 @@
 
 NS_DY_BEGIN
 
+PoolManager* PoolManager::_singleInstance = nullptr;
+
 PoolManager* PoolManager::getInstance()
 {
     if (nullptr == _singleInstance) {

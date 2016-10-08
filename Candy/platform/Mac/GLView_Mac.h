@@ -15,7 +15,23 @@
 #include "math/math.h"
 #include "memory/Ref.h"
 
+#include "glfw3.h"
+
 NS_DY_BEGIN
+
+
+/**
+ There are opengl Context Attrs.
+ */
+struct GLContextAttrs
+{
+    int redBits;
+    int greenBits;
+    int blueBits;
+    int alphaBits;
+    int depthBits;
+    int stencilBits;
+};
 
 class GLView : public Ref {
 public:
@@ -53,9 +69,33 @@ public:
      */
     bool init(const std::string& viewName, Rect rect, float frameZoomFactor, bool resizable);
     
+    /**
+     Static method and member so that we can modify it on all platforms before create OpenGL context.
+
+     @param attrs The OpenGL context attrs.
+     */
+    static void setGLConextAttrs(GLContextAttrs& attrs);
+    
+    /**
+     Return the OpenGL context attrs.
+
+     @return Return the OpenGL context attrs.
+     */
+    static GLContextAttrs getContextAttrs();
+    
+    // The OpenGL context attrs.
+    static GLContextAttrs _glContextAttrs;
+    
 private:
-    // View name
+    // View name.
     std::string _viewName;
+    // Frame zoom factor.
+    float _frameZoomFactor;
+    
+    // Opaque window object.
+    GLFWwindow *_window;
+    // Opaque monitor object.
+    GLFWmonitor *_monitor;
 };
 
 NS_DY_END

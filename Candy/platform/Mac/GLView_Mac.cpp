@@ -10,7 +10,24 @@
 
 NS_DY_BEGIN
 
+//default context attributions are set as follows
+GLContextAttrs GLView::_glContextAttrs = {5, 6, 5, 0, 16, 0};
+
+void GLView::setGLConextAttrs(candy::GLContextAttrs &attrs)
+{
+    _glContextAttrs = attrs;
+}
+
+GLContextAttrs GLView::getContextAttrs()
+{
+    return _glContextAttrs;
+}
+
 GLView::GLView()
+: _viewName("")
+, _frameZoomFactor(1.0f)
+, _window(nullptr)
+, _monitor(nullptr)
 {
 }
 
@@ -32,6 +49,44 @@ GLView* GLView::create(const std::string &viewName, Rect rect, float frameZoomFa
 bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoomFactor, bool resizable)
 {
     _viewName = viewName;
+    _frameZoomFactor = frameZoomFactor;
+    
+    /* Initialize the library */
+    if (!glfwInit()) return false;
+    
+    glfwWindowHint(GLFW_RESIZABLE, resizable ? GL_TRUE : GL_FALSE);
+    glfwWindowHint(GLFW_RED_BITS, _glContextAttrs.redBits);
+    glfwWindowHint(GLFW_GREEN_BITS, _glContextAttrs.greenBits);
+    glfwWindowHint(GLFW_BLUE_BITS, _glContextAttrs.blueBits);
+    glfwWindowHint(GLFW_ALPHA_BITS, _glContextAttrs.alphaBits);
+    glfwWindowHint(GLFW_DEPTH_BITS, _glContextAttrs.depthBits);
+    glfwWindowHint(GLFW_STENCIL_BITS, _glContextAttrs.stencilBits);
+    
+    /* Create a windowed mode window and its OpenGL context */
+    _window = glfwCreateWindow(rect._size._width * _frameZoomFactor, rect._size._height * _frameZoomFactor, viewName.c_str(), _monitor, NULL);
+    if (!_window)
+    {
+        glfwTerminate();
+        return -1;
+    }
+    
+    /* Make the window's context current */
+    glfwMakeContextCurrent(_window);
+    
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(_window))
+    {
+        /* Render here */
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        /* Swap front and back buffers */
+        glfwSwapBuffers(_window);
+        
+        /* Poll for and process events */
+        glfwPollEvents();
+    }
+    
+    glfwTerminate();
     
     return true;
 }

@@ -14,8 +14,8 @@
 #define CANDY_VERSION 0x00010000
 
 // PoolManager max capacity.
-#define POOL_MANAGER_CAPACITY           1
+#define POOL_MANAGER_CAPACITY           0x00000001
 // Default engine object pool index.
-#define POOL_MANAGER_CANDY_POOL_INDEX   0
+#define POOL_MANAGER_CANDY_POOL_INDEX   0x00000000
 
 #endif /* CandyMacros_h */
