@@ -11,6 +11,9 @@
 		A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
 		A13F18B01DA788D5006E9019 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18AD1DA788D5006E9019 /* Ref.h */; };
 		A13F18B21DA78917006E9019 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B11DA78917006E9019 /* memory.h */; };
+		A1574C911DAA274200C24924 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1574C901DAA274200C24924 /* CoreServices.framework */; };
+		A1574C921DAA28DB00C24924 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C331D9A67AC00AC5FE2 /* OpenGL.framework */; };
+		A1574C941DAA298700C24924 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1574C931DAA298700C24924 /* CoreGraphics.framework */; };
 		A15853B71DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
 		A15853B81DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
 		A15853B91DA8C27800FB190D /* PoolManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A15853B61DA8C27800FB190D /* PoolManager.h */; };
@@ -35,7 +38,6 @@
 		A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */; };
 		A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */; };
 		A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C471D9BC3C700AC5FE2 /* Vec2.h */; };
-		A1645C4C1D9BC8FB00AC5FE2 /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C4B1D9BC8FB00AC5FE2 /* math.h */; };
 		A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C4D1D9BC94500AC5FE2 /* Size.cpp */; };
 		A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C4D1D9BC94500AC5FE2 /* Size.cpp */; };
 		A1645C511D9BC94500AC5FE2 /* Size.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C4E1D9BC94500AC5FE2 /* Size.h */; };
@@ -64,6 +66,8 @@
 		A13F18AC1DA788D5006E9019 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ref.cpp; path = memory/Ref.cpp; sourceTree = "<group>"; };
 		A13F18AD1DA788D5006E9019 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ref.h; path = memory/Ref.h; sourceTree = "<group>"; };
 		A13F18B11DA78917006E9019 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memory.h; path = memory/memory.h; sourceTree = "<group>"; };
+		A1574C901DAA274200C24924 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		A1574C931DAA298700C24924 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A15853B51DA8C27800FB190D /* PoolManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PoolManager.cpp; path = memory/PoolManager.cpp; sourceTree = "<group>"; };
 		A15853B61DA8C27800FB190D /* PoolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoolManager.h; path = memory/PoolManager.h; sourceTree = "<group>"; };
 		A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectPool.cpp; path = memory/ObjectPool.cpp; sourceTree = "<group>"; };
@@ -87,7 +91,6 @@
 		A1645C411D9BB95700AC5FE2 /* GLView_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView_Mac.h; sourceTree = "<group>"; };
 		A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec2.cpp; path = math/Vec2.cpp; sourceTree = "<group>"; };
 		A1645C471D9BC3C700AC5FE2 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec2.h; path = math/Vec2.h; sourceTree = "<group>"; };
-		A1645C4B1D9BC8FB00AC5FE2 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = math.h; path = math/math.h; sourceTree = "<group>"; };
 		A1645C4D1D9BC94500AC5FE2 /* Size.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Size.cpp; path = math/Size.cpp; sourceTree = "<group>"; };
 		A1645C4E1D9BC94500AC5FE2 /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Size.h; path = math/Size.h; sourceTree = "<group>"; };
 		A1645C521D9BC95D00AC5FE2 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rect.cpp; path = math/Rect.cpp; sourceTree = "<group>"; };
@@ -100,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1574C941DAA298700C24924 /* CoreGraphics.framework in Frameworks */,
+				A1574C921DAA28DB00C24924 /* OpenGL.framework in Frameworks */,
+				A1574C911DAA274200C24924 /* CoreServices.framework in Frameworks */,
 				A1645C181D99457C00AC5FE2 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +211,8 @@
 		A1645C301D9A67A200AC5FE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1574C931DAA298700C24924 /* CoreGraphics.framework */,
+				A1574C901DAA274200C24924 /* CoreServices.framework */,
 				A1645C351D9A67EB00AC5FE2 /* IOKit.framework */,
 				A1645C331D9A67AC00AC5FE2 /* OpenGL.framework */,
 				A1645C311D9A67A200AC5FE2 /* Cocoa.framework */,
@@ -215,7 +223,6 @@
 		A1645C451D9BC33C00AC5FE2 /* math */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C4B1D9BC8FB00AC5FE2 /* math.h */,
 				A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */,
 				A1645C471D9BC3C700AC5FE2 /* Vec2.h */,
 				A1BB92F61D9CC4110082CE12 /* Vec2.inl */,
@@ -270,7 +277,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645C4C1D9BC8FB00AC5FE2 /* math.h in Headers */,
 				A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C161D99457C00AC5FE2 /* glfw3.h in Headers */,

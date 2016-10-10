@@ -15,7 +15,9 @@
 #include "platform/platform.h"
 
 // math
-#include "math/math.h"
+#include "math/Vec2.h"
+#include "math/Size.h"
+#include "math/Rect.h"
 
 // memory
 #include "memory/memory.h"

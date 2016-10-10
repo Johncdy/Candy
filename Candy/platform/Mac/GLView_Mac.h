@@ -12,10 +12,17 @@
 #include <stdio.h>
 #include <string>
 
-#include "math/math.h"
+#include "math/Rect.h"
 #include "memory/Ref.h"
 
 #include "glfw3.h"
+#ifndef GLFW_EXPOSE_NATIVE_NSGL
+#define GLFW_EXPOSE_NATIVE_NSGL
+#endif
+#ifndef GLFW_EXPOSE_NATIVE_COCOA
+#define GLFW_EXPOSE_NATIVE_COCOA
+#endif
+#include "glfw3native.h"
 
 NS_DY_BEGIN
 

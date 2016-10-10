@@ -67,7 +67,29 @@ bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoom
     if (!_window)
     {
         glfwTerminate();
-        return -1;
+        printf("Can't create window");
+        return false;
+    }
+    
+    /*
+     *  Note that the created window and context may differ from what you requested,
+     *  as not all parameters and hints are
+     *  [hard constraints](@ref window_hints_hard).  This includes the size of the
+     *  window, especially for full screen windows.  To retrieve the actual
+     *  attributes of the created window and context, use queries like @ref
+     *  glfwGetWindowAttrib and @ref glfwGetWindowSize.
+     *
+     *  see declaration glfwCreateWindow
+     */
+    int realW = 0, realH = 0;
+    glfwGetWindowSize(_window, &realW, &realH);
+    if (realW != rect._size._width * _frameZoomFactor)
+    {
+        rect._size._width = realW / _frameZoomFactor;
+    }
+    if (realH != rect._size._height * _frameZoomFactor)
+    {
+        rect._size._height = realH / _frameZoomFactor;
     }
     
     /* Make the window's context current */
