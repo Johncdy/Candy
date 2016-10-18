@@ -6,7 +6,8 @@
 //
 //
 
-#include "GLView_Mac.h"
+#include "platform/Mac/GLView_Mac.h"
+#include "platform/Mac/GLFWEventHandler.h"
 
 NS_DY_BEGIN
 
@@ -50,6 +51,8 @@ bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoom
 {
     _viewName = viewName;
     _frameZoomFactor = frameZoomFactor;
+    
+    glfwSetErrorCallback(GLFWEventHandler::onGLFWError);
     
     /* Initialize the library */
     if (!glfwInit()) return false;
@@ -95,6 +98,18 @@ bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoom
     /* Make the window's context current */
     glfwMakeContextCurrent(_window);
     
+    // Set glfw callback.
+    glfwSetMouseButtonCallback(_window, GLFWEventHandler::onGLFWMouseCallBack);
+    glfwSetCursorPosCallback(_window, GLFWEventHandler::onGLFWMouseMoveCallBack);
+    glfwSetScrollCallback(_window, GLFWEventHandler::onGLFWMouseScrollCallback);
+    glfwSetCharCallback(_window, GLFWEventHandler::onGLFWCharCallback);
+    glfwSetKeyCallback(_window, GLFWEventHandler::onGLFWKeyCallback);
+    glfwSetWindowPosCallback(_window, GLFWEventHandler::onGLFWWindowPosCallback);
+    glfwSetFramebufferSizeCallback(_window, GLFWEventHandler::onGLFWFrameBufferSize);
+    glfwSetWindowSizeCallback(_window, GLFWEventHandler::onGLFWWindowSizeFunCallback);
+    glfwSetWindowIconifyCallback(_window, GLFWEventHandler::onGLFWWindowIconifyCallback);
+    glfwSetWindowFocusCallback(_window, GLFWEventHandler::onGLFWWindowFocusCallback);
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(_window))
     {
@@ -111,6 +126,61 @@ bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoom
     glfwTerminate();
     
     return true;
+}
+
+void GLView::onGLFWError(int errorID, const char* errorDesc)
+{
+    printf("GLFWError #%d Happen, %s\n", errorID, errorDesc);
+}
+
+void GLView::onGLFWMouseCallBack(GLFWwindow* window, int button, int action, int modify)
+{
+    
+}
+
+void GLView::onGLFWMouseMoveCallBack(GLFWwindow* window, double x, double y)
+{
+    
+}
+
+void GLView::onGLFWMouseScrollCallback(GLFWwindow* window, double x, double y)
+{
+    
+}
+
+void GLView::onGLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    
+}
+
+void GLView::onGLFWCharCallback(GLFWwindow* window, unsigned int character)
+{
+    
+}
+
+void GLView::onGLFWWindowPosCallback(GLFWwindow* windows, int x, int y)
+{
+    
+}
+
+void GLView::onGLFWframebuffersize(GLFWwindow* window, int w, int h)
+{
+    
+}
+
+void GLView::onGLFWWindowSizeFunCallback(GLFWwindow *window, int width, int height)
+{
+    
+}
+
+void GLView::onGLFWWindowIconifyCallback(GLFWwindow* window, int iconified)
+{
+    
+}
+
+void GLView::onGLFWWindowFocusCallback(GLFWwindow* window, int focused)
+{
+    
 }
 
 NS_DY_END

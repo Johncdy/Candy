@@ -93,6 +93,29 @@ public:
     // The OpenGL context attrs.
     static GLContextAttrs _glContextAttrs;
     
+    // GLFWEventHandler callbacks
+    void onGLFWError(int errorID, const char* errorDesc);
+    
+    void onGLFWMouseCallBack(GLFWwindow* window, int button, int action, int modify);
+    
+    void onGLFWMouseMoveCallBack(GLFWwindow* window, double x, double y);
+    
+    void onGLFWMouseScrollCallback(GLFWwindow* window, double x, double y);
+    
+    void onGLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+    
+    void onGLFWCharCallback(GLFWwindow* window, unsigned int character);
+    
+    void onGLFWWindowPosCallback(GLFWwindow* windows, int x, int y);
+    
+    void onGLFWframebuffersize(GLFWwindow* window, int w, int h);
+    
+    void onGLFWWindowSizeFunCallback(GLFWwindow *window, int width, int height);
+    
+    void onGLFWWindowIconifyCallback(GLFWwindow* window, int iconified);
+    
+    void onGLFWWindowFocusCallback(GLFWwindow* window, int focused);
+    
 private:
     // View name.
     std::string _viewName;

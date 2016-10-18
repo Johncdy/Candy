@@ -1,3 +1,7 @@
 Candy/external/glfw/src
 Candy_Samples/Candy_Samples.xcodeproj/xcuserdata
 Candy_Samples/Candy_Samples.xcodeproj/project.xcworkspace/xcuserdata
+Candy/external/cegui
+Candy/external/cegui-0.8.4
+Candy/external/boost
+Candy/gui/cegui/ScriptModules
