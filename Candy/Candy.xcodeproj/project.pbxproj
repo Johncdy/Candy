@@ -2513,7 +2513,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include/GLFW";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -2558,7 +2558,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include/GLFW";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
