@@ -27,10 +27,10 @@
 #ifndef _FalStaticText_h_
 #define _FalStaticText_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/WindowRendererSets/Core/Static.h"
-#include "gui/CEGUI/falagard/Enums.h"
-#include "gui/CEGUI/ColourRect.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/WindowRendererSets/Core/Static.h"
+#include "CEGUI/falagard/Enums.h"
+#include "CEGUI/ColourRect.h"
 #include <vector>
 
 #if defined(_MSC_VER)
@@ -163,119 +163,11 @@ namespace CEGUI
         bool handleFontRenderSizeChange(const Font* const font);
         void render(void);
 
-        /*!
-        \brief
-            Get the current position of the horizontal scrollbar within the
-            text.
-
-            The range of the scrollbar is from 0 to the width of the text minus
-            the width of a page
-            (0 <= position <= (textSize - pageSize)).
-
-        \param position
-            Float value specifying the position of the scrollbar within the
-            text.
-        */
-        float getHorizontalScrollPosition() const;
-
-        /*!
-        \brief
-            Get the current position of the vertical scrollbar within the text.
-
-            The range of the scrollbar is from 0 to the height of the text minus
-            the height of a page
-            (0 <= position <= (textSize - pageSize)).
-
-        \param position
-            Float value specifying the position of the scrollbar within the
-            text.
-        */
-        float getVerticalScrollPosition() const;
-        
-        /*!
-        \brief
-            return the current horizontal scrollbar position as a value in the
-            interval [0, 1].
-        */
-        float getUnitIntervalHorizontalScrollPosition() const;
-
-        /*!
-        \brief
-            return the current vertical scrollbar position as a value in the
-            interval [0, 1].
-        */
-        float getUnitIntervalVerticalScrollPosition() const;
-
-        /*!
-        \brief
-            Set the current position of the horizontal scrollbar within the
-            text.
-
-            The range of the scrollbar is from 0 to the width of the text minus
-            the width of a page
-            (0 <= position <= (textSize - pageSize)), any attempt to set the
-            position outside this range will be adjusted so that it falls within
-            the legal range.
-
-        \param position
-            Float value specifying the position of the scrollbar within the 
-            text.
-        */
-        void setHorizontalScrollPosition(float position);
-
-        /*!
-        \brief
-            Set the current position of the vertical scrollbar within the text.
-
-            The range of the scrollbar is from 0 to the height of the text minus
-            the height of a page
-            (0 <= position <= (textSize - pageSize)), any attempt to set the
-            position outside this range will be adjusted so that it falls within
-            the legal range.
-
-        \param position
-            Float value specifying the position of the scrollbar within the
-            text.
-        */
-        void setVerticalScrollPosition(float position);
-
-        /*!
-        \brief
-            set the current horizontal scrollbar position as a value in the
-            interval [0, 1].
-        */
-        void setUnitIntervalHorizontalScrollPosition(float position);
-
-        /*!
-        \brief
-            set the current vertical scrollbar position as a value in the
-            interval [0, 1].
-        */
-        void setUnitIntervalVerticalScrollPosition(float position);
-
-        /*!
-        \brief
-            Invalidate string formatting and scrollbars visibility.
-
-            This sets a "dirty" flag which causes "updateFormatting" to actually
-            perform an update.
-        \see updateFormatting
-        */
-        void invalidateFormatting();
-
     protected:
-        /*!
-        \brief
-            Update string formatting and scrollbars visibility.
-
-            This only happens if a "dirty" flag is set. The flag is set by
-            "invalidateFormatting".
-        \see invalidateFormatting
-        */
+        //! update string formatting (gets area size to use from looknfeel)
         void updateFormatting() const;
-        
-        //! \deprecated
-        void updateFormatting(const Sizef&) const;
+        //! update string formatting using given area size.
+        void updateFormatting(const Sizef& sz) const;
 
         // overridden from FalagardStatic base class
         void onLookNFeelAssigned();
@@ -283,20 +175,11 @@ namespace CEGUI
 
         // text field with scrollbars methods
         void renderScrolledText(void);
-
-        void configureScrollbars() const;
-
-        //! \deprecated
         void configureScrollbars(void);
-
-        Scrollbar* getVertScrollbar() const;
-        Scrollbar* getHorzScrollbar() const;
-        Rectf getTextRenderArea() const;
-        Sizef getDocumentSize() const;
-
-        //! \deprecated
+        Scrollbar* getVertScrollbar(void) const;
+        Scrollbar* getHorzScrollbar(void) const;
+        Rectf getTextRenderArea(void) const;
         Sizef getDocumentSize(const Rectf& renderArea) const;
-
         void setupStringFormatter() const;
 
         // overridden event handlers
@@ -323,18 +206,8 @@ namespace CEGUI
         typedef std::vector<Event::Connection> ConnectionList;
         ConnectionList  d_connections;
 
-        /*!
-        \brief
-            True when string formatting and scrollbars visibility are up to
-            date.
-        */
+        //! true when string formatting is up to date.
         mutable bool d_formatValid;
-
-    private:
-        Scrollbar* getVertScrollbarWithoutUpdate() const;
-        Scrollbar* getHorzScrollbarWithoutUpdate() const;
-        Rectf getTextRenderAreaWithoutUpdate() const;
-        Sizef getDocumentSizeWithoutUpdate() const;
     };
 
 } // End of  CEGUI namespace section

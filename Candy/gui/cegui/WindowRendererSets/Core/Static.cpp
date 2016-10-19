@@ -24,11 +24,11 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/Static.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/falagard/XMLEnumHelper.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/Static.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/falagard/XMLEnumHelper.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

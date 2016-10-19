@@ -143,11 +143,6 @@ namespace CEGUI
         return d_vertFormatting.get(wnd);
     }
 
-    VerticalTextFormatting TextComponent::getVerticalFormattingFromComponent() const
-    {
-        return d_vertFormatting.getValue();
-    }
-
     void TextComponent::setVerticalFormatting(VerticalTextFormatting fmt)
     {
         d_vertFormatting.set(fmt);
@@ -158,30 +153,15 @@ namespace CEGUI
         return d_horzFormatting.get(wnd);
     }
 
-    HorizontalTextFormatting TextComponent::getHorizontalFormattingFromComponent() const
-    {
-        return d_horzFormatting.getValue();
-    }
-
     void TextComponent::setHorizontalFormatting(HorizontalTextFormatting fmt)
     {
         d_horzFormatting.set(fmt);
-    }
-
-    const String& TextComponent::getHorizontalFormattingPropertySource() const
-    {
-        return d_horzFormatting.getPropertySource();
     }
 
     void TextComponent::setHorizontalFormattingPropertySource(
                                                 const String& property_name)
     {
         d_horzFormatting.setPropertySource(property_name);
-    }
-
-    const String& TextComponent::getVerticalFormattingPropertySource() const
-    {
-        return d_vertFormatting.getPropertySource();
     }
 
     void TextComponent::setVerticalFormattingPropertySource(
@@ -252,19 +232,46 @@ namespace CEGUI
         }
     }
 
-    void TextComponent::render_impl(Window& srcWindow, Rectf& destRect,
-      const CEGUI::ColourRect* modColours, const Rectf* clipper,
-      bool /*clipToDisplay*/) const
+    void TextComponent::render_impl(Window& srcWindow, Rectf& destRect, const CEGUI::ColourRect* modColours, const Rectf* clipper, bool /*clipToDisplay*/) const
     {
-    
-        CEGUI_TRY
-        {
-            updateFormatting(srcWindow, destRect.getSize());
-        }
-        CEGUI_CATCH(...)
-        {
+        const Font* font = getFontObject(srcWindow);
+
+        // exit if we have no font to use.
+        if (!font)
             return;
+
+        const RenderedString* rs = &d_renderedString;
+        // do we fetch text from a property
+        if (!d_textPropertyName.empty())
+        {
+            // fetch text & do bi-directional reordering as needed
+            String vis;
+            #ifdef CEGUI_BIDI_SUPPORT
+                BidiVisualMapping::StrIndexList l2v, v2l;
+                d_bidiVisualMapping->reorderFromLogicalToVisual(
+                    srcWindow.getProperty(d_textPropertyName), vis, l2v, v2l);
+            #else
+                vis = srcWindow.getProperty(d_textPropertyName);
+            #endif
+            // parse string using parser from Window.
+            d_renderedString =
+                srcWindow.getRenderedStringParser().parse(vis, font, 0);
         }
+        // do we use a static text string from the looknfeel
+        else if (!getTextVisual().empty())
+            // parse string using parser from Window.
+            d_renderedString = srcWindow.getRenderedStringParser().
+                parse(getTextVisual(), font, 0);
+        // do we have to override the font?
+        else if (font != srcWindow.getFont())
+            d_renderedString = srcWindow.getRenderedStringParser().
+                parse(srcWindow.getTextVisual(), font, 0);
+        // use ready-made RenderedString from the Window itself
+        else
+            rs = &srcWindow.getRenderedString();
+
+        setupStringFormatter(srcWindow, *rs);
+        d_formattedRenderedString->format(&srcWindow, destRect.getSize());
 
         // Get total formatted height.
         const float textHeight = d_formattedRenderedString->getVerticalExtent(&srcWindow);
@@ -319,7 +326,7 @@ namespace CEGUI
         d_area.writeXMLToStream(xml_stream);
 
         // write text element
-        if (!d_font.empty() || !getText().empty())
+        if (!d_font.empty() && !getText().empty())
         {
             xml_stream.openTag(Falagard_xmlHandler::TextElement);
             if (!d_font.empty())
@@ -402,13 +409,11 @@ namespace CEGUI
 
     float TextComponent::getHorizontalTextExtent(const Window& window) const
     {
-        updateFormatting(window);
         return d_formattedRenderedString->getHorizontalExtent(&window);
     }
 
     float TextComponent::getVerticalTextExtent(const Window& window) const
     {
-        updateFormatting(window);
         return d_formattedRenderedString->getVerticalExtent(&window);
     }
 
@@ -425,58 +430,6 @@ namespace CEGUI
         }
 
         return res;
-    }
-
-    //------------------------------------------------------------------------//
-    void TextComponent::updateFormatting(const Window& srcWindow) const
-    {
-        updateFormatting(srcWindow, d_area.getPixelRect(srcWindow).getSize());
-    }
-
-    //------------------------------------------------------------------------//
-    void TextComponent::updateFormatting(
-      const Window& srcWindow, const Sizef& size) const
-    {
-
-        const Font* font = getFontObject(srcWindow);
-
-        // exit if we have no font to use.
-        if (!font)
-            CEGUI_THROW(InvalidRequestException("Window doesn't have a font."));
-
-        const RenderedString* rs = &d_renderedString;
-        // do we fetch text from a property
-        if (!d_textPropertyName.empty())
-        {
-            // fetch text & do bi-directional reordering as needed
-            String vis;
-            #ifdef CEGUI_BIDI_SUPPORT
-                BidiVisualMapping::StrIndexList l2v, v2l;
-                d_bidiVisualMapping->reorderFromLogicalToVisual(
-                    srcWindow.getProperty(d_textPropertyName), vis, l2v, v2l);
-            #else
-                vis = srcWindow.getProperty(d_textPropertyName);
-            #endif
-            // parse string using parser from Window.
-            d_renderedString =
-                srcWindow.getRenderedStringParser().parse(vis, font, 0);
-        }
-        // do we use a static text string from the looknfeel
-        else if (!getTextVisual().empty())
-            // parse string using parser from Window.
-            d_renderedString = srcWindow.getRenderedStringParser().
-                parse(getTextVisual(), font, 0);
-        // do we have to override the font?
-        else if (font != srcWindow.getFont())
-            d_renderedString = srcWindow.getRenderedStringParser().
-                parse(srcWindow.getTextVisual(), font, 0);
-        // use ready-made RenderedString from the Window itself
-        else
-            rs = &srcWindow.getRenderedString();
-
-        setupStringFormatter(srcWindow, *rs);
-        d_formattedRenderedString->format(&srcWindow, size);
-    
     }
 
 //----------------------------------------------------------------------------//

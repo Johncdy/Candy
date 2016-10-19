@@ -27,8 +27,8 @@
 #ifndef _FalSlider_h_
 #define _FalSlider_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/Slider.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/Slider.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

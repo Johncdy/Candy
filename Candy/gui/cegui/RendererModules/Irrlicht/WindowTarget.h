@@ -27,8 +27,8 @@
 #ifndef _CEGUIIrrlichtWindowTarget_h_
 #define _CEGUIIrrlichtWindowTarget_h_
 
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/RenderTarget.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/RendererModules/Irrlicht/RenderTarget.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

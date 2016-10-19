@@ -24,8 +24,8 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/XMLParserModules/Xerces/XMLParserProperties.h"
-#include "gui/CEGUI/XMLParserModules/Xerces/XMLParser.h"
+#include "CEGUI/XMLParserModules/Xerces/XMLParserProperties.h"
+#include "CEGUI/XMLParserModules/Xerces/XMLParser.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

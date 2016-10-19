@@ -29,7 +29,7 @@
 #ifndef _CEGUIIrrlichtResourceProvider_h_
 #define _CEGUIIrrlichtResourceProvider_h_
 
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
 #include "../../DefaultResourceProvider.h"
 #include <IFileSystem.h>
 

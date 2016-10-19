@@ -1188,12 +1188,6 @@ void ComponentArea::setAreaPropertySource(const String& property)
 }
 
 //----------------------------------------------------------------------------//
-const String& ComponentArea::getNamedAreaSourceLook() const
-{
-    return d_namedAreaSourceLook;
-}
-
-//----------------------------------------------------------------------------//
 void ComponentArea::setNamedAreaSouce(const String& widget_look,
                                       const String& area_name)
 {

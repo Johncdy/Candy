@@ -34,9 +34,19 @@
 #include "../../Vector.h"
 #include "../../Rect.h"
 #include "../../TextureTarget.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
+#include "CEGUI/RendererModules/OpenGL/GL.h"
 #include <vector>
 #include <map>
+
+#if (defined( __WIN32__ ) || defined( _WIN32 )) && !defined(CEGUI_STATIC)
+#   ifdef CEGUIOPENGLRENDERER_EXPORTS
+#       define OPENGL_GUIRENDERER_API __declspec(dllexport)
+#   else
+#       define OPENGL_GUIRENDERER_API __declspec(dllimport)
+#   endif
+#else
+#   define OPENGL_GUIRENDERER_API
+#endif
 
 #if defined(_MSC_VER)
 #   pragma warning(push)
@@ -49,7 +59,7 @@ class OpenGLTexture;
 class OpenGLGeometryBufferBase;
 struct mat4Pimpl;
 
-//! Common base class used for other OpenGL (desktop or ES) based renderer modules.
+//! Common base class used for other OpenGL based renderer modules.
 class OPENGL_GUIRENDERER_API OpenGLRendererBase : public Renderer
 {
 public:
@@ -154,7 +164,7 @@ public:
     virtual void setupRenderingBlendMode(const BlendMode mode,
                                          const bool force = false) = 0;
 
-    //! \deprecated - the OpenGL Info class should be used in the future for this purpose
+    //! Return whether EXT_texture_compression_s3tc is supported
     virtual bool isS3TCSupported() const = 0;
 
     /*!
@@ -202,23 +212,6 @@ public:
     */
     RenderTarget* getActiveRenderTarget();
 
-    /*!
-    \brief
-        Returns if the texture coordinate system is vertically flipped or not. The original of a
-        texture coordinate system is typically located either at the the top-left or the bottom-left.
-        CEGUI, Direct3D and most rendering engines assume it to be on the top-left. OpenGL assumes it to
-        be at the bottom left.        
- 
-        This function is intended to be used when generating geometry for rendering the TextureTarget
-        onto another surface. It is also intended to be used when trying to use a custom texture (RTT)
-        inside CEGUI using the Image class, in order to determine the Image coordinates correctly.
-
-    \return
-        - true if flipping is required: the texture coordinate origin is at the bottom left
-        - false if flipping is not required: the texture coordinate origin is at the top left
-    */
-    bool isTexCoordSystemFlipped() const { return true; }
-
 protected:
     OpenGLRendererBase();
 
@@ -230,21 +223,6 @@ protected:
         Size object describing the initial display resolution.
     */
     OpenGLRendererBase(const Sizef& display_size);
-    
-    OpenGLRendererBase(bool set_glew_experimental);
-
-    /*!
-    \brief
-        Constructor.
-
-    \param display_size
-        Size object describing the initial display resolution.
-    \param set_glew_experimental
-        If true, set "glewExperimental = GL_TRUE" before calling "glewInit".
-    */
-    OpenGLRendererBase(const Sizef& display_size, bool set_glew_experimental);
-    
-    void init (bool init_glew=false, bool set_glew_experimental=false);
 
     //! Destructor!
     virtual ~OpenGLRendererBase();

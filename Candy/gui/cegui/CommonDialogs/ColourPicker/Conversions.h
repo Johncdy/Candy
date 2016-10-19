@@ -30,9 +30,9 @@ the ColourPicker colour types
 #ifndef _CEGUIColourPickerConversions_h_
 #define _CEGUIColourPickerConversions_h_
 
-#include "gui/CEGUI/CommonDialogs/Module.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Types.h"
-#include "gui/CEGUI/Colour.h"
+#include "CEGUI/CommonDialogs/Module.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Types.h"
+#include "CEGUI/Colour.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

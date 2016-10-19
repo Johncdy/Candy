@@ -27,8 +27,8 @@
 #ifndef _CEGUIOpenGL3FBOTextureTarget_h_
 #define _CEGUIOpenGL3FBOTextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
+#include "CEGUI/RendererModules/OpenGL/TextureTarget.h"
+#include "CEGUI/RendererModules/OpenGL/GL.h"
 #include "../../Rect.h"
 
 

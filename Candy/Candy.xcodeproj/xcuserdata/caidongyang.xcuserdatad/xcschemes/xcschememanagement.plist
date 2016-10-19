@@ -9,6 +9,36 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>CEGUICommonDialogs Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>CEGUICoreWindowRendererSet Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>CEGUIExpatParser Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>CEGUIFreeImageImageCodec Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>CEGUILibXMLParser Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>CEGUIOpenGLRenderer Mac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Candy Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +58,46 @@
 			<true/>
 		</dict>
 		<key>A13E1BB81D8E93FB0097E85B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F7FFB1DB714F60080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F80031DB7151E0080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F82211DB71D4E0080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F82311DB71E740080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F82421DB724190080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F824A1DB724520080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F82641DB725F30080AFE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F82E51DB7486B0080AFE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

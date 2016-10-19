@@ -28,7 +28,7 @@
 #define _CEGUIOgreImageCodec_h_
 
 #include "../../ImageCodec.h"
-#include "gui/CEGUI/RendererModules/Ogre/Renderer.h"
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

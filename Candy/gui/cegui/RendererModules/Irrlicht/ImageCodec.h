@@ -28,7 +28,7 @@
 #define _CEGUIIrrlichtImageCodec_h_
 
 #include "../../ImageCodec.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
 
 // forward declararions of irrlicht bits.
 namespace irr

@@ -27,8 +27,8 @@
 #ifndef _FalScrollablePane_h_
 #define _FalScrollablePane_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/ScrollablePane.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/ScrollablePane.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

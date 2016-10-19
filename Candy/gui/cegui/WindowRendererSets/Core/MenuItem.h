@@ -27,8 +27,8 @@
 #ifndef _FalMenuItem_h_
 #define _FalMenuItem_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/ItemEntry.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/ItemEntry.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

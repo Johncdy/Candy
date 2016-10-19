@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Direct3D10/Texture.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/ImageCodec.h"
+#include "CEGUI/RendererModules/Direct3D10/Texture.h"
+#include "CEGUI/System.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/ImageCodec.h"
 #include <d3d10.h>
 
 // Start of CEGUI namespace section
@@ -71,6 +71,26 @@ static size_t calculateDataWidth(const size_t width, Texture::PixelFormat fmt)
 }
 
 //----------------------------------------------------------------------------//
+// Helper utility function that copies an RGBA buffer into a region of a second
+// buffer as D3DCOLOR data values
+static void blitToSurface(const uint32* src, uint32* dst,
+                   const Sizef& sz, size_t dest_pitch)
+{
+    for (uint i = 0; i < sz.d_height; ++i)
+    {
+        for (uint j = 0; j < sz.d_width; ++j)
+        {
+            const uint32 pixel = src[j];
+            const uint32 tmp = pixel & 0x00FF00FF;
+            dst[j] = pixel & 0xFF00FF00 | (tmp << 16) | (tmp >> 16);
+        }
+
+        dst += dest_pitch / sizeof(uint32);
+        src += static_cast<uint32>(sz.d_width);
+    }
+}
+
+//----------------------------------------------------------------------------//
 // Helper utility function that copies a region of a buffer containing D3DCOLOR
 // values into a second buffer as RGBA values.
 static void blitFromSurface(const uint32* src, uint32* dst,
@@ -82,7 +102,7 @@ static void blitFromSurface(const uint32* src, uint32* dst,
         {
             const uint32 pixel = src[j];
             const uint32 tmp = pixel & 0x00FF00FF;
-            dst[j] = (pixel & 0xFF00FF00) | (tmp << 16) | (tmp >> 16);
+            dst[j] = pixel & 0xFF00FF00 | (tmp << 16) | (tmp >> 16);
         }
 
         src += source_pitch / sizeof(uint32);
@@ -192,11 +212,10 @@ void Direct3D10Texture::loadFromMemory(const void* buffer,
     cleanupDirect3D10Texture();
 
     const void* img_src = buffer;
-    unsigned char* dest(0);
     if (pixel_format == PF_RGB)
     {
         const unsigned char* src = static_cast<const unsigned char*>(buffer);
-        dest = new unsigned char[static_cast<unsigned int>( buffer_size.d_width * buffer_size.d_height * 4 )];
+        unsigned char* dest = new unsigned char[static_cast<unsigned int>( buffer_size.d_width * buffer_size.d_height * 4 )];
 
         for (int i = 0; i < buffer_size.d_width * buffer_size.d_height; ++i)
         {
@@ -230,7 +249,8 @@ void Direct3D10Texture::loadFromMemory(const void* buffer,
 
     HRESULT hr = d_device.CreateTexture2D(&tex_desc, &data, &d_texture);
 
-    delete[] dest;
+    if (pixel_format == PF_RGB)
+        delete[] img_src;
 
     if (FAILED(hr))
         CEGUI_THROW(RendererException(

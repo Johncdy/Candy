@@ -24,23 +24,23 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGLES/Renderer.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/Texture.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/EventArgs.h"
-#include "gui/CEGUI/ImageCodec.h"
-#include "gui/CEGUI/DynamicModule.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/ViewportTarget.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
-#include "gui/CEGUI/Logger.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/DefaultResourceProvider.h"
+#include "CEGUI/RendererModules/OpenGLES/Renderer.h"
+#include "CEGUI/RendererModules/OpenGLES/Texture.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/EventArgs.h"
+#include "CEGUI/ImageCodec.h"
+#include "CEGUI/DynamicModule.h"
+#include "CEGUI/RendererModules/OpenGLES/ViewportTarget.h"
+#include "CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
+#include "CEGUI/Logger.h"
+#include "CEGUI/System.h"
+#include "CEGUI/DefaultResourceProvider.h"
 
 #include <sstream>
 #include <algorithm>
 
-#include "gui/CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
+#include "CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

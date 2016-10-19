@@ -28,7 +28,7 @@
 #define _CEGUIDirect3D9GeometryBuffer_h_
 
 #include "../../GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Direct3D9/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D9/Renderer.h"
 #include "../../Rect.h"
 #include "../../Quaternion.h"
 #include <d3dx9.h>

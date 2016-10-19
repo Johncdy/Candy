@@ -28,7 +28,7 @@
 #define _CEGUIDirectFBTexture_h_
 
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/DirectFB/Renderer.h"
+#include "CEGUI/RendererModules/DirectFB/Renderer.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

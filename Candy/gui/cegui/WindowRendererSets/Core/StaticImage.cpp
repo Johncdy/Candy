@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/StaticImage.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/StaticImage.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -40,7 +40,7 @@ namespace CEGUI
     {
         CEGUI_DEFINE_WINDOW_RENDERER_PROPERTY(FalagardStaticImage, Image*,
             "Image", "Property to get/set the image for the FalagardStaticImage widget."
-            " Value is \"ImagesetName/ImageName\".",
+            "  Value should be \"set:[imageset name] image:[image name]\".",
             &FalagardStaticImage::setImage, &FalagardStaticImage::getImage,
             0);
     }

@@ -26,7 +26,7 @@
 #ifndef _CEGUIDirect3D11TextureTarget_h_
 #define _CEGUIDirect3D11TextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/Direct3D11/RenderTarget.h"
+#include "CEGUI/RendererModules/Direct3D11/RenderTarget.h"
 #include "../../TextureTarget.h"
 
 #if defined(_MSC_VER)

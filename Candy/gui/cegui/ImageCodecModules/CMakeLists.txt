@@ -26,6 +26,3 @@ if (CEGUI_BUILD_IMAGECODEC_PVR)
     add_subdirectory(PVR)
 endif()
 
-if (CEGUI_BUILD_IMAGECODEC_SDL2)
-    add_subdirectory(SDL2)
-endif()

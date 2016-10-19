@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/RenderTarget.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GlmPimpl.h"
+#include "CEGUI/RendererModules/OpenGL/RenderTarget.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
+#include "CEGUI/RendererModules/OpenGL/GlmPimpl.h"
 
 #include <cmath>
 
@@ -133,7 +133,7 @@ void OpenGLRenderTarget<T>::unprojectPoint(const GeometryBuffer& buff,
         static_cast<GLint>(d_area.getHeight())
     };
 
-    GLdouble in_x = 0.0, in_y = 0.0, in_z = 0.0;
+    GLdouble in_x, in_y, in_z = 0.0;
 
     glm::ivec4 viewPort = glm::ivec4(vp[0], vp[1], vp[2], vp[3]);
     const glm::mat4& projMatrix = d_matrix->d_matrix;
@@ -209,13 +209,7 @@ void OpenGLRenderTarget<T>::updateMatrix() const
     glm::vec3 center = glm::vec3(midx, midy, 1);
     glm::vec3 up = glm::vec3(0, -1, 0);
 
-    //Older glm versions use degrees as parameter here by default (Unless radians are forced via GLM_FORCE_RADIANS). Newer versions of glm exlusively use radians.
-#if (GLM_VERSION_MAJOR == 0 && GLM_VERSION_MINOR <= 9 && GLM_VERSION_PATCH < 6) && (!defined(GLM_FORCE_RADIANS))
     glm::mat4 projectionMatrix = glm::perspective(30.f, aspect, float(d_viewDistance * 0.5), float(d_viewDistance * 2.0));
-#else
-    glm::mat4 projectionMatrix = glm::perspective(glm::radians(30.f), aspect, float(d_viewDistance * 0.5), float(d_viewDistance * 2.0));
-#endif
-
     // Projection matrix abuse!
     glm::mat4 viewMatrix = glm::lookAt(eye, center, up);
   

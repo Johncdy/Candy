@@ -26,20 +26,20 @@
 *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 *   OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************/
-#include "gui/CEGUI/widgets/PushButton.h"
-#include "gui/CEGUI/widgets/Editbox.h"
+#include "CEGUI/widgets/PushButton.h"
+#include "CEGUI/widgets/Editbox.h"
 
-#include "gui/CEGUI/MouseCursor.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/CoordConverter.h"
+#include "CEGUI/MouseCursor.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/CoordConverter.h"
 
-#include "gui/CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Conversions.h"
+#include "CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Conversions.h"
 
-#include "gui/CEGUI/TextureTarget.h"
-#include "gui/CEGUI/Texture.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/TextureTarget.h"
+#include "CEGUI/Texture.h"
+#include "CEGUI/PropertyHelper.h"
 
 namespace CEGUI
 {
@@ -76,6 +76,8 @@ ColourPicker::~ColourPicker(void)
 
             if (iter != s_colourPickerWindows.end())
             {
+                iter->second;
+
                 if (iter->second <= 0)
                     WindowManager::getSingleton().destroyWindow(iter->first);
             }

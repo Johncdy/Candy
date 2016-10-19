@@ -27,8 +27,8 @@
 #ifndef _FalPopupMenu_h_
 #define _FalPopupMenu_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/ItemListBase.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/ItemListBase.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

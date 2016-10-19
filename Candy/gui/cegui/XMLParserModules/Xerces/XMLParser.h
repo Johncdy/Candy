@@ -28,7 +28,7 @@
 #define _CEGUIXercesParser_h_
 
 #include "../../XMLParser.h"
-#include "gui/CEGUI/XMLParserModules/Xerces/XMLParserProperties.h"
+#include "CEGUI/XMLParserModules/Xerces/XMLParserProperties.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

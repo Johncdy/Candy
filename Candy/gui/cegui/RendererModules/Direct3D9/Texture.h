@@ -30,7 +30,7 @@
 #include "../../Base.h"
 #include "../../Renderer.h"
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Direct3D9/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D9/Renderer.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

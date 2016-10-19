@@ -26,8 +26,8 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Ogre/ResourceProvider.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/Ogre/ResourceProvider.h"
+#include "CEGUI/Exceptions.h"
 
 #include <OgreArchiveManager.h>
 #include <OgreResourceGroupManager.h>

@@ -27,7 +27,7 @@
 #ifndef _FalTabButton_h_
 #define _FalTabButton_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

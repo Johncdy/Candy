@@ -24,13 +24,13 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/XMLParserModules/Libxml2/XMLParser.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/ResourceProvider.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/XMLAttributes.h"
-#include "gui/CEGUI/XMLHandler.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/XMLParserModules/Libxml2/XMLParser.h"
+#include "CEGUI/System.h"
+#include "CEGUI/ResourceProvider.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/XMLAttributes.h"
+#include "CEGUI/XMLHandler.h"
+#include "CEGUI/PropertyHelper.h"
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 #include <libxml/xmlmemory.h>

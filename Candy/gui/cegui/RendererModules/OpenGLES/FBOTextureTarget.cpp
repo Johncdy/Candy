@@ -24,14 +24,14 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/RendererModules/OpenGLES/FBOTextureTarget.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/PropertyHelper.h"
 
-#include "gui/CEGUI/RendererModules/OpenGLES/Renderer.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/Texture.h"
+#include "CEGUI/RendererModules/OpenGLES/Renderer.h"
+#include "CEGUI/RendererModules/OpenGLES/Texture.h"
 
 #ifndef __APPLE__
 #include "EGL/egl.h"

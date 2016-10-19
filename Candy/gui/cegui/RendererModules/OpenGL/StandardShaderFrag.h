@@ -30,46 +30,20 @@
 
 namespace CEGUI
 {
+const char StandardShaderFrag[] = 
+    "#version 150 core\n"
 
-const char
-    StandardShaderFrag_Opengl3[] = 
-        "#version 150 core\n"
-        
-        "uniform sampler2D texture0;\n"
-        "in vec2 exTexCoord;\n"
-        "in vec4 exColour;\n"
-        "out vec4 out0;\n"
-        
-        "void main(void)\n"
-        "{\n"
-            "out0 = texture(texture0, exTexCoord) * exColour;\n"
-        "}",
-    StandardShaderFrag_OpenglEs2[] = 
-        "#version 100\n"
+    "uniform sampler2D texture0;\n"
 
-        "uniform sampler2D texture0;\n"
-        "precision mediump float;\n"
-        "varying vec2 exTexCoord;\n"
-        "varying vec4 exColour;\n"
+    "in vec2 exTexCoord;\n"
+    "in vec4 exColour;\n"
 
-        "void main(void)\n"
-        "{\n"
-            "gl_FragColor = texture2D(texture0, exTexCoord) * exColour;\n"
-        "}",
-    StandardShaderFrag_OpenglEs3[] = 
-        "#version 300 es\n"
+    "out vec4 out0;\n"
 
-        "uniform sampler2D texture0;\n"
-        "precision highp float;\n"
-        "in vec2 exTexCoord;\n"
-        "in vec4 exColour;\n"
-        "layout(location = 0) out vec4 out0;\n"
-        
-        "void main(void)\n"
-        "{\n"
-            "out0 = texture(texture0, exTexCoord) * exColour;\n"
-        "}";
-    
+    "void main(void)\n"
+    "{\n"
+        "out0 = texture(texture0, exTexCoord) * exColour;\n"
+    "}"
+    ;
 }
-
 #endif

@@ -27,7 +27,7 @@
 #ifndef _CEGUIOpenGLTextureTarget_h_
 #define _CEGUIOpenGLTextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/RenderTarget.h"
+#include "CEGUI/RendererModules/OpenGL/RenderTarget.h"
 #include "../../TextureTarget.h"
 
 #if defined(_MSC_VER)

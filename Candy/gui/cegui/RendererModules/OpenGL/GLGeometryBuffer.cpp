@@ -25,13 +25,13 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GLRenderer.h"
-#include "gui/CEGUI/RenderEffect.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
-#include "gui/CEGUI/Vertex.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GlmPimpl.h"
+#include <GL/glew.h>
+#include "CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGL/GLRenderer.h"
+#include "CEGUI/RenderEffect.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/Vertex.h"
+#include "CEGUI/RendererModules/OpenGL/GlmPimpl.h"
 #include "glm/gtc/type_ptr.hpp"
 
 // Start of CEGUI namespace section

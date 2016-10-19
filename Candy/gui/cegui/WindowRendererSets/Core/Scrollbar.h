@@ -27,8 +27,8 @@
 #ifndef _FalScrollbar_h_
 #define _FalScrollbar_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/Scrollbar.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/Scrollbar.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

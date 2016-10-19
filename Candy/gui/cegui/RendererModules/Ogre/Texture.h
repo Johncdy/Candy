@@ -28,7 +28,7 @@
 #define _CEGUIOgreTexture_h_
 
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Ogre/Renderer.h"
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
 #include <OgreTexture.h>
 
 // Start of CEGUI namespace section

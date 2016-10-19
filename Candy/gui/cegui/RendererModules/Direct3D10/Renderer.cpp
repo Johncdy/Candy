@@ -24,43 +24,16 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Direct3D10/Renderer.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/ViewportTarget.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/Texture.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/DefaultResourceProvider.h"
-#include "gui/CEGUI/Logger.h"
+#include "CEGUI/RendererModules/Direct3D10/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D10/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Direct3D10/TextureTarget.h"
+#include "CEGUI/RendererModules/Direct3D10/ViewportTarget.h"
+#include "CEGUI/RendererModules/Direct3D10/Texture.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/System.h"
+#include "CEGUI/DefaultResourceProvider.h"
+#include "CEGUI/Logger.h"
 #include <algorithm>
-
-#ifdef __MINGW32__
-
-extern "C"
-{
-
-struct ID3DX10ThreadPump;
-
-HRESULT WINAPI D3DX10CreateEffectFromMemory(
-  LPCVOID pData,
-  SIZE_T DataLength,
-  LPCSTR pSrcFileName,
-  CONST D3D10_SHADER_MACRO* pDefines, 
-  ID3D10Include* pInclude,
-  LPCSTR pProfile,
-  UINT HLSLFlags,
-  UINT FXFlags,
-  ID3D10Device* pDevice, 
-  ID3D10EffectPool* pEffectPool,
-  ID3DX10ThreadPump* pPump,
-  ID3D10Effect** ppEffect,
-  ID3D10Blob** ppErrors,
-  HRESULT* pHResult);
-
-}
-
-#endif
 
 #include "shader.txt"
 

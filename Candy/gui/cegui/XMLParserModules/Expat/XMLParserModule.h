@@ -27,7 +27,7 @@
 #ifndef _CEGUIExpatParserModule_h_
 #define _CEGUIExpatParserModule_h_
 
-#include "gui/CEGUI/XMLParserModules/Expat/XMLParser.h"
+#include "CEGUI/XMLParserModules/Expat/XMLParser.h"
 
 /*!
 \brief

@@ -27,8 +27,8 @@
 #ifndef _FalButton_h_
 #define _FalButton_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/ButtonBase.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/ButtonBase.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

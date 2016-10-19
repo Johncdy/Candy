@@ -27,7 +27,7 @@ author:     Lukas E Meindl
 #ifndef _CEGUIOpenGL3Shader_h_
 #define _CEGUIOpenGL3Shader_h_
 
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/Exceptions.h"
 #include "RendererBase.h"
 #include <string>
 
@@ -39,7 +39,6 @@ author:     Lukas E Meindl
 // Start of CEGUI namespace section
 namespace CEGUI
 {
-
 class OPENGL_GUIRENDERER_API OpenGL3Shader :
     public AllocatedObject<OpenGL3Shader>
 {

@@ -24,12 +24,12 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/TabControl.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/widgets/TabButton.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/TabControl.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/widgets/TabButton.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 // Start of CEGUI namespace section
 namespace CEGUI
 {

@@ -77,12 +77,6 @@ public:
     }
 
     //------------------------------------------------------------------------//
-    const String& getPropertySource() const
-    {
-        return d_propertySource;
-    }
-
-    //------------------------------------------------------------------------//
     void setPropertySource(const String& property_name)
     {
         d_propertySource = property_name;
@@ -103,13 +97,13 @@ public:
     }
 
     //------------------------------------------------------------------------//
-    virtual void writeXMLTagToStream(XMLSerializer& /*xml_stream*/) const
+    virtual void writeXMLTagToStream(XMLSerializer& xml_stream) const
     {
         // This does nothing and needs to be specialised or overridden
     }
 
     //------------------------------------------------------------------------//
-    virtual void writeXMLAttributesToStream(XMLSerializer& /*xml_stream*/) const
+    virtual void writeXMLAttributesToStream(XMLSerializer& xml_stream) const
     {
         // This does nothing and needs to be specialised or overridden
     }

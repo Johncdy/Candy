@@ -27,9 +27,9 @@
 #ifndef _FalStaticImage_h_
 #define _FalStaticImage_h_
 
-#include "gui/CEGUI/Image.h"
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/WindowRendererSets/Core/Static.h"
+#include "CEGUI/Image.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/WindowRendererSets/Core/Static.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

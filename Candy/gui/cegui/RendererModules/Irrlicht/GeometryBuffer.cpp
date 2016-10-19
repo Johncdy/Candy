@@ -28,11 +28,11 @@
 # include "config.h"
 #endif
 
-#include "gui/CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
-#include "gui/CEGUI/RenderEffect.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/Texture.h"
-#include "gui/CEGUI/Vertex.h"
-#include "gui/CEGUI/Quaternion.h"
+#include "CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
+#include "CEGUI/RenderEffect.h"
+#include "CEGUI/RendererModules/Irrlicht/Texture.h"
+#include "CEGUI/Vertex.h"
+#include "CEGUI/Quaternion.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

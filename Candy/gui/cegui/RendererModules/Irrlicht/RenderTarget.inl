@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Irrlicht/RenderTarget.h"
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Irrlicht/RenderTarget.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -39,8 +39,8 @@ IrrlichtRenderTarget<T>::IrrlichtRenderTarget(IrrlichtRenderer& owner,
     d_owner(owner),
     d_driver(driver),
     d_area(0, 0, 0, 0),
-    d_matrixValid(false),
     d_viewDistance(0),
+    d_matrixValid(false),
 #if IRRLICHT_VERSION_MAJOR > 1 || (IRRLICHT_VERSION_MAJOR == 1 && IRRLICHT_VERSION_MINOR >= 8)
     d_xViewDir(1.0f)
 #else

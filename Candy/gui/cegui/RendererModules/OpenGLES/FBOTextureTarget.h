@@ -27,10 +27,10 @@
 #ifndef _CEGUIOpenGLESFBOTextureTarget_h_
 #define _CEGUIOpenGLESFBOTextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/OpenGLES/RenderTarget.h"
-#include "gui/CEGUI/TextureTarget.h"
-#include "gui/CEGUI/Rect.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/GLES.h"
+#include "CEGUI/RendererModules/OpenGLES/RenderTarget.h"
+#include "CEGUI/TextureTarget.h"
+#include "CEGUI/Rect.h"
+#include "CEGUI/RendererModules/OpenGLES/GLES.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

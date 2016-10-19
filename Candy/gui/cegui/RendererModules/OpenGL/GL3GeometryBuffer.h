@@ -27,7 +27,7 @@
 #ifndef _CEGUIOpenGL3GeometryBuffer_h_
 #define _CEGUIOpenGL3GeometryBuffer_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
+#include "CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
 
 namespace CEGUI
 {
@@ -44,8 +44,6 @@ public:
     virtual ~OpenGL3GeometryBuffer();
 
     void initialiseOpenGLBuffers();
-    //! The functions first binds the vbo and then sets it up for rendering.
-    void configureVertexArray() const;
     void deinitialiseOpenGLBuffers();
     void updateOpenGLBuffers();
 

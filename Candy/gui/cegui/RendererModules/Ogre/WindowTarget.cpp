@@ -24,7 +24,7 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Ogre/WindowTarget.h"
+#include "CEGUI/RendererModules/Ogre/WindowTarget.h"
 
 #include <OgreRenderTarget.h>
 #include <OgreViewport.h>
@@ -49,16 +49,10 @@ OgreWindowTarget::~OgreWindowTarget()
 //----------------------------------------------------------------------------//
 void OgreWindowTarget::setOgreRenderTarget(Ogre::RenderTarget& target)
 {
-#ifdef CEGUI_USE_OGRE_COMPOSITOR2
-    // Setting this should properly change everything
-    d_renderTargetUpdated = true;
-#else
     // cleanup viewport since it's RT dependent.
     OGRE_DELETE d_viewport;
     d_viewport = 0;
     d_viewportValid = false;
-#endif    
-
 
     initRenderTarget(target);
 }

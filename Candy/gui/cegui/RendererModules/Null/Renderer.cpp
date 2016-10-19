@@ -24,15 +24,15 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Null/Renderer.h"
-#include "gui/CEGUI/RendererModules/Null/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Null/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Null/Texture.h"
-#include "gui/CEGUI/ImageCodec.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/DefaultResourceProvider.h"
-#include "gui/CEGUI/Logger.h"
+#include "CEGUI/RendererModules/Null/Renderer.h"
+#include "CEGUI/RendererModules/Null/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Null/TextureTarget.h"
+#include "CEGUI/RendererModules/Null/Texture.h"
+#include "CEGUI/ImageCodec.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/System.h"
+#include "CEGUI/DefaultResourceProvider.h"
+#include "CEGUI/Logger.h"
 
 #include <algorithm>
 

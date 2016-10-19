@@ -27,8 +27,8 @@
 #ifndef _FalTabControl_h_
 #define _FalTabControl_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/TabControl.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/TabControl.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

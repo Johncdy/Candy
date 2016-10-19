@@ -30,7 +30,7 @@
 #define _CEGUIOgreResourceProvider_h_
 
 #include "../../ResourceProvider.h"
-#include "gui/CEGUI/RendererModules/Ogre/Renderer.h"
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

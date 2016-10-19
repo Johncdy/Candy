@@ -28,7 +28,7 @@
 #define _CEGUINullGeometryBuffer_h_
 
 #include "../../GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Null/Renderer.h"
+#include "CEGUI/RendererModules/Null/Renderer.h"
 #include "../../Rect.h"
 #include "../../Colour.h"
 #include "../../Vertex.h"

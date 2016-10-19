@@ -28,10 +28,10 @@
 #define _CEGUIOpenGLWGLPBTextureTarget_h_
 
 //#include <windows.h>
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
+#include <GL/glew.h>
 #include <GL/wglew.h>
 
-#include "gui/CEGUI/RendererModules/OpenGL/TextureTarget.h"
+#include "CEGUI/RendererModules/OpenGL/TextureTarget.h"
 #include "../../Rect.h"
 
 #if defined(_MSC_VER)

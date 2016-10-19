@@ -24,13 +24,13 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/WGLPBTextureTarget.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGL/WGLPBTextureTarget.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
 
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
 
 #include <iostream>
 

@@ -28,7 +28,7 @@
 #define _CEGUINullRenderTarget_h_
 
 #include "../../RenderTarget.h"
-#include "gui/CEGUI/RendererModules/Null/Renderer.h"
+#include "CEGUI/RendererModules/Null/Renderer.h"
 #include "../../Rect.h"
 
 #if defined(_MSC_VER)

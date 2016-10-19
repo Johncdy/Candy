@@ -24,12 +24,12 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/ScrollablePane.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/widgets/Scrollbar.h"
-#include "gui/CEGUI/CoordConverter.h"
+#include "CEGUI/WindowRendererSets/Core/ScrollablePane.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/widgets/Scrollbar.h"
+#include "CEGUI/CoordConverter.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

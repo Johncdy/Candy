@@ -25,10 +25,10 @@
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
 #include <d3dx9.h>
-#include "gui/CEGUI/RendererModules/Direct3D9/Texture.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/ImageCodec.h"
+#include "CEGUI/RendererModules/Direct3D9/Texture.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/System.h"
+#include "CEGUI/ImageCodec.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -107,7 +107,7 @@ static void blitRGBAToD3DCOLORSurface(const uint32* src, uint32* dst,
         {
             const uint32 pixel = src[j];
             const uint32 tmp = pixel & 0x00FF00FF;
-            dst[j] = (pixel & 0xFF00FF00) | (tmp << 16) | (tmp >> 16);
+            dst[j] = pixel & 0xFF00FF00 | (tmp << 16) | (tmp >> 16);
         }
 
         dst += dest_pitch / sizeof(uint32);
@@ -127,7 +127,7 @@ static void blitD3DCOLORSurfaceToRGBA(const uint32* src, uint32* dst,
         {
             const uint32 pixel = src[j];
             const uint32 tmp = pixel & 0x00FF00FF;
-            dst[j] = (pixel & 0xFF00FF00) | (tmp << 16) | (tmp >> 16);
+            dst[j] = pixel & 0xFF00FF00 | (tmp << 16) | (tmp >> 16);
         }
 
         src += source_pitch / sizeof(uint32);

@@ -24,14 +24,14 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
+#include <GL/glew.h>
+#include "CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
 
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

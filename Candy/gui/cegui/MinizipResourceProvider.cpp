@@ -38,7 +38,7 @@
 #include <fstream>
 
 #if defined (__WIN32__) || defined(_WIN32)
-#   include <shlwapi.h>
+#   include <Shlwapi.h>
 #   define FNMATCH(p, s)    PathMatchSpec(s, p)
 #   ifdef _MSC_VER
 #       pragma comment(lib, "shlwapi.lib")

@@ -27,7 +27,7 @@
 #ifndef _CEGUIDirect3D10ViewportTarget_h_
 #define _CEGUIDirect3D10ViewportTarget_h_
 
-#include "gui/CEGUI/RendererModules/Direct3D10/RenderTarget.h"
+#include "CEGUI/RendererModules/Direct3D10/RenderTarget.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

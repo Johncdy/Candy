@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Irrlicht/ImageCodec.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/MemoryFile.h"
-#include "gui/CEGUI/Size.h"
+#include "CEGUI/RendererModules/Irrlicht/ImageCodec.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/Irrlicht/MemoryFile.h"
+#include "CEGUI/Size.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -86,9 +86,9 @@ Texture* IrrlichtImageCodec::load(const RawDataContainer& data, Texture* result)
     // (we should probably check the R and B masks and decide based on those)
     if (format == Texture::PF_RGBA)
     {
-        for (s32 j = 0; j < sz.Height; ++j)
+        for (uint j = 0; j < sz.Height; ++j)
         {
-            for (s32 i = 0; i < sz.Width; ++i)
+            for (uint i = 0; i < sz.Width; ++i)
             {
                 const uchar tmp = dat[i * components + 0];
                 dat[i * components + 0] = dat[i * components + 2];

@@ -27,7 +27,7 @@
 #ifndef _PVRImageCodecModule_h_
 #define _PVRImageCodecModule_h_
 
-#include "gui/CEGUI/ImageCodecModules/PVR/ImageCodec.h"
+#include "CEGUI/ImageCodecModules/PVR/ImageCodec.h"
 
 extern "C" CEGUIPVRIMAGECODEC_API CEGUI::ImageCodec* createImageCodec(void);
 extern "C" CEGUIPVRIMAGECODEC_API void destroyImageCodec(CEGUI::ImageCodec* imageCodec);

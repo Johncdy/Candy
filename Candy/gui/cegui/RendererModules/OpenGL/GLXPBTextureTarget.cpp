@@ -24,13 +24,13 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GLXPBTextureTarget.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGL/GLXPBTextureTarget.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
 
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
 
 #include <iostream>
 
@@ -157,8 +157,8 @@ void OpenGLGLXPBTextureTarget::initialisePBuffer()
 {
     int creation_attrs[] =
     {
-        GLX_PBUFFER_WIDTH, static_cast<int>(d_area.getWidth()),
-        GLX_PBUFFER_HEIGHT, static_cast<int>(d_area.getHeight()),
+        GLX_PBUFFER_WIDTH, d_area.getWidth(),
+        GLX_PBUFFER_HEIGHT, d_area.getHeight(),
         GLX_LARGEST_PBUFFER, True,
         GLX_PRESERVED_CONTENTS, True,
         None

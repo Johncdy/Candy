@@ -27,9 +27,9 @@
 #ifndef _CEGUIIrrlichtTextureTarget_h_
 #define _CEGUIIrrlichtTextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
 #include "../../TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/RenderTarget.h"
+#include "CEGUI/RendererModules/Irrlicht/RenderTarget.h"
 #include "../../String.h"
 
 #if defined(_MSC_VER)

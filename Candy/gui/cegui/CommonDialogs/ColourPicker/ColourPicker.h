@@ -29,9 +29,9 @@
 #ifndef _CEGUIColourPicker_h_
 #define _CEGUIColourPicker_h_
 
-#include "gui/CEGUI/CommonDialogs/Module.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Controls.h"
-#include "gui/CEGUI/Window.h"
+#include "CEGUI/CommonDialogs/Module.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Controls.h"
+#include "CEGUI/Window.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

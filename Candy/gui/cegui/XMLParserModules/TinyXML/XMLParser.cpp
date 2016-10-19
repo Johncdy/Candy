@@ -24,13 +24,13 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/XMLParserModules/TinyXML/XMLParser.h"
-#include "gui/CEGUI/ResourceProvider.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/XMLHandler.h"
-#include "gui/CEGUI/XMLAttributes.h"
-#include "gui/CEGUI/Logger.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/XMLParserModules/TinyXML/XMLParser.h"
+#include "CEGUI/ResourceProvider.h"
+#include "CEGUI/System.h"
+#include "CEGUI/XMLHandler.h"
+#include "CEGUI/XMLAttributes.h"
+#include "CEGUI/Logger.h"
+#include "CEGUI/Exceptions.h"
 #include <tinyxml.h>
 
 //---------------------------------------------------------------------------//

@@ -24,8 +24,8 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/Default.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowRendererSets/Core/Default.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

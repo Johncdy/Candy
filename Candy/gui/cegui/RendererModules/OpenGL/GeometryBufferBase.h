@@ -29,7 +29,7 @@
 #define _CEGUIGeometryBufferBase_h_
 
 #include "../../GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
 #include "../../Rect.h"
 #include "../../Quaternion.h"
 

@@ -24,21 +24,21 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/StaticText.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/falagard/XMLEnumHelper.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/widgets/Scrollbar.h"
-#include "gui/CEGUI/Event.h"
-#include "gui/CEGUI/Font.h"
-#include "gui/CEGUI/LeftAlignedRenderedString.h"
-#include "gui/CEGUI/RightAlignedRenderedString.h"
-#include "gui/CEGUI/CentredRenderedString.h"
-#include "gui/CEGUI/JustifiedRenderedString.h"
-#include "gui/CEGUI/RenderedStringWordWrapper.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
-#include "gui/CEGUI/CoordConverter.h"
+#include "CEGUI/WindowRendererSets/Core/StaticText.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/falagard/XMLEnumHelper.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/widgets/Scrollbar.h"
+#include "CEGUI/Event.h"
+#include "CEGUI/Font.h"
+#include "CEGUI/LeftAlignedRenderedString.h"
+#include "CEGUI/RightAlignedRenderedString.h"
+#include "CEGUI/CentredRenderedString.h"
+#include "CEGUI/JustifiedRenderedString.h"
+#include "CEGUI/RenderedStringWordWrapper.h"
+#include "CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/CoordConverter.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -129,22 +129,17 @@ namespace CEGUI
         renderScrolledText();
     }
 
-    void FalagardStaticText::invalidateFormatting()
-    {
-        d_formatValid = false;
-        d_window->invalidate();
-    }
-
     /************************************************************************
         Caches the text according to scrollbar positions
     *************************************************************************/
     void FalagardStaticText::renderScrolledText()
     {
-        updateFormatting();
-
         // get destination area for the text.
         const Rectf clipper(getTextRenderArea());
         Rectf absarea(clipper);
+
+        if (!d_formatValid)
+            updateFormatting(clipper.getSize());
 
         // see if we may need to adjust horizontal position
         const Scrollbar* const horzScrollbar = getHorzScrollbar();
@@ -193,13 +188,6 @@ namespace CEGUI
             case VTF_BOTTOM_ALIGNED:
                 absarea.d_min.d_y = absarea.d_max.d_y - textHeight;
                 break;
-
-            case VTF_TOP_ALIGNED:
-                break;
-
-            default:
-                CEGUI_THROW(InvalidRequestException(
-                  "Invalid vertical formatting."));
             }
 
         // calculate final colours
@@ -214,45 +202,69 @@ namespace CEGUI
     /************************************************************************
         Returns the vertical scrollbar component
     *************************************************************************/
-    Scrollbar* FalagardStaticText::getVertScrollbar() const
+    Scrollbar* FalagardStaticText::getVertScrollbar(void) const
     {
-        updateFormatting();
-        return getVertScrollbarWithoutUpdate();
+        // return component created by look'n'feel assignment.
+        return static_cast<Scrollbar*>(d_window->getChild(VertScrollbarName));
     }
 
     /************************************************************************
         Returns the horizontal scrollbar component
     *************************************************************************/
-    Scrollbar* FalagardStaticText::getHorzScrollbar() const
+    Scrollbar* FalagardStaticText::getHorzScrollbar(void) const
     {
-        updateFormatting();
-        return getHorzScrollbarWithoutUpdate();
+        // return component created by look'n'feel assignment.
+        return static_cast<Scrollbar*>(d_window->getChild(HorzScrollbarName));
     }
 
     /************************************************************************
         Gets the text rendering area
     *************************************************************************/
-    Rectf FalagardStaticText::getTextRenderArea() const
+    Rectf FalagardStaticText::getTextRenderArea(void) const
     {
-        updateFormatting();
-        return getTextRenderAreaWithoutUpdate();
+        Scrollbar* vertScrollbar = getVertScrollbar();
+        Scrollbar* horzScrollbar = getHorzScrollbar();
+        bool v_visible = vertScrollbar->isVisible();
+        bool h_visible = horzScrollbar->isVisible();
+
+        // get WidgetLookFeel for the assigned look.
+        const WidgetLookFeel& wlf = getLookNFeel();
+
+        String area_name(d_frameEnabled ? "WithFrameTextRenderArea" : "NoFrameTextRenderArea");
+
+        // if either of the scrollbars are visible, we might want to use a special rendering area
+        if (v_visible || h_visible)
+        {
+            if (h_visible)
+            {
+                area_name += "H";
+            }
+            if (v_visible)
+            {
+                area_name += "V";
+            }
+            area_name += "Scroll";
+        }
+
+        if (wlf.isNamedAreaDefined(area_name))
+        {
+            return wlf.getNamedArea(area_name).getArea().getPixelRect(*d_window);
+        }
+
+        // default to plain WithFrameTextRenderArea
+        return wlf.getNamedArea("WithFrameTextRenderArea").getArea().getPixelRect(*d_window);
     }
 
     /************************************************************************
         Gets the pixel size of the document
     *************************************************************************/
-    Sizef FalagardStaticText::getDocumentSize() const
+    Sizef FalagardStaticText::getDocumentSize(const Rectf& renderArea) const
     {
-        updateFormatting();
-        return getDocumentSizeWithoutUpdate();
-    }
+        if (!d_formatValid)
+            updateFormatting(renderArea.getSize());
 
-    /************************************************************************
-        Gets the pixel size of the document
-    *************************************************************************/
-    Sizef FalagardStaticText::getDocumentSize(const Rectf& /*renderArea*/) const
-    {
-        return getDocumentSize();
+        return Sizef(d_formattedRenderedString->getHorizontalExtent(d_window),
+                      d_formattedRenderedString->getVerticalExtent(d_window));
     }
 
     /*************************************************************************
@@ -270,7 +282,8 @@ namespace CEGUI
     void FalagardStaticText::setVerticalFormatting(VerticalTextFormatting v_fmt)
     {
         d_vertFormatting = v_fmt;
-        invalidateFormatting();
+        configureScrollbars();
+        d_window->invalidate();
     }
 
     /*************************************************************************
@@ -283,7 +296,8 @@ namespace CEGUI
 
         d_horzFormatting = h_fmt;
         setupStringFormatter();
-        invalidateFormatting();
+        configureScrollbars();
+        d_window->invalidate();
     }
 
     /*************************************************************************
@@ -291,10 +305,11 @@ namespace CEGUI
     *************************************************************************/
     void FalagardStaticText::setVerticalScrollbarEnabled(bool setting)
     {
-        if (d_enableVertScrollbar == setting)
-            return;
         d_enableVertScrollbar = setting;
-        invalidateFormatting();
+        configureScrollbars();
+        d_window->performChildWindowLayout();
+        d_formatValid = false;
+        d_window->invalidate();
     }
 
     /*************************************************************************
@@ -302,74 +317,54 @@ namespace CEGUI
     *************************************************************************/
     void FalagardStaticText::setHorizontalScrollbarEnabled(bool setting)
     {
-        if (d_enableHorzScrollbar == setting)
-            return;
         d_enableHorzScrollbar = setting;
-        invalidateFormatting();
+        configureScrollbars();
+        d_window->performChildWindowLayout();
+        d_formatValid = false;
+        d_window->invalidate();
     }
 
     /*************************************************************************
-        Display required integrated scroll bars according to current state of
-        the text and update their values. We may need to repeat the process
-        twice because showing one of the scrollbars shrinks the area reserved
-        for the text, and thus may cause the 2nd scrollbar to also be required.
+        display required integrated scroll bars according to current state
+        of the edit box and update their values.
     *************************************************************************/
-    void FalagardStaticText::configureScrollbars() const
+    void FalagardStaticText::configureScrollbars(void)
     {
-        Scrollbar* vertScrollbar = getVertScrollbarWithoutUpdate();
-        Scrollbar* horzScrollbar = getHorzScrollbarWithoutUpdate();
-        vertScrollbar->hide();
-        horzScrollbar->hide();
+        // get the scrollbars
+        Scrollbar* vertScrollbar = getVertScrollbar();
+        Scrollbar* horzScrollbar = getHorzScrollbar();
 
-        Rectf renderArea(getTextRenderAreaWithoutUpdate());
+        // get the sizes we need
+        Rectf renderArea(getTextRenderArea());
         Sizef renderAreaSize(renderArea.getSize());
-        d_formattedRenderedString->format(getWindow(), renderAreaSize);
-        Sizef documentSize(getDocumentSizeWithoutUpdate());
-        bool showVert = (documentSize.d_height > renderAreaSize.d_height)  &&
-                        d_enableVertScrollbar;
-        bool showHorz = (documentSize.d_width > renderAreaSize.d_width)  &&
-                        d_enableHorzScrollbar;
+        Sizef documentSize(getDocumentSize(renderArea));
+
+        // show or hide vertical scroll bar as required (or as specified by option)
+        const bool showVert = ((documentSize.d_height > renderAreaSize.d_height) && d_enableVertScrollbar);
+        const bool showHorz = ((documentSize.d_width > renderAreaSize.d_width) && d_enableHorzScrollbar);
+ 
         vertScrollbar->setVisible(showVert);
         horzScrollbar->setVisible(showHorz);
 
-        Rectf updatedRenderArea = getTextRenderAreaWithoutUpdate();
-        if (renderArea != updatedRenderArea)
+        // if scrollbar visibility just changed we have might have a better TextRenderArea
+        // if so we go with that instead
+        const Rectf updatedRenderArea = getTextRenderArea();
+        if (renderArea!=updatedRenderArea)
         {
+            d_formatValid = false;
             renderArea = updatedRenderArea;
             renderAreaSize = renderArea.getSize();
-            d_formattedRenderedString->format(getWindow(), renderAreaSize);
-            documentSize = getDocumentSizeWithoutUpdate();
-
-            showVert = (documentSize.d_height > renderAreaSize.d_height)  &&
-                       d_enableVertScrollbar;
-            showHorz = (documentSize.d_width > renderAreaSize.d_width)  &&
-                       d_enableHorzScrollbar;
-            vertScrollbar->setVisible(showVert);
-            horzScrollbar->setVisible(showHorz);
-
-            updatedRenderArea = getTextRenderAreaWithoutUpdate();
-            if (renderArea != updatedRenderArea)
-            {
-                renderArea = updatedRenderArea;
-                renderAreaSize = renderArea.getSize();
-                d_formattedRenderedString->format(getWindow(), renderAreaSize);
-                documentSize = getDocumentSizeWithoutUpdate();
-            }
+            documentSize = getDocumentSize(renderArea);
         }
 
-        getWindow()->performChildWindowLayout();
-
+        // Set up scroll bar values
         vertScrollbar->setDocumentSize(documentSize.d_height);
         vertScrollbar->setPageSize(renderAreaSize.d_height);
         vertScrollbar->setStepSize(ceguimax(1.0f, renderAreaSize.d_height / 10.0f));
+
         horzScrollbar->setDocumentSize(documentSize.d_width);
         horzScrollbar->setPageSize(renderAreaSize.d_width);
         horzScrollbar->setStepSize(ceguimax(1.0f, renderAreaSize.d_width / 10.0f));
-    }
-    
-    void FalagardStaticText::configureScrollbars(void)
-    {
-        static_cast<const FalagardStaticText*>(this)->configureScrollbars();
     }
 
     /*************************************************************************
@@ -377,7 +372,9 @@ namespace CEGUI
     *************************************************************************/
     bool FalagardStaticText::onTextChanged(const EventArgs&)
     {
-        invalidateFormatting();
+        d_formatValid = false;
+        configureScrollbars();
+        d_window->invalidate();
         return true;
     }
 
@@ -387,7 +384,8 @@ namespace CEGUI
     *************************************************************************/
     bool FalagardStaticText::onSized(const EventArgs&)
     {
-        invalidateFormatting();
+        d_formatValid = false;
+        configureScrollbars();
         return true;
     }
 
@@ -397,7 +395,9 @@ namespace CEGUI
     *************************************************************************/
     bool FalagardStaticText::onFontChanged(const EventArgs&)
     {
-        invalidateFormatting();
+        d_formatValid = false;
+        configureScrollbars();
+        d_window->invalidate();
         return true;
     }
 
@@ -443,8 +443,8 @@ namespace CEGUI
     void FalagardStaticText::onLookNFeelAssigned()
     {
         // do initial scrollbar setup
-        Scrollbar* vertScrollbar = getVertScrollbarWithoutUpdate();
-        Scrollbar* horzScrollbar = getHorzScrollbarWithoutUpdate();
+        Scrollbar* vertScrollbar = getVertScrollbar();
+        Scrollbar* horzScrollbar = getHorzScrollbar();
 
         vertScrollbar->hide();
         horzScrollbar->hide();
@@ -473,8 +473,6 @@ namespace CEGUI
         d_connections.push_back(
             d_window->subscribeEvent(Window::EventMouseWheel,
                 Event::Subscriber(&FalagardStaticText::onMouseWheel, this)));
-
-        invalidateFormatting();
     }
 
     void FalagardStaticText::onLookNFeelUnassigned()
@@ -549,82 +547,45 @@ namespace CEGUI
 //----------------------------------------------------------------------------//
 float FalagardStaticText::getHorizontalTextExtent() const
 {
-    updateFormatting();
-    return d_formattedRenderedString->getHorizontalExtent(d_window);
+    if (!d_formatValid)
+        updateFormatting();
+
+    return d_formattedRenderedString ?
+        d_formattedRenderedString->getHorizontalExtent(d_window) :
+        0.0f;
 }
 
 //----------------------------------------------------------------------------//
 float FalagardStaticText::getVerticalTextExtent() const
 {
-    updateFormatting();
-    return d_formattedRenderedString->getVerticalExtent(d_window);
-}
+    if (!d_formatValid)
+        updateFormatting();
 
-//----------------------------------------------------------------------------//
-float FalagardStaticText::getHorizontalScrollPosition() const
-{
-    return getHorzScrollbar()->getScrollPosition();
-}
-
-//----------------------------------------------------------------------------//
-float FalagardStaticText::getVerticalScrollPosition() const
-{
-    return getVertScrollbar()->getScrollPosition();
-}
-
-//----------------------------------------------------------------------------//
-float FalagardStaticText::getUnitIntervalHorizontalScrollPosition() const
-{
-    return getHorzScrollbar()->getUnitIntervalScrollPosition();
-}
-
-//----------------------------------------------------------------------------//
-float FalagardStaticText::getUnitIntervalVerticalScrollPosition() const
-{
-    return getVertScrollbar()->getUnitIntervalScrollPosition();
-}
-
-//----------------------------------------------------------------------------//
-void FalagardStaticText::setHorizontalScrollPosition(float position)
-{
-    getHorzScrollbar()->setScrollPosition(position);
-}
-
-//----------------------------------------------------------------------------//
-void FalagardStaticText::setVerticalScrollPosition(float position)
-{
-    getVertScrollbar()->setScrollPosition(position);
-}
-
-//----------------------------------------------------------------------------//
-void FalagardStaticText::setUnitIntervalHorizontalScrollPosition(float position)
-{
-    getHorzScrollbar()->setUnitIntervalScrollPosition(position);
-}
-
-//----------------------------------------------------------------------------//
-void FalagardStaticText::setUnitIntervalVerticalScrollPosition(float position)
-{
-    getVertScrollbar()->setUnitIntervalScrollPosition(position);
+    return d_formattedRenderedString ?
+        d_formattedRenderedString->getVerticalExtent(d_window) :
+        0.0f;
 }
 
 //----------------------------------------------------------------------------//
 void FalagardStaticText::updateFormatting() const
 {
-    if (d_formatValid)
-        return;
-    if (!d_formattedRenderedString)
-        setupStringFormatter();
-    // "Touch" the window's rendered string to ensure it's re-parsed if needed.
-    d_window->getRenderedString();
-    configureScrollbars();
-    d_formatValid = true;
+    updateFormatting(getTextRenderArea().getSize());
 }
 
 //----------------------------------------------------------------------------//
-void FalagardStaticText::updateFormatting(const Sizef&) const
+void FalagardStaticText::updateFormatting(const Sizef& sz) const
 {
-    updateFormatting();
+    if (!d_window)
+        return;
+
+    if (!d_formattedRenderedString)
+        setupStringFormatter();
+
+    // 'touch' the window's rendered string to ensure it's re-parsed if needed.
+    d_window->getRenderedString();
+
+    d_formattedRenderedString->format(d_window, sz);
+    d_formatValid = true;
 }
 
 //----------------------------------------------------------------------------//
@@ -634,77 +595,13 @@ bool FalagardStaticText::handleFontRenderSizeChange(const Font* const font)
 
     if (d_window->getFont() == font)
     {
-        invalidateFormatting();
+        d_window->invalidate();
+        d_formatValid = false;
         return true;
     }
 
     return res;
 }
-
-    /************************************************************************
-        Returns the vertical scrollbar component
-    *************************************************************************/
-    Scrollbar* FalagardStaticText::getVertScrollbarWithoutUpdate() const
-    {
-        // return component created by look'n'feel assignment.
-        return static_cast<Scrollbar*>(d_window->getChild(VertScrollbarName));
-    }
-
-    /************************************************************************
-        Returns the horizontal scrollbar component
-    *************************************************************************/
-    Scrollbar* FalagardStaticText::getHorzScrollbarWithoutUpdate() const
-    {
-        // return component created by look'n'feel assignment.
-        return static_cast<Scrollbar*>(d_window->getChild(HorzScrollbarName));
-    }
-
-    /************************************************************************
-        Gets the text rendering area
-    *************************************************************************/
-    Rectf FalagardStaticText::getTextRenderAreaWithoutUpdate() const
-    {
-        Scrollbar* vertScrollbar = getVertScrollbarWithoutUpdate();
-        Scrollbar* horzScrollbar = getHorzScrollbarWithoutUpdate();
-        bool v_visible = vertScrollbar->isVisible();
-        bool h_visible = horzScrollbar->isVisible();
-
-        // get WidgetLookFeel for the assigned look.
-        const WidgetLookFeel& wlf = getLookNFeel();
-
-        String area_name(d_frameEnabled ? "WithFrameTextRenderArea" : "NoFrameTextRenderArea");
-
-        // if either of the scrollbars are visible, we might want to use a special rendering area
-        if (v_visible || h_visible)
-        {
-            if (h_visible)
-            {
-                area_name += "H";
-            }
-            if (v_visible)
-            {
-                area_name += "V";
-            }
-            area_name += "Scroll";
-        }
-
-        if (wlf.isNamedAreaDefined(area_name))
-        {
-            return wlf.getNamedArea(area_name).getArea().getPixelRect(*d_window);
-        }
-
-        // default to plain WithFrameTextRenderArea
-        return wlf.getNamedArea("WithFrameTextRenderArea").getArea().getPixelRect(*d_window);
-    }
-
-    /************************************************************************
-        Gets the pixel size of the document
-    *************************************************************************/
-    Sizef FalagardStaticText::getDocumentSizeWithoutUpdate() const
-    {
-        return Sizef(d_formattedRenderedString->getHorizontalExtent(d_window),
-                     d_formattedRenderedString->getVerticalExtent(d_window));
-    }
 
 //----------------------------------------------------------------------------//
 

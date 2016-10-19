@@ -26,11 +26,11 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/ImageCodecModules/SILLY/ImageCodec.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/ImageCodecModules/SILLY/ImageCodec.h"
 #include <SILLY.h>
-#include "gui/CEGUI/Logger.h"
-#include "gui/CEGUI/Size.h"
+#include "CEGUI/Logger.h"
+#include "CEGUI/Size.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

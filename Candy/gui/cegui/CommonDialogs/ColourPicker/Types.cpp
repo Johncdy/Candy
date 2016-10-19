@@ -26,8 +26,8 @@
 *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 *   OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************/
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Types.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Conversions.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Types.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Conversions.h"
 
 using namespace CEGUI;
 

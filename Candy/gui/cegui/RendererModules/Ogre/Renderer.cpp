@@ -24,17 +24,17 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Ogre/Renderer.h"
-#include "gui/CEGUI/RendererModules/Ogre/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Ogre/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Ogre/Texture.h"
-#include "gui/CEGUI/RendererModules/Ogre/WindowTarget.h"
-#include "gui/CEGUI/GUIContext.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/RendererModules/Ogre/ResourceProvider.h"
-#include "gui/CEGUI/RendererModules/Ogre/ImageCodec.h"
-#include "gui/CEGUI/Logger.h"
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
+#include "CEGUI/RendererModules/Ogre/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Ogre/TextureTarget.h"
+#include "CEGUI/RendererModules/Ogre/Texture.h"
+#include "CEGUI/RendererModules/Ogre/WindowTarget.h"
+#include "CEGUI/GUIContext.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/System.h"
+#include "CEGUI/RendererModules/Ogre/ResourceProvider.h"
+#include "CEGUI/RendererModules/Ogre/ImageCodec.h"
+#include "CEGUI/Logger.h"
 
 #include <OgreRoot.h>
 #include <OgreRenderSystem.h>
@@ -46,21 +46,6 @@
 #include <OgreFrameListener.h>
 #include <OgreViewport.h>
 #include <OgreCamera.h>
-
-#ifdef CEGUI_USE_OGRE_COMPOSITOR2
-#include <Compositor/OgreCompositorManager2.h>
-#include <Compositor/OgreCompositorCommon.h>
-#include <Compositor/OgreCompositorWorkspaceDef.h>
-#include <Compositor/OgreCompositorNodeDef.h>
-#include <Compositor/Pass/PassClear/OgreCompositorPassClear.h>
-#include <Compositor/Pass/PassScene/OgreCompositorPassScene.h>
-#include <OgreRenderQueueListener.h>
-#endif
-
-#ifdef CEGUI_USE_OGRE_HLMS
-#include <OgreHlmsManager.h>
-#include <OgreHlmsDatablock.h>
-#endif
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -94,53 +79,6 @@ static Ogre::String S_hlsl_ps_source(
     "    return tex2D(texture0, texCoord) * colour;"
     "}"
 );
-
-#ifdef CEGUI_USE_OGRE_HLMS
-static Ogre::String S_hlsl_d3d11_vs_source(
-    "cbuffer MatrixBuffer\n"
-    "{\n"
-	"    matrix worldViewProjMatrix;\n"
-    "};\n"
-    "\n"
-    "struct VertOut\n"
-    "{\n"
-    "	float4 pos : SV_Position;\n"
-    "	float4 colour : COLOR;\n"
-    "	float2 texcoord0 : TEXCOORD;\n"
-    "};\n"
-    "\n"
-    "// Vertex shader\n"
-    "VertOut main(float3 inPos : POSITION, float4 inColour : COLOR, float2 inTexCoord0 : TEXCOORD)\n"
-    "{\n"
-    "	VertOut output;\n"
-    "\n"
-    "   output.pos = mul(worldViewProjMatrix, float4(inPos, 1.0));\n"
-    "   output.texcoord0 = inTexCoord0;\n"
-    "	output.colour = inColour;\n"
-    "\n"
-    "	return output;\n"
-    "}\n"
-);
-
-static Ogre::String S_hlsl_d3d11_ps_source(
-    "Texture2D texture0 : register(t0);\n"
-    "SamplerState textureSamplerState : register(s0);\n"
-    "\n"
-    "struct VertOut\n"
-    "{\n"
-    "	float4 pos : SV_Position;\n"
-    "	float4 colour : COLOR;\n"
-    "	float2 texcoord0 : TEXCOORD;\n"
-    "};\n"
-    "\n"
-    "float4 main(VertOut input) : SV_Target\n"
-    "{\n"
-    "	float4 colour = texture0.Sample(textureSamplerState, input.texcoord0) * input.colour;\n"
-    "	return colour;\n"
-    "}\n"
-    "\n"
-);
-#endif
 
 static Ogre::String S_glsl_compat_vs_source(
     "void main(void)"
@@ -196,25 +134,6 @@ static Ogre::String S_glsl_core_ps_source(
 );
 
 //----------------------------------------------------------------------------//
-#ifdef CEGUI_USE_OGRE_COMPOSITOR2
-// The new method will be used
-// Internal Ogre::RenderQueueListener. This is how the renderer gets notified
-// of workspaces that need rendering
-static class OgreGUIRenderQueueListener
-{
-public:
-    OgreGUIRenderQueueListener();
-
-    void setCEGUIRenderEnabled(bool enabled);
-    bool isCEGUIRenderEnabled() const;
-
-private:
-    bool d_enabled;
-
-} S_frameListener;
-
-
-#else // Use the old method
 // Internal Ogre::FrameListener based class.  This is how we noew hook into the
 // rendering process (as opposed to render queues previously)
 static class OgreGUIFrameListener : public Ogre::FrameListener
@@ -232,7 +151,6 @@ private:
 
 } S_frameListener;
 
-#endif    
 //----------------------------------------------------------------------------//
 //! container type used to hold TextureTargets we create.
 typedef std::vector<TextureTarget*> TextureTargetList;
@@ -252,25 +170,17 @@ struct OgreRenderer_impl :
         // TODO: should be set to correct value
         d_maxTextureSize(2048),
         d_ogreRoot(Ogre::Root::getSingletonPtr()),
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
         d_previousVP(0),
-#endif
-#ifdef CEGUI_USE_OGRE_HLMS
-        d_renderTarget(0),
-        d_hlmsMacroblock(0),
-        d_hlmsBlendblock(0),
-        d_hlmsSamplerblock(0),
-#endif
         d_activeBlendMode(BM_INVALID),
         d_makeFrameControlCalls(true),
         d_useShaders(false),
-        d_useGLSL(false),
-        d_useGLSLCore(false),
         d_worldMatrix(Ogre::Matrix4::IDENTITY),
         d_viewMatrix(Ogre::Matrix4::IDENTITY),
         d_projectionMatrix(Ogre::Matrix4::IDENTITY),
         d_worldViewProjMatrix(Ogre::Matrix4::IDENTITY),
-        d_combinedMatrixValid(true)
+        d_combinedMatrixValid(true),
+        d_useGLSL(false),
+        d_useGLSLCore(false)
         {}
 
     //! String holding the renderer identification text.
@@ -293,22 +203,10 @@ struct OgreRenderer_impl :
     Ogre::Root* d_ogreRoot;
     //! Pointer to the render system for Ogre.
     Ogre::RenderSystem* d_renderSystem;
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     //! Pointer to the previous viewport set in render system.
     Ogre::Viewport* d_previousVP;
     //! Previous projection matrix set on render system.
     Ogre::Matrix4 d_previousProjMatrix;
-#endif
-#ifdef CEGUI_USE_OGRE_HLMS
-    //! OGRE render target
-    Ogre::RenderTarget* d_renderTarget;
-    //! HLMS block used to set macro parameters
-    const Ogre::HlmsMacroblock* d_hlmsMacroblock;
-    //! HLMS block used to set blending parameters
-    const Ogre::HlmsBlendblock* d_hlmsBlendblock;
-    //! HLMS block used to set sampling parameters
-    const Ogre::HlmsSamplerblock* d_hlmsSamplerblock;
-#endif
     //! What we think is the current blend mode to use
     BlendMode d_activeBlendMode;
     //! Whether _beginFrame and _endFrame will be called.
@@ -337,7 +235,6 @@ String OgreRenderer_impl::d_rendererID(
 "CEGUI::OgreRenderer - Official OGRE based 2nd generation renderer module.");
 
 //----------------------------------------------------------------------------//
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
 OgreRenderer& OgreRenderer::bootstrapSystem(const int abi)
 {
     System::performVersionTest(CEGUI_VERSION_ABI, abi, CEGUI_FUNCTION_NAME);
@@ -353,7 +250,7 @@ OgreRenderer& OgreRenderer::bootstrapSystem(const int abi)
 
     return renderer;
 }
-#endif
+
 //----------------------------------------------------------------------------//
 OgreRenderer& OgreRenderer::bootstrapSystem(Ogre::RenderTarget& target,
                                             const int abi)
@@ -393,14 +290,13 @@ void OgreRenderer::destroySystem()
 }
 
 //----------------------------------------------------------------------------//
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
 OgreRenderer& OgreRenderer::create(const int abi)
 {
     System::performVersionTest(CEGUI_VERSION_ABI, abi, CEGUI_FUNCTION_NAME);
 
     return *CEGUI_NEW_AO OgreRenderer();
 }
-#endif
+
 //----------------------------------------------------------------------------//
 OgreRenderer& OgreRenderer::create(Ogre::RenderTarget& target,
                                    const int abi)
@@ -642,7 +538,6 @@ bool OgreRenderer::isTextureDefined(const String& name) const
 //----------------------------------------------------------------------------//
 void OgreRenderer::beginRendering()
 {
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     if ( !d_pimpl->d_previousVP ) 
     {
         d_pimpl->d_previousVP = d_pimpl->d_renderSystem->_getViewport();
@@ -653,8 +548,6 @@ void OgreRenderer::beginRendering()
 
     //FIXME: ???
     System::getSingleton().getDefaultGUIContext().getRenderTarget().activate();
-#endif
-
     initialiseRenderStateSettings();
 
     if (d_pimpl->d_makeFrameControlCalls)
@@ -666,14 +559,14 @@ void OgreRenderer::endRendering()
 {
     if (d_pimpl->d_makeFrameControlCalls)
         d_pimpl->d_renderSystem->_endFrame();
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
+
     //FIXME: ???
     System::getSingleton().getDefaultGUIContext().getRenderTarget().deactivate();
 
     if ( d_pimpl->d_previousVP ) 
     {
         d_pimpl->d_renderSystem->_setViewport(d_pimpl->d_previousVP);
-
+    
         if ( d_pimpl->d_previousVP->getCamera() )
         {
             d_pimpl->d_renderSystem->_setProjectionMatrix(
@@ -684,7 +577,6 @@ void OgreRenderer::endRendering()
         d_pimpl->d_previousVP = 0;
         d_pimpl->d_previousProjMatrix = Ogre::Matrix4::IDENTITY;
     }
-#endif    
 }
 
 //----------------------------------------------------------------------------//
@@ -712,7 +604,6 @@ const String& OgreRenderer::getIdentifierString() const
 }
 
 //----------------------------------------------------------------------------//
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
 OgreRenderer::OgreRenderer() :
     d_pimpl(CEGUI_NEW_AO OgreRenderer_impl())
 {
@@ -728,7 +619,6 @@ OgreRenderer::OgreRenderer() :
 
     constructor_impl(*rwnd);
 }
-#endif
 
 //----------------------------------------------------------------------------//
 OgreRenderer::OgreRenderer(Ogre::RenderTarget& target) :
@@ -742,9 +632,7 @@ OgreRenderer::OgreRenderer(Ogre::RenderTarget& target) :
 //----------------------------------------------------------------------------//
 OgreRenderer::~OgreRenderer()
 {
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     d_pimpl->d_ogreRoot->removeFrameListener(&S_frameListener);
-#endif    
 
     cleanupShaders();
 
@@ -782,26 +670,18 @@ void OgreRenderer::constructor_impl(Ogre::RenderTarget& target)
     d_pimpl->d_defaultTarget =
         CEGUI_NEW_AO OgreWindowTarget(*this, *d_pimpl->d_renderSystem, target);
 
-#ifdef CEGUI_USE_OGRE_HLMS
-    d_pimpl->d_renderTarget = &target;
-#endif
-
 #if OGRE_VERSION >= 0x10800
-    #ifdef CEGUI_USE_OGRE_HLMS
-        bool isFixedFunctionEnabled = false;
     // Check if built with RT Shader System and if it is: Check if fixed function pipeline is enabled
+    #if defined RTSHADER_SYSTEM_BUILD_CORE_SHADERS
+        bool isFixedFunctionEnabled = d_pimpl->d_renderSystem->getFixedPipelineEnabled();
     #else
-        #if defined RTSHADER_SYSTEM_BUILD_CORE_SHADERS
-            bool isFixedFunctionEnabled = d_pimpl->d_renderSystem->getFixedPipelineEnabled();
-        #else
-            bool isFixedFunctionEnabled = true;
-        #endif
+        bool isFixedFunctionEnabled = true;
+    #endif
 
-        #ifndef RTSHADER_SYSTEM_BUILD_CORE_SHADERS
-            if (d_pimpl->d_useGLSLCore)
-                CEGUI_THROW(RendererException("RT Shader System not available but trying to render using OpenGL 3.X+ Core."
-                "When GLSL shaders are necessary, the RT Shader System component of Ogre is required for rendering CEGUI."));
-        #endif
+    #ifndef RTSHADER_SYSTEM_BUILD_CORE_SHADERS
+        if (d_pimpl->d_useGLSLCore)
+            CEGUI_THROW(RendererException("RT Shader System not available but trying to render using OpenGL 3.X+ Core."
+            "When GLSL shaders are necessary, the RT Shader System component of Ogre is required for rendering CEGUI."));
     #endif
 
     // Default to using shaders when that is the sane thing to do.
@@ -811,59 +691,12 @@ void OgreRenderer::constructor_impl(Ogre::RenderTarget& target)
 #endif
 
     // hook into the rendering process
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     d_pimpl->d_ogreRoot->addFrameListener(&S_frameListener);
-#endif
-
 }
 
 //----------------------------------------------------------------------------//
 void OgreRenderer::initialiseShaders()
 {
-#ifdef CEGUI_USE_OGRE_HLMS
-    Ogre::HlmsManager* hlmsManager = d_pimpl->d_ogreRoot->getHlmsManager();
-
-    // Macro block
-    Ogre::HlmsMacroblock macroblock;
-    macroblock.mDepthCheck = false;
-    macroblock.mDepthWrite = false;
-    macroblock.mDepthBiasConstant = 0;
-    macroblock.mDepthBiasSlopeScale = 0;
-    macroblock.mCullMode = Ogre::CULL_NONE;
-    macroblock.mPolygonMode = Ogre::PM_SOLID;
-    macroblock.mScissorTestEnabled = true;
-    d_pimpl->d_hlmsMacroblock = hlmsManager->getMacroblock(macroblock);
-
-    // Blend block
-    Ogre::HlmsBlendblock blendblock;
-    blendblock.mAlphaToCoverageEnabled = false;
-    if (d_pimpl->d_activeBlendMode == BM_RTT_PREMULTIPLIED)
-    {
-        blendblock.mSourceBlendFactor = Ogre::SBF_ONE;
-        blendblock.mDestBlendFactor = Ogre::SBF_ONE_MINUS_SOURCE_ALPHA;
-    }
-    else
-    {
-        blendblock.mSeparateBlend = true;
-        blendblock.mSourceBlendFactor = Ogre::SBF_SOURCE_ALPHA;
-        blendblock.mDestBlendFactor = Ogre::SBF_ONE_MINUS_SOURCE_ALPHA;
-        blendblock.mSourceBlendFactorAlpha = Ogre::SBF_ONE_MINUS_DEST_ALPHA;
-        blendblock.mDestBlendFactorAlpha = Ogre::SBF_ONE;
-    }
-    d_pimpl->d_hlmsBlendblock = hlmsManager->getBlendblock(blendblock);
-
-    // Sampler block
-    Ogre::HlmsSamplerblock samplerblock;
-    samplerblock.mMinFilter = Ogre::FO_LINEAR;
-    samplerblock.mMagFilter = Ogre::FO_LINEAR;
-    samplerblock.mMipFilter = Ogre::FO_POINT;
-    samplerblock.mU = Ogre::TAM_CLAMP;
-    samplerblock.mV = Ogre::TAM_CLAMP;
-    samplerblock.mW = Ogre::TAM_CLAMP;
-    samplerblock.mCompareFunction = Ogre::NUM_COMPARE_FUNCTIONS;
-    d_pimpl->d_hlmsSamplerblock = hlmsManager->getSamplerblock(samplerblock);
-#endif
-
     d_pimpl->d_useGLSL = Ogre::HighLevelGpuProgramManager::getSingleton().
         isLanguageSupported("glsl");
 
@@ -904,10 +737,6 @@ void OgreRenderer::initialiseShaders()
     }
     else // else we use a hlsl shader with an available syntax code
     {
-#ifdef CEGUI_USE_OGRE_HLMS
-        d_pimpl->d_vertexShader->setParameter("target", "vs_4_1");
-        d_pimpl->d_vertexShader->setSource(S_hlsl_d3d11_vs_source);
-#else
         if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("vs_4_0"))
         {
             d_pimpl->d_vertexShader->setParameter("target", "vs_4_0");
@@ -925,7 +754,6 @@ void OgreRenderer::initialiseShaders()
                 "OgreRenderer::initialiseShaders: No supported syntax - "
                 "unable to compile '__cegui_internal_vs__'"));
         }
-#endif
     }
 
     d_pimpl->d_vertexShader->load();
@@ -955,10 +783,6 @@ void OgreRenderer::initialiseShaders()
     else
     {
         // D3D shaders
-#ifdef CEGUI_USE_OGRE_HLMS
-        d_pimpl->d_pixelShader->setParameter("target", "ps_4_1");
-        d_pimpl->d_pixelShader->setSource(S_hlsl_d3d11_ps_source);
-#else
         if (Ogre::GpuProgramManager::getSingleton().isSyntaxSupported("ps_4_0"))
         {    
             d_pimpl->d_pixelShader->setParameter("target", "ps_4_0");
@@ -978,7 +802,6 @@ void OgreRenderer::initialiseShaders()
                 "OgreRenderer::initialiseShaders: No supported syntax - "
                 "unable to compile '__cegui_internal_ps__'"));
         }
-#endif
     }
 
     d_pimpl->d_pixelShader->load();
@@ -993,16 +816,6 @@ void OgreRenderer::initialiseShaders()
 //----------------------------------------------------------------------------//
 void OgreRenderer::cleanupShaders()
 {
-#ifdef CEGUI_USE_OGRE_HLMS
-    Ogre::HlmsManager* hlmsManager = d_pimpl->d_ogreRoot->getHlmsManager();
-
-    if (d_pimpl->d_hlmsBlendblock != NULL)
-        hlmsManager->destroyBlendblock(d_pimpl->d_hlmsBlendblock);
-    if (d_pimpl->d_hlmsMacroblock != NULL)
-        hlmsManager->destroyMacroblock(d_pimpl->d_hlmsMacroblock);
-    if (d_pimpl->d_hlmsSamplerblock != NULL)
-        hlmsManager->destroySamplerblock(d_pimpl->d_hlmsSamplerblock);
-#endif
     d_pimpl->d_pixelShaderParameters.setNull();
     d_pimpl->d_vertexShaderParameters.setNull();
     d_pimpl->d_pixelShader.setNull();
@@ -1036,10 +849,6 @@ void OgreRenderer::setupRenderingBlendMode(const BlendMode mode,
 
     d_pimpl->d_activeBlendMode = mode;
 
-#ifdef CEGUI_USE_OGRE_HLMS
-    // Apply the HLMS blend block to the render system
-    d_pimpl->d_renderSystem->_setHlmsBlendblock(d_pimpl->d_hlmsBlendblock);
-#else
     if (d_pimpl->d_activeBlendMode == BM_RTT_PREMULTIPLIED)
         d_pimpl->d_renderSystem->_setSceneBlending(SBF_ONE,
                                                     SBF_ONE_MINUS_SOURCE_ALPHA);
@@ -1049,7 +858,6 @@ void OgreRenderer::setupRenderingBlendMode(const BlendMode mode,
                                       SBF_ONE_MINUS_SOURCE_ALPHA,
                                       SBF_ONE_MINUS_DEST_ALPHA,
                                       SBF_ONE);
-#endif
 }
 
 
@@ -1076,10 +884,6 @@ void OgreRenderer::initialiseRenderStateSettings()
     using namespace Ogre;
 
     // initialise render settings
-#ifdef CEGUI_USE_OGRE_HLMS
-    // Apply the HLMS macro block to the render system
-    d_pimpl->d_renderSystem->_setHlmsMacroblock(d_pimpl->d_hlmsMacroblock);
-#else
     d_pimpl->d_renderSystem->setLightingEnabled(false);
     d_pimpl->d_renderSystem->_setDepthBufferParams(false, false);
     d_pimpl->d_renderSystem->_setDepthBias(0, 0);
@@ -1088,7 +892,6 @@ void OgreRenderer::initialiseRenderStateSettings()
     d_pimpl->d_renderSystem->_setColourBufferWriteEnabled(true, true, true, true);
     d_pimpl->d_renderSystem->setShadingType(SO_GOURAUD);
     d_pimpl->d_renderSystem->_setPolygonMode(PM_SOLID);
-#endif
 
     bindShaders();
 
@@ -1107,18 +910,11 @@ void OgreRenderer::bindShaders()
 {
     if (isUsingShaders())
     {
-#ifdef CEGUI_USE_OGRE_HLMS
-        Ogre::HlmsCache hlmsCache;
-        hlmsCache.vertexShader = d_pimpl->d_vertexShader;
-        hlmsCache.pixelShader = d_pimpl->d_pixelShader;
-        d_pimpl->d_renderSystem->_setProgramsFromHlms(&hlmsCache);
-#else
         if (Ogre::GpuProgram* prog = d_pimpl->d_vertexShader->_getBindingDelegate())
             d_pimpl->d_renderSystem->bindGpuProgram(prog);
 
         if (Ogre::GpuProgram* prog = d_pimpl->d_pixelShader->_getBindingDelegate())
             d_pimpl->d_renderSystem->bindGpuProgram(prog);
-#endif
     }
     else
     {
@@ -1193,12 +989,8 @@ const Ogre::Matrix4& OgreRenderer::getWorldViewProjMatrix() const
     {
         Ogre::Matrix4 final_prj(d_pimpl->d_projectionMatrix);
 
-#ifdef CEGUI_USE_OGRE_HLMS
-        if (d_pimpl->d_renderTarget->requiresTextureFlipping())
-#else
         if (d_pimpl->d_renderSystem->_getViewport()->getTarget()->
             requiresTextureFlipping())
-#endif
         {
             final_prj[1][0] = -final_prj[1][0];
             final_prj[1][1] = -final_prj[1][1];
@@ -1261,41 +1053,6 @@ void OgreRenderer::setProjectionMatrix(const Ogre::Matrix4& m)
 }
 
 //----------------------------------------------------------------------------//
-#ifdef CEGUI_USE_OGRE_HLMS
-Ogre::RenderTarget* OgreRenderer::getOgreRenderTarget()
-{
-    return d_pimpl->d_renderTarget;
-}
-
-//----------------------------------------------------------------------------//
-const Ogre::HlmsSamplerblock* OgreRenderer::getHlmsSamplerblock()
-{
-    return d_pimpl->d_hlmsSamplerblock;
-}
-#endif
-
-//----------------------------------------------------------------------------//
-#ifdef CEGUI_USE_OGRE_COMPOSITOR2
-OgreGUIRenderQueueListener::OgreGUIRenderQueueListener() : d_enabled(true)
-{
-
-}
-
-//----------------------------------------------------------------------------//
-void OgreGUIRenderQueueListener::setCEGUIRenderEnabled(bool enabled)
-{
-    d_enabled = enabled;
-}
-
-//----------------------------------------------------------------------------//
-bool OgreGUIRenderQueueListener::isCEGUIRenderEnabled() const
-{
-    return d_enabled;
-}
-
-//----------------------------------------------------------------------------//
-
-#else
 OgreGUIFrameListener::OgreGUIFrameListener() :
     d_enabled(true)
 {
@@ -1321,6 +1078,5 @@ bool OgreGUIFrameListener::frameRenderingQueued(const Ogre::FrameEvent&)
 
     return true;
 }
-#endif    
 
 } // End of  CEGUI namespace section

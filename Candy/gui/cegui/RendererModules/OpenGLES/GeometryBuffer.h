@@ -27,10 +27,10 @@
 #ifndef _CEGUIOpenGLESGeometryBuffer_h_
 #define _CEGUIOpenGLESGeometryBuffer_h_
 
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/Renderer.h"
-#include "gui/CEGUI/Rect.h"
-#include "gui/CEGUI/Quaternion.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGLES/Renderer.h"
+#include "CEGUI/Rect.h"
+#include "CEGUI/Quaternion.h"
 
 #include <utility>
 #include <vector>
@@ -70,8 +70,6 @@ public:
     uint getBatchCount() const;
     void setRenderEffect(RenderEffect* effect);
     RenderEffect* getRenderEffect();
-    void setClippingActive(const bool active);
-    bool isClippingActive() const;
 
     //! return the GL modelview matrix used for this buffer.
 	const float* getMatrix() const;
@@ -105,8 +103,6 @@ protected:
     VertexList d_vertices;
     //! rectangular clip region
     Rectf d_clipRect;
-    //! whether clipping will be active for the current batch
-    bool d_clippingActive;
     //! translation vector
     Vector3f d_translation;
     //! rotation quaternion

@@ -378,17 +378,13 @@ const String& System::getVerboseVersion()
 #if _MSC_VER < 1500
         ret += "(Note: Compiler version is old and not officially supported)";
 #elif _MSC_VER == 1500
-        ret += "9.0 (2008)";
+        ret += "9.0";
 #elif _MSC_VER == 1600
-        ret += "10.0 (2010)";
+        ret += "10.0";
 #elif _MSC_VER == 1700
-        ret += "11.0 (2012)";
-#elif _MSC_VER == 1800
-        ret += "12.0 (2013)";
-#elif _MSC_VER == 1900
-        ret += "14.0 (2015)";
-#elif _MSC_VER > 1900
-        ret += "Unknown MSVC++ version";
+        ret += "11.0";
+#elif _MSC_VER > 1700
+        ret += "Great Scott!";
 #endif
 
 #ifdef _WIN64
@@ -478,7 +474,7 @@ void System::executeScriptFile(const String& filename, const String& resourceGro
         // Forward script exceptions with line number and file info
         CEGUI_CATCH(ScriptException& e)
         {
-            CEGUI_RETHROW;
+            CEGUI_THROW(e);
         }
 		CEGUI_CATCH(...)
 		{
@@ -510,7 +506,7 @@ int	System::executeScriptGlobal(const String& function_name) const
         // Forward script exceptions with line number and file info
         CEGUI_CATCH(ScriptException& e)
         {
-            CEGUI_RETHROW;
+            CEGUI_THROW(e);
         }
 		CEGUI_CATCH(...)
 		{
@@ -543,7 +539,7 @@ void System::executeScriptString(const String& str) const
         // Forward script exceptions with line number and file info
         CEGUI_CATCH(ScriptException& e)
         {
-            CEGUI_RETHROW;
+            CEGUI_THROW(e);
         }
         CEGUI_CATCH(...)
         {
@@ -771,7 +767,6 @@ void System::setXMLParser(const String& parserName)
     // perform initialisation of XML parser.
     d_xmlParser->initialise();
 #else
-    CEGUI_UNUSED(parserName);
     Logger::getSingleton().logEvent(
         "System::setXMLParser(const String& parserName) called from statically "
         "linked CEGUI library - unable to load dynamic module!", Errors);
@@ -828,7 +823,6 @@ void System::setupImageCodec(const String& codecName)
 #    if defined(CEGUI_STATIC)
         // for static build use static createImageCodec to create codec object
         d_imageCodec = createImageCodec();
-        CEGUI_UNUSED(codecName);
 #    else
         // load the appropriate image codec module
         d_imageCodecModule = codecName.empty() ?
@@ -975,10 +969,6 @@ void System::destroyRegexMatcher(RegexMatcher* rm) const
 //----------------------------------------------------------------------------//
 GUIContext& System::getDefaultGUIContext() const
 {
-    if (d_guiContexts.empty())
-        CEGUI_THROW(InvalidRequestException("Requesting the DefaultGUIContext, but no DefaultGUIContext is available. "
-        "The list of GUIContexts is empty."));
-
     return *d_guiContexts.front();
 }
 

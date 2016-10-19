@@ -24,20 +24,21 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
+#include <GL/glew.h>
+
 #include "glm/glm.hpp"
 #include "glm/gtc/quaternion.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "glm/gtc/matrix_transform.hpp"
-#include "gui/CEGUI/RendererModules/OpenGL/GL3GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GL3Renderer.h"
-#include "gui/CEGUI/RenderEffect.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
-#include "gui/CEGUI/Vertex.h"
-#include "gui/CEGUI/RendererModules/OpenGL/ShaderManager.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Shader.h"
-#include "gui/CEGUI/RendererModules/OpenGL/StateChangeWrapper.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GlmPimpl.h"
+#include "CEGUI/RendererModules/OpenGL/GL3GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGL/GL3Renderer.h"
+#include "CEGUI/RenderEffect.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/Vertex.h"
+#include "CEGUI/RendererModules/OpenGL/ShaderManager.h"
+#include "CEGUI/RendererModules/OpenGL/Shader.h"
+#include "CEGUI/RendererModules/OpenGL/StateChangeWrapper.h"
+#include "CEGUI/RendererModules/OpenGL/GlmPimpl.h"
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -85,17 +86,8 @@ void OpenGL3GeometryBuffer::draw() const
     // activate desired blending mode
     d_owner->setupRenderingBlendMode(d_blendMode);
 
-    if (OpenGLInfo::getSingleton().isVaoSupported())
-    {
-        // Bind our vao
-        d_glStateChanger->bindVertexArray(d_verticesVAO);
-    }
-    else
-    {
-        // We need to emulate a VAO.
-        // This binds and sets up a vbo for rendering
-        configureVertexArray();
-    }
+    // Bind our vao
+    d_glStateChanger->bindVertexArray(d_verticesVAO);
 
     const int pass_count = d_effect ? d_effect->getPassCount() : 1;
      size_t pos = 0;
@@ -150,50 +142,41 @@ void OpenGL3GeometryBuffer::reset()
 //----------------------------------------------------------------------------//
 void OpenGL3GeometryBuffer::initialiseOpenGLBuffers()
 {
-    if (OpenGLInfo::getSingleton().isVaoSupported())
-    {
-        glGenVertexArrays(1, &d_verticesVAO);
-        glBindVertexArray(d_verticesVAO);
-    }
+    glGenVertexArrays(1, &d_verticesVAO);
+    glBindVertexArray(d_verticesVAO);
 
-    // Generate position vbo
+    // Generate and bind position vbo
     glGenBuffers(1, &d_verticesVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, d_verticesVBO);
 
-    // This binds and sets up a vbo. The 
-    configureVertexArray();
     glBufferData(GL_ARRAY_BUFFER, 0, 0, GL_DYNAMIC_DRAW);
 
-    if (OpenGLInfo::getSingleton().isVaoSupported())
-    {
-        // Unbind Vertex Attribute Array (VAO)
-        glBindVertexArray(0);
-    }
+    d_shader->bind();
+    
+    GLsizei stride = 9 * sizeof(GL_FLOAT);
+
+    glVertexAttribPointer(d_shaderTexCoordLoc, 2, GL_FLOAT, GL_FALSE, stride, 0);
+    glEnableVertexAttribArray(d_shaderTexCoordLoc);
+
+    glVertexAttribPointer(d_shaderColourLoc, 4, GL_FLOAT, GL_FALSE, stride, BUFFER_OFFSET(2 * sizeof(GL_FLOAT)));
+    glEnableVertexAttribArray(d_shaderColourLoc);
+
+    glVertexAttribPointer(d_shaderPosLoc, 3, GL_FLOAT, GL_FALSE, stride, BUFFER_OFFSET(6 * sizeof(GL_FLOAT)));
+    glEnableVertexAttribArray(d_shaderPosLoc);
+
+    d_shader->unbind();
+
+    // Unbind Vertex Attribute Array (VAO)
+    glBindVertexArray(0);
 
     // Unbind array and element array buffers
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 //----------------------------------------------------------------------------//
-void OpenGL3GeometryBuffer::configureVertexArray() const
-{
-    glBindBuffer(GL_ARRAY_BUFFER, d_verticesVBO);
-    GLsizei stride = 9 * sizeof(GLfloat);
-
-    glVertexAttribPointer(d_shaderTexCoordLoc, 2, GL_FLOAT, GL_FALSE, stride, 0);
-    glEnableVertexAttribArray(d_shaderTexCoordLoc);
-
-    glVertexAttribPointer(d_shaderColourLoc, 4, GL_FLOAT, GL_FALSE, stride, BUFFER_OFFSET(2 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(d_shaderColourLoc);
-
-    glVertexAttribPointer(d_shaderPosLoc, 3, GL_FLOAT, GL_FALSE, stride, BUFFER_OFFSET(6 * sizeof(GLfloat)));
-    glEnableVertexAttribArray(d_shaderPosLoc);
-}
-
-//----------------------------------------------------------------------------//
 void OpenGL3GeometryBuffer::deinitialiseOpenGLBuffers()
 {
-    if (OpenGLInfo::getSingleton().isVaoSupported())
-        glDeleteVertexArrays(1, &d_verticesVAO);
+    glDeleteVertexArrays(1, &d_verticesVAO);
     glDeleteBuffers(1, &d_verticesVBO);
 }
 
@@ -211,7 +194,7 @@ void OpenGL3GeometryBuffer::updateOpenGLBuffers()
 
     d_glStateChanger->bindBuffer(GL_ARRAY_BUFFER, d_verticesVBO);
 
-    GLsizei dataSize = vertexCount * sizeof(GLVertex);
+    GLsizei dataSize = d_bufferSize * sizeof(GLVertex);
 
     GLVertex* data;
     if(d_vertices.empty())

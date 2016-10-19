@@ -27,9 +27,9 @@
 #ifndef _FalMultiColumnList_h_
 #define _FalMultiColumnList_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/MultiColumnList.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/MultiColumnList.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

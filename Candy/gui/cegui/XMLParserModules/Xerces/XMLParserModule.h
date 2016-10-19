@@ -27,7 +27,7 @@
 #ifndef _CEGUIXercesParserModule_h_
 #define _CEGUIXercesParserModule_h_
 
-#include "gui/CEGUI/XMLParserModules/Xerces/XMLParser.h"
+#include "CEGUI/XMLParserModules/Xerces/XMLParser.h"
 
 /*!
 \brief

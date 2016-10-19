@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
-#include "gui/CEGUI/RenderEffect.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/Texture.h"
-#include "gui/CEGUI/Vertex.h"
+#include "CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
+#include "CEGUI/RenderEffect.h"
+#include "CEGUI/RendererModules/OpenGLES/Texture.h"
+#include "CEGUI/Vertex.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
@@ -35,8 +35,6 @@ namespace CEGUI
 //----------------------------------------------------------------------------//
 OpenGLESGeometryBuffer::OpenGLESGeometryBuffer() :
     d_activeTexture(0),
-    d_clipRect(0, 0, 0, 0),
-    d_clippingActive(true),
     d_translation(0, 0, 0),
     d_rotation(0, 0, 0),
     d_pivot(0, 0, 0),
@@ -268,17 +266,6 @@ void OpenGLESGeometryBuffer::updateMatrix() const
     d_matrixValid = true;
 }
 
-//----------------------------------------------------------------------------//
-void OpenGLESGeometryBuffer::setClippingActive(const bool active)
-{
-    d_clippingActive = active;
-}
-
-//----------------------------------------------------------------------------//
-bool OpenGLESGeometryBuffer::isClippingActive() const
-{
-    return d_clippingActive;
-}
 //----------------------------------------------------------------------------//
 
 } // End of  CEGUI namespace section

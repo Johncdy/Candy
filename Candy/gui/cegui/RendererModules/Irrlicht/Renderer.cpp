@@ -24,15 +24,15 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Irrlicht/Renderer.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/WindowTarget.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/Texture.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/ResourceProvider.h"
-#include "gui/CEGUI/GUIContext.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/EventPusher.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/ImageCodec.h"
+#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
+#include "CEGUI/RendererModules/Irrlicht/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Irrlicht/WindowTarget.h"
+#include "CEGUI/RendererModules/Irrlicht/TextureTarget.h"
+#include "CEGUI/RendererModules/Irrlicht/Texture.h"
+#include "CEGUI/RendererModules/Irrlicht/ResourceProvider.h"
+#include "CEGUI/GUIContext.h"
+#include "CEGUI/RendererModules/Irrlicht/EventPusher.h"
+#include "CEGUI/RendererModules/Irrlicht/ImageCodec.h"
 
 #include <irrlicht.h>
 #include <algorithm>

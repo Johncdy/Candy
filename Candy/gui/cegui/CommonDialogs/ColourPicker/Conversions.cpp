@@ -27,7 +27,7 @@
 *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 *   OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************/
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Conversions.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Conversions.h"
 #include <math.h>
 #include <algorithm>
 
@@ -270,9 +270,7 @@ void ColourPickerConversions::clampInterpolationValue(float& interPolBalance)
 //----------------------------------------------------------------------------//
 RGB_Colour ColourPickerConversions::toRGB(const HSV_Colour& colour)
 {
-    float r = 0.0f;
-    float g = 0.0f;
-    float b = 0.0f;
+    float r, g, b;
 
     int i = (int)(colour.H * 6.0f);
     float f = colour.H * 6 - i;
@@ -345,21 +343,7 @@ HSV_Colour ColourPickerConversions::toHSV(RGB_Colour colour)
     float g = colour.g / 255.0f;
     float b = colour.b / 255.0f;
 
-    bool maxCompRed = false;
-    bool maxCompGreen = false;
-    float max_comp = b;
-
-    if(r > g && r > b)
-    {
-        maxCompRed = true;
-        max_comp = r;
-    }
-    else if(g > b)
-    {
-        maxCompGreen = true;
-        max_comp = g;
-    }
-
+    float max_comp = ceguimax(ceguimax(r, g), b);
     float min_comp = ceguimin(ceguimin(r, g), b);
     float h;
     float s;
@@ -374,13 +358,13 @@ HSV_Colour ColourPickerConversions::toHSV(RGB_Colour colour)
     }
     else
     {
-        if (maxCompRed)
+        if (max_comp == r)
             h = (g - b) / diff + (g < b ? 6.0f : 0.0f);
 
-        if (maxCompGreen)
+        if (max_comp == g)
             h = (b - r) / diff + 2.0f;
 
-        else
+        if (max_comp == b)
             h = (r - g) / diff + 4.0f;
 
         h /= 6.0f;

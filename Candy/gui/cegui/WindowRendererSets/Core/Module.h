@@ -27,8 +27,8 @@
 #ifndef _FalModule_h_
 #define _FalModule_h_
 
-#include "gui/CEGUI/FactoryModule.h"
-#include "gui/CEGUI/WindowRenderer.h"
+#include "CEGUI/FactoryModule.h"
+#include "CEGUI/WindowRenderer.h"
 
 #if (defined( __WIN32__ ) || defined( _WIN32 )) && !defined(CEGUI_STATIC)
 #   ifdef CEGUICOREWINDOWRENDERERSET_EXPORTS

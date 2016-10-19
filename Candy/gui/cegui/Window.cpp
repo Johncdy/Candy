@@ -68,37 +68,6 @@
 namespace CEGUI
 {
 //----------------------------------------------------------------------------//
-const String Window::AlphaPropertyName("Alpha");
-const String Window::AlwaysOnTopPropertyName("AlwaysOnTop");
-const String Window::ClippedByParentPropertyName("ClippedByParent");
-const String Window::DestroyedByParentPropertyName("DestroyedByParent");
-const String Window::DisabledPropertyName("Disabled");
-const String Window::FontPropertyName("Font");
-const String Window::IDPropertyName("ID");
-const String Window::InheritsAlphaPropertyName("InheritsAlpha");
-const String Window::MouseCursorImagePropertyName("MouseCursorImage");
-const String Window::VisiblePropertyName("Visible");
-const String Window::RestoreOldCapturePropertyName("RestoreOldCapture");
-const String Window::TextPropertyName("Text");
-const String Window::ZOrderingEnabledPropertyName("ZOrderingEnabled");
-const String Window::WantsMultiClickEventsPropertyName("WantsMultiClickEvents");
-const String Window::MouseAutoRepeatEnabledPropertyName("MouseAutoRepeatEnabled");
-const String Window::AutoRepeatDelayPropertyName("AutoRepeatDelay");
-const String Window::AutoRepeatRatePropertyName("AutoRepeatRate");
-const String Window::DistributeCapturedInputsPropertyName("DistributeCapturedInputs");
-const String Window::TooltipTypePropertyName("TooltipType");
-const String Window::TooltipTextPropertyName("TooltipText");
-const String Window::InheritsTooltipTextPropertyName("InheritsTooltipText");
-const String Window::RiseOnClickEnabledPropertyName("RiseOnClickEnabled");
-const String Window::MousePassThroughEnabledPropertyName("MousePassThroughEnabled");
-const String Window::DragDropTargetPropertyName("DragDropTarget");
-const String Window::AutoRenderingSurfacePropertyName("AutoRenderingSurface");
-const String Window::TextParsingEnabledPropertyName("TextParsingEnabled");
-const String Window::MarginPropertyName("MarginProperty");
-const String Window::UpdateModePropertyName("UpdateMode");
-const String Window::MouseInputPropagationEnabledPropertyName("MouseInputPropagationEnabled");
-const String Window::AutoWindowPropertyName("AutoWindow");
-//----------------------------------------------------------------------------//
 const String Window::EventNamespace("Window");
 const String Window::EventUpdated ("Updated");
 const String Window::EventTextChanged("TextChanged");
@@ -1252,17 +1221,10 @@ void Window::removeChild_impl(Element* element)
     if (position != d_children.end())
     {
         // unban properties window could write as a root window
-        wnd->unbanPropertyFromXML(RestoreOldCapturePropertyName);
+        wnd->unbanPropertyFromXML("RestoreOldCapture");
     }
     
     wnd->onZChange_impl();
-
-    // Removed windows should not be active anymore (they are not attached
-    // to anything so this would not make sense)
-    if(wnd->isActive())
-    {
-        wnd->deactivate();
-    }
 }
 
 //----------------------------------------------------------------------------//
@@ -1356,117 +1318,117 @@ void Window::addWindowProperties(void)
     const String propertyOrigin("Window");
 
     CEGUI_DEFINE_PROPERTY(Window, float,
-        AlphaPropertyName, "Property to get/set the alpha value of the Window. Value is floating point number.",
+        "Alpha", "Property to get/set the alpha value of the Window. Value is floating point number.",
         &Window::setAlpha, &Window::getAlpha, 1.0f
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        AlwaysOnTopPropertyName, "Property to get/set the 'always on top' setting for the Window. Value is either \"true\" or \"false\".",
+        "AlwaysOnTop", "Property to get/set the 'always on top' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setAlwaysOnTop, &Window::isAlwaysOnTop, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        ClippedByParentPropertyName, "Property to get/set the 'clipped by parent' setting for the Window. Value is either \"true\" or \"false\".",
+        "ClippedByParent", "Property to get/set the 'clipped by parent' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setClippedByParent, &Window::isClippedByParent, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        DestroyedByParentPropertyName, "Property to get/set the 'destroyed by parent' setting for the Window. Value is either \"true\" or \"false\".",
+        "DestroyedByParent", "Property to get/set the 'destroyed by parent' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setDestroyedByParent, &Window::isDestroyedByParent, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        DisabledPropertyName, "Property to get/set the 'disabled state' setting for the Window.  Value is either \"true\" or \"false\".",
+        "Disabled", "Property to get/set the 'disabled state' setting for the Window.  Value is either \"true\" or \"false\".",
         &Window::setDisabled, &Window::isDisabled, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, Font*,
-        FontPropertyName,"Property to get/set the font for the Window.  Value is the name of the font to use (must be loaded already).",
+        "Font","Property to get/set the font for the Window.  Value is the name of the font to use (must be loaded already).",
         &Window::setFont, &Window::property_getFont, 0
     );
 
     CEGUI_DEFINE_PROPERTY(Window, uint,
-        IDPropertyName, "Property to get/set the ID value of the Window. Value is an unsigned integer number.",
+        "ID", "Property to get/set the ID value of the Window. Value is an unsigned integer number.",
         &Window::setID, &Window::getID, 0
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        InheritsAlphaPropertyName, "Property to get/set the 'inherits alpha' setting for the Window. Value is either \"true\" or \"false\".",
+        "InheritsAlpha", "Property to get/set the 'inherits alpha' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setInheritsAlpha, &Window::inheritsAlpha, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, Image*,
-        MouseCursorImagePropertyName,"Property to get/set the mouse cursor image for the Window.  Value should be \"<image name>\".",
+        "MouseCursorImage","Property to get/set the mouse cursor image for the Window.  Value should be \"<image name>\".",
         &Window::setMouseCursor, &Window::property_getMouseCursor, 0
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        VisiblePropertyName, "Property to get/set the 'visible state' setting for the Window. Value is either \"true\" or \"false\".",
+        "Visible", "Property to get/set the 'visible state' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setVisible, &Window::isVisible, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        RestoreOldCapturePropertyName, "Property to get/set the 'restore old capture' setting for the Window. Value is either \"true\" or \"false\".",
+        "RestoreOldCapture", "Property to get/set the 'restore old capture' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setRestoreOldCapture, &Window::restoresOldCapture, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, String,
-        TextPropertyName, "Property to get/set the text / caption for the Window. Value is the text string to use. Meaning of this property heavily depends on the type of the Window.",
+        "Text", "Property to get/set the text / caption for the Window. Value is the text string to use. Meaning of this property heavily depends on the type of the Window.",
         &Window::setText, &Window::getText, ""
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        ZOrderingEnabledPropertyName, "Property to get/set the 'z-order changing enabled' setting for the Window. Value is either \"true\" or \"false\".",
+        "ZOrderingEnabled", "Property to get/set the 'z-order changing enabled' setting for the Window. Value is either \"true\" or \"false\".",
         &Window::setZOrderingEnabled, &Window::isZOrderingEnabled, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        WantsMultiClickEventsPropertyName, "Property to get/set whether the window will receive double-click and triple-click events. Value is either \"true\" or \"false\".",
+        "WantsMultiClickEvents", "Property to get/set whether the window will receive double-click and triple-click events. Value is either \"true\" or \"false\".",
         &Window::setWantsMultiClickEvents, &Window::wantsMultiClickEvents, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        MouseAutoRepeatEnabledPropertyName, "Property to get/set whether the window will receive autorepeat mouse button down events. Value is either \"true\" or \"false\".",
+        "MouseAutoRepeatEnabled", "Property to get/set whether the window will receive autorepeat mouse button down events. Value is either \"true\" or \"false\".",
         &Window::setMouseAutoRepeatEnabled, &Window::isMouseAutoRepeatEnabled, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, float,
-        AutoRepeatDelayPropertyName, "Property to get/set the autorepeat delay. Value is a floating point number indicating the delay required in seconds.",
+        "AutoRepeatDelay", "Property to get/set the autorepeat delay. Value is a floating point number indicating the delay required in seconds.",
         &Window::setAutoRepeatDelay, &Window::getAutoRepeatDelay, 0.3f
     );
 
     CEGUI_DEFINE_PROPERTY(Window, float,
-        AutoRepeatRatePropertyName, "Property to get/set the autorepeat rate. Value is a floating point number indicating the rate required in seconds.",
+        "AutoRepeatRate", "Property to get/set the autorepeat rate. Value is a floating point number indicating the rate required in seconds.",
         &Window::setAutoRepeatRate, &Window::getAutoRepeatRate, 0.06f
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        DistributeCapturedInputsPropertyName, "Property to get/set whether captured inputs are passed to child windows. Value is either \"true\" or \"false\".",
+        "DistributeCapturedInputs", "Property to get/set whether captured inputs are passed to child windows. Value is either \"true\" or \"false\".",
         &Window::setDistributesCapturedInputs, &Window::distributesCapturedInputs, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, String,
-        TooltipTypePropertyName, "Property to get/set the custom tooltip for the window. Value is the type name of the custom tooltip. If \"\", the default System tooltip is used.",
+       "TooltipType", "Property to get/set the custom tooltip for the window. Value is the type name of the custom tooltip. If \"\", the default System tooltip is used.",
         &Window::setTooltipType, &Window::getTooltipType, ""
     );
 
     CEGUI_DEFINE_PROPERTY(Window, String,
-        TooltipTextPropertyName, "Property to get/set the tooltip text for the window. Value is the tooltip text for the window.",
+        "TooltipText", "Property to get/set the tooltip text for the window. Value is the tooltip text for the window.",
         &Window::setTooltipText, &Window::getTooltipText, ""
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        InheritsTooltipTextPropertyName, "Property to get/set whether the window inherits its parents tooltip text when it has none of its own. Value is either \"true\" or \"false\".",
+        "InheritsTooltipText", "Property to get/set whether the window inherits its parents tooltip text when it has none of its own. Value is either \"true\" or \"false\".",
         &Window::setInheritsTooltipText, &Window::inheritsTooltipText, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        RiseOnClickEnabledPropertyName, "Property to get/set whether the window will come to the top of the Z-order when clicked. Value is either \"true\" or \"false\".",
+        "RiseOnClickEnabled", "Property to get/set whether the window will come to the top of the Z-order when clicked. Value is either \"true\" or \"false\".",
         &Window::setRiseOnClickEnabled, &Window::isRiseOnClickEnabled, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        MousePassThroughEnabledPropertyName, "Property to get/set whether the window ignores mouse events and pass them through to any windows behind it. Value is either \"true\" or \"false\".",
+        "MousePassThroughEnabled", "Property to get/set whether the window ignores mouse events and pass them through to any windows behind it. Value is either \"true\" or \"false\".",
         &Window::setMousePassThroughEnabled, &Window::isMousePassThroughEnabled, false
     );
     
@@ -1474,12 +1436,12 @@ void Window::addWindowProperties(void)
     addProperty(&d_lookNFeelProperty);
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        DragDropTargetPropertyName, "Property to get/set whether the Window will receive drag and drop related notifications.  Value is either \"true\" or \"false\".",
+        "DragDropTarget", "Property to get/set whether the Window will receive drag and drop related notifications.  Value is either \"true\" or \"false\".",
         &Window::setDragDropTarget, &Window::isDragDropTarget, true
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        AutoRenderingSurfacePropertyName, "Property to get/set whether the Window will automatically attempt to "
+        "AutoRenderingSurface", "Property to get/set whether the Window will automatically attempt to "
         "use a full imagery caching RenderingSurface (if supported by the "
         "renderer).  Here, full imagery caching usually will mean caching a "
         "window's representation onto a texture (although no such "
@@ -1489,32 +1451,33 @@ void Window::addWindowProperties(void)
     );
     
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        TextParsingEnabledPropertyName, "Property to get/set the text parsing setting for the Window.  "
+        "TextParsingEnabled", "Property to get/set the text parsing setting for the Window.  "
         "Value is either \"true\" or \"false\".",
         &Window::setTextParsingEnabled, &Window::isTextParsingEnabled, true
     );
    
     CEGUI_DEFINE_PROPERTY(Window, UBox,
-        MarginPropertyName, "Property to get/set margin for the Window. Value format:"
+        "Margin", "Property to get/set margin for the Window. Value format:"
         "{top:{[tops],[topo]},left:{[lefts],[lefto]},bottom:{[bottoms],[bottomo]},right:{[rights],[righto]}}.",
         &Window::setMargin, &Window::getMargin, UBox(UDim(0, 0))
     );
    
     CEGUI_DEFINE_PROPERTY(Window, WindowUpdateMode,
-        UpdateModePropertyName, "Property to get/set the window update mode setting.  "
+        "UpdateMode", "Property to get/set the window update mode setting.  "
         "Value is one of \"Always\", \"Never\" or \"Visible\".",
         &Window::setUpdateMode,&Window::getUpdateMode, WUM_VISIBLE
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        MouseInputPropagationEnabledPropertyName, "Property to get/set whether unhandled mouse inputs should be "
+        "MouseInputPropagationEnabled", "Property to get/set whether unhandled mouse inputs should be "
         "propagated back to the Window's parent.  "
         "Value is either \"true\" or \"false\".",
         &Window::setMouseInputPropagationEnabled, &Window::isMouseInputPropagationEnabled, false
     );
 
     CEGUI_DEFINE_PROPERTY(Window, bool,
-        AutoWindowPropertyName, "Property to get/set whether the system considers this window to be an "
+        "AutoWindow",
+        "Property to access whether the system considers this window to be an "
         "automatically created sub-component window."
         "Value is either \"true\" or \"false\".",
         &Window::setAutoWindow, &Window::isAutoWindow, false
@@ -1742,10 +1705,6 @@ void Window::destroy(void)
     WindowEventArgs args(this);
     onDestructionStarted(args);
 
-    // Check we are detached from parent
-    if (d_parent)
-        d_parent->removeChild(this);
-
     releaseInput();
 
     // let go of the tooltip if we have it
@@ -1755,8 +1714,6 @@ void Window::destroy(void)
 
     // ensure custom tooltip is cleaned up
     setTooltip(static_cast<Tooltip*>(0));
-    
-
 
     // clean up looknfeel related things
     if (!d_lookName.empty())
@@ -1774,6 +1731,10 @@ void Window::destroy(void)
             destroyWindowRenderer(d_windowRenderer);
         d_windowRenderer = 0;
     }
+
+    // double check we are detached from parent
+    if (d_parent)
+        d_parent->removeChild(this);
 
     cleanupChildren();
 
@@ -1855,12 +1816,6 @@ void Window::setTooltipText(const String& tip)
 
 //----------------------------------------------------------------------------//
 const String& Window::getTooltipText(void) const
-{
-    return d_tooltipText;
-}
-
-//----------------------------------------------------------------------------//
-const String& Window::getTooltipTextIncludingInheritance(void) const
 {
     if (d_inheritsTipText && d_parent && d_tooltipText.empty())
         return getParent()->getTooltipText();
@@ -2904,33 +2859,9 @@ void Window::banPropertyFromXML(const String& property_name)
 }
 
 //----------------------------------------------------------------------------//
-void Window::banPropertyFromXMLRecursive(const String& property_name)
-{
-    banPropertyFromXML(property_name);
-
-    const size_t childCount = getChildCount();
-    for(size_t i = 0; i < childCount; ++i)
-    {
-        getChildAtIdx(i)->banPropertyFromXMLRecursive(property_name);
-    }
-}
-
-//----------------------------------------------------------------------------//
 void Window::unbanPropertyFromXML(const String& property_name)
 {
     d_bannedXMLProperties.erase(property_name);
-}
-
-//----------------------------------------------------------------------------//
-void Window::unbanPropertyFromXMLRecursive(const String& property_name)
-{
-    unbanPropertyFromXML(property_name);
-
-    const size_t childCount = getChildCount();
-    for(size_t i = 0; i < childCount; ++i)
-    {
-        getChildAtIdx(i)->unbanPropertyFromXMLRecursive(property_name);
-    }
 }
 
 //----------------------------------------------------------------------------//
@@ -3395,14 +3326,10 @@ void Window::initialiseClippers(const RenderingContext& ctx)
 void Window::onRotated(ElementEventArgs& e)
 {
     Element::onRotated(e);
-
-    // TODO: Checking quaternion for equality with IDENTITY is stupid,
-    //       change this to something else, checking with tolerance.
-    if (d_rotation != Quaternion::IDENTITY && !d_surface)
+    
+    // if we have no surface set, enable the auto surface
+    if (!d_surface)
     {
-        // if we have no surface set and the rotation differs from identity,
-        // enable the auto surface
-
         Logger::getSingleton().logEvent("Window::setRotation - "
             "Activating AutoRenderingSurface on Window '" + d_name +
             "' to enable rotation support.");
@@ -3421,23 +3348,20 @@ void Window::onRotated(ElementEventArgs& e)
         }
     }
 
-    if (d_surface)
+    // ensure surface we have is the right type
+    if (!d_surface->isRenderingWindow())
     {
-        // ensure surface we have is the right type
-        if (!d_surface->isRenderingWindow())
-        {
-            Logger::getSingleton().logEvent("Window::setRotation - "
-                "Window '" + d_name + "' has a manual RenderingSurface that is not "
-                "a RenderingWindow.  Rotation will not be available.", Errors);
+        Logger::getSingleton().logEvent("Window::setRotation - "
+            "Window '" + d_name + "' has a manual RenderingSurface that is not "
+            "a RenderingWindow.  Rotation will not be available.", Errors);
 
-            return;
-        }
-
-        // Checks / setup complete!  Now we can finally set the rotation.
-        static_cast<RenderingWindow*>(d_surface)->setRotation(d_rotation);
-        static_cast<RenderingWindow*>(d_surface)->setPivot(
-            Vector3f(d_pixelSize.d_width / 2.0f, d_pixelSize.d_height / 2.0f, 0.0f));
+        return;
     }
+
+    // Checks / setup complete!  Now we can finally set the rotation.
+    static_cast<RenderingWindow*>(d_surface)->setRotation(d_rotation);
+    static_cast<RenderingWindow*>(d_surface)->setPivot(
+        Vector3f(d_pixelSize.d_width / 2.0f, d_pixelSize.d_height / 2.0f, 0.0f));
 }
 
 //----------------------------------------------------------------------------//
@@ -3445,8 +3369,9 @@ const RenderedString& Window::getRenderedString() const
 {
     if (!d_renderedStringValid)
     {
+		// FIXME: Evil const cast!
         d_renderedString = getRenderedStringParser().parse(
-            getTextVisual(), 0, 0);
+            getTextVisual(), const_cast<Font*>(getFont()), 0);
         d_renderedStringValid = true;
     }
 
@@ -3830,22 +3755,14 @@ const Image* Window::property_getMouseCursor() const
 GUIContext& Window::getGUIContext() const
 {
     // GUIContext is always the one on the root window, we do not allow parts
-    // of a hierarchy to be drawn to separate contexts (which is not much of
+    // of a hierarchy to be drawn to seperate contexts (which is not much of
     // a limitation).
     //
     // ISSUE: if root has no GUIContext set for it, should we return 0 or
     //        System::getDefaultGUIContext?  Come to IRC and argue about it!
-    if (getParent() != 0)
-    {
-        return getParent()->getGUIContext();
-    }
-    else
-    {
-        if (d_guiContext)
-            return *d_guiContext;
-        else
-            return System::getSingleton().getDefaultGUIContext();
-    }
+    return getParent() ? getParent()->getGUIContext() :
+                         d_guiContext ? *d_guiContext :
+                                        System::getSingleton().getDefaultGUIContext();
 }
 
 //----------------------------------------------------------------------------//

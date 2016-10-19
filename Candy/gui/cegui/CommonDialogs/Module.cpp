@@ -24,9 +24,9 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowFactoryManager.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Controls.h"
+#include "CEGUI/WindowFactoryManager.h"
+#include "CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Controls.h"
 
 //----------------------------------------------------------------------------//
 extern "C"

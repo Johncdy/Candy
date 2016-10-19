@@ -28,7 +28,7 @@
 #ifndef _CEGUIOpenGLGeometryBuffer_h_
 #define _CEGUIOpenGLGeometryBuffer_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
+#include "CEGUI/RendererModules/OpenGL/GeometryBufferBase.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

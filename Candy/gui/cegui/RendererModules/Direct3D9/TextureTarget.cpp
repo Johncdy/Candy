@@ -24,14 +24,14 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Direct3D9/TextureTarget.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/Logger.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Direct3D9/Renderer.h"
-#include "gui/CEGUI/RendererModules/Direct3D9/Texture.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/RendererModules/Direct3D9/TextureTarget.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/Logger.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Direct3D9/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D9/Texture.h"
+#include "CEGUI/PropertyHelper.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

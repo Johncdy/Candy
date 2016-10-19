@@ -27,7 +27,7 @@
 #ifndef _CEGUIDirect3D9ViewportTarget_h_
 #define _CEGUIDirect3D9ViewportTarget_h_
 
-#include "gui/CEGUI/RendererModules/Direct3D9/RenderTarget.h"
+#include "CEGUI/RendererModules/Direct3D9/RenderTarget.h"
 #include "../../Rect.h"
 
 // Start of CEGUI namespace section

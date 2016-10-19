@@ -27,7 +27,7 @@
 #ifndef _CEGUIOpenGLRenderTarget_h_
 #define _CEGUIOpenGLRenderTarget_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
 #include "../../RenderTarget.h"
 #include "../../Rect.h"
 

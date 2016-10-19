@@ -25,22 +25,23 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GLRenderer.h"
-#include "gui/CEGUI/RendererModules/OpenGL/Texture.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/ImageCodec.h"
-#include "gui/CEGUI/DynamicModule.h"
-#include "gui/CEGUI/RendererModules/OpenGL/ViewportTarget.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h"
+#include <GL/glew.h>
 
-#include "gui/CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h"
+#include "CEGUI/RendererModules/OpenGL/GLRenderer.h"
+#include "CEGUI/RendererModules/OpenGL/Texture.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/ImageCodec.h"
+#include "CEGUI/DynamicModule.h"
+#include "CEGUI/RendererModules/OpenGL/ViewportTarget.h"
+#include "CEGUI/RendererModules/OpenGL/GLGeometryBuffer.h"
 
-#include "gui/CEGUI/System.h"
-#include "gui/CEGUI/DefaultResourceProvider.h"
-#include "gui/CEGUI/Logger.h"
+#include "CEGUI/RendererModules/OpenGL/GLFBOTextureTarget.h"
 
-#include "gui/CEGUI/RendererModules/OpenGL/GlmPimpl.h"
+#include "CEGUI/System.h"
+#include "CEGUI/DefaultResourceProvider.h"
+#include "CEGUI/Logger.h"
+
+#include "CEGUI/RendererModules/OpenGL/GlmPimpl.h"
 #include "glm/gtc/type_ptr.hpp"
 
 #include <sstream>
@@ -162,8 +163,7 @@ void OpenGLRenderer::destroy(OpenGLRenderer& renderer)
 }
 
 //----------------------------------------------------------------------------//
-OpenGLRenderer::OpenGLRenderer(const TextureTargetType tt_type) :
-    OpenGLRendererBase(false)
+OpenGLRenderer::OpenGLRenderer(const TextureTargetType tt_type)
 {
     initialiseRendererIDString();
     initialiseGLExtensions();
@@ -179,7 +179,7 @@ OpenGLRenderer::OpenGLRenderer(const TextureTargetType tt_type) :
 //----------------------------------------------------------------------------//
 OpenGLRenderer::OpenGLRenderer(const Sizef& display_size,
                                const TextureTargetType tt_type) :
-    OpenGLRendererBase(display_size, false)
+    OpenGLRendererBase(display_size)
 {
     initialiseRendererIDString();
     initialiseGLExtensions();
@@ -275,12 +275,12 @@ void OpenGLRenderer::endRendering()
 //----------------------------------------------------------------------------//
 void OpenGLRenderer::setupExtraStates()
 {
-    CEGUI_activeTexture(GL_TEXTURE0);
-    CEGUI_clientActiveTexture(GL_TEXTURE0);
-
     glMatrixMode(GL_TEXTURE);
     glPushMatrix();
     glLoadIdentity();
+
+    CEGUI_activeTexture(GL_TEXTURE0);
+    CEGUI_clientActiveTexture(GL_TEXTURE0);
 
     glPolygonMode(GL_FRONT, GL_FILL);
     glPolygonMode(GL_BACK, GL_FILL);
@@ -386,6 +386,17 @@ void OpenGLRenderer::setupRenderingBlendMode(const BlendMode mode,
 //----------------------------------------------------------------------------//
 void OpenGLRenderer::initialiseGLExtensions()
 {
+    // initialise GLEW
+    GLenum err = glewInit();
+    if (GLEW_OK != err)
+    {
+        std::ostringstream err_string;
+        err_string << "OpenGLRenderer failed to initialise the GLEW library. "
+        << glewGetErrorString(err);
+
+        CEGUI_THROW(RendererException(err_string.str().c_str()));
+    }
+
     // GL 1.3 has multi-texture support natively
     if (GLEW_VERSION_1_3)
     {
@@ -409,7 +420,7 @@ void OpenGLRenderer::initialiseGLExtensions()
 //----------------------------------------------------------------------------//
 bool OpenGLRenderer::isS3TCSupported() const
 {
-    return OpenGLInfo::getSingleton().isS3tcSupported();
+    return GLEW_EXT_texture_compression_s3tc > 0;
 }
 
 //----------------------------------------------------------------------------//

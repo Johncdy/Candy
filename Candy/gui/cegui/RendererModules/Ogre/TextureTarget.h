@@ -28,7 +28,7 @@
 #define _CEGUIOgreTextureTarget_h_
 
 #include "../../TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Ogre/RenderTarget.h"
+#include "CEGUI/RendererModules/Ogre/RenderTarget.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

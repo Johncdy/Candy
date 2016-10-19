@@ -27,9 +27,9 @@
 #ifndef _CEGUIIrrlichtTexture_h_
 #define _CEGUIIrrlichtTexture_h_
 
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/Renderer.h"
+#include "CEGUI/RendererModules/Irrlicht/Renderer.h"
 #include <string>
 
 namespace irr

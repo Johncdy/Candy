@@ -66,7 +66,6 @@ namespace CEGUI
         setClippedByParent(false);
         setDestroyedByParent(false);
         setAlwaysOnTop(true);
-        setMousePassThroughEnabled(true);
         
         // we need updates even when not visible
         setUpdateMode(WUM_ALWAYS);
@@ -147,7 +146,7 @@ namespace CEGUI
             }
 
             // set text to that of the tooltip text of the target
-            setText(wnd->getTooltipTextIncludingInheritance());
+            setText(wnd->getTooltipText());
 
             // set size and position of the tooltip window.
             sizeSelf();
@@ -238,7 +237,7 @@ namespace CEGUI
     void Tooltip::doActiveState(float elapsed)
     {
         // if no target, switch immediately to inactive state.
-        if (!d_target || d_target->getTooltipTextIncludingInheritance().empty())
+        if (!d_target || d_target->getTooltipText().empty())
         {
             // hide immediately since the text is empty
             hide();
@@ -255,7 +254,7 @@ namespace CEGUI
 
     void Tooltip::doInactiveState(float elapsed)
     {
-        if (d_target && !d_target->getTooltipTextIncludingInheritance().empty() && ((d_elapsed += elapsed) >= d_hoverTime))
+        if (d_target && !d_target->getTooltipText().empty() && ((d_elapsed += elapsed) >= d_hoverTime))
         {
             switchToActiveState();
         }

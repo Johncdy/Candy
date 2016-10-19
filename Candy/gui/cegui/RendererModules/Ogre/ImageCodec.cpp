@@ -24,9 +24,9 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Ogre/ImageCodec.h"
-#include "gui/CEGUI/RendererModules/Ogre/Texture.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/Ogre/ImageCodec.h"
+#include "CEGUI/RendererModules/Ogre/Texture.h"
+#include "CEGUI/Exceptions.h"
 #include <Ogre.h>
 
 // Start of CEGUI namespace section

@@ -28,17 +28,11 @@
 #define _CEGUIDirect3D10GeometryBuffer_h_
 
 #include "../../GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D10/Renderer.h"
 #include "../../Rect.h"
 #include "../../Quaternion.h"
 
-// Unfortunately, MinGW-w64 doesn't have <d3dx10.h>
-#ifdef __MINGW32__
-    #include <d3d10.h>
-    #include <d3dx9.h>
-#else
-    #include <d3dx10.h>
-#endif
+#include <d3dx10.h>
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

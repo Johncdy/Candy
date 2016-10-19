@@ -27,7 +27,7 @@
 #define _CEGUIDirect3D10RenderTarget_h_
 
 #include "../../RenderTarget.h"
-#include "gui/CEGUI/RendererModules/Direct3D11/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D11/Renderer.h"
 #include "../../Rect.h"
 #include <d3dx10.h>
 

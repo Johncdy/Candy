@@ -28,9 +28,9 @@
 # include "config.h"
 #endif
 
-#include "gui/CEGUI/RendererModules/Irrlicht/TextureTarget.h"
-#include "gui/CEGUI/RendererModules/Irrlicht/Texture.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/RendererModules/Irrlicht/TextureTarget.h"
+#include "CEGUI/RendererModules/Irrlicht/Texture.h"
+#include "CEGUI/PropertyHelper.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

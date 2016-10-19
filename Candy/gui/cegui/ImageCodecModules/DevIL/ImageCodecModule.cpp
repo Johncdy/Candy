@@ -26,7 +26,7 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/ImageCodecModules/DevIL/ImageCodecModule.h" 
+#include "CEGUI/ImageCodecModules/DevIL/ImageCodecModule.h" 
 
 
 CEGUI::ImageCodec* createImageCodec(void)

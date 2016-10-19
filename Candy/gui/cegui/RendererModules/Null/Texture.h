@@ -28,7 +28,7 @@
 #define _CEGUINullTexture_h_
 
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Null/Renderer.h"
+#include "CEGUI/RendererModules/Null/Renderer.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)

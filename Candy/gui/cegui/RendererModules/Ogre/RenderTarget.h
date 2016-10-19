@@ -28,7 +28,7 @@
 #define _CEGUIOgreRenderTarget_h_
 
 #include "../../RenderTarget.h"
-#include "gui/CEGUI/RendererModules/Ogre/Renderer.h"
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
 #include "../../Rect.h"
 #include <OgreMatrix4.h>
 
@@ -46,7 +46,6 @@ public:
     //! Destructor
     virtual ~OgreRenderTarget();
 
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     /*!
     \brief
         Set the underlying viewport area directly - bypassing what the
@@ -61,7 +60,6 @@ public:
         in future releases.
     */
     void setOgreViewportDimensions(const Rectf& area);
-#endif
 
     // implement parts of CEGUI::RenderTarget interface
     void draw(const GeometryBuffer& buffer);
@@ -78,10 +76,8 @@ protected:
     void updateMatrix() const;
     //! helper that initialises the viewport
     void updateViewport();
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     //! helper to update the actual Ogre viewport dimensions
     void updateOgreViewportDimensions(const Ogre::RenderTarget* const rt);
-#endif
 
     //! OgreRenderer object that owns this RenderTarget
     OgreRenderer& d_owner;
@@ -91,16 +87,8 @@ protected:
     Rectf d_area;
     //! Ogre render target that we are effectively wrapping
     Ogre::RenderTarget* d_renderTarget;
-#ifdef CEGUI_USE_OGRE_COMPOSITOR2
-    
-    //! Set when the workspace needs to switch render targets
-    bool d_renderTargetUpdated;
-
-#else
     //! Ogre viewport used for this target.
     Ogre::Viewport* d_viewport;
-#endif // CEGUI_USE_OGRE_COMPOSITOR2
-
     //! projection / view matrix cache
     mutable Ogre::Matrix4 d_matrix;
     //! true when d_matrix is valid and up to date
@@ -108,13 +96,9 @@ protected:
     //! tracks viewing distance (this is set up at the same time as d_matrix)
     mutable float d_viewDistance;
     //! true when d_viewport is up to date and valid.
-    //! \version Beginning from Ogre 2.0 this indicates whether the workspace is
-    //! up to date
     bool d_viewportValid;
-#if !defined(CEGUI_USE_OGRE_COMPOSITOR2)
     //! holds set Ogre viewport dimensions
     Rectf d_ogreViewportDimensions;
-#endif
 };
 
 } // End of  CEGUI namespace section

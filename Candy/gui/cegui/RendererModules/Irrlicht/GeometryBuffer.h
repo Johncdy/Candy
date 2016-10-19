@@ -27,10 +27,10 @@
 #ifndef _CEGUIIrrlichtGeometryBuffer_h_
 #define _CEGUIIrrlichtGeometryBuffer_h_
 
-#include "gui/CEGUI/RendererModules/Irrlicht/RendererDef.h"
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/Rect.h"
-#include "gui/CEGUI/Vector.h"
+#include "CEGUI/RendererModules/Irrlicht/RendererDef.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/Rect.h"
+#include "CEGUI/Vector.h"
 #include <irrlicht.h>
 #include <vector>
 

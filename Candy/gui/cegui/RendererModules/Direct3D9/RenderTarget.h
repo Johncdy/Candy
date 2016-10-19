@@ -27,7 +27,7 @@
 #ifndef _CEGUIDirect3D9RenderTarget_h_
 #define _CEGUIDirect3D9RenderTarget_h_
 
-#include "gui/CEGUI/RendererModules/Direct3D9/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D9/Renderer.h"
 #include "../../RenderTarget.h"
 #include "../../Rect.h"
 #include <d3dx9.h>

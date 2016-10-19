@@ -100,12 +100,6 @@ void FalagardComponentBase::setColours(const ColourRect& cols)
 }
 
 //----------------------------------------------------------------------------//
-const String& FalagardComponentBase::getColoursPropertySource() const
-{
-    return d_colourPropertyName;
-}
-
-//----------------------------------------------------------------------------//
 void FalagardComponentBase::setColoursPropertySource(const String& property)
 {
     d_colourPropertyName = property;

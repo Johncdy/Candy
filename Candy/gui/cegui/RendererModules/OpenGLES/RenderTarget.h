@@ -27,9 +27,9 @@
 #ifndef _CEGUIOpenGLESRenderTarget_h_
 #define _CEGUIOpenGLESRenderTarget_h_
 
-#include "gui/CEGUI/RendererModules/OpenGLES/Renderer.h"
-#include "gui/CEGUI/RenderTarget.h"
-#include "gui/CEGUI/Rect.h"
+#include "CEGUI/RendererModules/OpenGLES/Renderer.h"
+#include "CEGUI/RenderTarget.h"
+#include "CEGUI/Rect.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

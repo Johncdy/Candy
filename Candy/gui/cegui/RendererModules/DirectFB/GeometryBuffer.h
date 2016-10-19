@@ -27,9 +27,9 @@
 #ifndef _CEGUIDirectFBGeometryBuffer_h_
 #define _CEGUIDirectFBGeometryBuffer_h_
 
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/Rect.h"
-#include "gui/CEGUI/Quaternion.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/Rect.h"
+#include "CEGUI/Quaternion.h"
 #include <directfb.h>
 #include <vector>
 

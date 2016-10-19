@@ -23,8 +23,8 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Direct3D11/ViewportTarget.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/Direct3D11/ViewportTarget.h"
+#include "CEGUI/Exceptions.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

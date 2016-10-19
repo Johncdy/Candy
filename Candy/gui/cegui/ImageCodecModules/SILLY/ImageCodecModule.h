@@ -30,7 +30,7 @@
 #ifndef _CEGUISILLYImageCodecModule_h_
 #define _CEGUISILLYImageCodecModule_h_
 
-#include "gui/CEGUI/ImageCodecModules/SILLY/ImageCodec.h"
+#include "CEGUI/ImageCodecModules/SILLY/ImageCodec.h"
 
 /*! 
   \brief 

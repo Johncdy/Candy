@@ -28,8 +28,8 @@
 #ifndef _CEGUIOpenGL3StateChangeWrapper_h_
 #define _CEGUIOpenGL3StateChangeWrapper_h_
 
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GL3Renderer.h"
+#include "CEGUI/RendererModules/OpenGL/GL.h"
+#include "CEGUI/RendererModules/OpenGL/GL3Renderer.h"
 
 #if defined(_MSC_VER)
 #   pragma warning(push)
@@ -79,10 +79,10 @@ namespace CEGUI
             GLuint d_buffer;
         };
 
-public:
-
-    OpenGL3StateChangeWrapper();
+    public:
+    //! constructor.
     OpenGL3StateChangeWrapper(OpenGL3Renderer& owner);
+    //! destructor
     virtual ~OpenGL3StateChangeWrapper();
 
     void reset();

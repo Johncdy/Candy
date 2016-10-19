@@ -24,15 +24,15 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/Editbox.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/falagard/XMLEnumHelper.h"
-#include "gui/CEGUI/PropertyHelper.h"
-#include "gui/CEGUI/CoordConverter.h"
-#include "gui/CEGUI/Font.h"
-#include "gui/CEGUI/BidiVisualMapping.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/Editbox.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/falagard/XMLEnumHelper.h"
+#include "CEGUI/PropertyHelper.h"
+#include "CEGUI/CoordConverter.h"
+#include "CEGUI/Font.h"
+#include "CEGUI/BidiVisualMapping.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 
 #include <stdio.h>
 
@@ -42,11 +42,8 @@ namespace CEGUI
 //----------------------------------------------------------------------------//
 const String FalagardEditbox::TypeName("Core/Editbox");
 
-const String FalagardEditbox::UnselectedTextColourPropertyName( "NormalTextColour" );
-const String FalagardEditbox::SelectedTextColourPropertyName( "SelectedTextColour" );
-const String FalagardEditbox::ActiveSelectionColourPropertyName( "ActiveSelectionColour" );
-const String FalagardEditbox::InactiveSelectionColourPropertyName( "InactiveSelectionColour" );
-
+const String FalagardEditbox::UnselectedTextColourPropertyName("NormalTextColour");
+const String FalagardEditbox::SelectedTextColourPropertyName("SelectedTextColour");
 const float FalagardEditbox::DefaultCaretBlinkTimeout(0.66f);
 
 //----------------------------------------------------------------------------//
@@ -187,8 +184,6 @@ size_t FalagardEditbox::getCaretIndex(const String& visual_text) const
         if (!firstCharRtl)
             caretIndex--;
     }
-#else
-    CEGUI_UNUSED(visual_text);
 #endif
 
     return caretIndex;
@@ -381,11 +376,6 @@ void FalagardEditbox::renderTextBidi(const WidgetLookFeel& wlf,
 
         }
     }
-#else
-    CEGUI_UNUSED(wlf);
-    CEGUI_UNUSED(text);
-    CEGUI_UNUSED(text_area);
-    CEGUI_UNUSED(text_offset);
 #endif
 }
 

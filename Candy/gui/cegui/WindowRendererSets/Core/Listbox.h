@@ -27,8 +27,8 @@
 #ifndef _FalListbox_h_
 #define _FalListbox_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/Listbox.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/Listbox.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

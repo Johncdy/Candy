@@ -26,29 +26,29 @@
 *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 *   OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************/
-#include "gui/CEGUI/widgets/PushButton.h"
-#include "gui/CEGUI/widgets/Editbox.h"
-#include "gui/CEGUI/widgets/RadioButton.h"
-#include "gui/CEGUI/widgets/Titlebar.h"
-#include "gui/CEGUI/widgets/Slider.h"
-#include "gui/CEGUI/widgets/Thumb.h"
+#include "CEGUI/widgets/PushButton.h"
+#include "CEGUI/widgets/Editbox.h"
+#include "CEGUI/widgets/RadioButton.h"
+#include "CEGUI/widgets/Titlebar.h"
+#include "CEGUI/widgets/Slider.h"
+#include "CEGUI/widgets/Thumb.h"
 
-#include "gui/CEGUI/MouseCursor.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/Exceptions.h"
-#include "gui/CEGUI/ImageManager.h"
-#include "gui/CEGUI/BasicImage.h"
-#include "gui/CEGUI/CoordConverter.h"
+#include "CEGUI/MouseCursor.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/Exceptions.h"
+#include "CEGUI/ImageManager.h"
+#include "CEGUI/BasicImage.h"
+#include "CEGUI/CoordConverter.h"
 
-#include "gui/CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Controls.h"
-#include "gui/CEGUI/CommonDialogs/ColourPicker/Conversions.h"
+#include "CEGUI/CommonDialogs/ColourPicker/ColourPicker.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Controls.h"
+#include "CEGUI/CommonDialogs/ColourPicker/Conversions.h"
 
-#include "gui/CEGUI/TextureTarget.h"
-#include "gui/CEGUI/Texture.h"
-#include "gui/CEGUI/PropertyHelper.h"
+#include "CEGUI/TextureTarget.h"
+#include "CEGUI/Texture.h"
+#include "CEGUI/PropertyHelper.h"
 
-#include "gui/CEGUI/RegexMatcher.h"
+#include "CEGUI/RegexMatcher.h"
 
 #include <sstream>
 #include <algorithm>
@@ -242,8 +242,8 @@ HSV_Colour ColourPickerControls::getColourPickingPositionColourHSV(float xAbs,
 //----------------------------------------------------------------------------//
 Vector2f ColourPickerControls::getColourPickingColourPosition()
 {
-    float x = 0.0f;
-    float y = 0.0f;
+    float x;
+    float y;
 
     switch (d_sliderMode)
     {
@@ -1467,7 +1467,7 @@ void ColourPickerControls::refreshColourSliderPosition()
     }
 
     float value = PropertyHelper<float>::fromString(editboxText);
-    float sliderValue = 0.0f;
+    float sliderValue;
 
     switch (d_sliderMode)
     {

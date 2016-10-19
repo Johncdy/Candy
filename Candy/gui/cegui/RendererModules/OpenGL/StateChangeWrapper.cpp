@@ -24,8 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/RendererModules/OpenGL/StateChangeWrapper.h"  
+
+#include <GL/glew.h>
+
+#include "CEGUI/RendererModules/OpenGL/StateChangeWrapper.h"  
 
 namespace CEGUI
 {
@@ -124,16 +126,16 @@ namespace CEGUI
         return equal;
     }
 
-OpenGL3StateChangeWrapper::OpenGL3StateChangeWrapper()
+
+
+
+
+//! constructor.
+OpenGL3StateChangeWrapper::OpenGL3StateChangeWrapper(OpenGL3Renderer& owner)
 {
     reset();
 }
-
-OpenGL3StateChangeWrapper::OpenGL3StateChangeWrapper(OpenGL3Renderer& /*owner*/)
-{
-    reset();
-}
-
+//! destructor
 OpenGL3StateChangeWrapper::~OpenGL3StateChangeWrapper()
 {
 }
@@ -155,8 +157,8 @@ void OpenGL3StateChangeWrapper::bindVertexArray(GLuint vertexArray)
         glBindVertexArray(vertexArray);
         d_vertexArrayObject = vertexArray;
     }
-}
 
+}
 void OpenGL3StateChangeWrapper::blendFunc(GLenum sfactor, GLenum dfactor)
 {
     bool callIsRedundant = d_blendFuncParams.equal(sfactor, dfactor);

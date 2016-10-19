@@ -27,7 +27,7 @@
 #ifndef _CEGUIDirect3D9TextureTarget_h_
 #define _CEGUIDirect3D9TextureTarget_h_
 
-#include "gui/CEGUI/RendererModules/Direct3D9/RenderTarget.h"
+#include "CEGUI/RendererModules/Direct3D9/RenderTarget.h"
 #include "../../TextureTarget.h"
 #include <d3d9.h>
 

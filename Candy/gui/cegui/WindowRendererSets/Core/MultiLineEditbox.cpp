@@ -24,14 +24,14 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/MultiLineEditbox.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/widgets/Scrollbar.h"
-#include "gui/CEGUI/PropertyHelper.h"
-#include "gui/CEGUI/Image.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/MultiLineEditbox.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/widgets/Scrollbar.h"
+#include "CEGUI/PropertyHelper.h"
+#include "CEGUI/Image.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

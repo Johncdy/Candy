@@ -24,18 +24,18 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGL/ViewportTarget.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGL/GL.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/OpenGL/ViewportTarget.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGL/GL.h"
+#include "CEGUI/Exceptions.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI
 {
 //----------------------------------------------------------------------------//
 OpenGLViewportTarget::OpenGLViewportTarget(OpenGLRendererBase& owner) :
-    OpenGLRenderTarget<RenderTarget>(owner)
+    OpenGLRenderTarget<>(owner)
 {
     // viewport area defaults to whatever the current OpenGL viewport is set to
     GLint vp[4];
@@ -50,14 +50,9 @@ OpenGLViewportTarget::OpenGLViewportTarget(OpenGLRendererBase& owner) :
 //----------------------------------------------------------------------------//
 OpenGLViewportTarget::OpenGLViewportTarget(OpenGLRendererBase& owner,
     const Rectf& area) :
-        OpenGLRenderTarget<RenderTarget>(owner)
+        OpenGLRenderTarget<>(owner)
 {
     setArea(area);
-}
-
-//----------------------------------------------------------------------------//
-OpenGLViewportTarget::~OpenGLViewportTarget()
-{
 }
 
 //----------------------------------------------------------------------------//

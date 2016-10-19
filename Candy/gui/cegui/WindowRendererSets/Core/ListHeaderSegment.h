@@ -27,7 +27,7 @@
 #ifndef _FalListHeaderSegment_h_
 #define _FalListHeaderSegment_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

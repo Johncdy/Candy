@@ -30,7 +30,7 @@
 #ifndef _CEGUICoronaImageCodecModule_h_
 #define _CEGUICoronaImageCodecModule_h_
 
-#include "gui/CEGUI/ImageCodecModules/Corona/ImageCodec.h"
+#include "CEGUI/ImageCodecModules/Corona/ImageCodec.h"
 
 /*! 
   \brief 

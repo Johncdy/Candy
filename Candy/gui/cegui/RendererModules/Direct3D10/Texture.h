@@ -28,7 +28,7 @@
 #define _CEGUIDirect3D10Texture_h_
 
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Direct3D10/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D10/Renderer.h"
 #include "../../Size.h"
 #include "../../Vector.h"
 

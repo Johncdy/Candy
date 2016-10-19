@@ -24,14 +24,14 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/WindowRendererSets/Core/Scrollbar.h"
-#include "gui/CEGUI/falagard/WidgetLookManager.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
-#include "gui/CEGUI/WindowManager.h"
-#include "gui/CEGUI/CoordConverter.h"
-#include "gui/CEGUI/widgets/Thumb.h"
-#include "gui/CEGUI/widgets/PushButton.h"
-#include "gui/CEGUI/TplWindowRendererProperty.h"
+#include "CEGUI/WindowRendererSets/Core/Scrollbar.h"
+#include "CEGUI/falagard/WidgetLookManager.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowManager.h"
+#include "CEGUI/CoordConverter.h"
+#include "CEGUI/widgets/Thumb.h"
+#include "CEGUI/widgets/PushButton.h"
+#include "CEGUI/TplWindowRendererProperty.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

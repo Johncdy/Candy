@@ -30,7 +30,7 @@
 #include "../../Base.h"
 #include "../../Renderer.h"
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/OpenGL/RendererBase.h"
+#include "CEGUI/RendererModules/OpenGL/RendererBase.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)
@@ -142,8 +142,6 @@ protected:
     //! clean up the GL texture, or the grab buffer if it had been grabbed
     void cleanupOpenGLTexture();
 
-    GLint internalFormat() const;
-
     //! initialise the internal format flags for the given CEGUI::PixelFormat.
     void initInternalPixelFormatFields(const PixelFormat fmt);
 
@@ -164,7 +162,7 @@ protected:
     Sizef d_size;
     //! cached image data for restoring the texture.
     uint8* d_grabBuffer;
-    //! original size of pixel data loaded into texture
+    //! original pixel of size data loaded into texture
     Sizef d_dataSize;
     //! cached pixel to texel mapping scale values.
     Vector2f d_texelScaling;

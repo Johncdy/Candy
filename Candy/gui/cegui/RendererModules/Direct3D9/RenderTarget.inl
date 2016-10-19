@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Direct3D9/RenderTarget.h"
-#include "gui/CEGUI/RendererModules/Direct3D9/GeometryBuffer.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/Exceptions.h"
+#include "CEGUI/RendererModules/Direct3D9/RenderTarget.h"
+#include "CEGUI/RendererModules/Direct3D9/GeometryBuffer.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/Exceptions.h"
 #include <d3dx9.h>
 
 // Start of CEGUI namespace section
@@ -39,8 +39,8 @@ Direct3D9RenderTarget<T>::Direct3D9RenderTarget(Direct3D9Renderer& owner) :
     d_owner(owner),
     d_device(owner.getDevice()),
     d_area(0, 0, 0, 0),
-    d_matrixValid(false),
-    d_viewDistance(0)
+    d_viewDistance(0),
+    d_matrixValid(false)
 {
 }
 

@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/Null/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/Null/Texture.h"
-#include "gui/CEGUI/Vertex.h"
-#include "gui/CEGUI/RenderEffect.h"
+#include "CEGUI/RendererModules/Null/GeometryBuffer.h"
+#include "CEGUI/RendererModules/Null/Texture.h"
+#include "CEGUI/Vertex.h"
+#include "CEGUI/RenderEffect.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

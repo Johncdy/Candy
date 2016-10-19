@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/OpenGLES/RenderTarget.h"
-#include "gui/CEGUI/RenderQueue.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
-#include "gui/CEGUI/RendererModules/OpenGLES/GLES.h"
+#include "CEGUI/RendererModules/OpenGLES/RenderTarget.h"
+#include "CEGUI/RenderQueue.h"
+#include "CEGUI/RendererModules/OpenGLES/GeometryBuffer.h"
+#include "CEGUI/RendererModules/OpenGLES/GLES.h"
 #include <cmath>
 
 // Start of CEGUI namespace section

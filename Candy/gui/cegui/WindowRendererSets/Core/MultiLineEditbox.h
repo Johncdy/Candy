@@ -27,8 +27,8 @@
 #ifndef _FalMultiLineEditbox_h_
 #define _FalMultiLineEditbox_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/MultiLineEditbox.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/MultiLineEditbox.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)
@@ -74,13 +74,13 @@ class COREWRSET_API FalagardMultiLineEditbox : public MultiLineEditboxWindowRend
 public:
     static const String TypeName;     //! type name for this widget.
 
-    //! Name of the optional property to access for the unselected text colour.
+    //! Name of property to use to obtain unselected text rendering colour.
     static const String UnselectedTextColourPropertyName;
-    //! Name of the optional property to access for the selected text colour.
+    //! Name of property to use to obtain selected text rendering colour.
     static const String SelectedTextColourPropertyName;
-    //! Name of the optional property to access to obtain active selection rendering colour.
+    //! Name of property to use to obtain active selection rendering colour.
     static const String ActiveSelectionColourPropertyName;
-    //! Name of the optional property to access to obtain inactive selection rendering colour.
+    //! Name of property to use to obtain inactive selection rendering colour.
     static const String InactiveSelectionColourPropertyName;
     //! The default timeout (in seconds) used when blinking the caret.
     static const float DefaultCaretBlinkTimeout;

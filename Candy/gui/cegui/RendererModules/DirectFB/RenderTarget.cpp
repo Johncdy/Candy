@@ -24,10 +24,10 @@
  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  *   OTHER DEALINGS IN THE SOFTWARE.
  ***************************************************************************/
-#include "gui/CEGUI/RendererModules/DirectFB/RenderTarget.h"
-#include "gui/CEGUI/RendererModules/DirectFB/Renderer.h"
-#include "gui/CEGUI/RendererModules/DirectFB/GeometryBuffer.h"
-#include "gui/CEGUI/RenderQueue.h"
+#include "CEGUI/RendererModules/DirectFB/RenderTarget.h"
+#include "CEGUI/RendererModules/DirectFB/Renderer.h"
+#include "CEGUI/RendererModules/DirectFB/GeometryBuffer.h"
+#include "CEGUI/RenderQueue.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

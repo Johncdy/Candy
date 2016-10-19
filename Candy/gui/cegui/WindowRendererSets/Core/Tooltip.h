@@ -27,8 +27,8 @@
 #ifndef _FalTooltip_h_
 #define _FalTooltip_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/Tooltip.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/Tooltip.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

@@ -27,9 +27,9 @@
 #ifndef _FalListHeader_h_
 #define _FalListHeader_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
-#include "gui/CEGUI/widgets/ListHeader.h"
-#include "gui/CEGUI/falagard/WidgetLookFeel.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/widgets/ListHeader.h"
+#include "CEGUI/falagard/WidgetLookFeel.h"
 
 #if defined(_MSC_VER)
 #	pragma warning(push)

@@ -27,7 +27,7 @@
 #ifndef _FalDefault_h_
 #define _FalDefault_h_
 
-#include "gui/CEGUI/WindowRendererSets/Core/Module.h"
+#include "CEGUI/WindowRendererSets/Core/Module.h"
 
 // Start of CEGUI namespace section
 namespace CEGUI

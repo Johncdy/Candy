@@ -27,7 +27,7 @@
 #define _CEGUIDirect3D11Texture_h_
 
 #include "../../Texture.h"
-#include "gui/CEGUI/RendererModules/Direct3D11/Renderer.h"
+#include "CEGUI/RendererModules/Direct3D11/Renderer.h"
 #include "../../Size.h"
 #include "../../Vector.h"
 
