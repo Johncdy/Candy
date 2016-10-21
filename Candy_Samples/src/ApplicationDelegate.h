@@ -19,6 +19,11 @@ public:
     virtual ~ApplicationDelegate();
     
     /**
+     Set OpenGL context attribution.
+     */
+    virtual void initGLContextAttrs();
+    
+    /**
      Application init function, include scene and config.
      
      @return    true    Init success, app can start.

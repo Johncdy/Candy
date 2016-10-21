@@ -19,6 +19,12 @@ inline Size::Size(float w, float h)
 {
 }
 
+inline void Size::set(float w, float h)
+{
+    this->_width = w;
+    this->_height = h;
+}
+
 inline const Size& Size::operator=(const Size &other)
 {
     this->_width = other._width;

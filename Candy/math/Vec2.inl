@@ -19,6 +19,12 @@ inline Vec2::Vec2(float x, float y)
 {
 }
 
+inline void Vec2::set(float x, float y)
+{
+    this->_x = x;
+    this->_y = y;
+}
+
 inline const Vec2& Vec2::operator= (const Vec2 &other)
 {
     this->_x = other._x;

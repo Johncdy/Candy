@@ -36,6 +36,16 @@ public:
      */
     inline const Rect& operator= (const Rect& other);
     
+    /**
+     Setter of a rect.
+     
+     @param x      The x coordinate.
+     @param y      The y coordinate.
+     @param width  The width of rect.
+     @param height The height of rect.
+     */
+    inline void set(float x, float y, float width, float height);
+    
 public:
     // Low left point of rect.
     Vec2 _origin;

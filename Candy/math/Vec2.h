@@ -25,6 +25,14 @@ public:
     inline Vec2(float x, float y);
     
     /**
+     Setter of a Vec2.
+     
+     @param x   The x coordinate.
+     @param y   The y coordinate.
+     */
+    inline void set(float x, float y);
+    
+    /**
      Operator equal.
 
      @param other Refrence from other vec2.

@@ -25,6 +25,14 @@ public:
     inline Size(float w, float h);
     
     /**
+     Setter of Size.
+     
+     @param w   The width of size.
+     @param h  The height of size.
+     */
+    inline void set(float w, float h);
+    
+    /**
      Operator equal.
 
      @param other Refrence from other size.

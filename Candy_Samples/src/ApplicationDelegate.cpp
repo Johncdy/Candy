@@ -18,8 +18,19 @@ ApplicationDelegate::~ApplicationDelegate()
 {
 }
 
+void ApplicationDelegate::initGLContextAttrs()
+{
+    GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8};
+    GLView::setGLConextAttrs(glContextAttrs);
+}
+
 bool ApplicationDelegate::init()
 {
+    initGLContextAttrs();
+    
+    auto glview = GLView::create("Candy", candy::Rect(0, 0, 640, 480));
+    glview->setDesignResolutionSize(640, 480, ResolutionPolicy::NO_BORDER);
+    
     return true;
 }
 

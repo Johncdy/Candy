@@ -26,6 +26,14 @@ inline const Rect& Rect::operator=(const Rect &other)
     return *this;
 }
 
+inline void Rect::set(float x, float y, float width, float height)
+{
+    this->_origin._x = x;
+    this->_origin._y = y;
+    this->_size._width = width;
+    this->_size._height = height;
+}
+
 NS_DY_END
 
 #endif /* Rect_inl */

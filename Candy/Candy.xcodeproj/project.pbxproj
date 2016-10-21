@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A129CBEE1DB4BD9000DE6DBC /* glfw3.h in Headers */ = {isa = PBXBuildFile; fileRef = A129CBEC1DB4BD9000DE6DBC /* glfw3.h */; };
-		A129CBEF1DB4BD9000DE6DBC /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A129CBED1DB4BD9000DE6DBC /* glfw3native.h */; };
 		A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
 		A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
 		A13F18B01DA788D5006E9019 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18AD1DA788D5006E9019 /* Ref.h */; };
@@ -25,7 +23,6 @@
 		A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BFB1D99149100AC5FE2 /* Application_Mac.h */; };
 		A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BFF1D991E5F00AC5FE2 /* ApplicationProtocol.h */; };
 		A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C011D9921F800AC5FE2 /* PlatformMacros.h */; };
-		A1645C181D99457C00AC5FE2 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C151D99457C00AC5FE2 /* libglfw3.a */; };
 		A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C271D9A105100AC5FE2 /* CandyMacros.h */; };
 		A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2B1D9A127000AC5FE2 /* platform.h */; };
 		A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C2D1D9A154700AC5FE2 /* Candy.h */; };
@@ -41,6 +38,10 @@
 		A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C521D9BC95D00AC5FE2 /* Rect.cpp */; };
 		A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1645C521D9BC95D00AC5FE2 /* Rect.cpp */; };
 		A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645C531D9BC95D00AC5FE2 /* Rect.h */; };
+		A177B0FA1DBA102500981949 /* glfw3.h in Headers */ = {isa = PBXBuildFile; fileRef = A177B0F51DBA102500981949 /* glfw3.h */; };
+		A177B0FB1DBA102500981949 /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A177B0F61DBA102500981949 /* glfw3native.h */; };
+		A177B0FC1DBA102500981949 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0F81DBA102500981949 /* libglfw3.a */; };
+		A177B0FD1DBA102500981949 /* libglfw3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0F91DBA102500981949 /* libglfw3.dylib */; };
 		A18F80821DB715630080AFE2 /* ApplePBTextureTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */; };
 		A18F80831DB715630080AFE2 /* ApplePBTextureTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */; };
 		A18F80841DB715630080AFE2 /* GeometryBufferBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F805B1DB715630080AFE2 /* GeometryBufferBase.cpp */; };
@@ -801,8 +802,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A129CBEC1DB4BD9000DE6DBC /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
-		A129CBED1DB4BD9000DE6DBC /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
@@ -822,7 +821,6 @@
 		A1645BFB1D99149100AC5FE2 /* Application_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application_Mac.h; sourceTree = "<group>"; };
 		A1645BFF1D991E5F00AC5FE2 /* ApplicationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationProtocol.h; path = platform/ApplicationProtocol.h; sourceTree = "<group>"; };
 		A1645C011D9921F800AC5FE2 /* PlatformMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformMacros.h; path = platform/PlatformMacros.h; sourceTree = "<group>"; };
-		A1645C151D99457C00AC5FE2 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		A1645C271D9A105100AC5FE2 /* CandyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandyMacros.h; path = include/CandyMacros.h; sourceTree = "<group>"; };
 		A1645C2B1D9A127000AC5FE2 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform.h; path = platform/platform.h; sourceTree = "<group>"; };
 		A1645C2D1D9A154700AC5FE2 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candy.h; path = include/Candy.h; sourceTree = "<group>"; };
@@ -837,6 +835,10 @@
 		A1645C4E1D9BC94500AC5FE2 /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Size.h; path = math/Size.h; sourceTree = "<group>"; };
 		A1645C521D9BC95D00AC5FE2 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rect.cpp; path = math/Rect.cpp; sourceTree = "<group>"; };
 		A1645C531D9BC95D00AC5FE2 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rect.h; path = math/Rect.h; sourceTree = "<group>"; };
+		A177B0F51DBA102500981949 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		A177B0F61DBA102500981949 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		A177B0F81DBA102500981949 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		A177B0F91DBA102500981949 /* libglfw3.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.dylib; sourceTree = "<group>"; };
 		A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIOpenGLRenderer Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplePBTextureTarget.cpp; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.cpp; sourceTree = "<group>"; };
 		A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplePBTextureTarget.h; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h; sourceTree = "<group>"; };
@@ -1656,7 +1658,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1645C181D99457C00AC5FE2 /* libglfw3.a in Frameworks */,
+				A177B0FD1DBA102500981949 /* libglfw3.dylib in Frameworks */,
+				A177B0FC1DBA102500981949 /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1724,15 +1727,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A129CBEB1DB4BD9000DE6DBC /* GLFW */ = {
-			isa = PBXGroup;
-			children = (
-				A129CBEC1DB4BD9000DE6DBC /* glfw3.h */,
-				A129CBED1DB4BD9000DE6DBC /* glfw3native.h */,
-			);
-			path = GLFW;
-			sourceTree = "<group>";
-		};
 		A13E1BA41D8E8D530097E85B = {
 			isa = PBXGroup;
 			children = (
@@ -1793,35 +1787,9 @@
 		A1645C041D993ECE00AC5FE2 /* glfw3 */ = {
 			isa = PBXGroup;
 			children = (
-				A1645C101D99457C00AC5FE2 /* mac */,
+				A177B0F31DBA102500981949 /* mac */,
 			);
 			name = glfw3;
-			sourceTree = "<group>";
-		};
-		A1645C101D99457C00AC5FE2 /* mac */ = {
-			isa = PBXGroup;
-			children = (
-				A1645C111D99457C00AC5FE2 /* include */,
-				A1645C141D99457C00AC5FE2 /* libs */,
-			);
-			name = mac;
-			path = external/glfw/mac;
-			sourceTree = "<group>";
-		};
-		A1645C111D99457C00AC5FE2 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A129CBEB1DB4BD9000DE6DBC /* GLFW */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A1645C141D99457C00AC5FE2 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				A1645C151D99457C00AC5FE2 /* libglfw3.a */,
-			);
-			path = libs;
 			sourceTree = "<group>";
 		};
 		A1645C221D994F7300AC5FE2 /* include */ = {
@@ -1859,6 +1827,34 @@
 				A13F18AA1DA750E6006E9019 /* Rect.inl */,
 			);
 			name = math;
+			sourceTree = "<group>";
+		};
+		A177B0F31DBA102500981949 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				A177B0F41DBA102500981949 /* include */,
+				A177B0F71DBA102500981949 /* libs */,
+			);
+			name = mac;
+			path = external/glfw3/mac;
+			sourceTree = "<group>";
+		};
+		A177B0F41DBA102500981949 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A177B0F51DBA102500981949 /* glfw3.h */,
+				A177B0F61DBA102500981949 /* glfw3native.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A177B0F71DBA102500981949 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A177B0F81DBA102500981949 /* libglfw3.a */,
+				A177B0F91DBA102500981949 /* libglfw3.dylib */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 		A178E3E31D98C4A8006D2DC8 /* platform */ = {
@@ -2987,8 +2983,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A129CBEE1DB4BD9000DE6DBC /* glfw3.h in Headers */,
-				A129CBEF1DB4BD9000DE6DBC /* glfw3native.h in Headers */,
+				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
+				A177B0FA1DBA102500981949 /* glfw3.h in Headers */,
 				A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
@@ -4189,6 +4185,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/external/glfw/mac/libs",
+					"$(PROJECT_DIR)/external/glfw3/mac/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -4204,7 +4201,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include/GLFW";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4234,6 +4231,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/external/glfw/mac/libs",
+					"$(PROJECT_DIR)/external/glfw3/mac/libs",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -4249,7 +4247,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/external/glfw/mac/include/GLFW";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4876,6 +4874,7 @@
 				A18F80071DB7151E0080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18F82231DB71D4F0080AFE2 /* Build configuration list for PBXNativeTarget "CEGUIExpatParser Mac" */ = {
 			isa = XCConfigurationList;
@@ -4884,6 +4883,7 @@
 				A18F82251DB71D4F0080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18F82331DB71E740080AFE2 /* Build configuration list for PBXNativeTarget "CEGUILibXMLParser Mac" */ = {
 			isa = XCConfigurationList;
@@ -4892,6 +4892,7 @@
 				A18F82351DB71E740080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18F824C1DB724520080AFE2 /* Build configuration list for PBXNativeTarget "CEGUIFreeImageImageCodec Mac" */ = {
 			isa = XCConfigurationList;
@@ -4900,6 +4901,7 @@
 				A18F824E1DB724520080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18F82661DB725F30080AFE2 /* Build configuration list for PBXNativeTarget "CEGUICoreWindowRendererSet Mac" */ = {
 			isa = XCConfigurationList;
@@ -4908,6 +4910,7 @@
 				A18F82681DB725F30080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A18F82E71DB7486C0080AFE2 /* Build configuration list for PBXNativeTarget "CEGUICommonDialogs Mac" */ = {
 			isa = XCConfigurationList;
@@ -4916,6 +4919,7 @@
 				A18F82E91DB7486C0080AFE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A19F45311DB63E5800E908D1 /* Build configuration list for PBXNativeTarget "CEGUIBase Mac" */ = {
 			isa = XCConfigurationList;

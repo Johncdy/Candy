@@ -14,6 +14,7 @@
 
 #if (DY_TARGET_PLATFORM == DY_PLATFORM_MAC)
     #include "platform/Mac/Application_Mac.h"
+    #include "platform/Mac/GLView_Mac.h"
 #endif // DY_TARGET_PLATFORM == DY_PLATFORM_MAC
 
 #endif /* platform_h */

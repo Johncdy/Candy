@@ -13,8 +13,6 @@
 #include "platform/Application.h"
 #include "platform/Mac/GLView_Mac.h"
 
-#include "glfw3.h"
-
 #include <assert.h>
 
 NS_DY_BEGIN
@@ -41,7 +39,10 @@ Application* Application::getInstance()
 
 int Application::run()
 {
-    auto view = GLView::create("Candy", Rect(0, 0, 640, 480));
+    if (!init()) {
+        return 1;
+    }
+    
     
     return 0;
 }

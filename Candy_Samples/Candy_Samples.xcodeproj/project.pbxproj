@@ -40,6 +40,55 @@
 			remoteGlobalIDString = A13E1BAE1D8E912F0097E85B;
 			remoteInfo = "Candy Mac";
 		};
+		A177B0DD1DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A19F45301DB63E5700E908D1;
+			remoteInfo = "CEGUIBase Mac";
+		};
+		A177B0DF1DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F80041DB7151E0080AFE2;
+			remoteInfo = "CEGUIOpenGLRenderer Mac";
+		};
+		A177B0E11DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F82221DB71D4E0080AFE2;
+			remoteInfo = "CEGUIExpatParser Mac";
+		};
+		A177B0E31DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F82321DB71E740080AFE2;
+			remoteInfo = "CEGUILibXMLParser Mac";
+		};
+		A177B0E51DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F824B1DB724520080AFE2;
+			remoteInfo = "CEGUIFreeImageImageCodec Mac";
+		};
+		A177B0E71DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F82651DB725F30080AFE2;
+			remoteInfo = "CEGUICoreWindowRendererSet Mac";
+		};
+		A177B0E91DBA0EB700981949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A18F82E61DB7486B0080AFE2;
+			remoteInfo = "CEGUICommonDialogs Mac";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +157,13 @@
 			children = (
 				A1645BEB1D99093000AC5FE2 /* libCandy Mac.a */,
 				A1645BED1D99093000AC5FE2 /* libCandy iOS.a */,
+				A177B0DE1DBA0EB700981949 /* libCEGUIBase Mac.a */,
+				A177B0E01DBA0EB700981949 /* libCEGUIOpenGLRenderer Mac.a */,
+				A177B0E21DBA0EB700981949 /* libCEGUIExpatParser Mac.a */,
+				A177B0E41DBA0EB700981949 /* libCEGUILibXMLParser Mac.a */,
+				A177B0E61DBA0EB700981949 /* libCEGUIFreeImageImageCodec Mac.a */,
+				A177B0E81DBA0EB700981949 /* libCEGUICoreWindowRendererSet Mac.a */,
+				A177B0EA1DBA0EB700981949 /* libCEGUICommonDialogs Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +262,55 @@
 			fileType = archive.ar;
 			path = "libCandy iOS.a";
 			remoteRef = A1645BEC1D99093000AC5FE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0DE1DBA0EB700981949 /* libCEGUIBase Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUIBase Mac.a";
+			remoteRef = A177B0DD1DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0E01DBA0EB700981949 /* libCEGUIOpenGLRenderer Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUIOpenGLRenderer Mac.a";
+			remoteRef = A177B0DF1DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0E21DBA0EB700981949 /* libCEGUIExpatParser Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUIExpatParser Mac.a";
+			remoteRef = A177B0E11DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0E41DBA0EB700981949 /* libCEGUILibXMLParser Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUILibXMLParser Mac.a";
+			remoteRef = A177B0E31DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0E61DBA0EB700981949 /* libCEGUIFreeImageImageCodec Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUIFreeImageImageCodec Mac.a";
+			remoteRef = A177B0E51DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0E81DBA0EB700981949 /* libCEGUICoreWindowRendererSet Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUICoreWindowRendererSet Mac.a";
+			remoteRef = A177B0E71DBA0EB700981949 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A177B0EA1DBA0EB700981949 /* libCEGUICommonDialogs Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCEGUICommonDialogs Mac.a";
+			remoteRef = A177B0E91DBA0EB700981949 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

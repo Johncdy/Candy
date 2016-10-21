@@ -24,7 +24,6 @@ public:
     
     virtual ~Application();
     
-    
     /**
      Get current application instance.
      
