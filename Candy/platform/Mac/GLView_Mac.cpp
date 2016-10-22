@@ -130,29 +130,6 @@ bool GLView::init(const std::string &viewName, Rect rect, float frameZoomFactor,
     
     setFrameSize(rect._size._width, rect._size._height);
     
-//    while (!glfwWindowShouldClose(_window))
-//    {
-//        /* Draw a triangle */
-//        glBegin(GL_TRIANGLES);
-//        
-//        glColor3f(1.0, 0.0, 0.0);    // Red
-//        glVertex3f(0.0, 1.0, 0.0);
-//        
-//        glColor3f(0.0, 1.0, 0.0);    // Green
-//        glVertex3f(-1.0, -1.0, 0.0);
-//        
-//        glColor3f(0.0, 0.0, 1.0);    // Blue
-//        glVertex3f(1.0, -1.0, 0.0);
-//        
-//        glEnd();
-//        
-//        /* Swap front and back buffers */
-//        glfwSwapBuffers(_window);
-//        
-//        /* Poll for and process events */
-//        glfwPollEvents();
-//    }
-    
     return true;
 }
 
@@ -210,6 +187,27 @@ void GLView::setDesignResolutionSize(float width, float height, ResolutionPolicy
     _viewPort.set(0, 0, _viewW, _viewH);
     
     glViewport(0, 0, _frameSize._width, _frameSize._height);
+}
+
+bool GLView::windowShouldClose()
+{
+    if (_window) {
+        return glfwWindowShouldClose(_window) ? true : false;
+    } else {
+        return true;
+    }
+}
+
+void GLView::swapBuffers()
+{
+    if (_window) {
+        glfwSwapBuffers(_window);
+    }
+}
+
+void GLView::pollEvents()
+{
+    glfwPollEvents();
 }
 
 void GLView::onGLFWError(int errorID, const char* errorDesc)

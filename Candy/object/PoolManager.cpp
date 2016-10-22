@@ -22,7 +22,7 @@ PoolManager* PoolManager::getInstance()
     if (nullptr == _singleInstance) {
         _singleInstance = new (std::nothrow) PoolManager();
         
-        assert(_singleInstance != nullptr);
+        assert(_singleInstance);
         
         new (std::nothrow) ObjectPool(1);
     }

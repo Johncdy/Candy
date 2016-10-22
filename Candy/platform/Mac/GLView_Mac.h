@@ -142,6 +142,23 @@ public:
      */
     void setDesignResolutionSize(float width, float height, ResolutionPolicy resolutionPolicy);
     
+    /**
+     GLView window should close.
+
+     @return bool
+     */
+    bool windowShouldClose();
+    
+    /**
+     Swap buffer.
+     */
+    void swapBuffers();
+    
+    /**
+     Poll Events.
+     */
+    void pollEvents();
+    
     // GLFWEventHandler callbacks
     void onGLFWError(int errorID, const char* errorDesc);
     

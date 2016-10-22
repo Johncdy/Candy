@@ -13,5 +13,5 @@ NS_DY_USE
 int main(int argc, char** argv)
 {
     ApplicationDelegate app;
-    return Application::getInstance()->run();
+    return app.run();
 }

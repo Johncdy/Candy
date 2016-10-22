@@ -11,7 +11,7 @@
 
 #include "include/Candy.h"
 
-class ApplicationDelegate : private NS_DY::Application {
+class ApplicationDelegate : public NS_DY::Application {
 public:
     
     ApplicationDelegate();

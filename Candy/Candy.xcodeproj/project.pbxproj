@@ -41,6 +41,9 @@
 		A1873F501DBB11150022CC16 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F471DBB11150022CC16 /* Ref.cpp */; };
 		A1873F511DBB11150022CC16 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F471DBB11150022CC16 /* Ref.cpp */; };
 		A1873F521DBB11150022CC16 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F481DBB11150022CC16 /* Ref.h */; };
+		A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F591DBB55A70022CC16 /* Director.cpp */; };
+		A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F591DBB55A70022CC16 /* Director.cpp */; };
+		A1873F5D1DBB55A70022CC16 /* Director.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F5A1DBB55A70022CC16 /* Director.h */; };
 		A18F80821DB715630080AFE2 /* ApplePBTextureTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */; };
 		A18F80831DB715630080AFE2 /* ApplePBTextureTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */; };
 		A18F80841DB715630080AFE2 /* GeometryBufferBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F805B1DB715630080AFE2 /* GeometryBufferBase.cpp */; };
@@ -837,6 +840,8 @@
 		A1873F461DBB11150022CC16 /* PoolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolManager.h; sourceTree = "<group>"; };
 		A1873F471DBB11150022CC16 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ref.cpp; sourceTree = "<group>"; };
 		A1873F481DBB11150022CC16 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
+		A1873F591DBB55A70022CC16 /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
+		A1873F5A1DBB55A70022CC16 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
 		A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIOpenGLRenderer Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplePBTextureTarget.cpp; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.cpp; sourceTree = "<group>"; };
 		A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplePBTextureTarget.h; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h; sourceTree = "<group>"; };
@@ -1730,7 +1735,6 @@
 			children = (
 				A1645C031D993B6100AC5FE2 /* external */,
 				A1645C301D9A67A200AC5FE2 /* Frameworks */,
-				A1A98FC71DB624CC00B4C842 /* gui */,
 				A1645C221D994F7300AC5FE2 /* include */,
 				A1645C451D9BC33C00AC5FE2 /* math */,
 				A1873F411DBB11150022CC16 /* object */,
@@ -1879,6 +1883,9 @@
 		A1873F411DBB11150022CC16 /* object */ = {
 			isa = PBXGroup;
 			children = (
+				A1873F591DBB55A70022CC16 /* Director.cpp */,
+				A1873F5A1DBB55A70022CC16 /* Director.h */,
+				A1A98FC71DB624CC00B4C842 /* gui */,
 				A1873F421DBB11150022CC16 /* object.h */,
 				A1873F431DBB11150022CC16 /* ObjectPool.cpp */,
 				A1873F441DBB11150022CC16 /* ObjectPool.h */,
@@ -2992,6 +2999,7 @@
 				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
+				A1873F5D1DBB55A70022CC16 /* Director.h in Headers */,
 				A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */,
 				A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */,
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
@@ -3783,6 +3791,7 @@
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
+				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
@@ -3795,6 +3804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1873F511DBB11150022CC16 /* Ref.cpp in Sources */,

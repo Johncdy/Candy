@@ -7,6 +7,7 @@
 //
 
 #include "platform/PlatformMacros.h"
+#include "object/Director.h"
 
 #if DY_TARGET_PLATFORM == DY_PLATFORM_MAC
 
@@ -17,24 +18,12 @@
 
 NS_DY_BEGIN
 
-Application* Application::s_application = nullptr;
-
 Application::Application()
 {
-    assert(!s_application);
-    s_application = this;
 }
 
 Application::~Application()
 {
-    assert(s_application == this);
-    s_application = 0;
-}
-
-Application* Application::getInstance()
-{
-    assert(s_application);
-    return s_application;
 }
 
 int Application::run()
@@ -43,22 +32,28 @@ int Application::run()
         return 1;
     }
     
-//    while (!glview->windowShouldClose())
-//    {
-//        /* Draw a triangle */
-//        glBegin(GL_TRIANGLES);
-//        
-//        glColor3f(1.0, 0.0, 0.0);    // Red
-//        glVertex3f(0.0, 1.0, 0.0);
-//        
-//        glColor3f(0.0, 1.0, 0.0);    // Green
-//        glVertex3f(-1.0, -1.0, 0.0);
-//        
-//        glColor3f(0.0, 0.0, 1.0);    // Blue
-//        glVertex3f(1.0, -1.0, 0.0);
-//        
-//        glEnd();
-//    }
+    auto director = object::Director::getInstance();
+    auto glview = director->getOpenGLView();
+    
+    while (!glview->windowShouldClose())
+    {
+        /* Draw a triangle */
+        glBegin(GL_TRIANGLES);
+        
+        glColor3f(1.0, 0.0, 0.0);    // Red
+        glVertex3f(0.0, 1.0, 0.0);
+        
+        glColor3f(0.0, 1.0, 0.0);    // Green
+        glVertex3f(-1.0, -1.0, 0.0);
+        
+        glColor3f(0.0, 0.0, 1.0);    // Blue
+        glVertex3f(1.0, -1.0, 0.0);
+        
+        glEnd();
+        
+        glview->swapBuffers();
+        glview->pollEvents();
+    }
     
     return 0;
 }
