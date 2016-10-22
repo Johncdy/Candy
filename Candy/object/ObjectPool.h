@@ -13,9 +13,11 @@
 
 #include "platform/PlatformMacros.h"
 
-#include "memory/Ref.h"
+#include "object/Ref.h"
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 class ObjectPool {
 public:
@@ -65,6 +67,8 @@ private:
     // The position in manager.
     int _pos;
 };
+
+NS_OBJECT_END
 
 NS_DY_END
 

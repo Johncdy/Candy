@@ -28,7 +28,7 @@ bool ApplicationDelegate::init()
 {
     initGLContextAttrs();
     
-    auto glview = GLView::create("Candy", candy::Rect(0, 0, 640, 480));
+    auto glview = GLView::create("Candy", NS_MATH::Rect(0, 0, 640, 480));
     glview->setDesignResolutionSize(640, 480, ResolutionPolicy::NO_BORDER);
     
     return true;

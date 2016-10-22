@@ -9,9 +9,11 @@
 #include "assert.h"
 
 #include "include/CandyMacros.h"
-#include "memory/PoolManager.h"
+#include "object/PoolManager.h"
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 PoolManager* PoolManager::_singleInstance = nullptr;
 
@@ -20,7 +22,7 @@ PoolManager* PoolManager::getInstance()
     if (nullptr == _singleInstance) {
         _singleInstance = new (std::nothrow) PoolManager();
         
-        assert(_singleInstance == nullptr);
+        assert(_singleInstance != nullptr);
         
         new (std::nothrow) ObjectPool(1);
     }
@@ -64,7 +66,7 @@ PoolManager::~PoolManager()
 
 int PoolManager::push(ObjectPool* pool)
 {
-    assert(_objectPoolVector.size() > POOL_MANAGER_CAPACITY);
+    assert(_objectPoolVector.size() <= POOL_MANAGER_CAPACITY);
     
     _objectPoolVector.push_back(pool);
     return static_cast<int>(_objectPoolVector.size());
@@ -74,5 +76,7 @@ void PoolManager::pop(int pos)
 {
     _objectPoolVector.erase(_objectPoolVector.begin() + pos - 1);
 }
+
+NS_OBJECT_END
 
 NS_DY_END

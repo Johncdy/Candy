@@ -8,10 +8,12 @@
 
 #include "assert.h"
 
-#include "memory/ObjectPool.h"
-#include "memory/PoolManager.h"
+#include "object/ObjectPool.h"
+#include "object/PoolManager.h"
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 ObjectPool::ObjectPool(int index)
 {
@@ -58,5 +60,7 @@ void ObjectPool::dump()
         printf("%20p%20u\n", obj, obj->getReferenceCount());
     }
 }
+
+NS_OBJECT_END
 
 NS_DY_END

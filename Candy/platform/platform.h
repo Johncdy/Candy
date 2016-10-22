@@ -9,8 +9,7 @@
 #ifndef platform_h
 #define platform_h
 
-#include "PlatformMacros.h"
-#include "PlatformConfig.h"
+#include "platform/PlatformMacros.h"
 
 #if (DY_TARGET_PLATFORM == DY_PLATFORM_MAC)
     #include "platform/Mac/Application_Mac.h"

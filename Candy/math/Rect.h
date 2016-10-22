@@ -14,6 +14,8 @@
 
 NS_DY_BEGIN
 
+NS_MATH_BEGIN
+
 class Rect {
 public:
     
@@ -52,6 +54,8 @@ public:
     // Width and height of the rect.
     Size _size;
 };
+
+NS_MATH_END
 
 NS_DY_END
 

@@ -19,7 +19,7 @@
 #include "math/Size.h"
 #include "math/Rect.h"
 
-// memory
-#include "memory/memory.h"
+// object
+#include "object/object.h"
 
 #endif /* candy_h */

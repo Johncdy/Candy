@@ -6,12 +6,14 @@
 //
 //
 
-#include "memory/Ref.h"
-#include "memory/PoolManager.h"
+#include "object/Ref.h"
+#include "object/PoolManager.h"
 
 #include <assert.h>
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 Ref::Ref()
 : _referenceCount(1)
@@ -48,5 +50,7 @@ unsigned int Ref::getReferenceCount()
 {
     return _referenceCount;
 }
+
+NS_OBJECT_END
 
 NS_DY_END

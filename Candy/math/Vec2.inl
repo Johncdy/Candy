@@ -13,6 +13,8 @@
 
 NS_DY_BEGIN
 
+NS_MATH_BEGIN
+
 inline Vec2::Vec2(float x, float y)
 : _x(x)
 , _y(y)
@@ -51,6 +53,8 @@ inline const Vec2 Vec2::operator/(float a) const
 {
     return Vec2(this->_x / a, this->_y / a);
 }
+
+NS_MATH_END
 
 NS_DY_END
 

@@ -13,6 +13,8 @@
 
 NS_DY_BEGIN
 
+NS_MATH_BEGIN
+
 inline Rect::Rect(float x, float y, float width, float height)
 : _origin(Vec2(x, y))
 , _size(Size(width, height))
@@ -33,6 +35,8 @@ inline void Rect::set(float x, float y, float width, float height)
     this->_size._width = width;
     this->_size._height = height;
 }
+
+NS_MATH_END
 
 NS_DY_END
 

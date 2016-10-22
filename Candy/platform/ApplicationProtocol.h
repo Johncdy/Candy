@@ -9,9 +9,11 @@
 #ifndef ApplicationProtocol_h
 #define ApplicationProtocol_h
 
-#include "platform/PlatformMacros.h"
+#include "include/CandyMacros.h"
 
 NS_DY_BEGIN
+
+NS_PLATFORM_BEGIN
 
 class ApplicationProtocol {
 public:
@@ -74,6 +76,8 @@ public:
      */
     virtual void initGLContextAttrs() {}
 };
+
+NS_PLATFORM_END
 
 NS_DY_END
 

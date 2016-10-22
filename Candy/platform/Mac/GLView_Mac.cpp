@@ -14,6 +14,8 @@
 
 NS_DY_BEGIN
 
+NS_MATH_USE
+
 #define drawOneLine(x1, y1, x2, y2) glBegin(GL_LINES); \
 glVertex2f((x1), (y1)); glVertex2f((x2), (y2)); glEnd();
 
@@ -47,6 +49,9 @@ GLView::GLView()
 
 GLView::~GLView()
 {
+    printf("deallocing GLViewImpl: %p", this);
+    GLFWEventHandler::setGLView(nullptr);
+    glfwTerminate();
 }
 
 GLView* GLView::create(const std::string &viewName, Rect rect, float frameZoomFactor, bool resizable)
@@ -60,7 +65,7 @@ GLView* GLView::create(const std::string &viewName, Rect rect, float frameZoomFa
     return nullptr;
 }
 
-bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoomFactor, bool resizable)
+bool GLView::init(const std::string &viewName, Rect rect, float frameZoomFactor, bool resizable)
 {
     _viewName = viewName;
     _frameZoomFactor = frameZoomFactor;
@@ -123,65 +128,30 @@ bool GLView::init(const std::string &viewName, candy::Rect rect, float frameZoom
     glfwSetWindowIconifyCallback(_window, GLFWEventHandler::onGLFWWindowIconifyCallback);
     glfwSetWindowFocusCallback(_window, GLFWEventHandler::onGLFWWindowFocusCallback);
     
-    /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(_window))
-    {
-        int i;
-        /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
-        glColor3f(1.0, 1.0, 1.0);
-        glEnable(GL_LINE_STIPPLE);
-        
-        // 1st row.
-        glLineStipple(1, 0x0101);
-        drawOneLine(50.0, 125.0, 150.0, 125.0);
-        glLineStipple(1, 0x00FF);
-        drawOneLine(150.0, 125.0, 250.0, 125.0);
-        glLineStipple(1, 0x1C47);
-        drawOneLine(250.0, 125.0, 350.0, 125.0);
-        
-        // 2nd row.
-        glLineWidth(5.0);
-        glLineStipple(1, 0x0101);
-        drawOneLine(50.0, 100.0, 150.0, 100.0);
-        glLineStipple(1, 0x00FF);
-        drawOneLine(150.0, 100.0, 250.0, 100.0);
-        glLineStipple(1, 0x1C47);
-        drawOneLine(250.0, 100.0, 350.0, 100.0);
-        
-        // 3th row.
-        glLineWidth(1.0);
-        glLineStipple(1, 0x1C47);
-        glBegin(GL_LINE_STRIP);
-        for (i = 0; i < 7; i++) {
-            glVertex2f(50.0 + ((GLfloat) i * 50.0), 75.0);
-        }
-        glEnd();
-        
-        // 4th row.
-        for (i = 0; i < 7; i++) {
-            drawOneLine(50.0 + ((GLfloat)i * 50.0), 50.0,
-                        50.0 + ((GLfloat)(i+1) * 50.0), 50.0);
-        }
-        glEnd();
-        
-        // 5th row.
-        glLineStipple(5, 0x1C47);
-        drawOneLine(50.0, 25.0, 350.0, 25.0);
-        
-        glDisable(GL_LINE_STIPPLE);
-        glFlush();
-        
-        /* Swap front and back buffers */
-        glfwSwapBuffers(_window);
-        
-        /* Poll for and process events */
-        glfwPollEvents();
-    }
-    
     setFrameSize(rect._size._width, rect._size._height);
     
-    glfwTerminate();
+//    while (!glfwWindowShouldClose(_window))
+//    {
+//        /* Draw a triangle */
+//        glBegin(GL_TRIANGLES);
+//        
+//        glColor3f(1.0, 0.0, 0.0);    // Red
+//        glVertex3f(0.0, 1.0, 0.0);
+//        
+//        glColor3f(0.0, 1.0, 0.0);    // Green
+//        glVertex3f(-1.0, -1.0, 0.0);
+//        
+//        glColor3f(0.0, 0.0, 1.0);    // Blue
+//        glVertex3f(1.0, -1.0, 0.0);
+//        
+//        glEnd();
+//        
+//        /* Swap front and back buffers */
+//        glfwSwapBuffers(_window);
+//        
+//        /* Poll for and process events */
+//        glfwPollEvents();
+//    }
     
     return true;
 }

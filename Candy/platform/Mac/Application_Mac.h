@@ -9,7 +9,7 @@
 #ifndef Application_Mac_h
 #define Application_Mac_h
 
-#include "platform/PlatformConfig.h"
+#include "include/CandyMacros.h"
 
 #if DY_TARGET_PLATFORM == DY_PLATFORM_MAC
 
@@ -17,7 +17,7 @@
 
 NS_DY_BEGIN
 
-class Application : public ApplicationProtocol {
+class Application : public NS_PLATFORM::ApplicationProtocol {
 public:
 
     Application();

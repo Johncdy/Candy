@@ -9,9 +9,11 @@
 #ifndef Ref_h
 #define Ref_h
 
-#include "platform/PlatformMacros.h"
+#include "include/CandyMacros.h"
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 class Ref {
 protected:
@@ -56,6 +58,8 @@ protected:
     // count of references
     unsigned int _referenceCount;
 };
+
+NS_OBJECT_END
 
 NS_DY_END
 

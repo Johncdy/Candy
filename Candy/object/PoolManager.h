@@ -9,9 +9,11 @@
 #ifndef PoolManager_h
 #define PoolManager_h
 
-#include "memory/ObjectPool.h"
+#include "object/ObjectPool.h"
 
 NS_DY_BEGIN
+
+NS_OBJECT_BEGIN
 
 class PoolManager {
 public:
@@ -76,6 +78,8 @@ private:
     // Object pool stack.
     std::vector<ObjectPool*> _objectPoolVector;
 };
+
+NS_OBJECT_END
 
 NS_DY_END
 

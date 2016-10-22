@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
-		A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13F18AC1DA788D5006E9019 /* Ref.cpp */; };
-		A13F18B01DA788D5006E9019 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18AD1DA788D5006E9019 /* Ref.h */; };
-		A13F18B21DA78917006E9019 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = A13F18B11DA78917006E9019 /* memory.h */; };
-		A15853B71DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
-		A15853B81DA8C27800FB190D /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853B51DA8C27800FB190D /* PoolManager.cpp */; };
-		A15853B91DA8C27800FB190D /* PoolManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A15853B61DA8C27800FB190D /* PoolManager.h */; };
-		A15853BC1DA8CCB400FB190D /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */; };
-		A15853BD1DA8CCB400FB190D /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */; };
-		A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */ = {isa = PBXBuildFile; fileRef = A15853BB1DA8CCB400FB190D /* ObjectPool.h */; };
-		A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */; };
 		A1645BF91D9913D900AC5FE2 /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BF81D9913D900AC5FE2 /* Application.h */; };
 		A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */; };
 		A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = A1645BFB1D99149100AC5FE2 /* Application_Mac.h */; };
@@ -42,6 +31,16 @@
 		A177B0FB1DBA102500981949 /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A177B0F61DBA102500981949 /* glfw3native.h */; };
 		A177B0FC1DBA102500981949 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0F81DBA102500981949 /* libglfw3.a */; };
 		A177B0FD1DBA102500981949 /* libglfw3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0F91DBA102500981949 /* libglfw3.dylib */; };
+		A1873F491DBB11150022CC16 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F421DBB11150022CC16 /* object.h */; };
+		A1873F4A1DBB11150022CC16 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F431DBB11150022CC16 /* ObjectPool.cpp */; };
+		A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F431DBB11150022CC16 /* ObjectPool.cpp */; };
+		A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F441DBB11150022CC16 /* ObjectPool.h */; };
+		A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F451DBB11150022CC16 /* PoolManager.cpp */; };
+		A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F451DBB11150022CC16 /* PoolManager.cpp */; };
+		A1873F4F1DBB11150022CC16 /* PoolManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F461DBB11150022CC16 /* PoolManager.h */; };
+		A1873F501DBB11150022CC16 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F471DBB11150022CC16 /* Ref.cpp */; };
+		A1873F511DBB11150022CC16 /* Ref.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F471DBB11150022CC16 /* Ref.cpp */; };
+		A1873F521DBB11150022CC16 /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F481DBB11150022CC16 /* Ref.h */; };
 		A18F80821DB715630080AFE2 /* ApplePBTextureTarget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */; };
 		A18F80831DB715630080AFE2 /* ApplePBTextureTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */; };
 		A18F80841DB715630080AFE2 /* GeometryBufferBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F805B1DB715630080AFE2 /* GeometryBufferBase.cpp */; };
@@ -806,16 +805,8 @@
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
 		A13F18AA1DA750E6006E9019 /* Rect.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rect.inl; path = math/Rect.inl; sourceTree = "<group>"; };
-		A13F18AC1DA788D5006E9019 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ref.cpp; path = memory/Ref.cpp; sourceTree = "<group>"; };
-		A13F18AD1DA788D5006E9019 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ref.h; path = memory/Ref.h; sourceTree = "<group>"; };
-		A13F18B11DA78917006E9019 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memory.h; path = memory/memory.h; sourceTree = "<group>"; };
 		A1574C901DAA274200C24924 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A1574C931DAA298700C24924 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A15853B51DA8C27800FB190D /* PoolManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PoolManager.cpp; path = memory/PoolManager.cpp; sourceTree = "<group>"; };
-		A15853B61DA8C27800FB190D /* PoolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoolManager.h; path = memory/PoolManager.h; sourceTree = "<group>"; };
-		A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectPool.cpp; path = memory/ObjectPool.cpp; sourceTree = "<group>"; };
-		A15853BB1DA8CCB400FB190D /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectPool.h; path = memory/ObjectPool.h; sourceTree = "<group>"; };
-		A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformConfig.h; path = platform/PlatformConfig.h; sourceTree = "<group>"; };
 		A1645BF81D9913D900AC5FE2 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = platform/Application.h; sourceTree = "<group>"; };
 		A1645BFA1D99149100AC5FE2 /* Application_Mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Application_Mac.mm; sourceTree = "<group>"; };
 		A1645BFB1D99149100AC5FE2 /* Application_Mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application_Mac.h; sourceTree = "<group>"; };
@@ -839,6 +830,13 @@
 		A177B0F61DBA102500981949 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		A177B0F81DBA102500981949 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		A177B0F91DBA102500981949 /* libglfw3.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.dylib; sourceTree = "<group>"; };
+		A1873F421DBB11150022CC16 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		A1873F431DBB11150022CC16 /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectPool.cpp; sourceTree = "<group>"; };
+		A1873F441DBB11150022CC16 /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
+		A1873F451DBB11150022CC16 /* PoolManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PoolManager.cpp; sourceTree = "<group>"; };
+		A1873F461DBB11150022CC16 /* PoolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoolManager.h; sourceTree = "<group>"; };
+		A1873F471DBB11150022CC16 /* Ref.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ref.cpp; sourceTree = "<group>"; };
+		A1873F481DBB11150022CC16 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIOpenGLRenderer Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplePBTextureTarget.cpp; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.cpp; sourceTree = "<group>"; };
 		A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplePBTextureTarget.h; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h; sourceTree = "<group>"; };
@@ -1730,14 +1728,14 @@
 		A13E1BA41D8E8D530097E85B = {
 			isa = PBXGroup;
 			children = (
+				A1645C031D993B6100AC5FE2 /* external */,
+				A1645C301D9A67A200AC5FE2 /* Frameworks */,
 				A1A98FC71DB624CC00B4C842 /* gui */,
 				A1645C221D994F7300AC5FE2 /* include */,
 				A1645C451D9BC33C00AC5FE2 /* math */,
-				A13F18AB1DA787D4006E9019 /* memory */,
-				A1645C031D993B6100AC5FE2 /* external */,
+				A1873F411DBB11150022CC16 /* object */,
 				A178E3E31D98C4A8006D2DC8 /* platform */,
 				A13E1BB01D8E912F0097E85B /* Products */,
-				A1645C301D9A67A200AC5FE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1755,20 +1753,6 @@
 				A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A13F18AB1DA787D4006E9019 /* memory */ = {
-			isa = PBXGroup;
-			children = (
-				A13F18AC1DA788D5006E9019 /* Ref.cpp */,
-				A13F18AD1DA788D5006E9019 /* Ref.h */,
-				A15853BA1DA8CCB400FB190D /* ObjectPool.cpp */,
-				A15853BB1DA8CCB400FB190D /* ObjectPool.h */,
-				A13F18B11DA78917006E9019 /* memory.h */,
-				A15853B51DA8C27800FB190D /* PoolManager.cpp */,
-				A15853B61DA8C27800FB190D /* PoolManager.h */,
-			);
-			name = memory;
 			sourceTree = "<group>";
 		};
 		A1645C031D993B6100AC5FE2 /* external */ = {
@@ -1864,7 +1848,6 @@
 				A178E3E51D98C4D8006D2DC8 /* iOS */,
 				A178E3E41D98C4CB006D2DC8 /* Mac */,
 				A1645BF81D9913D900AC5FE2 /* Application.h */,
-				A1645BF61D9913C300AC5FE2 /* PlatformConfig.h */,
 				A1645BFF1D991E5F00AC5FE2 /* ApplicationProtocol.h */,
 				A1645C011D9921F800AC5FE2 /* PlatformMacros.h */,
 			);
@@ -1891,6 +1874,20 @@
 			);
 			name = iOS;
 			path = platform/iOS;
+			sourceTree = "<group>";
+		};
+		A1873F411DBB11150022CC16 /* object */ = {
+			isa = PBXGroup;
+			children = (
+				A1873F421DBB11150022CC16 /* object.h */,
+				A1873F431DBB11150022CC16 /* ObjectPool.cpp */,
+				A1873F441DBB11150022CC16 /* ObjectPool.h */,
+				A1873F451DBB11150022CC16 /* PoolManager.cpp */,
+				A1873F461DBB11150022CC16 /* PoolManager.h */,
+				A1873F471DBB11150022CC16 /* Ref.cpp */,
+				A1873F481DBB11150022CC16 /* Ref.h */,
+			);
+			path = object;
 			sourceTree = "<group>";
 		};
 		A18F80AC1DB717AA0080AFE2 /* glew */ = {
@@ -2985,23 +2982,22 @@
 			files = (
 				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
 				A177B0FA1DBA102500981949 /* glfw3.h in Headers */,
-				A15853BE1DA8CCB400FB190D /* ObjectPool.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
-				A15853B91DA8C27800FB190D /* PoolManager.h in Headers */,
+				A1873F4F1DBB11150022CC16 /* PoolManager.h in Headers */,
 				A1645C4A1D9BC3C700AC5FE2 /* Vec2.h in Headers */,
-				A13F18B21DA78917006E9019 /* memory.h in Headers */,
+				A1873F491DBB11150022CC16 /* object.h in Headers */,
 				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */,
+				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
-				A1645BF71D9913C300AC5FE2 /* PlatformConfig.h in Headers */,
-				A13F18B01DA788D5006E9019 /* Ref.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */,
 				A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */,
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
 				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
+				A1873F521DBB11150022CC16 /* Ref.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3782,13 +3778,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1873F4A1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */,
-				A15853BC1DA8CCB400FB190D /* ObjectPool.cpp in Sources */,
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
-				A13F18AE1DA788D5006E9019 /* Ref.cpp in Sources */,
-				A15853B71DA8C27800FB190D /* PoolManager.cpp in Sources */,
+				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 			);
@@ -3798,13 +3794,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A15853BD1DA8CCB400FB190D /* ObjectPool.cpp in Sources */,
-				A15853B81DA8C27800FB190D /* PoolManager.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
+				A1873F511DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
-				A13F18AF1DA788D5006E9019 /* Ref.cpp in Sources */,
 				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
+				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

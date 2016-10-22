@@ -9,9 +9,11 @@
 #ifndef Vec2_h
 #define Vec2_h
 
-#include "platform/PlatformMacros.h"
+#include "include/CandyMacros.h"
 
 NS_DY_BEGIN
+
+NS_MATH_BEGIN
 
 class Vec2 {
 public:
@@ -83,6 +85,8 @@ public:
     // The y coordinate.
     float _y;
 };
+
+NS_MATH_END
 
 NS_DY_END
 

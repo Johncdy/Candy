@@ -6,7 +6,7 @@
 //
 //
 
-#include "platform/PlatformConfig.h"
+#include "platform/PlatformMacros.h"
 
 #if DY_TARGET_PLATFORM == DY_PLATFORM_MAC
 
@@ -43,6 +43,22 @@ int Application::run()
         return 1;
     }
     
+//    while (!glview->windowShouldClose())
+//    {
+//        /* Draw a triangle */
+//        glBegin(GL_TRIANGLES);
+//        
+//        glColor3f(1.0, 0.0, 0.0);    // Red
+//        glVertex3f(0.0, 1.0, 0.0);
+//        
+//        glColor3f(0.0, 1.0, 0.0);    // Green
+//        glVertex3f(-1.0, -1.0, 0.0);
+//        
+//        glColor3f(0.0, 0.0, 1.0);    // Blue
+//        glVertex3f(1.0, -1.0, 0.0);
+//        
+//        glEnd();
+//    }
     
     return 0;
 }

@@ -9,26 +9,41 @@
 #ifndef PlatformMacros_h
 #define PlatformMacros_h
 
-#ifdef __cplusplus
-    #define NS_DY_BEGIN     namespace candy {
-    #define NS_DY_END       }
-    #define NS_DY_USE       using namespace candy;
-    #define NS_DY           candy
+// Define supported target platform macro with DY uses.
+#define DY_PLATFORM_UNKNOW        0
+#define DY_PLATFORM_IOS           1
+#define DY_PLATFORM_ANDROID       2
+#define DY_PLATFORM_WIN           3
+#define DY_PLATFORM_MAC           4
+
+// Determine target platform by compile environment macro.
+#define DY_TARGET_PLATFORM  DY_PLATFORM_UNKNOWN
+
+// Apple: Mac and iOS
+/**
+ @param __APPLE__ This macro is defined in any Apple computer.
+ */
+#if defined(__APPLE__)
+#include <TargetConditionals.h>
+#if TARGET_OS_IPHONE
+#undef DY_TARGET_PLATFORM
+#define DY_TARGET_PLATFORM      DY_PLATFORM_IOS
+#elif TARGET_OS_MAC
+#undef DY_TARGET_PLATFORM
+#define DY_TARGET_PLATFORM      DY_PLATFORM_MAC
+#endif
 #endif
 
-#define DY_SAFE_DELETE(p)           do { delete (p); (p) = nullptr; } while(0)
-#define DY_SAFE_DELETE_ARRAY(p)     do { if(p) { delete[] (p); (p) = nullptr; } } while(0)
-#define DY_SAFE_FREE(p)             do { if(p) { free(p); (p) = nullptr; } } while(0)
-#define DY_SAFE_RELEASE(p)          do { if(p) { (p)->release(); } } while(0)
-#define DY_SAFE_RELEASE_NULL(p)     do { if(p) { (p)->release(); (p) = nullptr; } } while(0)
-#define DY_SAFE_RETAIN(p)           do { if(p) { (p)->retain(); } } while(0)
+// Android
+#if defined(ANDROID)
+#undef DY_TARGET_PLATFORM
+#define DY_TARGET_PLATFORM      DY_PLATFORM_ANDROID
+#endif
 
-#ifndef MIN
-#define MIN(x,y) (((x) > (y)) ? (y) : (x))
-#endif  // MIN
-
-#ifndef MAX
-#define MAX(x,y) (((x) < (y)) ? (y) : (x))
-#endif  // MAX
+// Win
+#if defined(_WIN32) && defined(_WINDOWS)
+#undef DY_TARGET_PLATFORM
+#define DY_TARGET_PLATFORM      DY_PLATFORM_WIN
+#endif
 
 #endif /* PlatformMacros_h */

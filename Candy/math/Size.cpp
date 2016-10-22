@@ -7,9 +7,3 @@
 //
 
 #include "math/Size.h"
-
-NS_DY_BEGIN
-
-
-
-NS_DY_END

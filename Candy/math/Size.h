@@ -9,9 +9,11 @@
 #ifndef Size_h
 #define Size_h
 
-#include "platform/PlatformMacros.h"
+#include "include/CandyMacros.h"
 
 NS_DY_BEGIN
+
+NS_MATH_BEGIN
 
 class Size {
 public:
@@ -78,6 +80,8 @@ public:
     // Height of size.
     float _height;
 };
+
+NS_MATH_END
 
 NS_DY_END
 
