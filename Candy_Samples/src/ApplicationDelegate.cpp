@@ -7,6 +7,8 @@
 //
 
 #include "ApplicationDelegate.h"
+#include "SamplesFramework.h"
+
 #include "object/Director.h"
 
 NS_DY_USE
@@ -34,6 +36,9 @@ bool ApplicationDelegate::init()
     director->setOpenGLView(glview);
     
     glview->setDesignResolutionSize(640, 480, ResolutionPolicy::NO_BORDER);
+    
+    auto samples = new (std::nothrow) SamplesFramework;
+    samples->init();
     
     return true;
 }

@@ -92,6 +92,9 @@ bool GLView::init(const std::string &viewName, Rect rect, float frameZoomFactor,
         return false;
     }
     
+    //Deactivate VSYNC
+    glfwSwapInterval(0);
+    
     /*
      *  Note that the created window and context may differ from what you requested,
      *  as not all parameters and hints are

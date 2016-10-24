@@ -16,6 +16,14 @@
 		A1645C3B1D9A692100AC5FE2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3A1D9A692100AC5FE2 /* IOKit.framework */; };
 		A1645C3D1D9A693700AC5FE2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */; };
 		A1645C3F1D9A696700AC5FE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */; };
+		A19F42261DBDB780000B9BCD /* SamplesFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19F42241DBDB780000B9BCD /* SamplesFramework.cpp */; };
+		A19F423F1DBE32B7000B9BCD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0DE1DBA0EB700981949 /* libCEGUIBase Mac.a */; };
+		A19F42441DBE40D9000B9BCD /* libCEGUIOpenGLRenderer Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E01DBA0EB700981949 /* libCEGUIOpenGLRenderer Mac.a */; };
+		A19F424F1DBE46C0000B9BCD /* libCEGUICommonDialogs Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0EA1DBA0EB700981949 /* libCEGUICommonDialogs Mac.a */; };
+		A19F42501DBE46C5000B9BCD /* libCEGUICoreWindowRendererSet Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E81DBA0EB700981949 /* libCEGUICoreWindowRendererSet Mac.a */; };
+		A19F42511DBE46CA000B9BCD /* libCEGUIExpatParser Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E21DBA0EB700981949 /* libCEGUIExpatParser Mac.a */; };
+		A19F42521DBE46CD000B9BCD /* libCEGUIFreeImageImageCodec Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E61DBA0EB700981949 /* libCEGUIFreeImageImageCodec Mac.a */; };
+		A19F42531DBE46D1000B9BCD /* libCEGUILibXMLParser Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E41DBA0EB700981949 /* libCEGUILibXMLParser Mac.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +97,55 @@
 			remoteGlobalIDString = A18F82E61DB7486B0080AFE2;
 			remoteInfo = "CEGUICommonDialogs Mac";
 		};
+		A19F423D1DBE32A3000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A19F452F1DB63E5700E908D1;
+			remoteInfo = "CEGUIBase Mac";
+		};
+		A19F42421DBE40D1000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F80031DB7151E0080AFE2;
+			remoteInfo = "CEGUIOpenGLRenderer Mac";
+		};
+		A19F42451DBE469D000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F82211DB71D4E0080AFE2;
+			remoteInfo = "CEGUIExpatParser Mac";
+		};
+		A19F42471DBE46A2000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F824A1DB724520080AFE2;
+			remoteInfo = "CEGUIFreeImageImageCodec Mac";
+		};
+		A19F42491DBE46A5000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F82311DB71E740080AFE2;
+			remoteInfo = "CEGUILibXMLParser Mac";
+		};
+		A19F424B1DBE46A8000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F82E51DB7486B0080AFE2;
+			remoteInfo = "CEGUICommonDialogs Mac";
+		};
+		A19F424D1DBE46AB000B9BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1645BE51D99093000AC5FE2 /* Candy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A18F82641DB725F30080AFE2;
+			remoteInfo = "CEGUICoreWindowRendererSet Mac";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +161,8 @@
 		A1645C3A1D9A692100AC5FE2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		A1645C3C1D9A693700AC5FE2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A19F42241DBDB780000B9BCD /* SamplesFramework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SamplesFramework.cpp; sourceTree = "<group>"; };
+		A19F42251DBDB780000B9BCD /* SamplesFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesFramework.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +170,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19F42531DBE46D1000B9BCD /* libCEGUILibXMLParser Mac.a in Frameworks */,
+				A19F42521DBE46CD000B9BCD /* libCEGUIFreeImageImageCodec Mac.a in Frameworks */,
+				A19F42511DBE46CA000B9BCD /* libCEGUIExpatParser Mac.a in Frameworks */,
+				A19F42501DBE46C5000B9BCD /* libCEGUICoreWindowRendererSet Mac.a in Frameworks */,
+				A19F424F1DBE46C0000B9BCD /* libCEGUICommonDialogs Mac.a in Frameworks */,
+				A19F42441DBE40D9000B9BCD /* libCEGUIOpenGLRenderer Mac.a in Frameworks */,
+				A19F423F1DBE32B7000B9BCD /* libCEGUIBase Mac.a in Frameworks */,
 				A1645C3F1D9A696700AC5FE2 /* QuartzCore.framework in Frameworks */,
 				A1645C3D1D9A693700AC5FE2 /* OpenGL.framework in Frameworks */,
 				A1645C3B1D9A692100AC5FE2 /* IOKit.framework in Frameworks */,
@@ -173,6 +239,8 @@
 			children = (
 				A1645C1F1D994E1100AC5FE2 /* ApplicationDelegate.cpp */,
 				A1645C201D994E1100AC5FE2 /* ApplicationDelegate.h */,
+				A19F42241DBDB780000B9BCD /* SamplesFramework.cpp */,
+				A19F42251DBDB780000B9BCD /* SamplesFramework.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -202,6 +270,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				A19F424E1DBE46AB000B9BCD /* PBXTargetDependency */,
+				A19F424C1DBE46A8000B9BCD /* PBXTargetDependency */,
+				A19F424A1DBE46A5000B9BCD /* PBXTargetDependency */,
+				A19F42481DBE46A2000B9BCD /* PBXTargetDependency */,
+				A19F42461DBE469D000B9BCD /* PBXTargetDependency */,
+				A19F42431DBE40D1000B9BCD /* PBXTargetDependency */,
+				A19F423E1DBE32A3000B9BCD /* PBXTargetDependency */,
 				A1645BEF1D99095300AC5FE2 /* PBXTargetDependency */,
 			);
 			name = Samples_Mac;
@@ -333,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1645C211D994E1100AC5FE2 /* ApplicationDelegate.cpp in Sources */,
+				A19F42261DBDB780000B9BCD /* SamplesFramework.cpp in Sources */,
 				A1645C1D1D994C6400AC5FE2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +420,41 @@
 			isa = PBXTargetDependency;
 			name = "Candy Mac";
 			targetProxy = A1645BEE1D99095300AC5FE2 /* PBXContainerItemProxy */;
+		};
+		A19F423E1DBE32A3000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUIBase Mac";
+			targetProxy = A19F423D1DBE32A3000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F42431DBE40D1000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUIOpenGLRenderer Mac";
+			targetProxy = A19F42421DBE40D1000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F42461DBE469D000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUIExpatParser Mac";
+			targetProxy = A19F42451DBE469D000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F42481DBE46A2000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUIFreeImageImageCodec Mac";
+			targetProxy = A19F42471DBE46A2000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F424A1DBE46A5000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUILibXMLParser Mac";
+			targetProxy = A19F42491DBE46A5000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F424C1DBE46A8000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUICommonDialogs Mac";
+			targetProxy = A19F424B1DBE46A8000B9BCD /* PBXContainerItemProxy */;
+		};
+		A19F424E1DBE46AB000B9BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CEGUICoreWindowRendererSet Mac";
+			targetProxy = A19F424D1DBE46AB000B9BCD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -379,10 +490,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -402,14 +513,16 @@
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -421,12 +534,15 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Samples-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src $(PROJECT_DIR)/../Candy $(PROJECT_DIR)/../Candy/object/gui";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
@@ -436,10 +552,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -459,8 +575,11 @@
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -471,11 +590,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Samples-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src $(PROJECT_DIR)/../Candy $(PROJECT_DIR)/../Candy/object/gui";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};

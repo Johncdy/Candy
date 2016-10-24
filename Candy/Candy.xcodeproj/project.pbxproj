@@ -1193,6 +1193,7 @@
 		A18F82F21DB748BA0080AFE2 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = CEGUI/CommonDialogs/ColourPicker/Types.h; sourceTree = "<group>"; };
 		A18F82FB1DB748CA0080AFE2 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Module.cpp; path = CEGUI/CommonDialogs/Module.cpp; sourceTree = "<group>"; };
 		A18F82FC1DB748CA0080AFE2 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = CEGUI/CommonDialogs/Module.h; sourceTree = "<group>"; };
+		A19F42401DBE383B000B9BCD /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIBase Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19F464C1DB6445600E908D1 /* Affector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Affector.cpp; path = CEGUI/Affector.cpp; sourceTree = "<group>"; };
 		A19F464D1DB6445600E908D1 /* Affector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Affector.h; path = CEGUI/Affector.h; sourceTree = "<group>"; };
@@ -1792,6 +1793,7 @@
 		A1645C301D9A67A200AC5FE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A19F42401DBE383B000B9BCD /* libiconv.tbd */,
 				A1574C931DAA298700C24924 /* CoreGraphics.framework */,
 				A1574C901DAA274200C24924 /* CoreServices.framework */,
 				A1645C351D9A67EB00AC5FE2 /* IOKit.framework */,
@@ -4365,7 +4367,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4400,7 +4402,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4436,7 +4438,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4467,7 +4469,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4503,7 +4505,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4534,7 +4536,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4574,7 +4576,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/freeimage/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/freeimage/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4609,7 +4611,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/freeimage/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/freeimage/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4654,7 +4656,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4694,7 +4696,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4730,7 +4732,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4761,7 +4763,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -4800,9 +4802,10 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/pcre/include $(SRCROOT)/external/freetype/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/pcre/include $(SRCROOT)/external/freetype/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -4836,9 +4839,10 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/gui $(SRCROOT)/external/pcre/include $(SRCROOT)/external/freetype/include";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/pcre/include $(SRCROOT)/external/freetype/include";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
