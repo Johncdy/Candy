@@ -82,7 +82,6 @@
 		A18F80B51DB717AA0080AFE2 /* glew.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F80AF1DB717AA0080AFE2 /* glew.h */; };
 		A18F80B61DB717AA0080AFE2 /* glxew.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F80B01DB717AA0080AFE2 /* glxew.h */; };
 		A18F80B71DB717AA0080AFE2 /* wglew.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F80B11DB717AA0080AFE2 /* wglew.h */; };
-		A18F80B81DB717AA0080AFE2 /* libglew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F80B31DB717AA0080AFE2 /* libglew.a */; };
 		A18F81A21DB7189C0080AFE2 /* _detail.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A18F80BF1DB7189B0080AFE2 /* _detail.hpp */; };
 		A18F81A31DB7189C0080AFE2 /* _fixes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A18F80C01DB7189B0080AFE2 /* _fixes.hpp */; };
 		A18F81A41DB7189C0080AFE2 /* _swizzle.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A18F80C11DB7189B0080AFE2 /* _swizzle.hpp */; };
@@ -219,7 +218,6 @@
 		A18F82561DB724A40080AFE2 /* ImageCodecModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F82521DB724A40080AFE2 /* ImageCodecModule.cpp */; };
 		A18F82571DB724A40080AFE2 /* ImageCodecModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F82531DB724A40080AFE2 /* ImageCodecModule.h */; };
 		A18F825E1DB725C30080AFE2 /* FreeImage.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F825A1DB725C30080AFE2 /* FreeImage.h */; };
-		A18F825F1DB725C30080AFE2 /* libFreeImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F825C1DB725C30080AFE2 /* libFreeImage.a */; };
 		A18F82601DB725C30080AFE2 /* libFreeImage.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F825D1DB725C30080AFE2 /* libFreeImage.dylib */; };
 		A18F82A21DB7268C0080AFE2 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F826A1DB7268C0080AFE2 /* Button.cpp */; };
 		A18F82A31DB7268C0080AFE2 /* Button.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F826B1DB7268C0080AFE2 /* Button.h */; };
@@ -656,7 +654,6 @@
 		A19F493A1DB6445800E908D1 /* XMLSerializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19F47C31DB6445700E908D1 /* XMLSerializer.cpp */; };
 		A19F493B1DB6445800E908D1 /* XMLSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F47C41DB6445700E908D1 /* XMLSerializer.h */; };
 		A19F49471DB64A0F00E908D1 /* pcre.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F49421DB64A0F00E908D1 /* pcre.h */; };
-		A19F49481DB64A0F00E908D1 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F49441DB64A0F00E908D1 /* libpcre.a */; };
 		A19F49A81DB64B6800E908D1 /* ftconfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F494F1DB64B6700E908D1 /* ftconfig.h */; };
 		A19F49A91DB64B6800E908D1 /* ftheader.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F49501DB64B6700E908D1 /* ftheader.h */; };
 		A19F49AA1DB64B6800E908D1 /* ftmodule.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F49511DB64B6700E908D1 /* ftmodule.h */; };
@@ -744,6 +741,17 @@
 		A19F49FC1DB64B6800E908D1 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F49A61DB64B6800E908D1 /* libfreetype.a */; };
 		A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */; };
 		A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */; };
+		A1D9E9FF1DBF7CCD00C5A4FD /* libglew.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D9E9FE1DBF7CCD00C5A4FD /* libglew.dylib */; };
+		A1D9EA001DBF7E4200C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA011DBF7E5D00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA091DBF815D00C5A4FD /* expat.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D9EA051DBF815D00C5A4FD /* expat.h */; };
+		A1D9EA0A1DBF815D00C5A4FD /* expat_external.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D9EA061DBF815D00C5A4FD /* expat_external.h */; };
+		A1D9EA0B1DBF815D00C5A4FD /* libexpat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D9EA081DBF815D00C5A4FD /* libexpat.a */; };
+		A1D9EA0C1DBF817C00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA0D1DBF82EA00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA0E1DBF830100C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA0F1DBF831400C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */; };
+		A1D9EA101DBF860200C5A4FD /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F49441DB64A0F00E908D1 /* libpcre.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -842,7 +850,7 @@
 		A1873F481DBB11150022CC16 /* Ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ref.h; sourceTree = "<group>"; };
 		A1873F591DBB55A70022CC16 /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
 		A1873F5A1DBB55A70022CC16 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
-		A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIOpenGLRenderer Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIOpenGLRenderer Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F80591DB715620080AFE2 /* ApplePBTextureTarget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ApplePBTextureTarget.cpp; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.cpp; sourceTree = "<group>"; };
 		A18F805A1DB715620080AFE2 /* ApplePBTextureTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplePBTextureTarget.h; path = CEGUI/RendererModules/OpenGL/ApplePBTextureTarget.h; sourceTree = "<group>"; };
 		A18F805B1DB715630080AFE2 /* GeometryBufferBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GeometryBufferBase.cpp; path = CEGUI/RendererModules/OpenGL/GeometryBufferBase.cpp; sourceTree = "<group>"; };
@@ -1107,17 +1115,17 @@
 		A18F819E1DB7189C0080AFE2 /* wrap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wrap.hpp; sourceTree = "<group>"; };
 		A18F819F1DB7189C0080AFE2 /* wrap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		A18F81A11DB7189C0080AFE2 /* xstream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
-		A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIExpatParser Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIExpatParser Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F82261DB71DFC0080AFE2 /* XMLParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMLParser.cpp; path = CEGUI/XMLParserModules/Expat/XMLParser.cpp; sourceTree = "<group>"; };
 		A18F82271DB71DFC0080AFE2 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParser.h; path = CEGUI/XMLParserModules/Expat/XMLParser.h; sourceTree = "<group>"; };
 		A18F82281DB71DFC0080AFE2 /* XMLParserModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMLParserModule.cpp; path = CEGUI/XMLParserModules/Expat/XMLParserModule.cpp; sourceTree = "<group>"; };
 		A18F82291DB71DFC0080AFE2 /* XMLParserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParserModule.h; path = CEGUI/XMLParserModules/Expat/XMLParserModule.h; sourceTree = "<group>"; };
-		A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUILibXMLParser Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUILibXMLParser Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F82371DB71EBD0080AFE2 /* XMLParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMLParser.cpp; path = CEGUI/XMLParserModules/Libxml2/XMLParser.cpp; sourceTree = "<group>"; };
 		A18F82381DB71EBD0080AFE2 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParser.h; path = CEGUI/XMLParserModules/Libxml2/XMLParser.h; sourceTree = "<group>"; };
 		A18F82391DB71EBD0080AFE2 /* XMLParserModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMLParserModule.cpp; path = CEGUI/XMLParserModules/Libxml2/XMLParserModule.cpp; sourceTree = "<group>"; };
 		A18F823A1DB71EBD0080AFE2 /* XMLParserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLParserModule.h; path = CEGUI/XMLParserModules/Libxml2/XMLParserModule.h; sourceTree = "<group>"; };
-		A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIFreeImageImageCodec Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIFreeImageImageCodec Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F82501DB724A40080AFE2 /* ImageCodec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageCodec.cpp; path = CEGUI/ImageCodecModules/FreeImage/ImageCodec.cpp; sourceTree = "<group>"; };
 		A18F82511DB724A40080AFE2 /* ImageCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCodec.h; path = CEGUI/ImageCodecModules/FreeImage/ImageCodec.h; sourceTree = "<group>"; };
 		A18F82521DB724A40080AFE2 /* ImageCodecModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageCodecModule.cpp; path = CEGUI/ImageCodecModules/FreeImage/ImageCodecModule.cpp; sourceTree = "<group>"; };
@@ -1125,7 +1133,7 @@
 		A18F825A1DB725C30080AFE2 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeImage.h; sourceTree = "<group>"; };
 		A18F825C1DB725C30080AFE2 /* libFreeImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFreeImage.a; sourceTree = "<group>"; };
 		A18F825D1DB725C30080AFE2 /* libFreeImage.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libFreeImage.dylib; sourceTree = "<group>"; };
-		A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUICoreWindowRendererSet Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUICoreWindowRendererSet Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F826A1DB7268C0080AFE2 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = CEGUI/WindowRendererSets/Core/Button.cpp; sourceTree = "<group>"; };
 		A18F826B1DB7268C0080AFE2 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Button.h; path = CEGUI/WindowRendererSets/Core/Button.h; sourceTree = "<group>"; };
 		A18F826C1DB7268C0080AFE2 /* Default.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Default.cpp; path = CEGUI/WindowRendererSets/Core/Default.cpp; sourceTree = "<group>"; };
@@ -1182,7 +1190,7 @@
 		A18F829F1DB7268C0080AFE2 /* Tooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tooltip.h; path = CEGUI/WindowRendererSets/Core/Tooltip.h; sourceTree = "<group>"; };
 		A18F82A01DB7268C0080AFE2 /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tree.cpp; path = CEGUI/WindowRendererSets/Core/Tree.cpp; sourceTree = "<group>"; };
 		A18F82A11DB7268C0080AFE2 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tree.h; path = CEGUI/WindowRendererSets/Core/Tree.h; sourceTree = "<group>"; };
-		A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUICommonDialogs Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUICommonDialogs Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18F82EB1DB748BA0080AFE2 /* ColourPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColourPicker.cpp; path = CEGUI/CommonDialogs/ColourPicker/ColourPicker.cpp; sourceTree = "<group>"; };
 		A18F82EC1DB748BA0080AFE2 /* ColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColourPicker.h; path = CEGUI/CommonDialogs/ColourPicker/ColourPicker.h; sourceTree = "<group>"; };
 		A18F82ED1DB748BA0080AFE2 /* Controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Controls.cpp; path = CEGUI/CommonDialogs/ColourPicker/Controls.cpp; sourceTree = "<group>"; };
@@ -1194,7 +1202,7 @@
 		A18F82FB1DB748CA0080AFE2 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Module.cpp; path = CEGUI/CommonDialogs/Module.cpp; sourceTree = "<group>"; };
 		A18F82FC1DB748CA0080AFE2 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = CEGUI/CommonDialogs/Module.h; sourceTree = "<group>"; };
 		A19F42401DBE383B000B9BCD /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIBase Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIBase Mac.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19F464C1DB6445600E908D1 /* Affector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Affector.cpp; path = CEGUI/Affector.cpp; sourceTree = "<group>"; };
 		A19F464D1DB6445600E908D1 /* Affector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Affector.h; path = CEGUI/Affector.h; sourceTree = "<group>"; };
 		A19F464E1DB6445600E908D1 /* Animation_xmlHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Animation_xmlHandler.cpp; path = CEGUI/Animation_xmlHandler.cpp; sourceTree = "<group>"; };
@@ -1655,6 +1663,11 @@
 		A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFWEventHandler.h; sourceTree = "<group>"; };
 		A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWEventHandler.cpp; sourceTree = "<group>"; };
 		A1BB92F61D9CC4110082CE12 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec2.inl; path = math/Vec2.inl; sourceTree = "<group>"; };
+		A1D9E9FE1DBF7CCD00C5A4FD /* libglew.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglew.dylib; path = external/glew/lib/libglew.dylib; sourceTree = "<group>"; };
+		A1D9EA031DBF815D00C5A4FD /* expat-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "expat-license.txt"; sourceTree = "<group>"; };
+		A1D9EA051DBF815D00C5A4FD /* expat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat.h; sourceTree = "<group>"; };
+		A1D9EA061DBF815D00C5A4FD /* expat_external.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat_external.h; sourceTree = "<group>"; };
+		A1D9EA081DBF815D00C5A4FD /* libexpat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexpat.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1674,18 +1687,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A18F80011DB7151E0080AFE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A18F80B81DB717AA0080AFE2 /* libglew.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A18F821F1DB71D4E0080AFE2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA0B1DBF815D00C5A4FD /* libexpat.a in Frameworks */,
+				A1D9EA011DBF7E5D00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1693,6 +1700,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA0C1DBF817C00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1700,8 +1708,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA0D1DBF82EA00C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
 				A18F82601DB725C30080AFE2 /* libFreeImage.dylib in Frameworks */,
-				A18F825F1DB725C30080AFE2 /* libFreeImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1709,6 +1717,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA0E1DBF830100C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1716,6 +1725,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA0F1DBF831400C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1723,8 +1733,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A19F49481DB64A0F00E908D1 /* libpcre.a in Frameworks */,
+				A1D9EA101DBF860200C5A4FD /* libpcre.a in Frameworks */,
 				A19F49FC1DB64B6800E908D1 /* libfreetype.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D9E9FD1DBF7CAF00C5A4FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D9EA001DBF7E4200C5A4FD /* libCEGUIBase Mac.dylib in Frameworks */,
+				A1D9E9FF1DBF7CCD00C5A4FD /* libglew.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1749,13 +1768,13 @@
 			children = (
 				A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */,
 				A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */,
-				A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */,
-				A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */,
-				A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.a */,
-				A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.a */,
-				A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.a */,
-				A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.a */,
-				A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.a */,
+				A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */,
+				A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.dylib */,
+				A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.dylib */,
+				A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.dylib */,
+				A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.dylib */,
+				A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.dylib */,
+				A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1763,6 +1782,7 @@
 		A1645C031D993B6100AC5FE2 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				A1D9EA021DBF815D00C5A4FD /* expat */,
 				A18F82581DB725C30080AFE2 /* freeimage */,
 				A18F80BA1DB7189B0080AFE2 /* glm */,
 				A18F80AC1DB717AA0080AFE2 /* glew */,
@@ -1793,6 +1813,7 @@
 		A1645C301D9A67A200AC5FE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1D9E9FE1DBF7CCD00C5A4FD /* libglew.dylib */,
 				A19F42401DBE383B000B9BCD /* libiconv.tbd */,
 				A1574C931DAA298700C24924 /* CoreGraphics.framework */,
 				A1574C901DAA274200C24924 /* CoreServices.framework */,
@@ -2982,6 +3003,34 @@
 			path = gui;
 			sourceTree = "<group>";
 		};
+		A1D9EA021DBF815D00C5A4FD /* expat */ = {
+			isa = PBXGroup;
+			children = (
+				A1D9EA031DBF815D00C5A4FD /* expat-license.txt */,
+				A1D9EA041DBF815D00C5A4FD /* include */,
+				A1D9EA071DBF815D00C5A4FD /* lib */,
+			);
+			name = expat;
+			path = external/expat;
+			sourceTree = "<group>";
+		};
+		A1D9EA041DBF815D00C5A4FD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A1D9EA051DBF815D00C5A4FD /* expat.h */,
+				A1D9EA061DBF815D00C5A4FD /* expat_external.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A1D9EA071DBF815D00C5A4FD /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A1D9EA081DBF815D00C5A4FD /* libexpat.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -3167,7 +3216,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9EA091DBF815D00C5A4FD /* expat.h in Headers */,
 				A18F822B1DB71DFC0080AFE2 /* XMLParser.h in Headers */,
+				A1D9EA0A1DBF815D00C5A4FD /* expat_external.h in Headers */,
 				A18F822D1DB71DFC0080AFE2 /* XMLParserModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3583,8 +3634,8 @@
 			buildConfigurationList = A18F80051DB7151E0080AFE2 /* Build configuration list for PBXNativeTarget "CEGUIOpenGLRenderer Mac" */;
 			buildPhases = (
 				A18F80001DB7151E0080AFE2 /* Sources */,
-				A18F80011DB7151E0080AFE2 /* Frameworks */,
 				A18F80021DB7151E0080AFE2 /* Headers */,
+				A1D9E9FD1DBF7CAF00C5A4FD /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3593,7 +3644,7 @@
 			);
 			name = "CEGUIOpenGLRenderer Mac";
 			productName = "CEGUIOpenGLRenderer Mac";
-			productReference = A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.a */;
+			productReference = A18F80041DB7151E0080AFE2 /* libCEGUIOpenGLRenderer Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A18F82211DB71D4E0080AFE2 /* CEGUIExpatParser Mac */ = {
@@ -3611,7 +3662,7 @@
 			);
 			name = "CEGUIExpatParser Mac";
 			productName = "CEGUIExpatParser Mac";
-			productReference = A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.a */;
+			productReference = A18F82221DB71D4E0080AFE2 /* libCEGUIExpatParser Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A18F82311DB71E740080AFE2 /* CEGUILibXMLParser Mac */ = {
@@ -3629,7 +3680,7 @@
 			);
 			name = "CEGUILibXMLParser Mac";
 			productName = "CEGUILibXMLParser Mac";
-			productReference = A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.a */;
+			productReference = A18F82321DB71E740080AFE2 /* libCEGUILibXMLParser Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A18F824A1DB724520080AFE2 /* CEGUIFreeImageImageCodec Mac */ = {
@@ -3647,7 +3698,7 @@
 			);
 			name = "CEGUIFreeImageImageCodec Mac";
 			productName = "CEGUIFreeImageImageCodec Mac";
-			productReference = A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.a */;
+			productReference = A18F824B1DB724520080AFE2 /* libCEGUIFreeImageImageCodec Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A18F82641DB725F30080AFE2 /* CEGUICoreWindowRendererSet Mac */ = {
@@ -3665,7 +3716,7 @@
 			);
 			name = "CEGUICoreWindowRendererSet Mac";
 			productName = "CEGUICoreWindowRendererSet Mac";
-			productReference = A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.a */;
+			productReference = A18F82651DB725F30080AFE2 /* libCEGUICoreWindowRendererSet Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A18F82E51DB7486B0080AFE2 /* CEGUICommonDialogs Mac */ = {
@@ -3683,7 +3734,7 @@
 			);
 			name = "CEGUICommonDialogs Mac";
 			productName = "CEGUICommonDialogs Mac";
-			productReference = A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.a */;
+			productReference = A18F82E61DB7486B0080AFE2 /* libCEGUICommonDialogs Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A19F452F1DB63E5700E908D1 /* CEGUIBase Mac */ = {
@@ -3700,7 +3751,7 @@
 			);
 			name = "CEGUIBase Mac";
 			productName = CEGUIBase;
-			productReference = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */;
+			productReference = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -4349,6 +4400,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4363,8 +4415,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glew/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					OpenGL,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
@@ -4390,6 +4447,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -4398,8 +4456,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glew/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					OpenGL,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui $(SRCROOT)/external/glew/include $(SRCROOT)/external/glm/include";
@@ -4424,6 +4487,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4434,6 +4498,11 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/external/expat/lib",
+				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4461,10 +4530,16 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/external/expat/lib",
+				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4491,6 +4566,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4501,8 +4577,10 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = /usr/lib/libxml2.dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
@@ -4528,12 +4606,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = /usr/lib/libxml2.dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT) $(SRCROOT)/object/gui /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/$(SDK_NAME).sdk/usr/include/libxml2";
@@ -4558,6 +4639,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4572,6 +4654,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/freeimage/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4599,6 +4682,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -4607,6 +4691,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/freeimage/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4642,6 +4727,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4652,6 +4738,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4688,10 +4775,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4718,6 +4807,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4728,6 +4818,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4755,10 +4846,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4785,6 +4878,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4800,6 +4894,7 @@
 					"$(PROJECT_DIR)/external/pcre/lib",
 					"$(PROJECT_DIR)/external/freetype/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;
@@ -4828,6 +4923,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -4837,6 +4933,7 @@
 					"$(PROJECT_DIR)/external/pcre/lib",
 					"$(PROJECT_DIR)/external/freetype/lib",
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = /usr/lib/libiconv.dylib;

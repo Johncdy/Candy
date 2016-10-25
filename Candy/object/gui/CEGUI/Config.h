@@ -44,9 +44,9 @@ setting CMake options and regenerating, rather than editing directly.
 #ifdef CEGUI_HAS_BUILD_SUFFIX
 #   ifndef CEGUI_BUILD_SUFFIX
 #       if defined(DEBUG) || defined(_DEBUG)
-#           define CEGUI_BUILD_SUFFIX "_d"
+#           define CEGUI_BUILD_SUFFIX " Mac"
 #       else
-#           define CEGUI_BUILD_SUFFIX ""
+#           define CEGUI_BUILD_SUFFIX " Mac"
 #       endif
 #   endif
 #endif
