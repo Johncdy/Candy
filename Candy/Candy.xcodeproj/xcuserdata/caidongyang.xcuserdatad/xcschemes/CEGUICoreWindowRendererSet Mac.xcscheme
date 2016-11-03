@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A18F82641DB725F30080AFE2"
-               BuildableName = "libCEGUICoreWindowRendererSet Mac.a"
+               BuildableName = "libCEGUICoreWindowRendererSet Mac.dylib"
                BlueprintName = "CEGUICoreWindowRendererSet Mac"
                ReferencedContainer = "container:Candy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82641DB725F30080AFE2"
-            BuildableName = "libCEGUICoreWindowRendererSet Mac.a"
+            BuildableName = "libCEGUICoreWindowRendererSet Mac.dylib"
             BlueprintName = "CEGUICoreWindowRendererSet Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82641DB725F30080AFE2"
-            BuildableName = "libCEGUICoreWindowRendererSet Mac.a"
+            BuildableName = "libCEGUICoreWindowRendererSet Mac.dylib"
             BlueprintName = "CEGUICoreWindowRendererSet Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>

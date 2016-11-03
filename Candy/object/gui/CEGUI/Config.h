@@ -193,6 +193,9 @@ setting CMake options and regenerating, rather than editing directly.
 #   define CEGUI_MODULE_DIR "/usr/local/lib/cegui-0.8/"
 #endif
 
+#define CEGUI_STATIC
+#define CEGUI_BUILD_STATIC_FACTORY_MODULE
+
 // This is defined when iconv is expecting a const char** and not a char**
 // as type for its inbuf parameter. This is only used when building cegui
 // itself, and likely will not be useful externally.

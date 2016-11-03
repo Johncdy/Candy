@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A19F452F1DB63E5700E908D1"
-               BuildableName = "libCEGUIBase Mac.a"
+               BuildableName = "libCEGUIBase Mac.dylib"
                BlueprintName = "CEGUIBase Mac"
                ReferencedContainer = "container:Candy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A19F452F1DB63E5700E908D1"
-            BuildableName = "libCEGUIBase Mac.a"
+            BuildableName = "libCEGUIBase Mac.dylib"
             BlueprintName = "CEGUIBase Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A19F452F1DB63E5700E908D1"
-            BuildableName = "libCEGUIBase Mac.a"
+            BuildableName = "libCEGUIBase Mac.dylib"
             BlueprintName = "CEGUIBase Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>

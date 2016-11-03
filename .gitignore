@@ -4,4 +4,5 @@ Candy_Samples/Candy_Samples.xcodeproj/project.xcworkspace/xcuserdata
 Candy/external/cegui
 Candy/external/cegui-0.8.4
 Candy/external/boost
+Candy/external/libiconv-1.14
 Candy/gui/cegui/ScriptModules

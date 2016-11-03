@@ -50,11 +50,11 @@
 // Declare functions to return FactoryModules for Window and WindowRenderers
 // as extern when statically linking.
 #if defined(CEGUI_STATIC)
-extern "C"
-{
+//extern "C"
+//{
 CEGUI::FactoryModule& getWindowRendererFactoryModule();
 CEGUI::FactoryModule& getWindowFactoryModule();
-}
+//}
 #endif
 
 
