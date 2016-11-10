@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A18F82211DB71D4E0080AFE2"
-               BuildableName = "libCEGUIExpatParser Mac.dylib"
+               BuildableName = "libCEGUIExpatParser Mac.a"
                BlueprintName = "CEGUIExpatParser Mac"
                ReferencedContainer = "container:Candy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82211DB71D4E0080AFE2"
-            BuildableName = "libCEGUIExpatParser Mac.dylib"
+            BuildableName = "libCEGUIExpatParser Mac.a"
             BlueprintName = "CEGUIExpatParser Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82211DB71D4E0080AFE2"
-            BuildableName = "libCEGUIExpatParser Mac.dylib"
+            BuildableName = "libCEGUIExpatParser Mac.a"
             BlueprintName = "CEGUIExpatParser Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>

@@ -24,6 +24,7 @@
 		A19F42511DBE46CA000B9BCD /* libCEGUIExpatParser Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E21DBA0EB700981949 /* libCEGUIExpatParser Mac.a */; };
 		A19F42521DBE46CD000B9BCD /* libCEGUIFreeImageImageCodec Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E61DBA0EB700981949 /* libCEGUIFreeImageImageCodec Mac.a */; };
 		A19F42531DBE46D1000B9BCD /* libCEGUILibXMLParser Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0E41DBA0EB700981949 /* libCEGUILibXMLParser Mac.a */; };
+		A1CFDA811DD2D3DA00C6681D /* datafiles in Resources */ = {isa = PBXBuildFile; fileRef = A1CFDA801DD2D3DA00C6681D /* datafiles */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		A1645C3E1D9A696700AC5FE2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A19F42241DBDB780000B9BCD /* SamplesFramework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SamplesFramework.cpp; sourceTree = "<group>"; };
 		A19F42251DBDB780000B9BCD /* SamplesFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesFramework.h; sourceTree = "<group>"; };
+		A1CFDA801DD2D3DA00C6681D /* datafiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = datafiles; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		A1645BD91D9908FB00AC5FE2 /* Samples_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				A1CFDA801DD2D3DA00C6681D /* datafiles */,
 				A1645BDC1D9908FB00AC5FE2 /* Assets.xcassets */,
 				A1645BDE1D9908FB00AC5FE2 /* MainMenu.xib */,
 				A1645BE11D9908FB00AC5FE2 /* Info.plist */,
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1645BDD1D9908FB00AC5FE2 /* Assets.xcassets in Resources */,
+				A1CFDA811DD2D3DA00C6681D /* datafiles in Resources */,
 				A1645BE01D9908FB00AC5FE2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,7 +39,6 @@ public:
      */
     virtual bool start();
     
-    
     /**
      Application stop function.
      
@@ -48,7 +47,6 @@ public:
      */
     virtual bool stop();
     
-    
     /**
      Application become active from stop.
      
@@ -56,7 +54,6 @@ public:
      false   Resume failed.
      */
     virtual bool resume();
-    
     
     /**
      Application end function.

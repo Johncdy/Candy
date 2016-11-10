@@ -32,10 +32,10 @@ bool ApplicationDelegate::init()
     initGLContextAttrs();
     
     auto director = object::Director::getInstance();
-    auto glview = GLView::create("Candy", NS_MATH::Rect(0, 0, 640, 480));
+    auto glview = GLView::create("Candy", NS_MATH::Rect(0, 0, 1024, 768));
     director->setOpenGLView(glview);
     
-    glview->setDesignResolutionSize(640, 480, ResolutionPolicy::NO_BORDER);
+    glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::NO_BORDER);
     
     auto samples = new (std::nothrow) SamplesFramework;
     samples->init();

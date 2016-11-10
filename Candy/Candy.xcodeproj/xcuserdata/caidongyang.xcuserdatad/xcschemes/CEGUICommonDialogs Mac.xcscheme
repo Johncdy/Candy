@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A18F82E51DB7486B0080AFE2"
-               BuildableName = "libCEGUICommonDialogs Mac.dylib"
+               BuildableName = "libCEGUICommonDialogs Mac.a"
                BlueprintName = "CEGUICommonDialogs Mac"
                ReferencedContainer = "container:Candy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82E51DB7486B0080AFE2"
-            BuildableName = "libCEGUICommonDialogs Mac.dylib"
+            BuildableName = "libCEGUICommonDialogs Mac.a"
             BlueprintName = "CEGUICommonDialogs Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F82E51DB7486B0080AFE2"
-            BuildableName = "libCEGUICommonDialogs Mac.dylib"
+            BuildableName = "libCEGUICommonDialogs Mac.a"
             BlueprintName = "CEGUICommonDialogs Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>

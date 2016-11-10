@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A18F824A1DB724520080AFE2"
-               BuildableName = "libCEGUIFreeImageImageCodec Mac.dylib"
+               BuildableName = "libCEGUIFreeImageImageCodec Mac.a"
                BlueprintName = "CEGUIFreeImageImageCodec Mac"
                ReferencedContainer = "container:Candy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F824A1DB724520080AFE2"
-            BuildableName = "libCEGUIFreeImageImageCodec Mac.dylib"
+            BuildableName = "libCEGUIFreeImageImageCodec Mac.a"
             BlueprintName = "CEGUIFreeImageImageCodec Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A18F824A1DB724520080AFE2"
-            BuildableName = "libCEGUIFreeImageImageCodec Mac.dylib"
+            BuildableName = "libCEGUIFreeImageImageCodec Mac.a"
             BlueprintName = "CEGUIFreeImageImageCodec Mac"
             ReferencedContainer = "container:Candy.xcodeproj">
          </BuildableReference>
