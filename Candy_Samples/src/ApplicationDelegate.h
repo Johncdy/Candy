@@ -40,6 +40,14 @@ public:
     virtual bool start();
     
     /**
+     Application update function.
+     
+     @return    true    Update success.
+                false   Update failed.
+     */
+    virtual bool update();
+    
+    /**
      Application stop function.
      
      @return    true    Stop success.

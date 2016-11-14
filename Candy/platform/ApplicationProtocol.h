@@ -39,6 +39,13 @@ public:
      */
     virtual bool start() = 0;
     
+    /**
+     Application update function.
+
+     @return    true    Update success.
+                false   Update failed.
+     */
+    virtual bool update() = 0;
     
     /**
      Application stop function.

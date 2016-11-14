@@ -30,6 +30,11 @@ public:
      @return int   0: Application run success.
      */
     int run();
+    
+protected:
+    
+    static double _frameTime;
+    static double _elapsedTime;
 };
 
 NS_DY_END

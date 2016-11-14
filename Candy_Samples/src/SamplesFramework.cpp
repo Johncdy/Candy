@@ -21,6 +21,7 @@ SamplesFramework::SamplesFramework()
 , d_resourceProvider(nullptr)
 , d_imageCodec(nullptr)
 , d_logoGeometry(nullptr)
+, d_spinLogo(false)
 {
     
 }
@@ -51,7 +52,12 @@ void SamplesFramework::init()
     CEGUI::ImageManager::getSingleton().addFromImageFile("cegui_logo", "logo.png");
     CEGUI::ImageManager::getSingleton().get("cegui_logo").render(*d_logoGeometry, CEGUI::Rectf(0, 0, 183, 89), 0, CEGUI::ColourRect(0xFFFFFFFF));
 
-    CEGUI::Font& font = FontManager::getSingleton().createFromFile("DejaVuSans-12.font");
+    // clearing this queue actually makes sure it's created(!)
+    CEGUI::System::getSingleton().getDefaultGUIContext().clearGeometry(CEGUI::RQ_OVERLAY);
+    
+    // subscribe handler to render overlay items
+    CEGUI::System::getSingleton().getDefaultGUIContext().subscribeEvent(CEGUI::RenderingSurface::EventRenderQueueStarted, CEGUI::Event::Subscriber(&SamplesFramework::sampleOverlayHandler, this));
+    
 }
 
 void SamplesFramework::start()
@@ -139,4 +145,48 @@ const char* SamplesFramework::getDataPathPrefix() const
 #endif
     
     return dataPathPrefix;
+}
+
+bool SamplesFramework::sampleOverlayHandler(const CEGUI::EventArgs& args)
+{
+    if (static_cast<const CEGUI::RenderQueueEventArgs&>(args).queueID != CEGUI::RQ_OVERLAY)
+        return false;
+    
+    // draw the logo
+    d_logoGeometry->draw();
+    
+    return true;
+}
+
+void SamplesFramework::renderSingleFrame(const float elapsed)
+{
+    CEGUI::System& gui_system(CEGUI::System::getSingleton());
+    
+    gui_system.injectTimePulse(elapsed);
+    updateLogo(elapsed);
+    
+    CEGUI::Renderer* gui_renderer(gui_system.getRenderer());
+    gui_renderer->beginRendering();
+    
+    renderGUIContexts();
+    
+    gui_renderer->endRendering();
+    CEGUI::WindowManager::getSingleton().cleanDeadPool();
+
+}
+
+void SamplesFramework::renderGUIContexts()
+{
+    CEGUI::System& gui_system(CEGUI::System::getSingleton());
+    gui_system.getDefaultGUIContext().draw();
+}
+
+void SamplesFramework::updateLogo(const float elapsed)
+{
+    if (!d_spinLogo)
+        return;
+    
+    static float rot = 0.0f;
+    d_logoGeometry->setRotation(CEGUI::Quaternion::eulerAnglesDegrees(rot, 0, 0));
+    rot = fmodf(rot + 180.0f * elapsed, 360.0f);
 }

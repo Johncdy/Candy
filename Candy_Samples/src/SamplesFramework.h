@@ -23,6 +23,7 @@ public:
     
     void end();
     
+    // CEGUI
     /*!
      \brief
      Setup standard sample resource group directory locations.  Default uses
@@ -34,6 +35,24 @@ public:
     //! initialise the standard default resource groups used by the samples.
     void initialiseDefaultResourceGroups();
     
+    //! event handler function that draws the logo and FPS overlay elements.
+    bool sampleOverlayHandler(const CEGUI::EventArgs& args);
+    
+    /*!
+     \brief
+     Render a single display frame.  This should be called by subclasses to
+     perform rendering.
+     
+     This function handles all per-frame updates, calls beginRendering, then
+     renders the CEGUI output, and finally calls endRendering.
+     
+     \param elapsed
+     Number of seconds elapsed since last frame.
+     */
+    void renderSingleFrame(const float elapsed);
+    
+    void renderGUIContexts();
+    
     /*!
      \brief
      Return the path prefix to use for datafiles.  The value returned
@@ -42,6 +61,9 @@ public:
      build system in use.
      */
     const char* getDataPathPrefix() const;
+    
+    //! function that updates the logo rotation as needed.
+    void updateLogo(const float elapsed);
     
 private:
     //! Renderer to use.  This MUST be set in the subclass constructor.
@@ -53,6 +75,8 @@ private:
     
     //! GeometryBuffer used for drawing the spinning CEGUI logo
     CEGUI::GeometryBuffer* d_logoGeometry;
+    //! whether to spin the logo
+    bool d_spinLogo;
 };
 
 #endif /* SamplesFramework_h */

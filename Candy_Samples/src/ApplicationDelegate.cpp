@@ -13,6 +13,8 @@
 
 NS_DY_USE
 
+static SamplesFramework* s_samples;
+
 ApplicationDelegate::ApplicationDelegate()
 {
 }
@@ -37,14 +39,21 @@ bool ApplicationDelegate::init()
     
     glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::NO_BORDER);
     
-    auto samples = new (std::nothrow) SamplesFramework;
-    samples->init();
+    s_samples = new (std::nothrow) SamplesFramework;
+    s_samples->init();
     
     return true;
 }
 
 bool ApplicationDelegate::start()
 {
+    return true;
+}
+
+bool ApplicationDelegate::update()
+{
+    s_samples->renderSingleFrame(static_cast<float>(_elapsedTime));
+    
     return true;
 }
 

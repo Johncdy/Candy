@@ -18,6 +18,9 @@
 
 NS_DY_BEGIN
 
+double Application::_frameTime = 0;
+double Application::_elapsedTime = 0;
+
 Application::Application()
 {
 }
@@ -35,21 +38,32 @@ int Application::run()
     auto director = object::Director::getInstance();
     auto glview = director->getOpenGLView();
     
+    // set starting time
+    _frameTime = glfwGetTime();
+    
     while (!glview->windowShouldClose())
     {
         /* Draw a triangle */
-        glBegin(GL_TRIANGLES);
+//        glBegin(GL_TRIANGLES);
+//        
+//        glColor3f(1.0, 0.0, 0.0);    // Red
+//        glVertex3f(0.0, 1.0, 0.0);
+//        
+//        glColor3f(0.0, 1.0, 0.0);    // Green
+//        glVertex3f(-1.0, -1.0, 0.0);
+//        
+//        glColor3f(0.0, 0.0, 1.0);    // Blue
+//        glVertex3f(1.0, -1.0, 0.0);
+//        
+//        glEnd();
+        glClear(GL_COLOR_BUFFER_BIT);
         
-        glColor3f(1.0, 0.0, 0.0);    // Red
-        glVertex3f(0.0, 1.0, 0.0);
+        // calculate time elapsed since last frame
+        double time_now = glfwGetTime();
+        _elapsedTime = time_now - _frameTime;
+        _frameTime = time_now;
         
-        glColor3f(0.0, 1.0, 0.0);    // Green
-        glVertex3f(-1.0, -1.0, 0.0);
-        
-        glColor3f(0.0, 0.0, 1.0);    // Blue
-        glVertex3f(1.0, -1.0, 0.0);
-        
-        glEnd();
+        update();
         
         glview->swapBuffers();
         glview->pollEvents();
