@@ -9,6 +9,7 @@
 #include "assert.h"
 
 #include "object/Director.h"
+#include "object/PoolManager.h"
 
 NS_DY_BEGIN
 
@@ -22,6 +23,7 @@ Director* Director::getInstance()
         s_director = new (std::nothrow) Director;
         
         assert(s_director);
+        s_director->init();
     }
     
     return s_director;
@@ -34,7 +36,14 @@ Director::Director()
 
 Director::~Director()
 {
-    
+}
+
+void Director::init()
+{
+    // Delta time init.
+    _deltaTime = 0;
+    _isDeltaZero = false;
+    _lastUpdateTime = std::chrono::steady_clock::now();
 }
 
 void Director::setOpenGLView(GLView *view)
@@ -43,8 +52,52 @@ void Director::setOpenGLView(GLView *view)
     
     if (_glview != view) {
         DY_SAFE_RELEASE(_glview);
+        
         _glview = view;
+        _glview->retain();
     }
+}
+
+void Director::mainLoop()
+{
+    draw();
+    
+    PoolManager::getInstance()->getDefaultPool()->clear();
+}
+
+void Director::draw()
+{
+    calculateDeltaTime();
+    
+    if (_glview) {
+        _glview->pollEvents();
+    }
+    
+    
+    if (_glview) {
+        _glview->swapBuffers();
+    }
+}
+
+void Director::calculateDeltaTime()
+{
+    auto now = std::chrono::steady_clock::now();
+    
+    if (_isDeltaZero) {
+        _deltaTime = 0;
+        _isDeltaZero = false;
+    } else {
+        _deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(now - _lastUpdateTime).count() / 1000000.0f;
+        _deltaTime = MAX(0, _deltaTime);
+    }
+    
+    _lastUpdateTime = now;
+}
+
+void Director::resume()
+{
+    _deltaTime = 0;
+    _isDeltaZero = true;
 }
 
 NS_OBJECT_END

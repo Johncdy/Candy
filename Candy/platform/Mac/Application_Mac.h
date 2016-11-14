@@ -31,6 +31,14 @@ public:
      */
     int run();
     
+    // Application function.
+    virtual bool init();
+    virtual bool start();
+    virtual bool update();
+    virtual bool stop();
+    virtual bool resume();
+    virtual bool end();
+    
 protected:
     
     static double _frameTime;

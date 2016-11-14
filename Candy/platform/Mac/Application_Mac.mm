@@ -65,11 +65,42 @@ int Application::run()
         
         update();
         
-        glview->swapBuffers();
-        glview->pollEvents();
+        director->mainLoop();
     }
     
     return 0;
+}
+
+bool Application::init()
+{
+    return true;
+}
+
+bool Application::start()
+{
+    return true;
+}
+
+bool Application::update()
+{
+    return true;
+}
+
+bool Application::stop()
+{
+    return true;
+}
+
+bool Application::resume()
+{
+    object::Director::getInstance()->resume();
+    
+    return true;
+}
+
+bool Application::end()
+{
+    return false;
 }
 
 NS_DY_END

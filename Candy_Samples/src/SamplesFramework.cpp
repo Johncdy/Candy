@@ -21,7 +21,7 @@ SamplesFramework::SamplesFramework()
 , d_resourceProvider(nullptr)
 , d_imageCodec(nullptr)
 , d_logoGeometry(nullptr)
-, d_spinLogo(false)
+, d_spinLogo(true)
 {
     
 }
@@ -172,7 +172,6 @@ void SamplesFramework::renderSingleFrame(const float elapsed)
     
     gui_renderer->endRendering();
     CEGUI::WindowManager::getSingleton().cleanDeadPool();
-
 }
 
 void SamplesFramework::renderGUIContexts()

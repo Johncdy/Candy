@@ -14,9 +14,9 @@
 #define CANDY_VERSION 0x00010000
 
 // PoolManager max capacity.
-#define POOL_MANAGER_CAPACITY           0x00000001
+#define POOL_MANAGER_CAPACITY               0x00000001
 // Default engine object pool index.
-#define POOL_MANAGER_CANDY_POOL_INDEX   0x00000000
+#define POOL_MANAGER_DEFAULT_POOL_INDEX     0x00000000
 
 #ifdef __cplusplus
 #define NS_DY_BEGIN         namespace candy {
@@ -43,6 +43,11 @@
 #define NS_PLATFORM_END     }
 #define NS_PLATFORM_USE     using namespace platform;
 #define NS_PLATFORM         platform
+
+#define NS_RENDERER_BEGIN   namespace renderer {
+#define NS_RENDERER_END     }
+#define NS_RENDERER_USE     using namespace renderer;
+#define NS_RENDERER         renderer
 #endif
 
 #define DY_SAFE_DELETE(p)           do { delete (p); (p) = nullptr; } while(0)

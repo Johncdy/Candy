@@ -37,7 +37,7 @@ void PoolManager::destroyInstance()
 
 ObjectPool* PoolManager::getDefaultPool() const
 {
-    return _objectPoolVector[POOL_MANAGER_CANDY_POOL_INDEX];
+    return _objectPoolVector[POOL_MANAGER_DEFAULT_POOL_INDEX];
 }
 
 ObjectPool* PoolManager::getPoolAt(int pos) const

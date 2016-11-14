@@ -64,6 +64,8 @@ bool ApplicationDelegate::stop()
 
 bool ApplicationDelegate::resume()
 {
+    Application::resume();
+    
     return true;
 }
 
