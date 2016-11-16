@@ -31,8 +31,7 @@ PoolManager* PoolManager::getInstance()
 
 void PoolManager::destroyInstance()
 {
-    delete _singleInstance;
-    _singleInstance = nullptr;
+    DY_SAFE_DELETE(_singleInstance);
 }
 
 ObjectPool* PoolManager::getDefaultPool() const
@@ -62,6 +61,8 @@ PoolManager::~PoolManager()
         ObjectPool* pool = _objectPoolVector.back();
         delete pool;
     }
+    
+    _singleInstance = nullptr;
 }
 
 int PoolManager::push(ObjectPool* pool)

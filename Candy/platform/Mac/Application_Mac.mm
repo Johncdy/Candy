@@ -68,6 +68,8 @@ int Application::run()
         director->mainLoop();
     }
     
+    glview->release();
+    
     return 0;
 }
 

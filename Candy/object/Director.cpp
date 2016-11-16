@@ -29,6 +29,11 @@ Director* Director::getInstance()
     return s_director;
 }
 
+void Director::destroyInstance()
+{
+    DY_SAFE_DELETE(s_director);
+}
+
 Director::Director()
 : _glview(nullptr)
 {
@@ -36,6 +41,9 @@ Director::Director()
 
 Director::~Director()
 {
+    DY_SAFE_DELETE(_renderer);
+    
+    s_director = nullptr;
 }
 
 void Director::init()
@@ -44,6 +52,8 @@ void Director::init()
     _deltaTime = 0;
     _isDeltaZero = false;
     _lastUpdateTime = std::chrono::steady_clock::now();
+    
+    _renderer = new (std::nothrow) renderer::Renderer;
 }
 
 void Director::setOpenGLView(GLView *view)
@@ -73,6 +83,9 @@ void Director::draw()
         _glview->pollEvents();
     }
     
+    
+    
+//    _renderer->clear();
     
     if (_glview) {
         _glview->swapBuffers();

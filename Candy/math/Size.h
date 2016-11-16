@@ -17,6 +17,10 @@ NS_MATH_BEGIN
 
 class Size {
 public:
+    /**
+     * Constructs a new size initialized to all zeros.
+     */
+    inline Size();
     
     /**
      Constructs a new size initialized to the specified values.
@@ -25,6 +29,13 @@ public:
      @param h  The height of size.
      */
     inline Size(float w, float h);
+    
+    /**
+     * Constructs a new size that is a copy of the specified size.
+     *
+     * @param copy The size to copy.
+     */
+    inline Size(const Size& copy);
     
     /**
      Setter of Size.

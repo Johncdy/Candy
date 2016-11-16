@@ -750,6 +750,15 @@
 		A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D0908A1DD9F6E40030A95B /* Renderer.cpp */; };
 		A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D0908A1DD9F6E40030A95B /* Renderer.cpp */; };
 		A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D0908B1DD9F6E40030A95B /* Renderer.h */; };
+		A1D628F81DDC3FC300AE91A2 /* Mat4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D628F61DDC3FC300AE91A2 /* Mat4.cpp */; };
+		A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D628F61DDC3FC300AE91A2 /* Mat4.cpp */; };
+		A1D628FA1DDC3FC300AE91A2 /* Mat4.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D628F71DDC3FC300AE91A2 /* Mat4.h */; };
+		A1D628FE1DDC452900AE91A2 /* Vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D628FC1DDC452900AE91A2 /* Vec3.cpp */; };
+		A1D628FF1DDC452900AE91A2 /* Vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D628FC1DDC452900AE91A2 /* Vec3.cpp */; };
+		A1D629001DDC452900AE91A2 /* Vec3.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D628FD1DDC452900AE91A2 /* Vec3.h */; };
+		A1D629051DDC64D700AE91A2 /* MathUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D629031DDC64D700AE91A2 /* MathUtil.cpp */; };
+		A1D629061DDC64D700AE91A2 /* MathUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D629031DDC64D700AE91A2 /* MathUtil.cpp */; };
+		A1D629071DDC64D700AE91A2 /* MathUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D629041DDC64D700AE91A2 /* MathUtil.h */; };
 		A1D9EA001DBF7E4200C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA011DBF7E5D00C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA091DBF815D00C5A4FD /* expat.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D9EA051DBF815D00C5A4FD /* expat.h */; };
@@ -1674,6 +1683,14 @@
 		A1BB92F61D9CC4110082CE12 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec2.inl; path = math/Vec2.inl; sourceTree = "<group>"; };
 		A1D0908A1DD9F6E40030A95B /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = renderer/Renderer.cpp; sourceTree = "<group>"; };
 		A1D0908B1DD9F6E40030A95B /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Renderer.h; path = renderer/Renderer.h; sourceTree = "<group>"; };
+		A1D628F61DDC3FC300AE91A2 /* Mat4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mat4.cpp; path = math/Mat4.cpp; sourceTree = "<group>"; };
+		A1D628F71DDC3FC300AE91A2 /* Mat4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mat4.h; path = math/Mat4.h; sourceTree = "<group>"; };
+		A1D628FB1DDC418F00AE91A2 /* Mat4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Mat4.inl; path = math/Mat4.inl; sourceTree = "<group>"; };
+		A1D628FC1DDC452900AE91A2 /* Vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec3.cpp; path = math/Vec3.cpp; sourceTree = "<group>"; };
+		A1D628FD1DDC452900AE91A2 /* Vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec3.h; path = math/Vec3.h; sourceTree = "<group>"; };
+		A1D629021DDC456B00AE91A2 /* Vec3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec3.inl; path = math/Vec3.inl; sourceTree = "<group>"; };
+		A1D629031DDC64D700AE91A2 /* MathUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MathUtil.cpp; path = math/MathUtil.cpp; sourceTree = "<group>"; };
+		A1D629041DDC64D700AE91A2 /* MathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathUtil.h; path = math/MathUtil.h; sourceTree = "<group>"; };
 		A1D9EA031DBF815D00C5A4FD /* expat-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "expat-license.txt"; sourceTree = "<group>"; };
 		A1D9EA051DBF815D00C5A4FD /* expat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat.h; sourceTree = "<group>"; };
 		A1D9EA061DBF815D00C5A4FD /* expat_external.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat_external.h; sourceTree = "<group>"; };
@@ -1852,6 +1869,14 @@
 				A1645C521D9BC95D00AC5FE2 /* Rect.cpp */,
 				A1645C531D9BC95D00AC5FE2 /* Rect.h */,
 				A13F18AA1DA750E6006E9019 /* Rect.inl */,
+				A1D628F61DDC3FC300AE91A2 /* Mat4.cpp */,
+				A1D628F71DDC3FC300AE91A2 /* Mat4.h */,
+				A1D628FB1DDC418F00AE91A2 /* Mat4.inl */,
+				A1D628FC1DDC452900AE91A2 /* Vec3.cpp */,
+				A1D628FD1DDC452900AE91A2 /* Vec3.h */,
+				A1D629021DDC456B00AE91A2 /* Vec3.inl */,
+				A1D629031DDC64D700AE91A2 /* MathUtil.cpp */,
+				A1D629041DDC64D700AE91A2 /* MathUtil.h */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -3063,7 +3088,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D629071DDC64D700AE91A2 /* MathUtil.h in Headers */,
 				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
+				A1D629001DDC452900AE91A2 /* Vec3.h in Headers */,
 				A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */,
 				A177B0FA1DBA102500981949 /* glfw3.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
@@ -3082,6 +3109,7 @@
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
 				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
+				A1D628FA1DDC3FC300AE91A2 /* Mat4.h in Headers */,
 				A1873F521DBB11150022CC16 /* Ref.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3866,8 +3894,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1873F4A1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
+				A1D629051DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */,
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
+				A1D628F81DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
@@ -3876,6 +3906,7 @@
 				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
+				A1D628FE1DDC452900AE91A2 /* Vec3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3883,6 +3914,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D628FF1DDC452900AE91A2 /* Vec3.cpp in Sources */,
 				A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,
@@ -3891,7 +3923,9 @@
 				A1873F511DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
+				A1D629061DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
+				A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

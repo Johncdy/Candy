@@ -15,25 +15,37 @@ NS_DY_BEGIN
 
 NS_MATH_BEGIN
 
+inline Rect::Rect()
+: _origin(Vec2())
+, _size(Size())
+{
+}
+
 inline Rect::Rect(float x, float y, float width, float height)
 : _origin(Vec2(x, y))
 , _size(Size(width, height))
 {
 }
 
+inline Rect::Rect(const Rect& copy)
+: _origin(copy._origin)
+, _size(copy._size)
+{
+}
+
 inline const Rect& Rect::operator=(const Rect &other)
 {
-    this->_origin = other._origin;
-    this->_size = other._size;
+    _origin = other._origin;
+    _size = other._size;
     return *this;
 }
 
 inline void Rect::set(float x, float y, float width, float height)
 {
-    this->_origin._x = x;
-    this->_origin._y = y;
-    this->_size._width = width;
-    this->_size._height = height;
+    _origin._x = x;
+    _origin._y = y;
+    _size._width = width;
+    _size._height = height;
 }
 
 NS_MATH_END

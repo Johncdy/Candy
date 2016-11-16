@@ -21,6 +21,7 @@ ApplicationDelegate::ApplicationDelegate()
 
 ApplicationDelegate::~ApplicationDelegate()
 {
+    DY_SAFE_DELETE(s_samples);
 }
 
 void ApplicationDelegate::initGLContextAttrs()

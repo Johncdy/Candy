@@ -15,43 +15,55 @@ NS_DY_BEGIN
 
 NS_MATH_BEGIN
 
+inline Size::Size()
+: _width(0.0f)
+, _height(0.0f)
+{
+}
+
 inline Size::Size(float w, float h)
 : _width(w)
 , _height(h)
 {
 }
 
+inline Size::Size(const Size& copy)
+: _width(copy._width)
+, _height(copy._height)
+{
+}
+
 inline void Size::set(float w, float h)
 {
-    this->_width = w;
-    this->_height = h;
+    _width = w;
+    _height = h;
 }
 
 inline const Size& Size::operator=(const Size &other)
 {
-    this->_width = other._width;
-    this->_height = other._height;
+    _width = other._width;
+    _height = other._height;
     return *this;
 }
 
 inline const Size Size::operator+(const Size &other) const
 {
-    return Size(this->_width + other._width, this->_height + other._height);
+    return Size(_width + other._width, _height + other._height);
 }
 
 inline const Size Size::operator-(const Size &other) const
 {
-    return Size(this->_width - other._width, this->_height - other._height);
+    return Size(_width - other._width, _height - other._height);
 }
 
 inline const Size Size::operator*(float a) const
 {
-    return Size(this->_width * a, this->_height * a);
+    return Size(_width * a, _height * a);
 }
 
 inline const Size Size::operator/(float a) const
 {
-    return Size(this->_width / a, this->_height /a);
+    return Size(_width / a, _height /a);
 }
 
 NS_MATH_END

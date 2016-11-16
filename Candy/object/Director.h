@@ -11,12 +11,25 @@
 
 #include "object/Ref.h"
 #include "platform/Mac/GLView_Mac.h"
+#include "renderer/Renderer.h"
 
 #include <chrono>
 
 NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
+
+enum class MATRIX_STACK_TYPE
+{
+    /// Model view matrix stack
+    MATRIX_STACK_MODELVIEW,
+    
+    /// projection matrix stack
+    MATRIX_STACK_PROJECTION,
+    
+    /// texture matrix stack
+    MATRIX_STACK_TEXTURE
+};
 
 class Director: public Ref {
 public:
@@ -27,6 +40,11 @@ public:
      @return _getInstance
      */
     static Director* getInstance();
+    
+    /**
+     Delete director manager singleton.
+     */
+    static void destroyInstance();
     
     void init();
     
@@ -81,6 +99,9 @@ private:
     bool _isDeltaZero;
     // Last time the main loop was updated.
     std::chrono::steady_clock::time_point _lastUpdateTime;
+    
+    // Renderer for the director.
+    renderer::Renderer* _renderer;
 };
 
 NS_OBJECT_END

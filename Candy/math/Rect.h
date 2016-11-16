@@ -18,6 +18,10 @@ NS_MATH_BEGIN
 
 class Rect {
 public:
+    /**
+     Constructor an empty Rect.
+     */
+    inline Rect();
     
     /**
      Constructor a rect.
@@ -28,6 +32,11 @@ public:
      @param height The height of rect.
      */
     inline Rect(float x, float y, float width, float height);
+    
+    /**
+     Copy constructor.
+     */
+    inline Rect(const Rect& copy);
     
     /**
      Operator equal.

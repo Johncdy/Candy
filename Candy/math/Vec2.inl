@@ -15,43 +15,61 @@ NS_DY_BEGIN
 
 NS_MATH_BEGIN
 
+inline Vec2::Vec2()
+: _x(0.0f)
+, _y(0.0f)
+{
+}
+
 inline Vec2::Vec2(float x, float y)
 : _x(x)
 , _y(y)
 {
 }
 
+inline Vec2::Vec2(const float* array)
+: _x(array[0])
+, _y(array[1])
+{
+}
+
+inline Vec2::Vec2(const Vec2& copy)
+: _x(copy._x)
+, _y(copy._y)
+{
+}
+
 inline void Vec2::set(float x, float y)
 {
-    this->_x = x;
-    this->_y = y;
+    _x = x;
+    _y = y;
 }
 
 inline const Vec2& Vec2::operator= (const Vec2 &other)
 {
-    this->_x = other._x;
-    this->_y = other._y;
+    _x = other._x;
+    _y = other._y;
     return *this;
 }
 
 inline const Vec2 Vec2::operator+(const Vec2 &other) const
 {
-    return Vec2(this->_x + other._x, this->_y + other._y);
+    return Vec2(_x + other._x, _y + other._y);
 }
 
 inline const Vec2 Vec2::operator-(const Vec2 &other) const
 {
-    return Vec2(this->_x - other._x, this->_y - other._y);
+    return Vec2(_x - other._x, _y - other._y);
 }
 
 inline const Vec2 Vec2::operator*(float a) const
 {
-    return Vec2(this->_x * a, this->_y * a);
+    return Vec2(_x * a, _y * a);
 }
 
 inline const Vec2 Vec2::operator/(float a) const
 {
-    return Vec2(this->_x / a, this->_y / a);
+    return Vec2(_x / a, _y / a);
 }
 
 NS_MATH_END
