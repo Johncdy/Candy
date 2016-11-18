@@ -8,8 +8,11 @@
 
 #include "assert.h"
 
+#include "math/MathMacros.h"
+
 #include "object/Director.h"
 #include "object/PoolManager.h"
+
 
 NS_DY_BEGIN
 

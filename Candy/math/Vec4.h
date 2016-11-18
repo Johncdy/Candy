@@ -1,35 +1,72 @@
 //
-//  Vec3.h
+//  Vec4.h
 //  Candy
 //
-//  Created by Dongyang.Cai on 16/11/2016.
+//  Created by Dongyang.Cai on 18/11/2016.
 //
 //
 
-#ifndef Vec3_h
-#define Vec3_h
+#ifndef Vec4_h
+#define Vec4_h
+
+#ifdef __SSE__
+#include <xmmintrin.h>
+#endif
 
 #include "include/Candy.h"
+
+/**
+ * @addtogroup base
+ * @{
+ */
 
 NS_DY_BEGIN
 
 NS_MATH_BEGIN
 
+class Mat4;
+
 /**
- * Defines a 3-element floating point vector.
- *
- * When using a vector to represent a surface normal,
- * the vector should typically be normalized.
- * Other uses of directional vectors may wish to leave
- * the magnitude of the vector intact. When used as a point,
- * the elements of the vector represent a position in 3D space.
+ * Defines 4-element floating point vector.
  */
-class Vec3 {
+class Vec4
+{
 public:
+#ifdef __SSE__
+    union {
+        struct {
+            float x;
+            float y;
+            float z;
+            float w;
+        };
+        __m128 v;
+    };
+#else
+    /**
+     * The x-coordinate.
+     */
+    float x;
+    
+    /**
+     * The y-coordinate.
+     */
+    float y;
+    
+    /**
+     * The z-coordinate.
+     */
+    float z;
+    
+    /**
+     * The w-coordinate.
+     */
+    float w;
+#endif
     /**
      * Constructs a new vector initialized to all zeros.
      */
-    Vec3();
+    Vec4();
     
     /**
      * Constructs a new vector initialized to the specified values.
@@ -37,15 +74,16 @@ public:
      * @param xx The x coordinate.
      * @param yy The y coordinate.
      * @param zz The z coordinate.
+     * @param ww The w coordinate.
      */
-    Vec3(float xx, float yy, float zz);
+    Vec4(float xx, float yy, float zz, float ww);
     
     /**
      * Constructs a new vector from the values in the specified array.
      *
-     * @param array An array containing the elements of the vector in the order x, y, z.
+     * @param array An array containing the elements of the vector in the order x, y, z, w.
      */
-    Vec3(const float* array);
+    Vec4(const float* array);
     
     /**
      * Constructs a vector that describes the direction between the specified points.
@@ -53,43 +91,45 @@ public:
      * @param p1 The first point.
      * @param p2 The second point.
      */
-    Vec3(const Vec3& p1, const Vec3& p2);
+    Vec4(const Vec4& p1, const Vec4& p2);
     
     /**
-     * Constructs a new vector that is a copy of the specified vector.
+     * Constructor.
+     *
+     * Creates a new vector that is a copy of the specified vector.
      *
      * @param copy The vector to copy.
      */
-    Vec3(const Vec3& copy);
+    Vec4(const Vec4& copy);
     
     /**
-     * Creates a new vector from an integer interpreted as an RGB value.
-     * E.g. 0xff0000 represents red or the vector (1, 0, 0).
+     * Creates a new vector from an integer interpreted as an RGBA value.
+     * E.g. 0xff0000ff represents opaque red or the vector (1, 0, 0, 1).
      *
-     * @param color The integer to interpret as an RGB value.
+     * @param color The integer to interpret as an RGBA value.
      *
-     * @return A vector corresponding to the interpreted RGB color.
+     * @return A vector corresponding to the interpreted RGBA color.
      */
-    static Vec3 fromColor(unsigned int color);
+    static Vec4 fromColor(unsigned int color);
     
     /**
      * Destructor.
      */
-    ~Vec3();
+    ~Vec4();
     
     /**
      * Indicates whether this vector contains all zeros.
      *
      * @return true if this vector contains all zeros, false otherwise.
      */
-    inline bool isZero() const;
+    bool isZero() const;
     
     /**
      * Indicates whether this vector contains all ones.
      *
      * @return true if this vector contains all ones, false otherwise.
      */
-    inline bool isOne() const;
+    bool isOne() const;
     
     /**
      * Returns the angle (in radians) between the specified vectors.
@@ -99,25 +139,14 @@ public:
      *
      * @return The angle between the two vectors (in radians).
      */
-    static float angle(const Vec3& v1, const Vec3& v2);
-    
+    static float angle(const Vec4& v1, const Vec4& v2);
     
     /**
      * Adds the elements of the specified vector to this one.
      *
      * @param v The vector to add.
      */
-    inline void add(const Vec3& v);
-    
-    
-    /**
-     * Adds the elements of this vector to the specified values.
-     *
-     * @param xx The add x coordinate.
-     * @param yy The add y coordinate.
-     * @param zz The add z coordinate.
-     */
-    inline void add(float xx, float yy, float zz);
+    void add(const Vec4& v);
     
     /**
      * Adds the specified vectors and stores the result in dst.
@@ -126,7 +155,7 @@ public:
      * @param v2 The second vector.
      * @param dst A vector to store the result in.
      */
-    static void add(const Vec3& v1, const Vec3& v2, Vec3* dst);
+    static void add(const Vec4& v1, const Vec4& v2, Vec4* dst);
     
     /**
      * Clamps this vector within the specified range.
@@ -134,7 +163,7 @@ public:
      * @param min The minimum value.
      * @param max The maximum value.
      */
-    void clamp(const Vec3& min, const Vec3& max);
+    void clamp(const Vec4& min, const Vec4& max);
     
     /**
      * Clamps the specified vector within the specified range and returns it in dst.
@@ -144,23 +173,7 @@ public:
      * @param max The maximum value.
      * @param dst A vector to store the result in.
      */
-    static void clamp(const Vec3& v, const Vec3& min, const Vec3& max, Vec3* dst);
-    
-    /**
-     * Sets this vector to the cross product between itself and the specified vector.
-     *
-     * @param v The vector to compute the cross product with.
-     */
-    void cross(const Vec3& v);
-    
-    /**
-     * Computes the cross product of the specified vectors and stores the result in dst.
-     *
-     * @param v1 The first vector.
-     * @param v2 The second vector.
-     * @param dst A vector to store the result in.
-     */
-    static void cross(const Vec3& v1, const Vec3& v2, Vec3* dst);
+    static void clamp(const Vec4& v, const Vec4& min, const Vec4& max, Vec4* dst);
     
     /**
      * Returns the distance between this vector and v.
@@ -171,7 +184,7 @@ public:
      *
      * @see distanceSquared
      */
-    float distance(const Vec3& v) const;
+    float distance(const Vec4& v) const;
     
     /**
      * Returns the squared distance between this vector and v.
@@ -187,7 +200,7 @@ public:
      *
      * @see distance
      */
-    float distanceSquared(const Vec3& v) const;
+    float distanceSquared(const Vec4& v) const;
     
     /**
      * Returns the dot product of this vector and the specified vector.
@@ -196,7 +209,7 @@ public:
      *
      * @return The dot product.
      */
-    float dot(const Vec3& v) const;
+    float dot(const Vec4& v) const;
     
     /**
      * Returns the dot product between the specified vectors.
@@ -206,7 +219,7 @@ public:
      *
      * @return The dot product between the vectors.
      */
-    static float dot(const Vec3& v1, const Vec3& v2);
+    static float dot(const Vec4& v1, const Vec4& v2);
     
     /**
      * Computes the length of this vector.
@@ -215,7 +228,7 @@ public:
      *
      * @see lengthSquared
      */
-    inline float length() const;
+    float length() const;
     
     /**
      * Returns the squared length of this vector.
@@ -229,17 +242,17 @@ public:
      *
      * @see length
      */
-    inline float lengthSquared() const;
+    float lengthSquared() const;
     
     /**
      * Negates this vector.
      */
-    inline void negate();
+    void negate();
     
     /**
      * Normalizes this vector.
      *
-     * This method normalizes this Vec3 so that it is of
+     * This method normalizes this Vec4 so that it is of
      * unit length (in other words, the length of the vector
      * after calling this method will be 1.0f). If the vector
      * already has unit length or if the length of the vector
@@ -252,14 +265,14 @@ public:
     /**
      * Get the normalized vector.
      */
-    Vec3 getNormalized() const;
+    Vec4 getNormalized() const;
     
     /**
      * Scales all elements of this vector by the specified value.
      *
      * @param scalar The scalar value.
      */
-    inline void scale(float scalar);
+    void scale(float scalar);
     
     /**
      * Sets the elements of this vector to the specified values.
@@ -267,32 +280,31 @@ public:
      * @param xx The new x coordinate.
      * @param yy The new y coordinate.
      * @param zz The new z coordinate.
+     * @param ww The new w coordinate.
      */
-    inline void set(float xx, float yy, float zz);
+    void set(float xx, float yy, float zz, float ww);
     
     /**
      * Sets the elements of this vector from the values in the specified array.
      *
-     * @param array An array containing the elements of the vector in the order x, y, z.
+     * @param array An array containing the elements of the vector in the order x, y, z, w.
      */
-    inline void set(const float* array);
+    void set(const float* array);
     
     /**
      * Sets the elements of this vector to those in the specified vector.
      *
      * @param v The vector to copy.
      */
-    inline void set(const Vec3& v);
+    void set(const Vec4& v);
     
     /**
      * Sets this vector to the directional vector between the specified points.
+     *
+     * @param p1 The first point.
+     * @param p2 The second point.
      */
-    inline void set(const Vec3& p1, const Vec3& p2);
-    
-    /**
-     * Sets the elements of this vector to zero.
-     */
-    inline void setZero();
+    void set(const Vec4& p1, const Vec4& p2);
     
     /**
      * Subtracts this vector and the specified vector as (this - v)
@@ -300,7 +312,7 @@ public:
      *
      * @param v The vector to subtract.
      */
-    inline void subtract(const Vec3& v);
+    void subtract(const Vec4& v);
     
     /**
      * Subtracts the specified vectors and stores the result in dst.
@@ -310,26 +322,7 @@ public:
      * @param v2 The second vector.
      * @param dst The destination vector.
      */
-    static void subtract(const Vec3& v1, const Vec3& v2, Vec3* dst);
-    
-    /**
-     * Updates this vector towards the given target using a smoothing function.
-     * The given response time determines the amount of smoothing (lag). A longer
-     * response time yields a smoother result and more lag. To force this vector to
-     * follow the target closely, provide a response time that is very small relative
-     * to the given elapsed time.
-     *
-     * @param target target value.
-     * @param elapsedTime elapsed time between calls.
-     * @param responseTime response time (in the same units as elapsedTime).
-     */
-    void smooth(const Vec3& target, float elapsedTime, float responseTime);
-    
-    /**
-     * Linear interpolation between two vectors A and B by alpha which
-     * is in the range [0,1]
-     */
-    inline Vec3 lerp(const Vec3& target, float alpha) const;
+    static void subtract(const Vec4& v1, const Vec4& v2, Vec4* dst);
     
     /**
      * Calculates the sum of this vector with the given vector.
@@ -339,7 +332,7 @@ public:
      * @param v The vector to add.
      * @return The vector sum.
      */
-    inline const Vec3 operator+(const Vec3& v) const;
+    inline const Vec4 operator+(const Vec4& v) const;
     
     /**
      * Adds the given vector to this vector.
@@ -347,17 +340,17 @@ public:
      * @param v The vector to add.
      * @return This vector, after the addition occurs.
      */
-    inline Vec3& operator+=(const Vec3& v);
+    inline Vec4& operator+=(const Vec4& v);
     
     /**
-     * Calculates the difference of this vector with the given vector.
+     * Calculates the sum of this vector with the given vector.
      *
      * Note: this does not modify this vector.
      *
-     * @param v The vector to subtract.
-     * @return The vector difference.
+     * @param v The vector to add.
+     * @return The vector sum.
      */
-    inline const Vec3 operator-(const Vec3& v) const;
+    inline const Vec4 operator-(const Vec4& v) const;
     
     /**
      * Subtracts the given vector from this vector.
@@ -365,7 +358,7 @@ public:
      * @param v The vector to subtract.
      * @return This vector, after the subtraction occurs.
      */
-    inline Vec3& operator-=(const Vec3& v);
+    inline Vec4& operator-=(const Vec4& v);
     
     /**
      * Calculates the negation of this vector.
@@ -374,7 +367,7 @@ public:
      *
      * @return The negation of this vector.
      */
-    inline const Vec3 operator-() const;
+    inline const Vec4 operator-() const;
     
     /**
      * Calculates the scalar product of this vector with the given value.
@@ -384,7 +377,7 @@ public:
      * @param s The value to scale by.
      * @return The scaled vector.
      */
-    inline const Vec3 operator*(float s) const;
+    inline const Vec4 operator*(float s) const;
     
     /**
      * Scales this vector by the given value.
@@ -392,7 +385,7 @@ public:
      * @param s The value to scale by.
      * @return This vector, after the scale occurs.
      */
-    inline Vec3& operator*=(float s);
+    inline Vec4& operator*=(float s);
     
     /**
      * Returns the components of this vector divided by the given constant
@@ -402,27 +395,16 @@ public:
      * @param s the constant to divide this vector with
      * @return a smaller vector
      */
-    inline const Vec3 operator/(float s) const;
+    inline const Vec4 operator/(float s) const;
     
-    /** Returns true if the vector's scalar components are all greater
-     that the ones of the vector it is compared against.
+    /**
+     * Determines if this vector is less than the given vector.
+     *
+     * @param v The vector to compare against.
+     *
+     * @return True if this vector is less than the given vector, false otherwise.
      */
-    inline bool operator < (const Vec3& rhs) const
-    {
-        if (_x < rhs._x && _y < rhs._y && _z < rhs._z)
-            return true;
-        return false;
-    }
-    
-    /** Returns true if the vector's scalar components are all smaller
-     that the ones of the vector it is compared against.
-     */
-    inline bool operator >(const Vec3& rhs) const
-    {
-        if (_x > rhs._x && _y > rhs._y && _z > rhs._z)
-            return true;
-        return false;
-    }
+    inline bool operator<(const Vec4& v) const;
     
     /**
      * Determines if this vector is equal to the given vector.
@@ -431,7 +413,7 @@ public:
      *
      * @return True if this vector is equal to the given vector, false otherwise.
      */
-    inline bool operator==(const Vec3& v) const;
+    inline bool operator==(const Vec4& v) const;
     
     /**
      * Determines if this vector is not equal to the given vector.
@@ -440,41 +422,35 @@ public:
      *
      * @return True if this vector is not equal to the given vector, false otherwise.
      */
-    inline bool operator!=(const Vec3& v) const;
+    inline bool operator!=(const Vec4& v) const;
     
-    /** equals to Vec3(0,0,0) */
-    static const Vec3 ZERO;
-    /** equals to Vec3(1,1,1) */
-    static const Vec3 ONE;
-    /** equals to Vec3(1,0,0) */
-    static const Vec3 UNIT_X;
-    /** equals to Vec3(0,1,0) */
-    static const Vec3 UNIT_Y;
-    /** equals to Vec3(0,0,1) */
-    static const Vec3 UNIT_Z;
-    
-public:
-    // The x-coordinate.
-    float _x;
-    // The y-coordinate.
-    float _y;
-    // The z-coordinate.
-    float _z;
+    /** equals to Vec4(0,0,0,0) */
+    static const Vec4 ZERO;
+    /** equals to Vec4(1,1,1,1) */
+    static const Vec4 ONE;
+    /** equals to Vec4(1,0,0,0) */
+    static const Vec4 UNIT_X;
+    /** equals to Vec4(0,1,0,0) */
+    static const Vec4 UNIT_Y;
+    /** equals to Vec4(0,0,1,0) */
+    static const Vec4 UNIT_Z;
+    /** equals to Vec4(0,0,0,1) */
+    static const Vec4 UNIT_W;
 };
 
 /**
  * Calculates the scalar product of the given vector with the given value.
- *
+ * 
  * @param x The value to scale by.
  * @param v The vector to scale.
  * @return The scaled vector.
  */
-inline const Vec3 operator*(float x, const Vec3& v);
-
-NS_MATH_END
+inline const Vec4 operator*(float x, const Vec4& v);
 
 NS_DY_END
 
-#include "math/Vec3.inl"
+NS_MATH_END
 
-#endif /* Vec3_h */
+#include "math/Vec4.inl"
+
+#endif /* Vec4_h */

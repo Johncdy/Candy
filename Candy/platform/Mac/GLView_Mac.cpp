@@ -11,6 +11,7 @@
 
 #include "platform/Mac/GLView_Mac.h"
 #include "platform/Mac/GLFWEventHandler.h"
+#include "math/MathMacros.h"
 
 NS_DY_BEGIN
 

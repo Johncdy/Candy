@@ -767,6 +767,13 @@
 		A1D9EA0D1DBF82EA00C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA0E1DBF830100C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA0F1DBF831400C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
+		A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F1320C1DDEF32B0085042F /* Vec4.cpp */; };
+		A1F1320F1DDEF32B0085042F /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F1320C1DDEF32B0085042F /* Vec4.cpp */; };
+		A1F132101DDEF32B0085042F /* Vec4.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F1320D1DDEF32B0085042F /* Vec4.h */; };
+		A1F132131DDEF4F90085042F /* MathMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F132121DDEF4F90085042F /* MathMacros.h */; };
+		A1F132161DDEFA270085042F /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F132141DDEFA270085042F /* Quaternion.cpp */; };
+		A1F132171DDEFA270085042F /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F132141DDEFA270085042F /* Quaternion.cpp */; };
+		A1F132181DDEFA270085042F /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F132151DDEFA270085042F /* Quaternion.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1695,6 +1702,17 @@
 		A1D9EA051DBF815D00C5A4FD /* expat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat.h; sourceTree = "<group>"; };
 		A1D9EA061DBF815D00C5A4FD /* expat_external.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat_external.h; sourceTree = "<group>"; };
 		A1D9EA081DBF815D00C5A4FD /* libexpat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexpat.a; sourceTree = "<group>"; };
+		A1F132081DDEA5BC0085042F /* MathUtilNeon64.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtilNeon64.inl; path = math/MathUtilNeon64.inl; sourceTree = "<group>"; };
+		A1F132091DDEA61A0085042F /* MathUtil.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtil.inl; path = math/MathUtil.inl; sourceTree = "<group>"; };
+		A1F1320A1DDEB28C0085042F /* MathUtilSSE.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtilSSE.inl; path = math/MathUtilSSE.inl; sourceTree = "<group>"; };
+		A1F1320B1DDEF06F0085042F /* MathUtilNeon.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtilNeon.inl; path = math/MathUtilNeon.inl; sourceTree = "<group>"; };
+		A1F1320C1DDEF32B0085042F /* Vec4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vec4.cpp; path = math/Vec4.cpp; sourceTree = "<group>"; };
+		A1F1320D1DDEF32B0085042F /* Vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vec4.h; path = math/Vec4.h; sourceTree = "<group>"; };
+		A1F132111DDEF3400085042F /* Vec4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec4.inl; path = math/Vec4.inl; sourceTree = "<group>"; };
+		A1F132121DDEF4F90085042F /* MathMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathMacros.h; path = math/MathMacros.h; sourceTree = "<group>"; };
+		A1F132141DDEFA270085042F /* Quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quaternion.cpp; path = math/Quaternion.cpp; sourceTree = "<group>"; };
+		A1F132151DDEFA270085042F /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quaternion.h; path = math/Quaternion.h; sourceTree = "<group>"; };
+		A1F132191DDEFAA30085042F /* Quaternion.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Quaternion.inl; path = math/Quaternion.inl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1863,6 +1881,12 @@
 				A1645C461D9BC3C700AC5FE2 /* Vec2.cpp */,
 				A1645C471D9BC3C700AC5FE2 /* Vec2.h */,
 				A1BB92F61D9CC4110082CE12 /* Vec2.inl */,
+				A1D628FC1DDC452900AE91A2 /* Vec3.cpp */,
+				A1D628FD1DDC452900AE91A2 /* Vec3.h */,
+				A1D629021DDC456B00AE91A2 /* Vec3.inl */,
+				A1F1320C1DDEF32B0085042F /* Vec4.cpp */,
+				A1F1320D1DDEF32B0085042F /* Vec4.h */,
+				A1F132111DDEF3400085042F /* Vec4.inl */,
 				A1645C4D1D9BC94500AC5FE2 /* Size.cpp */,
 				A1645C4E1D9BC94500AC5FE2 /* Size.h */,
 				A13F18A91DA737BB006E9019 /* Size.inl */,
@@ -1872,11 +1896,16 @@
 				A1D628F61DDC3FC300AE91A2 /* Mat4.cpp */,
 				A1D628F71DDC3FC300AE91A2 /* Mat4.h */,
 				A1D628FB1DDC418F00AE91A2 /* Mat4.inl */,
-				A1D628FC1DDC452900AE91A2 /* Vec3.cpp */,
-				A1D628FD1DDC452900AE91A2 /* Vec3.h */,
-				A1D629021DDC456B00AE91A2 /* Vec3.inl */,
 				A1D629031DDC64D700AE91A2 /* MathUtil.cpp */,
 				A1D629041DDC64D700AE91A2 /* MathUtil.h */,
+				A1F132091DDEA61A0085042F /* MathUtil.inl */,
+				A1F1320B1DDEF06F0085042F /* MathUtilNeon.inl */,
+				A1F132081DDEA5BC0085042F /* MathUtilNeon64.inl */,
+				A1F1320A1DDEB28C0085042F /* MathUtilSSE.inl */,
+				A1F132121DDEF4F90085042F /* MathMacros.h */,
+				A1F132141DDEFA270085042F /* Quaternion.cpp */,
+				A1F132151DDEFA270085042F /* Quaternion.h */,
+				A1F132191DDEFAA30085042F /* Quaternion.inl */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -3100,12 +3129,15 @@
 				A1873F491DBB11150022CC16 /* object.h in Headers */,
 				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */,
+				A1F132131DDEF4F90085042F /* MathMacros.h in Headers */,
 				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1873F5D1DBB55A70022CC16 /* Director.h in Headers */,
+				A1F132101DDEF32B0085042F /* Vec4.h in Headers */,
 				A1645C021D9921F800AC5FE2 /* PlatformMacros.h in Headers */,
 				A1645C001D991E5F00AC5FE2 /* ApplicationProtocol.h in Headers */,
+				A1F132181DDEFA270085042F /* Quaternion.h in Headers */,
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
 				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
@@ -3898,10 +3930,12 @@
 				A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */,
 				A1645C4F1D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1D628F81DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
+				A1F132161DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
+				A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
@@ -3918,6 +3952,8 @@
 				A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,
+				A1F1320F1DDEF32B0085042F /* Vec4.cpp in Sources */,
+				A1F132171DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1873F511DBB11150022CC16 /* Ref.cpp in Sources */,
