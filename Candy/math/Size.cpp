@@ -7,3 +7,13 @@
 //
 
 #include "math/Size.h"
+
+NS_DY_BEGIN
+
+NS_MATH_BEGIN
+
+const Size Size::ZERO = Size(0, 0);
+
+NS_MATH_END
+
+NS_DY_END

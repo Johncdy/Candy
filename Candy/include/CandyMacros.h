@@ -18,6 +18,15 @@
 // Default engine object pool index.
 #define POOL_MANAGER_DEFAULT_POOL_INDEX     0x00000000
 
+/*********************************/
+/** 64bits Program Sense Macros **/
+/*********************************/
+#if defined(_M_X64) || defined(_WIN64) || defined(__LP64__) || defined(_LP64) || defined(__x86_64)
+    #define DY_64   1
+#else
+    #define DY_64   0
+#endif
+
 #ifdef __cplusplus
 #define NS_DY_BEGIN         namespace candy {
 #define NS_DY_END           }

@@ -9,10 +9,12 @@
 #ifndef Director_h
 #define Director_h
 
-#include "object/Ref.h"
 #include "platform/Mac/GLView_Mac.h"
+#include "object/Ref.h"
 #include "renderer/Renderer.h"
+#include "math/math.h"
 
+#include <stack>
 #include <chrono>
 
 NS_DY_BEGIN
@@ -61,6 +63,52 @@ public:
     GLView* getOpenGLView() { return _glview; }
     
     /**
+     * Clones a specified type matrix and put it to the top of specified type of matrix stack.
+     * @js NA
+     */
+    void pushMatrix(MATRIX_STACK_TYPE type);
+    
+    /** Pops the top matrix of the specified type of matrix stack.
+     * @js NA
+     */
+    void popMatrix(MATRIX_STACK_TYPE type);
+    
+    /** Adds an identity matrix to the top of specified type of matrix stack.
+     * @js NA
+     */
+    void loadIdentityMatrix(MATRIX_STACK_TYPE type);
+    
+    /**
+     * Adds a matrix to the top of specified type of matrix stack.
+     *
+     * @param type Matrix type.
+     * @param mat The matrix that to be added.
+     * @js NA
+     */
+    void loadMatrix(MATRIX_STACK_TYPE type, const math::Mat4& mat);
+    
+    /**
+     * Multiplies a matrix to the top of specified type of matrix stack.
+     *
+     * @param type Matrix type.
+     * @param mat The matrix that to be multiplied.
+     * @js NA
+     */
+    void multiplyMatrix(MATRIX_STACK_TYPE type, const math::Mat4& mat);
+    
+    /**
+     * Gets the top matrix of specified type of matrix stack.
+     * @js NA
+     */
+    const math::Mat4& getMatrix(MATRIX_STACK_TYPE type) const;
+    
+    /**
+     * Clear all types of matrix stack, and add identity matrix to these matrix stacks.
+     * @js NA
+     */
+    void resetMatrixStack();
+    
+    /**
      Background main loop.
      */
     void mainLoop();
@@ -102,6 +150,10 @@ private:
     
     // Renderer for the director.
     renderer::Renderer* _renderer;
+    
+    std::stack<math::Mat4> _modelViewMatrixStack;
+    std::stack<math::Mat4> _projectionMatrixStack;
+    std::stack<math::Mat4> _textureMatrixStack;
 };
 
 NS_OBJECT_END

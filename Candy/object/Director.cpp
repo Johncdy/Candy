@@ -56,6 +56,8 @@ void Director::init()
     _isDeltaZero = false;
     _lastUpdateTime = std::chrono::steady_clock::now();
     
+    resetMatrixStack();
+    
     _renderer = new (std::nothrow) renderer::Renderer;
 }
 
@@ -69,6 +71,104 @@ void Director::setOpenGLView(GLView *view)
         _glview = view;
         _glview->retain();
     }
+}
+
+void Director::pushMatrix(candy::object::MATRIX_STACK_TYPE type)
+{
+    if (MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW == type) {
+        _modelViewMatrixStack.push(_modelViewMatrixStack.top());
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION == type) {
+        _projectionMatrixStack.push(_projectionMatrixStack.top());
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE == type) {
+        _textureMatrixStack.push(_textureMatrixStack.top());
+    }
+    
+    printf("Unknown matrix stack type");
+}
+
+void Director::popMatrix(candy::object::MATRIX_STACK_TYPE type)
+{
+    if (MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW == type) {
+        _modelViewMatrixStack.pop();
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION == type) {
+        _projectionMatrixStack.pop();
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE == type) {
+        _textureMatrixStack.pop();
+    }
+    
+    printf("Unknown matrix stack type");
+}
+
+void Director::loadIdentityMatrix(candy::object::MATRIX_STACK_TYPE type)
+{
+    if (MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW == type) {
+        _modelViewMatrixStack.top() = math::Mat4::IDENTITY;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION == type) {
+        _projectionMatrixStack.top() = math::Mat4::IDENTITY;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE == type) {
+        _textureMatrixStack.top() = math::Mat4::IDENTITY;
+    }
+    
+    printf("Unknown matrix stack type");
+}
+
+void Director::loadMatrix(candy::object::MATRIX_STACK_TYPE type, const math::Mat4 &mat)
+{
+    if (MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW == type) {
+        _modelViewMatrixStack.top() = mat;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION == type) {
+        _projectionMatrixStack.top() = mat;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE == type) {
+        _textureMatrixStack.top() = mat;
+    }
+    
+    printf("Unknown matrix stack type");
+}
+
+void Director::multiplyMatrix(candy::object::MATRIX_STACK_TYPE type, const math::Mat4 &mat)
+{
+    if (MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW == type) {
+        _modelViewMatrixStack.top() *= mat;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION == type) {
+        _projectionMatrixStack.top() *= mat;
+    } else if (MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE == type) {
+        _textureMatrixStack.top() *= mat;
+    }
+    
+    printf("Unknown matrix stack type");
+}
+
+const math::Mat4& Director::getMatrix(candy::object::MATRIX_STACK_TYPE type) const
+{
+    if (type == MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW) {
+        return _modelViewMatrixStack.top();
+    } else if (type == MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION) {
+        return _projectionMatrixStack.top();
+    } else if (type == MATRIX_STACK_TYPE::MATRIX_STACK_TEXTURE) {
+        return _textureMatrixStack.top();
+    }
+    
+    printf("Unknown matrix stack type");
+    return math::Mat4::ZERO;
+}
+
+void Director::resetMatrixStack()
+{
+    while (!_modelViewMatrixStack.empty()) {
+        _modelViewMatrixStack.pop();
+    }
+    
+    while (!_projectionMatrixStack.empty()) {
+        _projectionMatrixStack.pop();
+    }
+    
+    while (!_textureMatrixStack.empty()) {
+        _textureMatrixStack.pop();
+    }
+    
+    _modelViewMatrixStack.push(math::Mat4::IDENTITY);
+    _projectionMatrixStack.push(math::Mat4::IDENTITY);
+    _textureMatrixStack.push(math::Mat4::IDENTITY);
 }
 
 void Director::mainLoop()

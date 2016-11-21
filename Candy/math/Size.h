@@ -85,6 +85,9 @@ public:
      */
     inline const Size operator/ (float a) const;
     
+    /**Size(0,0).*/
+    static const Size ZERO;
+    
 public:
     // Width of size.
     float _width;

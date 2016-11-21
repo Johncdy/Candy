@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A136CC2E1DDFF39900D566B8 /* RenderCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A136CC2C1DDFF39900D566B8 /* RenderCommand.cpp */; };
+		A136CC2F1DDFF39900D566B8 /* RenderCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A136CC2C1DDFF39900D566B8 /* RenderCommand.cpp */; };
+		A136CC301DDFF39900D566B8 /* RenderCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = A136CC2D1DDFF39900D566B8 /* RenderCommand.h */; };
+		A136CC3A1DE0026600D566B8 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A136CC381DE0026600D566B8 /* Node.cpp */; };
+		A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A136CC381DE0026600D566B8 /* Node.cpp */; };
+		A136CC3C1DE0026600D566B8 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = A136CC391DE0026600D566B8 /* Node.h */; };
+		A136CC3E1DE02B6900D566B8 /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = A136CC3D1DE02B6900D566B8 /* math.h */; };
 		A15770C21DCB36C200702593 /* libFreeImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F825C1DB725C30080AFE2 /* libFreeImage.a */; };
 		A15770C31DCB372000702593 /* libglew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F80B31DB717AA0080AFE2 /* libglew.a */; };
 		A15770C51DCB37ED00702593 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F49A61DB64B6800E908D1 /* libfreetype.a */; };
@@ -834,6 +841,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A136CC2C1DDFF39900D566B8 /* RenderCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RenderCommand.cpp; path = renderer/RenderCommand.cpp; sourceTree = "<group>"; };
+		A136CC2D1DDFF39900D566B8 /* RenderCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RenderCommand.h; path = renderer/RenderCommand.h; sourceTree = "<group>"; };
+		A136CC381DE0026600D566B8 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		A136CC391DE0026600D566B8 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		A136CC3D1DE02B6900D566B8 /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = math.h; path = math/math.h; sourceTree = "<group>"; };
 		A13E1BAF1D8E912F0097E85B /* libCandy Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
@@ -1687,6 +1699,8 @@
 		A19F49A61DB64B6800E908D1 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfreetype.a; sourceTree = "<group>"; };
 		A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFWEventHandler.h; sourceTree = "<group>"; };
 		A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWEventHandler.cpp; sourceTree = "<group>"; };
+		A1B2BFDD1DE292E30044162E /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
+		A1B2BFDE1DE292E30044162E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A1BB92F61D9CC4110082CE12 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec2.inl; path = math/Vec2.inl; sourceTree = "<group>"; };
 		A1D0908A1DD9F6E40030A95B /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = renderer/Renderer.cpp; sourceTree = "<group>"; };
 		A1D0908B1DD9F6E40030A95B /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Renderer.h; path = renderer/Renderer.h; sourceTree = "<group>"; };
@@ -1798,9 +1812,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A136CC371DE0026600D566B8 /* node */ = {
+			isa = PBXGroup;
+			children = (
+				A136CC381DE0026600D566B8 /* Node.cpp */,
+				A136CC391DE0026600D566B8 /* Node.h */,
+			);
+			path = node;
+			sourceTree = "<group>";
+		};
 		A13E1BA41D8E8D530097E85B = {
 			isa = PBXGroup;
 			children = (
+				A1B2BFDD1DE292E30044162E /* LICENSE.txt */,
+				A1B2BFDE1DE292E30044162E /* README.md */,
 				A1645C031D993B6100AC5FE2 /* external */,
 				A1645C301D9A67A200AC5FE2 /* Frameworks */,
 				A1645C221D994F7300AC5FE2 /* include */,
@@ -1906,6 +1931,7 @@
 				A1F132141DDEFA270085042F /* Quaternion.cpp */,
 				A1F132151DDEFA270085042F /* Quaternion.h */,
 				A1F132191DDEFAA30085042F /* Quaternion.inl */,
+				A136CC3D1DE02B6900D566B8 /* math.h */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -1976,6 +2002,7 @@
 		A1873F411DBB11150022CC16 /* object */ = {
 			isa = PBXGroup;
 			children = (
+				A136CC371DE0026600D566B8 /* node */,
 				A1873F591DBB55A70022CC16 /* Director.cpp */,
 				A1873F5A1DBB55A70022CC16 /* Director.h */,
 				A1A98FC71DB624CC00B4C842 /* gui */,
@@ -3078,6 +3105,8 @@
 			children = (
 				A1D0908A1DD9F6E40030A95B /* Renderer.cpp */,
 				A1D0908B1DD9F6E40030A95B /* Renderer.h */,
+				A136CC2C1DDFF39900D566B8 /* RenderCommand.cpp */,
+				A136CC2D1DDFF39900D566B8 /* RenderCommand.h */,
 			);
 			name = renderer;
 			sourceTree = "<group>";
@@ -3120,8 +3149,10 @@
 				A1D629071DDC64D700AE91A2 /* MathUtil.h in Headers */,
 				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
 				A1D629001DDC452900AE91A2 /* Vec3.h in Headers */,
+				A136CC301DDFF39900D566B8 /* RenderCommand.h in Headers */,
 				A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */,
 				A177B0FA1DBA102500981949 /* glfw3.h in Headers */,
+				A136CC3C1DE0026600D566B8 /* Node.h in Headers */,
 				A1645C441D9BB95700AC5FE2 /* GLView_Mac.h in Headers */,
 				A1645C511D9BC94500AC5FE2 /* Size.h in Headers */,
 				A1873F4F1DBB11150022CC16 /* PoolManager.h in Headers */,
@@ -3141,6 +3172,7 @@
 				A1645BF91D9913D900AC5FE2 /* Application.h in Headers */,
 				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
+				A136CC3E1DE02B6900D566B8 /* math.h in Headers */,
 				A1D628FA1DDC3FC300AE91A2 /* Mat4.h in Headers */,
 				A1873F521DBB11150022CC16 /* Ref.h in Headers */,
 			);
@@ -3925,6 +3957,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A136CC2E1DDFF39900D566B8 /* RenderCommand.cpp in Sources */,
 				A1873F4A1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1D629051DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */,
@@ -3933,6 +3966,7 @@
 				A1F132161DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */,
+				A136CC3A1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */,
@@ -3948,6 +3982,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A136CC2F1DDFF39900D566B8 /* RenderCommand.cpp in Sources */,
 				A1D628FF1DDC452900AE91A2 /* Vec3.cpp in Sources */,
 				A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
@@ -3962,6 +3997,7 @@
 				A1D629061DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
+				A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
