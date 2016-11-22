@@ -54,11 +54,12 @@ Node* Node::create()
 {
     Node* ret = new (std::nothrow) Node();
     if (ret && ret->init()) {
+        ret->autoRelease();
         return ret;
-    } else {
-        DY_SAFE_DELETE(ret);
     }
-    return ret;
+    
+    DY_SAFE_DELETE(ret);
+    return nullptr;
 }
 
 bool Node::init()

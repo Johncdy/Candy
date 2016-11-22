@@ -14,6 +14,9 @@
 		A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A136CC381DE0026600D566B8 /* Node.cpp */; };
 		A136CC3C1DE0026600D566B8 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = A136CC391DE0026600D566B8 /* Node.h */; };
 		A136CC3E1DE02B6900D566B8 /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = A136CC3D1DE02B6900D566B8 /* math.h */; };
+		A14425071DE3E8830001F0F1 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A14425051DE3E8830001F0F1 /* Camera.cpp */; };
+		A14425081DE3E8830001F0F1 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A14425051DE3E8830001F0F1 /* Camera.cpp */; };
+		A14425091DE3E8830001F0F1 /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = A14425061DE3E8830001F0F1 /* Camera.h */; };
 		A15770C21DCB36C200702593 /* libFreeImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F825C1DB725C30080AFE2 /* libFreeImage.a */; };
 		A15770C31DCB372000702593 /* libglew.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F80B31DB717AA0080AFE2 /* libglew.a */; };
 		A15770C51DCB37ED00702593 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F49A61DB64B6800E908D1 /* libfreetype.a */; };
@@ -850,6 +853,8 @@
 		A13E1BB91D8E93FB0097E85B /* libCandy iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCandy iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13F18A91DA737BB006E9019 /* Size.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Size.inl; path = math/Size.inl; sourceTree = "<group>"; };
 		A13F18AA1DA750E6006E9019 /* Rect.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rect.inl; path = math/Rect.inl; sourceTree = "<group>"; };
+		A14425051DE3E8830001F0F1 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		A14425061DE3E8830001F0F1 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		A1574C901DAA274200C24924 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A1574C931DAA298700C24924 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A15770C81DCB411F00702593 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
@@ -2013,6 +2018,8 @@
 				A1873F461DBB11150022CC16 /* PoolManager.h */,
 				A1873F471DBB11150022CC16 /* Ref.cpp */,
 				A1873F481DBB11150022CC16 /* Ref.h */,
+				A14425051DE3E8830001F0F1 /* Camera.cpp */,
+				A14425061DE3E8830001F0F1 /* Camera.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -3163,6 +3170,7 @@
 				A1F132131DDEF4F90085042F /* MathMacros.h in Headers */,
 				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
+				A14425091DE3E8830001F0F1 /* Camera.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1873F5D1DBB55A70022CC16 /* Director.h in Headers */,
 				A1F132101DDEF32B0085042F /* Vec4.h in Headers */,
@@ -3970,6 +3978,7 @@
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */,
+				A14425071DE3E8830001F0F1 /* Camera.cpp in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
@@ -3994,6 +4003,7 @@
 				A1873F511DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1645C491D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1645C551D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
+				A14425081DE3E8830001F0F1 /* Camera.cpp in Sources */,
 				A1D629061DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
