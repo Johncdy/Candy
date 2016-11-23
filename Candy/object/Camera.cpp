@@ -12,6 +12,17 @@ NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
 
+ViewPort::ViewPort(float left, float bottom, float width, float height)
+: _left(left)
+, _bottom(bottom)
+, _width(width)
+, _height(height)
+{
+}
+
+Camera* Camera::_visitingCamera = nullptr;
+ViewPort Camera::_defaultViewPort = ViewPort(0.f, 0.f, 1.0f, 1.0f);
+
 Camera::Camera()
 : _flag(Camera::Flag::DEFAULT)
 , _depth(-1)
@@ -40,6 +51,7 @@ bool Camera::initPerspective(float fieldOfView, float aspectRatio, float nearPla
     _aspectRatio = aspectRatio;
     _nearPlane = nearPlane;
     _farPlane = farPlane;
+    math::Mat4::createPerspective(fieldOfView, aspectRatio, nearPlane, fieldOfView, &_projection);
     
     return true;
 }

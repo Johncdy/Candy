@@ -26,6 +26,19 @@ NS_OBJECT_BEGIN
  * For each camera, transparent 3d sprite is rendered after opaque 3d sprite and other 2d objects.
  */
 
+/**
+ Viewport is a normalized to FrameBufferObject
+ But for default FBO, the size is absolute.
+ */
+struct ViewPort {
+    ViewPort(float left, float bottom, float width, float height);
+    
+    float _left;
+    float _bottom;
+    float _width;
+    float _height;
+};
+
 class Camera : public Node {
 public:
     enum class Flag {
@@ -89,6 +102,10 @@ public:
     
     void setCameraFlag(Camera::Flag flag) { _flag = flag; }
     
+    static void setDefaultViewPort(const ViewPort& vp) { _defaultViewPort = vp; }
+    
+    static const ViewPort& getDefaultViewPort() { return _defaultViewPort; }
+    
     /**
      * Gets the camera's projection matrix.
      *
@@ -138,12 +155,17 @@ private:
     Camera::Type _type;
     Camera::Flag _flag;
     
+    math::Mat4 _projection;
+    
     int8_t _depth;
     float _fieldOfView;
     float _aspectRatio;
     float _farPlane;
     float _nearPlane;
     float _zoom[2];
+    
+    static Camera* _visitingCamera;
+    static ViewPort _defaultViewPort;
 };
 
 NS_OBJECT_END

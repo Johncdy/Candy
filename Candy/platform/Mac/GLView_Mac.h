@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string>
 
-#include "math/Rect.h"
+#include "math/math.h"
 #include "object/Ref.h"
 
 #include "external/glfw3/mac/include/glfw3.h"
@@ -129,7 +129,9 @@ public:
      @param width  frame width
      @param height frame height
      */
-    void setFrameSize(float width, float height);
+    void setScreenSize(float width, float height);
+    
+    const math::Size& getScreenSize() const;
     
     /**
      * Set the design resolution size.
@@ -140,7 +142,19 @@ public:
      *                         [2] NO_BORDER Full screen without black border: if the design resolution ratio of width to height is different from the screen resolution ratio, two areas of your game view will be cut.
      *                         [3] SHOW_ALL  Full screen with black border: if the design resolution ratio of width to height is different from the screen resolution ratio, two black borders will be shown.
      */
-    void setDesignResolutionSize(float width, float height, ResolutionPolicy resolutionPolicy);
+    void setWindowSize(float width, float height, ResolutionPolicy resolutionPolicy);
+    
+    const math::Size& getWindowSize() const;
+    
+    /**
+     * Set opengl view port rectangle with points.
+     *
+     * @param x Set the points of x.
+     * @param y Set the points of y.
+     * @param w Set the width of  the view port
+     * @param h Set the Height of the view port.
+     */
+    void setViewPortInPoints(float x , float y , float w , float h);
     
     /**
      GLView window should close.
@@ -188,8 +202,8 @@ private:
     
     // Frame zoom factor.
     float _frameZoomFactor;
-    // The extents of window size.
-    NS_MATH::Size _frameSize;
+    // The screen size of mobile devices and window size of destop devices.
+    NS_MATH::Size _screenSize;
     // Is enable retina model.
     bool _isRetinaEnabled;
     // Retina zoom factor
@@ -200,13 +214,13 @@ private:
     // Resolution Policy.
     ResolutionPolicy _resolutionPolicy;
     // resolution size, it is the size appropriate for the app resources.
-    NS_MATH::Size _designResolutionSize;
+    NS_MATH::Size _windowSize;
     // Frame size width / design size width.
     float _scaleX;
     // Frame size height / design size height.
     float _scaleY;
     // View port.
-    NS_MATH::Rect _viewPort;
+    NS_MATH::Rect _viewPortRect;
     
     // Opaque window object.
     GLFWwindow *_window;

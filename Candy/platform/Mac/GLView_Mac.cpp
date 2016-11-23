@@ -11,11 +11,10 @@
 
 #include "platform/Mac/GLView_Mac.h"
 #include "platform/Mac/GLFWEventHandler.h"
-#include "math/MathMacros.h"
+
+#include "object/Camera.h"
 
 NS_DY_BEGIN
-
-NS_MATH_USE
 
 #define drawOneLine(x1, y1, x2, y2) glBegin(GL_LINES); \
 glVertex2f((x1), (y1)); glVertex2f((x2), (y2)); glEnd();
@@ -35,7 +34,7 @@ GLContextAttrs GLView::getContextAttrs()
 
 GLView::GLView()
 : _viewName("")
-, _frameSize(Size(0, 0))
+, _screenSize(Size(0, 0))
 , _frameZoomFactor(1.0f)
 , _window(nullptr)
 , _monitor(nullptr)
@@ -43,8 +42,8 @@ GLView::GLView()
 , _retinaFactor(1)
 , _isInRetinaMonitor(false)
 , _resolutionPolicy(ResolutionPolicy::UNKNOWN)
-, _designResolutionSize(Size(0, 0))
-, _viewPort(Rect(0, 0, 0, 0))
+, _windowSize(Size(0, 0))
+, _viewPortRect(Rect(0, 0, 0, 0))
 {
 }
 
@@ -132,17 +131,17 @@ bool GLView::init(const std::string &viewName, Rect rect, float frameZoomFactor,
     glfwSetWindowIconifyCallback(_window, GLFWEventHandler::onGLFWWindowIconifyCallback);
     glfwSetWindowFocusCallback(_window, GLFWEventHandler::onGLFWWindowFocusCallback);
     
-    setFrameSize(rect._size._width, rect._size._height);
+    setScreenSize(rect._size._width, rect._size._height);
     
     return true;
 }
 
-void GLView::setFrameSize(float width, float height)
+void GLView::setScreenSize(float width, float height)
 {
     assert(width != 0 && height != 0);
     
-    _frameSize._width = width;
-    _frameSize._height = height;
+    _screenSize._width = width;
+    _screenSize._height = height;
     
     int window_w = 0, window_h = 0;
     glfwGetWindowSize(_window, &window_w, &window_h);
@@ -153,25 +152,30 @@ void GLView::setFrameSize(float width, float height)
     if (2 * window_w == frame_w && 2 * window_h == frame_h) {
         _isInRetinaMonitor = true;
         _retinaFactor = _isRetinaEnabled ? 1 : 2;
-        glfwSetWindowSize(_window, _frameSize._width / 2 * _retinaFactor, _frameSize._height / 2 * _retinaFactor);
+        glfwSetWindowSize(_window, _screenSize._width / 2 * _retinaFactor, _screenSize._height / 2 * _retinaFactor);
     } else {
         _isInRetinaMonitor = false;
-        glfwSetWindowSize(_window, _frameSize._width, _frameSize._height);
+        glfwSetWindowSize(_window, _screenSize._width, _screenSize._height);
     }
 }
 
-void GLView::setDesignResolutionSize(float width, float height, ResolutionPolicy resolutionPolicy)
+const math::Size& GLView::getScreenSize() const
+{
+    return _screenSize;
+}
+
+void GLView::setWindowSize(float width, float height, ResolutionPolicy resolutionPolicy)
 {
     assert(resolutionPolicy != ResolutionPolicy::UNKNOWN);
-    assert(width != 0 && height != 0 && _frameSize._width != 0 && _frameSize._height != 0);
+    assert(width != 0 && height != 0 && _screenSize._width != 0 && _screenSize._height != 0);
     
     _resolutionPolicy = resolutionPolicy;
     
-    _designResolutionSize._width = width;
-    _designResolutionSize._height = height;
+    _windowSize._width = width;
+    _windowSize._height = height;
     
-    _scaleX = _frameSize._width / _designResolutionSize._width;
-    _scaleY = _frameSize._height / _designResolutionSize._height;
+    _scaleX = _screenSize._width / _windowSize._width;
+    _scaleY = _screenSize._height / _windowSize._height;
     
     if (ResolutionPolicy::NO_BORDER == _resolutionPolicy) {
         _scaleX = _scaleY = MAX(_scaleX, _scaleY);
@@ -179,18 +183,32 @@ void GLView::setDesignResolutionSize(float width, float height, ResolutionPolicy
         _scaleX = _scaleY = MIN(_scaleX, _scaleY);
     } else if (ResolutionPolicy::FIXED_HEIGHT == _resolutionPolicy) {
         _scaleX = _scaleY;
-        _designResolutionSize._width = ceilf(_frameSize._width / _scaleX);
+        _windowSize._width = ceilf(_screenSize._width / _scaleX);
     } else if (ResolutionPolicy::FIXED_WIDTH == _resolutionPolicy) {
         _scaleY = _scaleX;
-        _designResolutionSize._height = ceilf(_frameSize._height / _scaleY);
+        _windowSize._height = ceilf(_screenSize._height / _scaleY);
     }
     
-    float _viewW = _designResolutionSize._width * _scaleX;
-    float _viewH = _designResolutionSize._height * _scaleY;
+    float viewW = _windowSize._width * _scaleX;
+    float viewH = _windowSize._height * _scaleY;
     
-    _viewPort.set(0, 0, _viewW, _viewH);
+    _viewPortRect.set((_screenSize._width - viewW) / 2, (_screenSize._height - viewH) / 2, viewW, viewH);
     
-    glViewport(0, 0, _frameSize._width, _frameSize._height);
+    glViewport(0, 0, _screenSize._width, _screenSize._height);
+}
+
+const math::Size& GLView::getWindowSize() const
+{
+    return _windowSize;
+}
+
+void GLView::setViewPortInPoints(float x, float y, float w, float h)
+{
+    ViewPort vp(x * _scaleX + _viewPortRect._origin._x,
+                y * _scaleY + _viewPortRect._origin._y,
+                w * _scaleX,
+                h * _scaleY);
+    Camera::setDefaultViewPort(vp);
 }
 
 bool GLView::windowShouldClose()

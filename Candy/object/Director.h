@@ -36,6 +36,19 @@ enum class MATRIX_STACK_TYPE
 class Director: public Ref {
 public:
     
+    enum class Projection {
+        /// Sets a 2D projection (orthogonal projection).
+        _2D,
+        
+        /// Sets a 3D projection with a fovy=60, znear=0.5f and zfar=1500.
+        _3D,
+        
+        /// It calls "updateProjection" on the projection delegate.
+        CUSTOM,
+        
+        DEFAULT = _3D,
+    };
+    
     /**
      Returns a shared instance of the director.
 
@@ -108,6 +121,28 @@ public:
      */
     void resetMatrixStack();
     
+    Projection getProjection() { return _projection; }
+    
+    void setProjection(Projection projection);
+    
+    /** Returns the size of the OpenGL view in points. */
+    const math::Size& getWinSize() const;
+    
+    /** Returns the size of the OpenGL view in pixels. */
+    math::Size getWinSizeInPixels() const;
+    
+    /** The size in pixels of the surface. It could be different than the screen size.
+     * High-res devices might have a higher surface size than the screen size.
+     * Only available when compiled using SDK >= 4.0.
+     * @since v0.99.4
+     */
+    void setContentScaleFactor(float scaleFactor);
+    /**
+     * Gets content scale factor.
+     * @see Director::setContentScaleFactor()
+     */
+    float getContentScaleFactor() const { return _contentScaleFactor; }
+    
     /**
      Background main loop.
      */
@@ -154,6 +189,13 @@ private:
     std::stack<math::Mat4> _modelViewMatrixStack;
     std::stack<math::Mat4> _projectionMatrixStack;
     std::stack<math::Mat4> _textureMatrixStack;
+    
+    /* projection used */
+    Projection _projection;
+    /* window size in points */
+    math::Size _winSizeInPoints;
+    /* content scale factor */
+    float _contentScaleFactor;
 };
 
 NS_OBJECT_END

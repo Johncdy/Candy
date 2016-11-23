@@ -56,6 +56,9 @@ void Director::init()
     _isDeltaZero = false;
     _lastUpdateTime = std::chrono::steady_clock::now();
     
+    _winSizeInPoints = math::Size::ZERO;
+    _contentScaleFactor = 1.0f;
+    
     resetMatrixStack();
     
     _renderer = new (std::nothrow) renderer::Renderer;
@@ -70,6 +73,8 @@ void Director::setOpenGLView(GLView *view)
         
         _glview = view;
         _glview->retain();
+        
+        _winSizeInPoints = _glview->getWindowSize();
     }
 }
 
@@ -169,6 +174,32 @@ void Director::resetMatrixStack()
     _modelViewMatrixStack.push(math::Mat4::IDENTITY);
     _projectionMatrixStack.push(math::Mat4::IDENTITY);
     _textureMatrixStack.push(math::Mat4::IDENTITY);
+}
+
+void Director::setProjection(candy::object::Director::Projection projection)
+{
+    math::Size size = _winSizeInPoints;
+    
+    if (_glview) {
+        
+    }
+}
+
+const math::Size& Director::getWinSize() const
+{
+    return _winSizeInPoints;
+}
+
+math::Size Director::getWinSizeInPixels() const
+{
+    return math::Size(_winSizeInPoints._width * _contentScaleFactor, _winSizeInPoints._height * _contentScaleFactor);
+}
+
+void Director::setContentScaleFactor(float scaleFactor)
+{
+    if (scaleFactor != _contentScaleFactor) {
+        _contentScaleFactor = scaleFactor;
+    }
 }
 
 void Director::mainLoop()
