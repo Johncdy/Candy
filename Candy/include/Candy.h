@@ -9,8 +9,6 @@
 #ifndef Candy_h
 #define Candy_h
 
-#include "include/CandyMacros.h"
-
 // platform
 #include "platform/platform.h"
 

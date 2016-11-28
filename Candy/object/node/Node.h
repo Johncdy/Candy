@@ -210,6 +210,24 @@ public:
      * @return The scale factor on Z axis.
      */
     virtual float getScaleZ() const;
+    
+    /**
+     * Sets the untransformed size of the node.
+     *
+     * The contentSize remains the same no matter the node is scaled or rotated.
+     * All nodes has a size. Layer and Scene has the same size of the screen.
+     *
+     * @param contentSize   The untransformed size of the node.
+     */
+    virtual void setContentSize(const math::Size& contentSize);
+    /**
+     * Returns the untransformed size of the node.
+     *
+     * @see `setContentSize(const Size&)`
+     *
+     * @return The untransformed size of the node.
+     */
+    virtual const math::Size& getContentSize() const;
 
     /**
      * Sets the position (x,y) of the node in its parent's coordinate system.
@@ -224,6 +242,53 @@ public:
      * @param position  The position (x,y) of the node in OpenGL coordinates.
      */
     virtual void setPosition(const math::Vec2 &position);
+    
+    /** Sets the position (x,y) using values between 0 and 1.
+     The positions in pixels is calculated like the following:
+     @code
+     // pseudo code
+     void setNormalizedPosition(Vec2 pos) {
+     Size s = getParent()->getContentSize();
+     _position = pos * s;
+     }
+     @endcode
+     *
+     * @param position The normalized position (x,y) of the node, using value between 0 and 1.
+     */
+    virtual void setNormalizedPosition(const math::Vec2 &position);
+    
+    /**
+     * Gets the position (x,y) of the node in its parent's coordinate system.
+     *
+     * @see setPosition(const Vec2&)
+     *
+     * @return The position (x,y) of the node in OpenGL coordinates.
+     * @code
+     * In js and lua return value is table which contains x,y.
+     * @endcode
+     */
+    virtual const math::Vec2& getPosition() const;
+    
+    /** Returns the normalized position.
+     *
+     * @return The normalized position.
+     */
+    virtual const math::Vec2& getNormalizedPosition() const;
+    
+    //check whether this camera mask is visible by the current visiting camera
+    bool isVisitableByCamera() const;
+    
+    /**
+     * get & set camera mask, the node is visible by the camera whose camera flag & node's camera mask is true
+     */
+    unsigned short getCameraMask() const { return _cameraMask; }
+    /**
+     * Modify the camera mask for current node.
+     * If applyChildren is true, then it will modify the camera mask of its children recursively.
+     * @param mask A unsigned short bit for mask.
+     * @param applyChildren A boolean value to determine whether the mask bit should apply to its children or not.
+     */
+    virtual void setCameraMask(unsigned short mask, bool applyChildren = true);
     
 protected:
     // Nodes should be created using create();
@@ -254,6 +319,9 @@ protected:
     math::Vec2 _position;
     ///< OpenGL real Z position
     float _positionZ;
+    math::Vec2 _normalizedPosition;
+    bool _isUsingNormalizedPosition;
+    bool _isNormalizedPositionDirty;
     
     ///< skew angle on x-axis
     float _skewX;
@@ -321,6 +389,14 @@ protected:
     
     ///< is this node visible
     bool _visible;
+    
+    // camera mask, it is visible only when _cameraMask & current camera' camera flag is true
+    unsigned short _cameraMask;
+    
+protected:
+    uint32_t processParentFlags(const math::Mat4& parentTransform, uint32_t parentFlags);
+    
+    math::Mat4 transform(const math::Mat4 &parentTransform);
     
 private:
     /*

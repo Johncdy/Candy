@@ -9,11 +9,16 @@
 #ifndef Vec3_h
 #define Vec3_h
 
-#include "include/Candy.h"
+#include "include/CandyMacros.h"
+
+#include "assert.h"
 
 NS_DY_BEGIN
 
 NS_MATH_BEGIN
+
+class Mat4;
+class Quaternion;
 
 /**
  * Defines a 3-element floating point vector.
@@ -245,7 +250,7 @@ public:
      * already has unit length or if the length of the vector
      * is zero, this method does nothing.
      *
-     * @return This vector, after the normalization occurs.
+     * This vector, after the normalization occurs.
      */
     void normalize();
     

@@ -7,6 +7,9 @@
 //
 
 #include "object/node/Node.h"
+#include "object/Camera.h"
+
+#include "assert.h"
 
 NS_DY_BEGIN
 
@@ -25,6 +28,9 @@ Node::Node()
 , _positionZ(0.0f)
 , _skewX(0.0f)
 , _skewY(0.0f)
+, _cameraMask(1)
+, _isUsingNormalizedPosition(false)
+, _isNormalizedPositionDirty(false)
 , _contentSize(math::Size::ZERO)
 , _isContentSizeDirty(true)
 , _isTransformDirty(true)
@@ -104,16 +110,90 @@ void Node::sortAllChildren()
     }
 }
 
+bool Node::isVisitableByCamera() const
+{
+    auto camera = Camera::getVisitingCamera();
+    bool visible = ((unsigned short)camera->getCameraFlag() & _cameraMask) ?  : true;
+    return visible;
+}
+
+void Node::setCameraMask(unsigned short mask, bool applayChildren)
+{
+    _cameraMask = mask;
+    if (applayChildren) {
+        for (const auto& child : _children) {
+            child->setCameraMask(mask, applayChildren);
+        }
+    }
+}
+
+uint32_t Node::processParentFlags(const math::Mat4 &parentTransform, uint32_t parentFlags)
+{
+    if (_isUsingNormalizedPosition) {
+        assert(_parent);
+        
+        if ((parentFlags & FLAGS_CONTENT_SIZE_DIRTY) || _isNormalizedPositionDirty) {
+            math::Size s = _parent->getContentSize();
+            _position._x = _normalizedPosition._x * s._width;
+            _position._y = _normalizedPosition._y * s._height;
+            _isTransformUpdated = _isInverseDirty = _isTransformDirty = true;
+            _isNormalizedPositionDirty = false;
+        }
+    }
+    
+    if (!isVisitableByCamera()) {
+        return parentFlags;
+    }
+    
+    uint32_t flags = parentFlags;
+    flags |= (_isTransformUpdated ? FLAGS_TRANSFORM_DIRTY : 0);
+    flags |= (_isContentSizeDirty ? FLAGS_CONTENT_SIZE_DIRTY : 0);
+    
+    if (flags & FLAGS_DIRTY_MASK) {
+        _modelViewTransform = transform(parentTransform);
+    }
+    
+    _isTransformUpdated = false;
+    _isContentSizeDirty = false;
+    
+    return flags;
+}
+
 void Node::visit(renderer::Renderer *renderer, const math::Mat4 &parentTransform, uint32_t parentFlags)
 {
     if (!_visible) {
         return;
     }
     
+    uint32_t flags = processParentFlags(parentTransform, parentFlags);
+    
     _director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
     _director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW, _modelViewTransform);
     
+    bool visibleByCamera = isVisitableByCamera();
     
+    int i = 0;
+    if (!_children.empty()) {
+        sortAllChildren();
+        for (; i < _children.size(); i++) {
+            Node* node = _children.at(i);
+            if (node && node->_localZOrder < 0) {
+                node->visit(renderer, _modelViewTransform, flags);
+            } else {
+                break;
+            }
+        }
+        
+        if (visibleByCamera) {
+            this->draw(renderer, _modelViewTransform, flags);
+        }
+        
+        for (auto it = _children.cbegin(); it != _children.end(); it++) {
+            (*it)->visit(renderer, _modelViewTransform, flags);
+        }
+    } else if (visibleByCamera) {
+        this->draw(renderer, _modelViewTransform, flags);
+    }
     
     _director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 }
@@ -121,6 +201,11 @@ void Node::visit(renderer::Renderer *renderer, const math::Mat4 &parentTransform
 void Node::draw(renderer::Renderer *renderer, const math::Mat4 &transform, uint32_t flags)
 {
     
+}
+
+math::Mat4 Node::transform(const math::Mat4& parentTransform)
+{
+    return math::Mat4::ZERO;
 }
 
 void Node::setGlobalZOrder(float globalZOrder)
@@ -161,6 +246,31 @@ float Node::getScaleZ() const
 void Node::setPosition(const math::Vec2 &position)
 {
     
+}
+
+const math::Vec2& Node::getPosition() const
+{
+    return _position;
+}
+
+void Node::setNormalizedPosition(const math::Vec2 &position)
+{
+    
+}
+
+const math::Vec2& Node::getNormalizedPosition() const
+{
+    return _normalizedPosition;
+}
+
+void Node::setContentSize(const math::Size& contentSize)
+{
+    
+}
+
+const math::Size& Node::getContentSize() const
+{
+    return _contentSize;
 }
 
 NS_OBJECT_END

@@ -34,7 +34,7 @@ GLContextAttrs GLView::getContextAttrs()
 
 GLView::GLView()
 : _viewName("")
-, _screenSize(Size(0, 0))
+, _screenSize(math::Size(0, 0))
 , _frameZoomFactor(1.0f)
 , _window(nullptr)
 , _monitor(nullptr)
@@ -42,8 +42,8 @@ GLView::GLView()
 , _retinaFactor(1)
 , _isInRetinaMonitor(false)
 , _resolutionPolicy(ResolutionPolicy::UNKNOWN)
-, _windowSize(Size(0, 0))
-, _viewPortRect(Rect(0, 0, 0, 0))
+, _windowSize(math::Size(0, 0))
+, _viewPortRect(math::Rect(0, 0, 0, 0))
 {
 }
 
@@ -54,7 +54,7 @@ GLView::~GLView()
     glfwTerminate();
 }
 
-GLView* GLView::create(const std::string &viewName, Rect rect, float frameZoomFactor, bool resizable)
+GLView* GLView::create(const std::string &viewName, math::Rect rect, float frameZoomFactor, bool resizable)
 {
     auto view = new (std::nothrow) GLView;
     if (view && view->init(viewName, rect, frameZoomFactor, resizable)) {
@@ -65,7 +65,7 @@ GLView* GLView::create(const std::string &viewName, Rect rect, float frameZoomFa
     return nullptr;
 }
 
-bool GLView::init(const std::string &viewName, Rect rect, float frameZoomFactor, bool resizable)
+bool GLView::init(const std::string &viewName, math::Rect rect, float frameZoomFactor, bool resizable)
 {
     _viewName = viewName;
     _frameZoomFactor = frameZoomFactor;
@@ -204,11 +204,11 @@ const math::Size& GLView::getWindowSize() const
 
 void GLView::setViewPortInPoints(float x, float y, float w, float h)
 {
-    ViewPort vp(x * _scaleX + _viewPortRect._origin._x,
+    NS_OBJECT::ViewPort vp(x * _scaleX + _viewPortRect._origin._x,
                 y * _scaleY + _viewPortRect._origin._y,
                 w * _scaleX,
                 h * _scaleY);
-    Camera::setDefaultViewPort(vp);
+    NS_OBJECT::Camera::setDefaultViewPort(vp);
 }
 
 bool GLView::windowShouldClose()

@@ -13,7 +13,7 @@
 #include <xmmintrin.h>
 #endif
 
-#include "include/Candy.h"
+#include "include/CandyMacros.h"
 
 /**
  * @addtogroup base

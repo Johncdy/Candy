@@ -11,6 +11,10 @@
 
 #include "include/Candy.h"
 
+#ifdef __SSE__
+#include <xmmintrin.h>
+#endif
+
 NS_DY_BEGIN
 
 NS_MATH_BEGIN

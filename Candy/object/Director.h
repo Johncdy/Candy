@@ -125,6 +125,9 @@ public:
     
     void setProjection(Projection projection);
     
+    /** Enables/disables OpenGL alpha blending. */
+    void setAlphaBlending(bool on);
+    
     /** Returns the size of the OpenGL view in points. */
     const math::Size& getWinSize() const;
     

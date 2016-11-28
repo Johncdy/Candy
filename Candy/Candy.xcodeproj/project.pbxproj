@@ -757,6 +757,9 @@
 		A19F49FB1DB64B6800E908D1 /* ft2build.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F49A41DB64B6800E908D1 /* ft2build.h */; };
 		A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */; };
 		A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */; };
+		A1B92D161DE82E8E00845358 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1B92D141DE82E8E00845358 /* Scene.cpp */; };
+		A1B92D171DE82E8E00845358 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1B92D141DE82E8E00845358 /* Scene.cpp */; };
+		A1B92D181DE82E8E00845358 /* Scene.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B92D151DE82E8E00845358 /* Scene.h */; };
 		A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D0908A1DD9F6E40030A95B /* Renderer.cpp */; };
 		A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D0908A1DD9F6E40030A95B /* Renderer.cpp */; };
 		A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D0908B1DD9F6E40030A95B /* Renderer.h */; };
@@ -1706,6 +1709,8 @@
 		A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWEventHandler.cpp; sourceTree = "<group>"; };
 		A1B2BFDD1DE292E30044162E /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
 		A1B2BFDE1DE292E30044162E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A1B92D141DE82E8E00845358 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		A1B92D151DE82E8E00845358 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		A1BB92F61D9CC4110082CE12 /* Vec2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Vec2.inl; path = math/Vec2.inl; sourceTree = "<group>"; };
 		A1D0908A1DD9F6E40030A95B /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = renderer/Renderer.cpp; sourceTree = "<group>"; };
 		A1D0908B1DD9F6E40030A95B /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Renderer.h; path = renderer/Renderer.h; sourceTree = "<group>"; };
@@ -2020,6 +2025,8 @@
 				A1873F481DBB11150022CC16 /* Ref.h */,
 				A14425051DE3E8830001F0F1 /* Camera.cpp */,
 				A14425061DE3E8830001F0F1 /* Camera.h */,
+				A1B92D141DE82E8E00845358 /* Scene.cpp */,
+				A1B92D151DE82E8E00845358 /* Scene.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -3181,6 +3188,7 @@
 				A1645C2E1D9A154700AC5FE2 /* Candy.h in Headers */,
 				A1645BFE1D99149100AC5FE2 /* Application_Mac.h in Headers */,
 				A136CC3E1DE02B6900D566B8 /* math.h in Headers */,
+				A1B92D181DE82E8E00845358 /* Scene.h in Headers */,
 				A1D628FA1DDC3FC300AE91A2 /* Mat4.h in Headers */,
 				A1873F521DBB11150022CC16 /* Ref.h in Headers */,
 			);
@@ -3973,6 +3981,7 @@
 				A1D628F81DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
 				A1F132161DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
+				A1B92D161DE82E8E00845358 /* Scene.cpp in Sources */,
 				A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A136CC3A1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
@@ -3997,6 +4006,7 @@
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1F1320F1DDEF32B0085042F /* Vec4.cpp in Sources */,
+				A1B92D171DE82E8E00845358 /* Scene.cpp in Sources */,
 				A1F132171DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C431D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,

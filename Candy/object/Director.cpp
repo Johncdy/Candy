@@ -181,7 +181,45 @@ void Director::setProjection(candy::object::Director::Projection projection)
     math::Size size = _winSizeInPoints;
     
     if (_glview) {
-        
+        _glview->setViewPortInPoints(0, 0, size._width, size._height);
+    }
+    
+    switch (projection) {
+        case Projection::_2D:
+        {
+            math::Mat4 orthoMatrix;
+            math::Mat4::createOrthographicOffCenter(0, size._width, 0, size._height, -1024, 1024, &orthoMatrix);
+            
+            loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, orthoMatrix);
+            loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+            break;
+        }
+        case Projection::_3D:
+        {
+            float zeye = _winSizeInPoints._height / 1.1566f;
+            
+            math::Mat4 matrixPerspective, matrixLookup;
+            
+            math::Mat4::createPerspective(60, size._width/size._height, 10, zeye+size._height/2, &matrixPerspective);
+            math::Vec3 eye(size._width/2, size._height/2, zeye), center(size._width/2, size._height/2, 0.f), up(0.f, 1.0f, 0.f);
+            math::Mat4::createLookAt(eye, center, up, &matrixLookup);
+            math::Mat4 proj3d = matrixPerspective * matrixLookup;
+            
+            loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, proj3d);
+            loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+        }
+        case Projection::CUSTOM:
+            break;
+        default:
+            printf("Director: unrecognized projection");
+            break;
+    }
+}
+
+void Director::setAlphaBlending(bool on)
+{
+    if (on) {
+//        GL::blend
     }
 }
 

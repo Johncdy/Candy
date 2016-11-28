@@ -68,6 +68,27 @@ Camera* Camera::createOrthographic(float zoomX, float zoomY, float nearPlane, fl
     return nullptr;
 }
 
+bool Camera::initOrthographic(float zoomX, float zoomY, float nearPlane, float farPlane)
+{
+    _zoom[0] = zoomX;
+    _zoom[1] = zoomY;
+    _nearPlane = nearPlane;
+    _farPlane = farPlane;
+    math::Mat4::createOrthographicOffCenter(0, _zoom[0], 0, _zoom[1], _nearPlane, _farPlane, &_projection);
+    
+    return true;
+}
+
+const Camera* Camera::getVisitingCamera()
+{
+    return _visitingCamera;
+}
+
+const math::Mat4& Camera::getProjectionMatrix() const
+{
+    return _projection;
+}
+
 NS_OBJECT_END
 
 NS_DY_END
