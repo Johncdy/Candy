@@ -14,6 +14,7 @@
 
 #include "math/math.h"
 #include "object/Ref.h"
+#include "math/Rect.h"
 
 #include "external/glfw3/mac/include/glfw3.h"
 #ifndef GLFW_EXPOSE_NATIVE_NSGL
@@ -70,7 +71,7 @@ struct GLContextAttrs
     int stencilBits;
 };
 
-class GLView : public NS_OBJECT::Ref {
+class GLView : public object::Ref {
 public:
     /**
      GLView ctor.
@@ -92,7 +93,7 @@ public:
 
      @return GLView.
      */
-    static GLView *create(const std::string& viewName, NS_MATH::Rect rect, float frameZoomFactor = 1.0f, bool resizable = false);
+    static GLView *create(const std::string& viewName, math::Rect rect, float frameZoomFactor = 1.0f, bool resizable = false);
     
     /**
      GLView init function.
@@ -104,7 +105,7 @@ public:
      
      @return bool.
      */
-    bool init(const std::string& viewName, NS_MATH::Rect rect, float frameZoomFactor, bool resizable);
+    bool init(const std::string& viewName, math::Rect rect, float frameZoomFactor, bool resizable);
     
     /**
      Static method and member so that we can modify it on all platforms before create OpenGL context.
@@ -203,7 +204,7 @@ private:
     // Frame zoom factor.
     float _frameZoomFactor;
     // The screen size of mobile devices and window size of destop devices.
-    NS_MATH::Size _screenSize;
+    math::Size _screenSize;
     // Is enable retina model.
     bool _isRetinaEnabled;
     // Retina zoom factor
@@ -214,13 +215,13 @@ private:
     // Resolution Policy.
     ResolutionPolicy _resolutionPolicy;
     // resolution size, it is the size appropriate for the app resources.
-    NS_MATH::Size _windowSize;
+    math::Size _windowSize;
     // Frame size width / design size width.
     float _scaleX;
     // Frame size height / design size height.
     float _scaleY;
     // View port.
-    NS_MATH::Rect _viewPortRect;
+    math::Rect _viewPortRect;
     
     // Opaque window object.
     GLFWwindow *_window;

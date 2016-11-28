@@ -290,6 +290,15 @@ public:
      */
     virtual void setCameraMask(unsigned short mask, bool applyChildren = true);
     
+    /**
+     * Returns the matrix that transform the node's (local) space coordinates into the parent's space coordinates.
+     * The matrix is in Pixels.
+     *
+     * @return The transformation matrix.
+     */
+    virtual const math::Mat4& getNodeToParentTransform() const;
+    
+    
 protected:
     // Nodes should be created using create();
     Node();

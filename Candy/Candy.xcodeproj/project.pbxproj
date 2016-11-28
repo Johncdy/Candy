@@ -302,6 +302,9 @@
 		A18F82FA1DB748BA0080AFE2 /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F82F21DB748BA0080AFE2 /* Types.h */; };
 		A18F82FD1DB748CA0080AFE2 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F82FB1DB748CA0080AFE2 /* Module.cpp */; };
 		A18F82FE1DB748CA0080AFE2 /* Module.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F82FC1DB748CA0080AFE2 /* Module.h */; };
+		A19B52861DEC21DF00395EC6 /* AffineTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */; };
+		A19B52871DEC21DF00395EC6 /* AffineTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */; };
+		A19B52881DEC21DF00395EC6 /* AffineTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = A19B52851DEC21DF00395EC6 /* AffineTransform.h */; };
 		A19F47C51DB6445700E908D1 /* Affector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19F464C1DB6445600E908D1 /* Affector.cpp */; };
 		A19F47C61DB6445700E908D1 /* Affector.h in Headers */ = {isa = PBXBuildFile; fileRef = A19F464D1DB6445600E908D1 /* Affector.h */; };
 		A19F47C71DB6445700E908D1 /* Animation_xmlHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19F464E1DB6445600E908D1 /* Animation_xmlHandler.cpp */; };
@@ -1247,6 +1250,8 @@
 		A18F82F21DB748BA0080AFE2 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = CEGUI/CommonDialogs/ColourPicker/Types.h; sourceTree = "<group>"; };
 		A18F82FB1DB748CA0080AFE2 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Module.cpp; path = CEGUI/CommonDialogs/Module.cpp; sourceTree = "<group>"; };
 		A18F82FC1DB748CA0080AFE2 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = CEGUI/CommonDialogs/Module.h; sourceTree = "<group>"; };
+		A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AffineTransform.cpp; path = math/AffineTransform.cpp; sourceTree = "<group>"; };
+		A19B52851DEC21DF00395EC6 /* AffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AffineTransform.h; path = math/AffineTransform.h; sourceTree = "<group>"; };
 		A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIBase Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19F464C1DB6445600E908D1 /* Affector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Affector.cpp; path = CEGUI/Affector.cpp; sourceTree = "<group>"; };
 		A19F464D1DB6445600E908D1 /* Affector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Affector.h; path = CEGUI/Affector.h; sourceTree = "<group>"; };
@@ -1942,6 +1947,8 @@
 				A1F132151DDEFA270085042F /* Quaternion.h */,
 				A1F132191DDEFAA30085042F /* Quaternion.inl */,
 				A136CC3D1DE02B6900D566B8 /* math.h */,
+				A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */,
+				A19B52851DEC21DF00395EC6 /* AffineTransform.h */,
 			);
 			name = math;
 			sourceTree = "<group>";
@@ -3174,6 +3181,7 @@
 				A1873F491DBB11150022CC16 /* object.h in Headers */,
 				A1645C561D9BC95D00AC5FE2 /* Rect.h in Headers */,
 				A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */,
+				A19B52881DEC21DF00395EC6 /* AffineTransform.h in Headers */,
 				A1F132131DDEF4F90085042F /* MathMacros.h in Headers */,
 				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
@@ -3993,6 +4001,7 @@
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 				A1D628FE1DDC452900AE91A2 /* Vec3.cpp in Sources */,
+				A19B52861DEC21DF00395EC6 /* AffineTransform.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4006,6 +4015,7 @@
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1F1320F1DDEF32B0085042F /* Vec4.cpp in Sources */,
+				A19B52871DEC21DF00395EC6 /* AffineTransform.cpp in Sources */,
 				A1B92D171DE82E8E00845358 /* Scene.cpp in Sources */,
 				A1F132171DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F4E1DBB11150022CC16 /* PoolManager.cpp in Sources */,

@@ -273,6 +273,11 @@ const math::Size& Node::getContentSize() const
     return _contentSize;
 }
 
+const math::Mat4& Node::getNodeToParentTransform() const
+{
+    return math::Mat4::IDENTITY;
+}
+
 NS_OBJECT_END
 
 NS_DY_END
