@@ -85,6 +85,12 @@ public:
      */
     inline const Size operator/ (float a) const;
     
+    /**
+     Check if two size is the same.
+     * @js NA
+     */
+    bool equals(const Size& target) const;
+    
     /**Size(0,0).*/
     static const Size ZERO;
     

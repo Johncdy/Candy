@@ -93,6 +93,15 @@ Mat4 TransformConcat(const Mat4& t1, const Mat4& t2);
 
 extern const AffineTransform AffineTransformIdentity;
 
+/**@{
+ Conversion between mat4*4 and AffineTransform.
+ @param m The Mat4*4 pointer.
+ @param t Affine transform.
+ */
+void CGAffineToGL(const AffineTransform &t, GLfloat *m);
+void GLToCGAffine(const GLfloat *m, AffineTransform *t);
+/**@}*/
+
 NS_MATH_END
 
 NS_DY_END

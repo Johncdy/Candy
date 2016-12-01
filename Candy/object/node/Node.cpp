@@ -11,6 +11,8 @@
 
 #include "assert.h"
 
+#include <math.h>
+
 NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
@@ -110,7 +112,7 @@ void Node::sortAllChildren()
     }
 }
 
-bool Node::isVisitableByCamera() const
+bool Node::isVisitableByVisitingCamera() const
 {
     auto camera = Camera::getVisitingCamera();
     bool visible = ((unsigned short)camera->getCameraFlag() & _cameraMask) ?  : true;
@@ -141,7 +143,7 @@ uint32_t Node::processParentFlags(const math::Mat4 &parentTransform, uint32_t pa
         }
     }
     
-    if (!isVisitableByCamera()) {
+    if (!isVisitableByVisitingCamera()) {
         return parentFlags;
     }
     
@@ -170,7 +172,7 @@ void Node::visit(renderer::Renderer *renderer, const math::Mat4 &parentTransform
     _director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
     _director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW, _modelViewTransform);
     
-    bool visibleByCamera = isVisitableByCamera();
+    bool visibleByCamera = isVisitableByVisitingCamera();
     
     int i = 0;
     if (!_children.empty()) {
@@ -255,7 +257,13 @@ const math::Vec2& Node::getPosition() const
 
 void Node::setNormalizedPosition(const math::Vec2 &position)
 {
-    
+    if (!_normalizedPosition.equals(position)) {
+        
+        _normalizedPosition = position;
+        _isUsingNormalizedPosition = true;
+        _isNormalizedPositionDirty = true;
+        _isTransformUpdated = _isTransformDirty = _isInverseDirty = true;
+    }
 }
 
 const math::Vec2& Node::getNormalizedPosition() const
@@ -263,9 +271,28 @@ const math::Vec2& Node::getNormalizedPosition() const
     return _normalizedPosition;
 }
 
+void Node::setAnchorPoint(const math::Vec2 &anchorPoint)
+{
+    if (!anchorPoint.equals(_anchorPoint)) {
+        _anchorPoint = anchorPoint;
+        
+        _isTransformUpdated = _isTransformDirty = _isInverseDirty = true;
+    }
+}
+
+const math::Vec2& Node::getAnchorPoint() const
+{
+    return _anchorPoint;
+}
+
 void Node::setContentSize(const math::Size& contentSize)
 {
-    
+    if (!contentSize.equals(_contentSize)) {
+        _contentSize = contentSize;
+        
+        _anchorPointInPoints.set(_contentSize._width * _anchorPoint._x, _contentSize._height * _anchorPoint._y);
+        _isTransformUpdated = _isTransformDirty = _isInverseDirty = _isContentSizeDirty = true;
+    }
 }
 
 const math::Size& Node::getContentSize() const
@@ -275,7 +302,112 @@ const math::Size& Node::getContentSize() const
 
 const math::Mat4& Node::getNodeToParentTransform() const
 {
-    return math::Mat4::IDENTITY;
+    if (_isTransformDirty) {
+        // Translate values
+        float x = _position._x;
+        float y = _position._y;
+        float z = _positionZ;
+        
+        bool needsSkewMatrix = (_skewX || _skewY);
+        
+        math::Vec2 anchorPoint(_anchorPointInPoints._x * _scaleX, _anchorPointInPoints._y * _scaleY);
+        
+        // calculate real position
+        if (!needsSkewMatrix && !anchorPoint.isZero()) {
+            x += anchorPoint._x;
+            y += anchorPoint._y;
+        }
+        
+        // Build Transform Matrix = translation * rotation * scale
+        math::Mat4 translation;
+        //move to anchor point first, then rotate
+        math::Mat4::createTranslation(x + anchorPoint._x, y + anchorPoint._y, z, &translation);
+        
+        math::Mat4::createRotation(_rotationQuat, &translation);
+        
+        if (_rotationZ_X != _rotationZ_Y) {
+            // Rotation values
+            // Change rotation code to handle X and Y
+            // If we skew with the exact same value for both x and y then we're simply just rotating
+            float radiansX = -MATH_DEG_TO_RAD(_rotationZ_X);
+            float radiansY = -MATH_DEG_TO_RAD(_rotationZ_Y);
+            float cx = cosf(radiansX);
+            float sx = sinf(radiansX);
+            float cy = cosf(radiansY);
+            float sy = sinf(radiansY);
+            
+            float m0 = _transform.m[0], m1 = _transform.m[1], m4 = _transform.m[4], m5 = _transform.m[5], m8 = _transform.m[8], m9 = _transform.m[9];
+            _transform.m[0] = cy * m0 - sx * m1, _transform.m[4] = cy * m4 - sx * m5, _transform.m[8] = cy * m8 - sx * m9;
+            _transform.m[1] = sy * m0 + cx * m1, _transform.m[5] = sy * m4 + cx * m5, _transform.m[9] = sy * m8 + cx * m9;
+        }
+        _transform = translation * _transform;
+        //move by (-anchorPoint.x, -anchorPoint.y, 0) after rotation
+        _transform.translate(-anchorPoint._x, -anchorPoint._y, 0);
+        
+        if (_scaleX != 1.f)
+        {
+            _transform.m[0] *= _scaleX, _transform.m[1] *= _scaleX, _transform.m[2] *= _scaleX;
+        }
+        if (_scaleY != 1.f)
+        {
+            _transform.m[4] *= _scaleY, _transform.m[5] *= _scaleY, _transform.m[6] *= _scaleY;
+        }
+        if (_scaleZ != 1.f)
+        {
+            _transform.m[8] *= _scaleZ, _transform.m[9] *= _scaleZ, _transform.m[10] *= _scaleZ;
+        }
+        
+        // FIXME:: Try to inline skew
+        // If skew is needed, apply skew and then anchor point
+        if (needsSkewMatrix) {
+            float skewMatArray[16] =
+            {
+                1, (float)tanf(MATH_DEG_TO_RAD(_skewY)), 0, 0,
+                (float)tanf(MATH_DEG_TO_RAD(_skewX)), 1, 0, 0,
+                0,  0,  1, 0,
+                0,  0,  0, 1
+            };
+            math::Mat4 skewMatrix(skewMatArray);
+            
+            _transform = _transform * skewMatrix;
+            
+            // adjust anchor point
+            if (!_anchorPointInPoints.isZero())
+            {
+                // FIXME:: Argh, Mat4 needs a "translate" method.
+                // FIXME:: Although this is faster than multiplying a vec4 * mat4
+                _transform.m[12] += _transform.m[0] * -_anchorPointInPoints._x + _transform.m[4] * -_anchorPointInPoints._y;
+                _transform.m[13] += _transform.m[1] * -_anchorPointInPoints._x + _transform.m[5] * -_anchorPointInPoints._y;
+            }
+        }
+    }
+    
+    return _transform;
+}
+
+math::AffineTransform Node::getNodeToParentAffineTransform() const
+{
+    
+}
+
+math::AffineTransform Node::getNodeToParentAffineTransform(candy::object::Node *ancestor) const
+{
+    
+}
+
+void Node::setVisible(bool visible)
+{
+    if (!_visible == visible) {
+        _visible = visible;
+        if (_visible) {
+            _isTransformUpdated = _isTransformDirty = _isInverseDirty = true;
+        }
+    }
+}
+
+bool Node::isVisible() const
+{
+    return _visible;
 }
 
 NS_OBJECT_END

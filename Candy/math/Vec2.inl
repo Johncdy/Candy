@@ -72,6 +72,16 @@ inline const Vec2 Vec2::operator/(float a) const
     return Vec2(_x / a, _y / a);
 }
 
+inline bool Vec2::isZero() const
+{
+    return _x == 0.0f && _y == 0.0f;
+}
+
+inline bool Vec2::isOne() const
+{
+    return _x == 1.0f && _y == 1.0f;
+}
+
 NS_MATH_END
 
 NS_DY_END

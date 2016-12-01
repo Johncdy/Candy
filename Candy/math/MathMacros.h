@@ -33,5 +33,9 @@
 #define MATH_PIOVER2                1.57079632679489661923f
 #define MATH_EPSILON                0.000001f
 
+#ifndef FLT_EPSILON
+#define FLT_EPSILON     1.192092896e-07F
+#endif // FLT_EPSILON
+
 
 #endif /* MathMacros_h */

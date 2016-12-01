@@ -14,6 +14,7 @@
 #include "object/Ref.h"
 #include "object/Director.h"
 #include "math/math.h"
+#include "math/AffineTransform.h"
 
 #include <vector>
 
@@ -275,8 +276,37 @@ public:
      */
     virtual const math::Vec2& getNormalizedPosition() const;
     
+    /**
+     * Sets the anchor point in percent.
+     *
+     * anchorPoint is the point around which all transformations and positioning manipulations take place.
+     * It's like a pin in the node where it is "attached" to its parent.
+     * The anchorPoint is normalized, like a percentage. (0,0) means the bottom-left corner and (1,1) means the top-right corner.
+     * But you can use values higher than (1,1) and lower than (0,0) too.
+     * The default anchorPoint is (0.5,0.5), so it starts in the center of the node.
+     * @note If node has a physics body, the anchor must be in the middle, you can't change this to other value.
+     *
+     * @param anchorPoint   The anchor point of node.
+     */
+    virtual void setAnchorPoint(const math::Vec2& anchorPoint);
+    
+    /**
+     * Returns the anchor point in percent.
+     *
+     * @see `setAnchorPoint(const Vec2&)`
+     *
+     * @return The anchor point of node.
+     */
+    virtual const math::Vec2& getAnchorPoint() const;
+    
+    // update quaternion from Rotation3D
+    void updateRotationQuat();
+    
+    // update Rotation3D from quaternion
+    void updateRotation3D();
+    
     //check whether this camera mask is visible by the current visiting camera
-    bool isVisitableByCamera() const;
+    bool isVisitableByVisitingCamera() const;
     
     /**
      * get & set camera mask, the node is visible by the camera whose camera flag & node's camera mask is true
@@ -297,7 +327,47 @@ public:
      * @return The transformation matrix.
      */
     virtual const math::Mat4& getNodeToParentTransform() const;
+    virtual math::AffineTransform getNodeToParentAffineTransform() const;
     
+    /**
+     * Returns the matrix that transform the node's (local) space coordinates into the parent's space coordinates.
+     * The matrix is in Pixels.
+     * Note: If ancestor is not a valid ancestor of the node, the API would return the same value as @see getNodeToWorldTransform
+     *
+     * @param ancestor The parent's node pointer.
+     * @since v3.7
+     * @return The transformation matrix.
+     */
+    virtual math::Mat4 getNodeToParentTransform(Node* ancestor) const;
+    
+    /**
+     * Returns the affine transform matrix that transform the node's (local) space coordinates into the parent's space coordinates.
+     * The matrix is in Pixels.
+     *
+     * Note: If ancestor is not a valid ancestor of the node, the API would return the same value as @see getNodeToWorldAffineTransform
+     *
+     * @param ancestor The parent's node pointer.
+     * @since v3.7
+     * @return The affine transformation matrix.
+     */
+    virtual math::AffineTransform getNodeToParentAffineTransform(Node* ancestor) const;
+    
+    /**
+     * Sets whether the node is visible.
+     *
+     * The default value is true, a node is default to visible.
+     *
+     * @param visible   true if the node is visible, false if the node is hidden.
+     */
+    virtual void setVisible(bool visible);
+    /**
+     * Determines if the node is visible.
+     *
+     * @see `setVisible(bool)`
+     *
+     * @return true if the node is visible, false if the node is hidden.
+     */
+    virtual bool isVisible() const;
     
 protected:
     // Nodes should be created using create();
