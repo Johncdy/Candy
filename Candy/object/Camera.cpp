@@ -89,6 +89,22 @@ const math::Mat4& Camera::getProjectionMatrix() const
     return _projection;
 }
 
+void Camera::setDepth(int8_t depth)
+{
+    if (_depth != depth) {
+        _depth = depth;
+    }
+}
+
+int Camera::getRenderOrder() const
+{
+    int result(0);
+    result = 127 << 8;
+    result += _depth;
+    
+    return result;
+}
+
 NS_OBJECT_END
 
 NS_DY_END

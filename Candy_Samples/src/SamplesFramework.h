@@ -9,15 +9,23 @@
 #ifndef SamplesFramework_h
 #define SamplesFramework_h
 
+#include "include/Candy.h"
+
+#include "object/Layer.h"
+#include "object/Scene.h"
+
 #include "CEGUI/CEGUI.h"
 
-class SamplesFramework {
+class SamplesFramework : public candy::object::Layer {
 public:
+    
     SamplesFramework();
     
     virtual ~SamplesFramework();
     
-    void init();
+    static candy::object::Scene* scene();
+    
+    bool init();
     
     void start();
     

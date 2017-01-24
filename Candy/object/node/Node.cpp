@@ -9,8 +9,6 @@
 #include "object/node/Node.h"
 #include "object/Camera.h"
 
-#include "assert.h"
-
 #include <math.h>
 
 NS_DY_BEGIN
@@ -44,7 +42,7 @@ Node::Node()
 , _globalZOrder(0.0f)
 , _isReorderChildDirty(false)
 , _parent(nullptr)
-, _tag(Node::INVALID_TAG)
+, _id(Node::INVALID_ID)
 , _name("")
 , _hashOfName(0)
 , _userData(nullptr)
@@ -73,6 +71,11 @@ Node* Node::create()
 bool Node::init()
 {
     return true;
+}
+
+void Node::addChild(candy::object::Node *child, int localZOrder, int identify)
+{
+    DY_ASSERT(child != nullptr, "Argument must be non-nil");
 }
 
 void Node::setLocalZOrder(int z)
@@ -387,12 +390,32 @@ const math::Mat4& Node::getNodeToParentTransform() const
 
 math::AffineTransform Node::getNodeToParentAffineTransform() const
 {
+    math::AffineTransform ret;
+    GLToCGAffine(getNodeToParentTransform().m, &ret);
     
+    return ret;
+}
+
+math::Mat4 Node::getNodeToParentTransform(candy::object::Node *ancestor) const
+{
+    math::Mat4 t(this->getNodeToParentTransform());
+    
+    for (Node *p = _parent;  p != nullptr && p != ancestor ; p = p->getParent())
+    {
+        t = p->getNodeToParentTransform() * t;
+    }
+    
+    return t;
 }
 
 math::AffineTransform Node::getNodeToParentAffineTransform(candy::object::Node *ancestor) const
 {
+    math::AffineTransform t(this->getNodeToParentAffineTransform());
     
+    for (Node *p = _parent; p != nullptr && p != ancestor; p = p->getParent())
+        t = AffineTransformConcat(t, p->getNodeToParentAffineTransform());
+    
+    return t;
 }
 
 void Node::setVisible(bool visible)
@@ -408,6 +431,12 @@ void Node::setVisible(bool visible)
 bool Node::isVisible() const
 {
     return _visible;
+}
+
+void Node::setParent(candy::object::Node *parent)
+{
+    _parent = parent;
+    _isTransformUpdated = _isTransformDirty = _isInverseDirty = true;
 }
 
 NS_OBJECT_END

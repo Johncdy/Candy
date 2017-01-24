@@ -25,7 +25,7 @@ NS_OBJECT_BEGIN
 class Node : public Ref {
 public:
     /** Default tag used for all the nodes */
-    static const int INVALID_TAG = -1;
+    static const int INVALID_ID = -1;
     
     enum {
         FLAGS_TRANSFORM_DIRTY = (1 << 0),
@@ -41,6 +41,15 @@ public:
     static Node* create();
     
     virtual bool init();
+    
+    /**
+     Add child to parent node.
+
+     @param child node
+     @param localZOrder node zorder
+     @param identify node identify
+     */
+    virtual void addChild(Node* child, int localZOrder, int identify);
     
     /**
      LocalZOrder is the 'key' used to sort the node relative to its siblings.
@@ -369,6 +378,23 @@ public:
      */
     virtual bool isVisible() const;
     
+    /**
+     * Sets the parent node.
+     *
+     * @param parent    A pointer to the parent node.
+     */
+    virtual void setParent(Node* parent);
+    
+    /**
+     * Returns a pointer to the parent node.
+     *
+     * @see `setParent(Node*)`
+     *
+     * @returns A pointer to the parent node.
+     */
+    virtual const Node* getParent() const { return _parent; }
+    virtual Node* getParent() { return _parent; }
+    
 protected:
     // Nodes should be created using create();
     Node();
@@ -454,7 +480,7 @@ protected:
     //cached director pointer to improve rendering performance
     Director* _director;
     ///< a tag. Can be any number you assigned just to identify this node
-    int _tag;
+    int _id;
     
     ///<a string label, an user defined string to identify this node
     std::string _name;

@@ -134,6 +134,11 @@ public:
     int8_t getDepth() const { return _depth; }
     
     /**
+     get rendered order
+     */
+    int getRenderOrder() const;
+    
+    /**
      * Get the frustum's far plane.
      */
     float getFarPlane() const { return _farPlane; }

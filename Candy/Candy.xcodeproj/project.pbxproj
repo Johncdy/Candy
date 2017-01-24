@@ -48,6 +48,9 @@
 		A177B0FA1DBA102500981949 /* glfw3.h in Headers */ = {isa = PBXBuildFile; fileRef = A177B0F51DBA102500981949 /* glfw3.h */; };
 		A177B0FB1DBA102500981949 /* glfw3native.h in Headers */ = {isa = PBXBuildFile; fileRef = A177B0F61DBA102500981949 /* glfw3native.h */; };
 		A177B0FC1DBA102500981949 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A177B0F81DBA102500981949 /* libglfw3.a */; };
+		A1864CE31E1F74D100D095CB /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1864CE11E1F74D100D095CB /* Layer.cpp */; };
+		A1864CE41E1F74D100D095CB /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1864CE11E1F74D100D095CB /* Layer.cpp */; };
+		A1864CE51E1F74D100D095CB /* Layer.h in Headers */ = {isa = PBXBuildFile; fileRef = A1864CE21E1F74D100D095CB /* Layer.h */; };
 		A1873F491DBB11150022CC16 /* object.h in Headers */ = {isa = PBXBuildFile; fileRef = A1873F421DBB11150022CC16 /* object.h */; };
 		A1873F4A1DBB11150022CC16 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F431DBB11150022CC16 /* ObjectPool.cpp */; };
 		A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1873F431DBB11150022CC16 /* ObjectPool.cpp */; };
@@ -890,6 +893,8 @@
 		A177B0F61DBA102500981949 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		A177B0F81DBA102500981949 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
 		A177B0F91DBA102500981949 /* libglfw3.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.dylib; sourceTree = "<group>"; };
+		A1864CE11E1F74D100D095CB /* Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Layer.cpp; sourceTree = "<group>"; };
+		A1864CE21E1F74D100D095CB /* Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layer.h; sourceTree = "<group>"; };
 		A1873F421DBB11150022CC16 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
 		A1873F431DBB11150022CC16 /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectPool.cpp; sourceTree = "<group>"; };
 		A1873F441DBB11150022CC16 /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
@@ -2034,6 +2039,8 @@
 				A14425061DE3E8830001F0F1 /* Camera.h */,
 				A1B92D141DE82E8E00845358 /* Scene.cpp */,
 				A1B92D151DE82E8E00845358 /* Scene.h */,
+				A1864CE11E1F74D100D095CB /* Layer.cpp */,
+				A1864CE21E1F74D100D095CB /* Layer.h */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -3170,6 +3177,7 @@
 				A1D629071DDC64D700AE91A2 /* MathUtil.h in Headers */,
 				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
 				A1D629001DDC452900AE91A2 /* Vec3.h in Headers */,
+				A1864CE51E1F74D100D095CB /* Layer.h in Headers */,
 				A136CC301DDFF39900D566B8 /* RenderCommand.h in Headers */,
 				A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */,
 				A177B0FA1DBA102500981949 /* glfw3.h in Headers */,
@@ -3996,6 +4004,7 @@
 				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
 				A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */,
 				A14425071DE3E8830001F0F1 /* Camera.cpp in Sources */,
+				A1864CE31E1F74D100D095CB /* Layer.cpp in Sources */,
 				A1645C481D9BC3C700AC5FE2 /* Vec2.cpp in Sources */,
 				A1873F4D1DBB11150022CC16 /* PoolManager.cpp in Sources */,
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
@@ -4028,6 +4037,7 @@
 				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
 				A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */,
+				A1864CE41E1F74D100D095CB /* Layer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4383,10 +4393,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -4396,14 +4406,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4434,10 +4446,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -4448,8 +4460,10 @@
 				DEVELOPMENT_TEAM = QGMMQ4HULR;
 				ENABLE_NS_ASSERTIONS = NO;
 				EXECUTABLE_PREFIX = lib;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

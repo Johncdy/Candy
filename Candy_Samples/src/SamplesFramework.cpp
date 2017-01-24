@@ -31,7 +31,18 @@ SamplesFramework::~SamplesFramework()
     
 }
 
-void SamplesFramework::init()
+candy::object::Scene* SamplesFramework::scene()
+{
+    auto scene = candy::object::Scene::create();
+    
+    SamplesFramework* layer = SamplesFramework::create();
+    
+    scene->addChild(layer);
+    
+    return scene;
+}
+
+bool SamplesFramework::init()
 {
     d_renderer = &CEGUI::OpenGLRenderer::create();
     // start up CEGUI system using objects created in subclass constructor.
@@ -58,6 +69,7 @@ void SamplesFramework::init()
     // subscribe handler to render overlay items
     CEGUI::System::getSingleton().getDefaultGUIContext().subscribeEvent(CEGUI::RenderingSurface::EventRenderQueueStarted, CEGUI::Event::Subscriber(&SamplesFramework::sampleOverlayHandler, this));
     
+    return true;
 }
 
 void SamplesFramework::start()
