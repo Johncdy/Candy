@@ -6,10 +6,14 @@
 //
 //
 
-#include <assert.h>
+#include "assert.h"
 
 #ifndef CandyMacros_h
 #define CandyMacros_h
+
+/*********************************/
+/** Constant Macros **/
+/*********************************/
 
 // 0x00 HI ME LO
 // 00   01 00 00
@@ -28,6 +32,10 @@
 #else
     #define DY_64   0
 #endif
+
+/*********************************/
+/** Code block annotation Macros **/
+/*********************************/
 
 #ifdef __cplusplus
 #define NS_DY_BEGIN         namespace candy {
@@ -69,5 +77,17 @@
 #define DY_SAFE_RETAIN(p)           do { if(p) { (p)->retain(); } } while(0)
 
 #define DY_ASSERT   assert
+
+#define DY_CREATE_FUNC(__TYPE__) \
+static __TYPE__* create() { \
+    __TYPE__* ret = new (std::nothrow) __TYPE__(); \
+    if (ret && ret->init()) { \
+        ret->autoRelease(); \
+        return ret; \
+    } \
+    delete (ret); \
+    ret = nullptr; \
+    return nullptr; \
+}
 
 #endif /* CandyMacros_h */

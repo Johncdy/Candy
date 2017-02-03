@@ -56,18 +56,6 @@ Node::~Node()
 {
 }
 
-Node* Node::create()
-{
-    Node* ret = new (std::nothrow) Node();
-    if (ret && ret->init()) {
-        ret->autoRelease();
-        return ret;
-    }
-    
-    DY_SAFE_DELETE(ret);
-    return nullptr;
-}
-
 bool Node::init()
 {
     return true;
@@ -75,7 +63,7 @@ bool Node::init()
 
 void Node::addChild(candy::object::Node *child, int localZOrder, int identify)
 {
-    DY_ASSERT(child != nullptr, "Argument must be non-nil");
+    DY_ASSERT(child != nullptr);
 }
 
 void Node::setLocalZOrder(int z)

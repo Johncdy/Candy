@@ -24,7 +24,7 @@ NS_OBJECT_BEGIN
 
 class Scene : public Node {
 public:
-    static Scene* create();
+    DY_CREATE_FUNC(Scene);
     
     /** Get all cameras.
      *

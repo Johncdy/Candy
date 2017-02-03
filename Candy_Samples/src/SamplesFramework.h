@@ -23,13 +23,15 @@ public:
     
     virtual ~SamplesFramework();
     
-    static candy::object::Scene* scene();
-    
     bool init();
     
     void start();
     
     void end();
+    
+    DY_CREATE_FUNC(SamplesFramework);
+    
+    static candy::object::Scene* scene();
     
     // CEGUI
     /*!

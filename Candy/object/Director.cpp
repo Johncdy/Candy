@@ -22,7 +22,7 @@ Director* Director::s_director = nullptr;
 
 Director* Director::getInstance()
 {
-    if (!s_director) {
+    if (nullptr == s_director) {
         s_director = new (std::nothrow) Director;
         
         assert(s_director);

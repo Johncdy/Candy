@@ -37,7 +37,7 @@ candy::object::Scene* SamplesFramework::scene()
     
     SamplesFramework* layer = SamplesFramework::create();
     
-    scene->addChild(layer);
+    scene->addChild(layer, 0, 0);
     
     return scene;
 }

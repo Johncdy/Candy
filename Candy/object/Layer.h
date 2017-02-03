@@ -23,7 +23,7 @@ public:
      *
      * @return An autoreleased Layer object.
      */
-    static Layer* create();
+    DY_CREATE_FUNC(Layer);
     
 protected:
     Layer();

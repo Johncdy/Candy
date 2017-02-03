@@ -24,18 +24,6 @@ Scene::~Scene()
 {
 }
 
-Scene* Scene::create()
-{
-    Scene* ret = new (std::nothrow) Scene();
-    if (ret && ret->init()) {
-        ret->autoRelease();
-        return ret;
-    }
-    
-    DY_SAFE_DELETE(ret);
-    return nullptr;
-}
-
 bool Scene::init()
 {
     auto size = Director::getInstance()->getWinSize();

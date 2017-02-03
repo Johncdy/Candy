@@ -38,7 +38,7 @@ public:
      * Allocates and initializes a node.
      * @return A initialized node which is marked as "autorelease".
      */
-    static Node* create();
+    DY_CREATE_FUNC(Node);
     
     virtual bool init();
     
