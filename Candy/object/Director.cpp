@@ -13,7 +13,6 @@
 #include "object/Director.h"
 #include "object/PoolManager.h"
 
-
 NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
@@ -39,6 +38,8 @@ void Director::destroyInstance()
 
 Director::Director()
 : _glview(nullptr)
+, _runningScene(nullptr)
+, _isSceneChanged(false)
 {
 }
 
@@ -255,9 +256,7 @@ void Director::draw()
         _glview->pollEvents();
     }
     
-    
-    
-//    _renderer->clear();
+    drawScene();
     
     if (_glview) {
         _glview->swapBuffers();
@@ -283,6 +282,66 @@ void Director::resume()
 {
     _deltaTime = 0;
     _isDeltaZero = true;
+}
+
+/*********************************/
+// Scene management
+/*********************************/
+
+/**
+ Draw the scene.
+ This method is called every frame. Don't call it manually.
+ */
+void Director::drawScene()
+{
+//    _renderer->clear();
+    
+    if (_isSceneChanged) {
+        _isSceneChanged = false;
+        
+        if (_runningScene) {
+            _runningScene->release();
+            _runningScene = nullptr;
+        }
+        _runningScene = _sceneStack.top();
+    }
+}
+
+/**
+ Enters the Director's main loop with the given Scene.
+ 
+ @param scene candy object Scene
+ */
+void Director::runWithScene(candy::object::Scene *scene)
+{
+    DY_ASSERT(scene != nullptr && _runningScene == nullptr);
+    
+    pushScene(scene);
+    scene->retain();
+}
+
+/**
+ Suspends the execution of the running scene, pushing it on the stack of suspended scenes.
+ 
+ @param scene candy object Scene.
+ */
+void Director::pushScene(Scene* scene)
+{
+    DY_ASSERT(scene != nullptr);
+    
+    _sceneStack.push(scene);
+    _isSceneChanged = true;
+}
+
+/**
+ Pops out a scene from the stack.
+ This scene will replace the running one.
+ */
+void Director::popScene()
+{
+    DY_ASSERT(_runningScene != nullptr);
+    
+    _sceneStack.pop();
 }
 
 NS_OBJECT_END

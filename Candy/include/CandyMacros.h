@@ -12,7 +12,7 @@
 #define CandyMacros_h
 
 /*********************************/
-/** Constant Macros **/
+// Constant Macros
 /*********************************/
 
 // 0x00 HI ME LO
@@ -25,7 +25,7 @@
 #define POOL_MANAGER_DEFAULT_POOL_INDEX     0x00000000
 
 /*********************************/
-/** 64bits Program Sense Macros **/
+// 64bits Program Sense Macros
 /*********************************/
 #if defined(_M_X64) || defined(_WIN64) || defined(__LP64__) || defined(_LP64) || defined(__x86_64)
     #define DY_64   1
@@ -34,7 +34,7 @@
 #endif
 
 /*********************************/
-/** Code block annotation Macros **/
+// Code block annotation Macros
 /*********************************/
 
 #ifdef __cplusplus
@@ -89,5 +89,9 @@ static __TYPE__* create() { \
     ret = nullptr; \
     return nullptr; \
 }
+
+#define DY_CONSTRUCTOR_FUNC(NAME) \
+    NAME(); \
+    virtual ~NAME();
 
 #endif /* CandyMacros_h */

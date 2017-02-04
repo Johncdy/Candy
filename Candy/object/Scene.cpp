@@ -7,6 +7,7 @@
 //
 
 #include "object/Scene.h"
+#include "object/Director.h"
 
 #include <algorithm>
 

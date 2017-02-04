@@ -13,15 +13,12 @@
 
 NS_DY_USE
 
-static SamplesFramework* s_samples;
-
 ApplicationDelegate::ApplicationDelegate()
 {
 }
 
 ApplicationDelegate::~ApplicationDelegate()
 {
-    DY_SAFE_DELETE(s_samples);
 }
 
 void ApplicationDelegate::initGLContextAttrs()
@@ -40,8 +37,10 @@ bool ApplicationDelegate::init()
     
     glview->setWindowSize(1280, 720, ResolutionPolicy::NO_BORDER);
     
-    s_samples = new (std::nothrow) SamplesFramework;
-    s_samples->init();
+//    s_samples = new (std::nothrow) SamplesFramework;
+//    s_samples->init();
+    auto scene = SamplesFramework::scene();
+    director->runWithScene(scene);
     
     return true;
 }
@@ -53,7 +52,7 @@ bool ApplicationDelegate::start()
 
 bool ApplicationDelegate::update()
 {
-    s_samples->renderSingleFrame(static_cast<float>(_elapsedTime));
+    SamplesFramework::getInstance()->renderSingleFrame(static_cast<float>(_elapsedTime));
     
     return true;
 }

@@ -29,9 +29,9 @@ public:
     
     void end();
     
-    DY_CREATE_FUNC(SamplesFramework);
-    
     static candy::object::Scene* scene();
+    
+    static SamplesFramework* getInstance();
     
     // CEGUI
     /*!
@@ -76,6 +76,8 @@ public:
     void updateLogo(const float elapsed);
     
 private:
+    DY_CREATE_FUNC(SamplesFramework);
+    
     //! Renderer to use.  This MUST be set in the subclass constructor.
     CEGUI::Renderer* d_renderer;
     //! ImageCodec to use.  Set in subclass constructor, may be 0.

@@ -16,6 +16,8 @@
 
 using namespace CEGUI;
 
+static SamplesFramework* s_samples = nullptr;
+
 SamplesFramework::SamplesFramework()
 : d_renderer(nullptr)
 , d_resourceProvider(nullptr)
@@ -23,27 +25,35 @@ SamplesFramework::SamplesFramework()
 , d_logoGeometry(nullptr)
 , d_spinLogo(true)
 {
-    
+
 }
 
 SamplesFramework::~SamplesFramework()
 {
-    
+    DY_SAFE_DELETE(s_samples);
 }
 
 candy::object::Scene* SamplesFramework::scene()
 {
     auto scene = candy::object::Scene::create();
     
-    SamplesFramework* layer = SamplesFramework::create();
+    s_samples = SamplesFramework::create();
     
-    scene->addChild(layer, 0, 0);
+    scene->addChild(s_samples, 0, 0);
     
     return scene;
 }
 
+SamplesFramework* SamplesFramework::getInstance()
+{
+    return s_samples;
+}
+
 bool SamplesFramework::init()
 {
+    if (!candy::object::Layer::init()) {
+        return false;
+    }
     d_renderer = &CEGUI::OpenGLRenderer::create();
     // start up CEGUI system using objects created in subclass constructor.
     CEGUI::System::create(*d_renderer, d_resourceProvider, 0, d_imageCodec);

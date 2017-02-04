@@ -10,8 +10,7 @@
 #define Director_h
 
 #include "platform/Mac/GLView_Mac.h"
-#include "object/Ref.h"
-#include "renderer/Renderer.h"
+#include "object/Scene.h"
 #include "math/math.h"
 
 #include <stack>
@@ -168,11 +167,35 @@ public:
      */
     void resume();
     
+    /**
+     Draw the scene.
+     This method is called every frame. Don't call it manually.
+     */
+    void drawScene();
+    
+    /**
+     Enters the Director's main loop with the given Scene.
+
+     @param scene candy object Scene
+     */
+    void runWithScene(Scene* scene);
+    
 private:
     
-    Director();
+    DY_CONSTRUCTOR_FUNC(Director);
     
-    virtual ~Director();
+    /**
+     Suspends the execution of the running scene, pushing it on the stack of suspended scenes.
+     
+     @param scene candy object Scene.
+     */
+    void pushScene(Scene* scene);
+    
+    /**
+     Pops out a scene from the stack.
+     This scene will replace the running one.
+     */
+    void popScene();
     
     // Director instance
     static Director* s_director;
@@ -193,12 +216,19 @@ private:
     std::stack<math::Mat4> _projectionMatrixStack;
     std::stack<math::Mat4> _textureMatrixStack;
     
-    /* projection used */
+    // projection used
     Projection _projection;
-    /* window size in points */
+    // window size in points
     math::Size _winSizeInPoints;
-    /* content scale factor */
+    // content scale factor
     float _contentScaleFactor;
+    
+    // The running scene
+    Scene* _runningScene;
+    // Scheduled scenes
+    std::stack<Scene*> _sceneStack;
+    // Is scene change
+    bool _isSceneChanged;
 };
 
 NS_OBJECT_END

@@ -12,15 +12,17 @@
 #include "include/CandyMacros.h"
 
 #include "object/Ref.h"
-#include "object/Director.h"
 #include "math/math.h"
 #include "math/AffineTransform.h"
+#include "renderer/Renderer.h"
 
 #include <vector>
 
 NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
+
+class Director;
 
 class Node : public Ref {
 public:
@@ -393,7 +395,20 @@ public:
      * @returns A pointer to the parent node.
      */
     virtual const Node* getParent() const { return _parent; }
-    virtual Node* getParent() { return _parent; }
+    
+    /**
+     Changes the id that is used to identify the node easily.
+
+     @param identify int
+     */
+    virtual void setId(int identify);
+    
+    /**
+     Returns a id that is used to identify the node easily.
+
+     @return identify
+     */
+    virtual int getId();
     
 protected:
     // Nodes should be created using create();

@@ -8,6 +8,7 @@
 
 #include "object/node/Node.h"
 #include "object/Camera.h"
+#include "object/Director.h"
 
 #include <math.h>
 
@@ -64,6 +65,11 @@ bool Node::init()
 void Node::addChild(candy::object::Node *child, int localZOrder, int identify)
 {
     DY_ASSERT(child != nullptr);
+    
+    _children.push_back(child);
+    child->retain();
+    child->setLocalZOrder(localZOrder);
+    child->setId(identify);
 }
 
 void Node::setLocalZOrder(int z)
@@ -388,7 +394,7 @@ math::Mat4 Node::getNodeToParentTransform(candy::object::Node *ancestor) const
 {
     math::Mat4 t(this->getNodeToParentTransform());
     
-    for (Node *p = _parent;  p != nullptr && p != ancestor ; p = p->getParent())
+    for (const Node *p = _parent;  p != nullptr && p != ancestor ; p = p->getParent())
     {
         t = p->getNodeToParentTransform() * t;
     }
@@ -400,7 +406,7 @@ math::AffineTransform Node::getNodeToParentAffineTransform(candy::object::Node *
 {
     math::AffineTransform t(this->getNodeToParentAffineTransform());
     
-    for (Node *p = _parent; p != nullptr && p != ancestor; p = p->getParent())
+    for (const Node *p = _parent; p != nullptr && p != ancestor; p = p->getParent())
         t = AffineTransformConcat(t, p->getNodeToParentAffineTransform());
     
     return t;
@@ -425,6 +431,16 @@ void Node::setParent(candy::object::Node *parent)
 {
     _parent = parent;
     _isTransformUpdated = _isTransformDirty = _isInverseDirty = true;
+}
+
+void Node::setId(int identify)
+{
+    _id = identify;
+}
+
+int Node::getId()
+{
+    return _id;
 }
 
 NS_OBJECT_END
