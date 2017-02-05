@@ -10,6 +10,7 @@
 #define Layer_h
 
 #include "include/CandyMacros.h"
+#include "include/CandyTypes.h"
 
 #include "object/node/Node.h"
 
@@ -30,6 +31,10 @@ protected:
     virtual ~Layer();
     
     virtual bool init() override;
+    
+private:
+    // Layer render color.
+    Color4F _color;
 };
 
 NS_OBJECT_END

@@ -14,6 +14,7 @@ NS_DY_BEGIN
 NS_OBJECT_BEGIN
 
 Layer::Layer()
+: _color(Color4F(0.0, 0.0, 0.0, 0.0))
 {
     setAnchorPoint(math::Vec2(0.5, 0.5));
 }
