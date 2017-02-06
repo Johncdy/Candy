@@ -76,8 +76,6 @@
 #define DY_SAFE_RELEASE_NULL(p)     do { if(p) { (p)->release(); (p) = nullptr; } } while(0)
 #define DY_SAFE_RETAIN(p)           do { if(p) { (p)->retain(); } } while(0)
 
-#define DY_ASSERT   assert
-
 #define DY_CREATE_FUNC(__TYPE__) \
 static __TYPE__* create() { \
     __TYPE__* ret = new (std::nothrow) __TYPE__(); \
@@ -93,5 +91,15 @@ static __TYPE__* create() { \
 #define DY_CONSTRUCTOR_FUNC(NAME) \
     NAME(); \
     virtual ~NAME();
+
+#define DY_ASSERT   assert
+
+#define DY_CHECK_GLERROR() \
+    do { \
+        GLenum __error = glGetError(); \
+        if (__error) { \
+            printf("OpenGL error 0x%04X in %s %s %d\n", __error, __FILE__, __FUNCTION__, __LINE__); \
+        } \
+    } while (false)
 
 #endif /* CandyMacros_h */

@@ -793,6 +793,9 @@
 		A1D9EA0D1DBF82EA00C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA0E1DBF830100C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
 		A1D9EA0F1DBF831400C5A4FD /* libCEGUIBase Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */; };
+		A1DEA3BA1E4877D500D21C48 /* GLProgramState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1DEA3B81E4877D500D21C48 /* GLProgramState.cpp */; };
+		A1DEA3BB1E4877D500D21C48 /* GLProgramState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1DEA3B81E4877D500D21C48 /* GLProgramState.cpp */; };
+		A1DEA3BC1E4877D500D21C48 /* GLProgramState.h in Headers */ = {isa = PBXBuildFile; fileRef = A1DEA3B91E4877D500D21C48 /* GLProgramState.h */; };
 		A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F1320C1DDEF32B0085042F /* Vec4.cpp */; };
 		A1F1320F1DDEF32B0085042F /* Vec4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F1320C1DDEF32B0085042F /* Vec4.cpp */; };
 		A1F132101DDEF32B0085042F /* Vec4.h in Headers */ = {isa = PBXBuildFile; fileRef = A1F1320D1DDEF32B0085042F /* Vec4.h */; };
@@ -1748,6 +1751,8 @@
 		A1D9EA051DBF815D00C5A4FD /* expat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat.h; sourceTree = "<group>"; };
 		A1D9EA061DBF815D00C5A4FD /* expat_external.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expat_external.h; sourceTree = "<group>"; };
 		A1D9EA081DBF815D00C5A4FD /* libexpat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexpat.a; sourceTree = "<group>"; };
+		A1DEA3B81E4877D500D21C48 /* GLProgramState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLProgramState.cpp; path = renderer/GLProgramState.cpp; sourceTree = "<group>"; };
+		A1DEA3B91E4877D500D21C48 /* GLProgramState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLProgramState.h; path = renderer/GLProgramState.h; sourceTree = "<group>"; };
 		A1F132081DDEA5BC0085042F /* MathUtilNeon64.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtilNeon64.inl; path = math/MathUtilNeon64.inl; sourceTree = "<group>"; };
 		A1F132091DDEA61A0085042F /* MathUtil.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtil.inl; path = math/MathUtil.inl; sourceTree = "<group>"; };
 		A1F1320A1DDEB28C0085042F /* MathUtilSSE.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MathUtilSSE.inl; path = math/MathUtilSSE.inl; sourceTree = "<group>"; };
@@ -3152,6 +3157,8 @@
 				A1AB51BA1E474720002642FE /* GLStateCache.h */,
 				A1AB51BE1E4748F8002642FE /* GLProgram.cpp */,
 				A1AB51BF1E4748F8002642FE /* GLProgram.h */,
+				A1DEA3B81E4877D500D21C48 /* GLProgramState.cpp */,
+				A1DEA3B91E4877D500D21C48 /* GLProgramState.h */,
 			);
 			name = renderer;
 			sourceTree = "<group>";
@@ -3194,6 +3201,7 @@
 				A1D629071DDC64D700AE91A2 /* MathUtil.h in Headers */,
 				A177B0FB1DBA102500981949 /* glfw3native.h in Headers */,
 				A1D629001DDC452900AE91A2 /* Vec3.h in Headers */,
+				A1DEA3BC1E4877D500D21C48 /* GLProgramState.h in Headers */,
 				A1864CE51E1F74D100D095CB /* Layer.h in Headers */,
 				A136CC301DDFF39900D566B8 /* RenderCommand.h in Headers */,
 				A1D0908E1DD9F6E40030A95B /* Renderer.h in Headers */,
@@ -4022,6 +4030,7 @@
 				A136CC3A1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
 				A1873F5B1DBB55A70022CC16 /* Director.cpp in Sources */,
+				A1DEA3BA1E4877D500D21C48 /* GLProgramState.cpp in Sources */,
 				A1F1320E1DDEF32B0085042F /* Vec4.cpp in Sources */,
 				A14425071DE3E8830001F0F1 /* Camera.cpp in Sources */,
 				A1864CE31E1F74D100D095CB /* Layer.cpp in Sources */,
@@ -4062,6 +4071,7 @@
 				A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1864CE41E1F74D100D095CB /* Layer.cpp in Sources */,
 				A1AB51C11E4748F8002642FE /* GLProgram.cpp in Sources */,
+				A1DEA3BB1E4877D500D21C48 /* GLProgramState.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
