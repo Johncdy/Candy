@@ -277,6 +277,20 @@ public:
      */
     void use();
     
+    /** calls glUniform1i only if the values are different than the previous call for this same shader program.
+     * @js setUniformLocationI32
+     * @lua setUniformLocationI32
+     */
+    
+    
+    /**
+     calls glUniform1i only if the values are different than the previous call for this same shader program.
+
+     @param location uniform location
+     @param i1 value
+     */
+    void setUniformLocationWith1i(GLint location, GLint i1);
+    
 protected:
     // OpenGL handle for program.
     GLuint _program;
@@ -286,6 +300,8 @@ protected:
     GLuint _fragShader;
     // Built in uniforms.
     GLint _builtInUniforms[UNIFORM_MAX];
+    // needed uniforms
+    UniformFlags _flags;
     
     // User defined Uniforms.
     std::unordered_map<std::string, Uniform> _uniforms;

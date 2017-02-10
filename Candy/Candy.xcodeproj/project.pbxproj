@@ -305,6 +305,8 @@
 		A18F82FA1DB748BA0080AFE2 /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F82F21DB748BA0080AFE2 /* Types.h */; };
 		A18F82FD1DB748CA0080AFE2 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18F82FB1DB748CA0080AFE2 /* Module.cpp */; };
 		A18F82FE1DB748CA0080AFE2 /* Module.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F82FC1DB748CA0080AFE2 /* Module.h */; };
+		A19540D51E4C64140081B608 /* CandyTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19540D41E4C64140081B608 /* CandyTypes.cpp */; };
+		A19540D61E4C64140081B608 /* CandyTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19540D41E4C64140081B608 /* CandyTypes.cpp */; };
 		A19B52861DEC21DF00395EC6 /* AffineTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */; };
 		A19B52871DEC21DF00395EC6 /* AffineTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */; };
 		A19B52881DEC21DF00395EC6 /* AffineTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = A19B52851DEC21DF00395EC6 /* AffineTransform.h */; };
@@ -1265,6 +1267,7 @@
 		A18F82F21DB748BA0080AFE2 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = CEGUI/CommonDialogs/ColourPicker/Types.h; sourceTree = "<group>"; };
 		A18F82FB1DB748CA0080AFE2 /* Module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Module.cpp; path = CEGUI/CommonDialogs/Module.cpp; sourceTree = "<group>"; };
 		A18F82FC1DB748CA0080AFE2 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Module.h; path = CEGUI/CommonDialogs/Module.h; sourceTree = "<group>"; };
+		A19540D41E4C64140081B608 /* CandyTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CandyTypes.cpp; path = include/CandyTypes.cpp; sourceTree = "<group>"; };
 		A19B52841DEC21DF00395EC6 /* AffineTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AffineTransform.cpp; path = math/AffineTransform.cpp; sourceTree = "<group>"; };
 		A19B52851DEC21DF00395EC6 /* AffineTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AffineTransform.h; path = math/AffineTransform.h; sourceTree = "<group>"; };
 		A19F45301DB63E5700E908D1 /* libCEGUIBase Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libCEGUIBase Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1918,6 +1921,7 @@
 				A1645C2D1D9A154700AC5FE2 /* Candy.h */,
 				A1645C271D9A105100AC5FE2 /* CandyMacros.h */,
 				A1AB51AE1E471FC5002642FE /* CandyTypes.h */,
+				A19540D41E4C64140081B608 /* CandyTypes.cpp */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -4026,6 +4030,7 @@
 				A1F132161DDEFA270085042F /* Quaternion.cpp in Sources */,
 				A1873F501DBB11150022CC16 /* Ref.cpp in Sources */,
 				A1B92D161DE82E8E00845358 /* Scene.cpp in Sources */,
+				A19540D51E4C64140081B608 /* CandyTypes.cpp in Sources */,
 				A1D0908C1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A136CC3A1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1645BFC1D99149100AC5FE2 /* Application_Mac.mm in Sources */,
@@ -4068,6 +4073,7 @@
 				A1D629061DDC64D700AE91A2 /* MathUtil.cpp in Sources */,
 				A1873F4B1DBB11150022CC16 /* ObjectPool.cpp in Sources */,
 				A1D628F91DDC3FC300AE91A2 /* Mat4.cpp in Sources */,
+				A19540D61E4C64140081B608 /* CandyTypes.cpp in Sources */,
 				A136CC3B1DE0026600D566B8 /* Node.cpp in Sources */,
 				A1864CE41E1F74D100D095CB /* Layer.cpp in Sources */,
 				A1AB51C11E4748F8002642FE /* GLProgram.cpp in Sources */,

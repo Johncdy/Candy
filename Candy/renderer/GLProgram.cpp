@@ -328,10 +328,45 @@ void GLProgram::clearShader()
 
 void GLProgram::updateUniforms()
 {
+    _builtInUniforms[UNIFORM_AMBIENT_COLOR] = glGetUniformLocation(_program, UNIFORM_NAME_AMBIENT_COLOR);
+    _builtInUniforms[UNIFORM_P_MATRIX] = glGetUniformLocation(_program, UNIFORM_NAME_P_MATRIX);
+    _builtInUniforms[UNIFORM_MV_MATRIX] = glGetUniformLocation(_program, UNIFORM_NAME_MV_MATRIX);
+    _builtInUniforms[UNIFORM_MVP_MATRIX] = glGetUniformLocation(_program, UNIFORM_NAME_MVP_MATRIX);
+    _builtInUniforms[UNIFORM_NORMAL_MATRIX] = glGetUniformLocation(_program, UNIFORM_NAME_NORMAL_MATRIX);
+    
+    _builtInUniforms[UNIFORM_TIME] = glGetUniformLocation(_program, UNIFORM_NAME_TIME);
+    _builtInUniforms[UNIFORM_SIN_TIME] = glGetUniformLocation(_program, UNIFORM_NAME_SIN_TIME);
+    _builtInUniforms[UNIFORM_COS_TIME] = glGetUniformLocation(_program, UNIFORM_NAME_COS_TIME);
+    
+    _builtInUniforms[UNIFORM_RANDOM01] = glGetUniformLocation(_program, UNIFORM_NAME_RANDOM01);
+    
+    _builtInUniforms[UNIFORM_SAMPLER0] = glGetUniformLocation(_program, UNIFORM_NAME_SAMPLER0);
+    _builtInUniforms[UNIFORM_SAMPLER1] = glGetUniformLocation(_program, UNIFORM_NAME_SAMPLER1);
+    _builtInUniforms[UNIFORM_SAMPLER2] = glGetUniformLocation(_program, UNIFORM_NAME_SAMPLER2);
+    _builtInUniforms[UNIFORM_SAMPLER3] = glGetUniformLocation(_program, UNIFORM_NAME_SAMPLER3);
+    
+    _flags.usesP = _builtInUniforms[UNIFORM_P_MATRIX] != -1;
+    _flags.usesMV = _builtInUniforms[UNIFORM_MV_MATRIX] != -1;
+    _flags.usesMVP = _builtInUniforms[UNIFORM_MVP_MATRIX] != -1;
+    _flags.usesNormal = _builtInUniforms[UNIFORM_NORMAL_MATRIX] != -1;
+    _flags.usesTime = (
+                       _builtInUniforms[UNIFORM_TIME] != -1 ||
+                       _builtInUniforms[UNIFORM_SIN_TIME] != -1 ||
+                       _builtInUniforms[UNIFORM_COS_TIME] != -1
+                       );
+    _flags.usesRandom = _builtInUniforms[UNIFORM_RANDOM01] != -1;
+    
+    use();
 }
 
 void GLProgram::use()
 {
+    glUseProgram(_program);
+}
+
+void GLProgram::setUniformLocationWith1i(GLint location, GLint i1)
+{
+    
 }
 
 NS_RENDERER_END

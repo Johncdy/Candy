@@ -531,6 +531,8 @@ private:
      * @param child     An already added child node. It MUST be already added.
      */
     virtual void _reorderChild(Node * child);
+    
+    DY_DISALLOW_COPY_AND_ASSIGN(Node);
 };
 
 NS_OBJECT_END

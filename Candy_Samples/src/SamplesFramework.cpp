@@ -51,7 +51,7 @@ SamplesFramework* SamplesFramework::getInstance()
 
 bool SamplesFramework::init()
 {
-    if (!candy::object::Layer::init()) {
+    if (!PARENT::init()) {
         return false;
     }
     d_renderer = &CEGUI::OpenGLRenderer::create();

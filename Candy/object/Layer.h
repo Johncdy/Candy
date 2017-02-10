@@ -32,9 +32,40 @@ protected:
     
     virtual bool init() override;
     
+    /**
+     Init with color and size.
+
+     @param color Layer color.
+     @param w Layer width.
+     @param h Layer height.
+     @return Init result.
+     */
+    bool initWithParams(const Color4F& color, GLfloat w, GLfloat h);
+    
+    /**
+     Update Color vector.
+     */
+    void updateColor();
+    
+    /**
+     Set layer content size.
+
+     @param size content size.
+     */
+    virtual void setContentSize(const math::Size& size) override;
+    
+    // Layer blend function.
+    BlendFunc _blendFunc;
+    // Layer square vertices.
+    math::Vec2 _squareVertices[4];
+    // Layer square color.
+    Color4F _squareColor[4];
+    
 private:
     // Layer render color.
     Color4F _color;
+    
+    DY_DISALLOW_COPY_AND_ASSIGN(Layer);
 };
 
 NS_OBJECT_END

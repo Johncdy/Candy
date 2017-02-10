@@ -16,7 +16,9 @@
 
 #include "CEGUI/CEGUI.h"
 
-class SamplesFramework : public candy::object::Layer {
+#define PARENT candy::object::Layer
+
+class SamplesFramework : public PARENT {
 public:
     
     SamplesFramework();

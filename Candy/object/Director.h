@@ -127,10 +127,18 @@ public:
     /** Enables/disables OpenGL alpha blending. */
     void setAlphaBlending(bool on);
     
-    /** Returns the size of the OpenGL view in points. */
+    /**
+     Returns the size of the OpenGL view in points.
+
+     @return The size of the opengl view in points.
+     */
     const math::Size& getWinSize() const;
     
-    /** Returns the size of the OpenGL view in pixels. */
+    /**
+     Returns the size of the OpenGL view in pixels.
+
+     @return The size of the OpenGL view in pixels.
+     */
     math::Size getWinSizeInPixels() const;
     
     /** The size in pixels of the surface. It could be different than the screen size.
