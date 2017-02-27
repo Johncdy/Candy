@@ -41,6 +41,8 @@ bool Layer::initWithParams(const Color4F& color, GLfloat w, GLfloat h)
     }
     
     updateColor();
+    setContentSize(math::Size(w, h));
+    
     
     
     return true;

@@ -6,8 +6,6 @@
 //
 //
 
-#include "assert.h"
-
 #include "include/CandyMacros.h"
 #include "object/PoolManager.h"
 
@@ -15,23 +13,23 @@ NS_DY_BEGIN
 
 NS_OBJECT_BEGIN
 
-PoolManager* PoolManager::_singleInstance = nullptr;
+PoolManager* PoolManager::s_manager = nullptr;
 
 PoolManager* PoolManager::getInstance()
 {
-    if (nullptr == _singleInstance) {
-        _singleInstance = new (std::nothrow) PoolManager();
+    if (nullptr == s_manager) {
+        s_manager = new (std::nothrow) PoolManager();
         
-        assert(_singleInstance);
+        assert(s_manager);
         
         new (std::nothrow) ObjectPool(1);
     }
-    return _singleInstance;
+    return s_manager;
 }
 
 void PoolManager::destroyInstance()
 {
-    DY_SAFE_DELETE(_singleInstance);
+    DY_SAFE_DELETE(s_manager);
 }
 
 ObjectPool* PoolManager::getDefaultPool() const
@@ -62,7 +60,7 @@ PoolManager::~PoolManager()
         delete pool;
     }
     
-    _singleInstance = nullptr;
+    s_manager = nullptr;
 }
 
 int PoolManager::push(ObjectPool* pool)

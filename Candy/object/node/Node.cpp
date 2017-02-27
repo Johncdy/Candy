@@ -49,6 +49,7 @@ Node::Node()
 , _userData(nullptr)
 , _userObject(nullptr)
 , _visible(true)
+, _glProgramState(nullptr)
 {
     _director = Director::getInstance();
 }
@@ -441,6 +442,24 @@ void Node::setId(int identify)
 int Node::getId()
 {
     return _id;
+}
+
+renderer::GLProgramState* Node::getGLProgramState() const
+{
+    return _glProgramState;
+}
+
+void Node::setGLProgramState(renderer::GLProgramState *glProgramState)
+{
+    if (glProgramState != _glProgramState) {
+        DY_SAFE_RELEASE(_glProgramState);
+        _glProgramState = glProgramState;
+        DY_SAFE_RETAIN(_glProgramState);
+        
+        if (_glProgramState) {
+            _glProgramState->setNodeBinding(this);
+        }
+    }
 }
 
 NS_OBJECT_END

@@ -45,7 +45,22 @@ bool GLProgramState::init(candy::renderer::GLProgram *program)
     return true;
 }
 
+GLProgramState* GLProgramState::getOrCreateWithGLProgramName(const std::string &glProgramName)
+{
+    return nullptr;
+}
+
 void GLProgramState::setGLProgram(candy::renderer::GLProgram *glprogram)
+{
+    
+}
+
+object::Node* GLProgramState::getNodeBinding() const
+{
+    return _nodeBinding;
+}
+
+void GLProgramState::setNodeBinding(object::Node *node)
 {
     
 }

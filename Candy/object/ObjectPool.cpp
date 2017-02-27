@@ -6,8 +6,6 @@
 //
 //
 
-#include "assert.h"
-
 #include "object/ObjectPool.h"
 #include "object/PoolManager.h"
 

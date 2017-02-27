@@ -73,7 +73,7 @@ private:
     void pop(int pos);
     
     // PoolManager singleton instance.
-    static PoolManager* _singleInstance;
+    static PoolManager* s_manager;
     
     // Object pool stack.
     std::vector<ObjectPool*> _objectPoolVector;

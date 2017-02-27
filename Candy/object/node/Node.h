@@ -15,6 +15,7 @@
 #include "math/math.h"
 #include "math/AffineTransform.h"
 #include "renderer/Renderer.h"
+#include "renderer/GLProgramState.h"
 
 #include <vector>
 
@@ -410,10 +411,23 @@ public:
      */
     virtual int getId();
     
+    /**
+     Return the GLProgramState currently used for this node.
+
+     @return the GLProgramState currently used for this node.
+     */
+    renderer::GLProgramState* getGLProgramState() const;
+    
+    /**
+     Set the GLProgramState for this node.
+     
+     @param glProgramState The GLProgramState for this node.
+     */
+    virtual void setGLProgramState(renderer::GLProgramState* glProgramState);
+    
 protected:
     // Nodes should be created using create();
-    Node();
-    virtual ~Node();
+    DY_CONSTRUCTOR_FUNC(Node);
     
     ///< rotation on the X-axis
     float _rotationX;
@@ -512,6 +526,9 @@ protected:
     
     // camera mask, it is visible only when _cameraMask & current camera' camera flag is true
     unsigned short _cameraMask;
+    
+    // OpenGL Program State
+    renderer::GLProgramState* _glProgramState;
     
 protected:
     uint32_t processParentFlags(const math::Mat4& parentTransform, uint32_t parentFlags);

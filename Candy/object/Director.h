@@ -60,7 +60,7 @@ public:
      */
     static void destroyInstance();
     
-    void init();
+    bool init();
     
     /**
      Sets the GLView.

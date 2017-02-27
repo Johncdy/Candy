@@ -9,8 +9,6 @@
 #include "object/Ref.h"
 #include "object/PoolManager.h"
 
-#include <assert.h>
-
 NS_DY_BEGIN
 
 NS_OBJECT_BEGIN

@@ -17,6 +17,12 @@
 
 NS_DY_BEGIN
 
+NS_OBJECT_BEGIN
+
+class Node;
+
+NS_OBJECT_END
+
 NS_RENDERER_BEGIN
 
 /**
@@ -36,12 +42,38 @@ public:
     static GLProgramState* create(GLProgram* glprogram);
     
     /**
+     gets-or-creates an instance of GLProgramState for a given GLProgramName
+
+     @param glProgramName glProgramName
+     @return GLProgramState
+     */
+    static GLProgramState* getOrCreateWithGLProgramName(const std::string& glProgramName);
+    
+    /**
      Setter and Getter of the owner GLProgram binded in this program state.
 
      @param glprogram GLProgram
      */
     void setGLProgram(GLProgram* glprogram);
     GLProgram* getGLProgram() { return _program; }
+
+    /**
+     Returns the Node bound to the GLProgramState
+
+     @return the Node bound to the GLProgramState
+     */
+    object::Node* getNodeBinding() const;
+    
+    /**
+     * Sets the node that this render state is bound to.
+     *
+     * The specified node is used to apply auto-bindings for the render state.
+     * This is typically set to the node of the model that a material is
+     * applied to.
+     *
+     * @param node The node to use for applying auto-bindings.
+     */
+    void setNodeBinding(object::Node* node);
     
 protected:
     DY_CONSTRUCTOR_FUNC(GLProgramState);
@@ -51,7 +83,8 @@ protected:
     // Binded glprogram.
     GLProgram* _program;
     
-    
+    // weak ref
+    object::Node* _nodeBinding;
 };
 
 NS_RENDERER_END

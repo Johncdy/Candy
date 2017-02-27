@@ -766,9 +766,9 @@
 		A1A98FC41DB5CDFC00B4C842 /* GLFWEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */; };
 		A1A98FC61DB6095600B4C842 /* GLFWEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */; };
 		A1AB51AF1E471FC5002642FE /* CandyTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = A1AB51AE1E471FC5002642FE /* CandyTypes.h */; };
-		A1AB51BB1E474720002642FE /* GLStateCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51B91E474720002642FE /* GLStateCache.cpp */; };
-		A1AB51BC1E474720002642FE /* GLStateCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51B91E474720002642FE /* GLStateCache.cpp */; };
-		A1AB51BD1E474720002642FE /* GLStateCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A1AB51BA1E474720002642FE /* GLStateCache.h */; };
+		A1AB51BB1E474720002642FE /* GLProgramCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51B91E474720002642FE /* GLProgramCache.cpp */; };
+		A1AB51BC1E474720002642FE /* GLProgramCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51B91E474720002642FE /* GLProgramCache.cpp */; };
+		A1AB51BD1E474720002642FE /* GLProgramCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A1AB51BA1E474720002642FE /* GLProgramCache.h */; };
 		A1AB51C01E4748F8002642FE /* GLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51BE1E4748F8002642FE /* GLProgram.cpp */; };
 		A1AB51C11E4748F8002642FE /* GLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB51BE1E4748F8002642FE /* GLProgram.cpp */; };
 		A1AB51C21E4748F8002642FE /* GLProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = A1AB51BF1E4748F8002642FE /* GLProgram.h */; };
@@ -1731,8 +1731,8 @@
 		A1A98FC21DB5CDFC00B4C842 /* GLFWEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLFWEventHandler.h; sourceTree = "<group>"; };
 		A1A98FC51DB6095600B4C842 /* GLFWEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLFWEventHandler.cpp; sourceTree = "<group>"; };
 		A1AB51AE1E471FC5002642FE /* CandyTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandyTypes.h; path = include/CandyTypes.h; sourceTree = "<group>"; };
-		A1AB51B91E474720002642FE /* GLStateCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLStateCache.cpp; path = renderer/GLStateCache.cpp; sourceTree = "<group>"; };
-		A1AB51BA1E474720002642FE /* GLStateCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLStateCache.h; path = renderer/GLStateCache.h; sourceTree = "<group>"; };
+		A1AB51B91E474720002642FE /* GLProgramCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLProgramCache.cpp; path = renderer/GLProgramCache.cpp; sourceTree = "<group>"; };
+		A1AB51BA1E474720002642FE /* GLProgramCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLProgramCache.h; path = renderer/GLProgramCache.h; sourceTree = "<group>"; };
 		A1AB51BE1E4748F8002642FE /* GLProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLProgram.cpp; path = renderer/GLProgram.cpp; sourceTree = "<group>"; };
 		A1AB51BF1E4748F8002642FE /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLProgram.h; path = renderer/GLProgram.h; sourceTree = "<group>"; };
 		A1B2BFDD1DE292E30044162E /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
@@ -3157,8 +3157,8 @@
 				A1D0908B1DD9F6E40030A95B /* Renderer.h */,
 				A136CC2C1DDFF39900D566B8 /* RenderCommand.cpp */,
 				A136CC2D1DDFF39900D566B8 /* RenderCommand.h */,
-				A1AB51B91E474720002642FE /* GLStateCache.cpp */,
-				A1AB51BA1E474720002642FE /* GLStateCache.h */,
+				A1AB51B91E474720002642FE /* GLProgramCache.cpp */,
+				A1AB51BA1E474720002642FE /* GLProgramCache.h */,
 				A1AB51BE1E4748F8002642FE /* GLProgram.cpp */,
 				A1AB51BF1E4748F8002642FE /* GLProgram.h */,
 				A1DEA3B81E4877D500D21C48 /* GLProgramState.cpp */,
@@ -3224,7 +3224,7 @@
 				A1F132131DDEF4F90085042F /* MathMacros.h in Headers */,
 				A1873F4C1DBB11150022CC16 /* ObjectPool.h in Headers */,
 				A1645C2C1D9A127000AC5FE2 /* platform.h in Headers */,
-				A1AB51BD1E474720002642FE /* GLStateCache.h in Headers */,
+				A1AB51BD1E474720002642FE /* GLProgramCache.h in Headers */,
 				A14425091DE3E8830001F0F1 /* Camera.h in Headers */,
 				A1645C281D9A105100AC5FE2 /* CandyMacros.h in Headers */,
 				A1873F5D1DBB55A70022CC16 /* Director.h in Headers */,
@@ -4045,7 +4045,7 @@
 				A1645C421D9BB95700AC5FE2 /* GLView_Mac.cpp in Sources */,
 				A1645C541D9BC95D00AC5FE2 /* Rect.cpp in Sources */,
 				A1D628FE1DDC452900AE91A2 /* Vec3.cpp in Sources */,
-				A1AB51BB1E474720002642FE /* GLStateCache.cpp in Sources */,
+				A1AB51BB1E474720002642FE /* GLProgramCache.cpp in Sources */,
 				A19B52861DEC21DF00395EC6 /* AffineTransform.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4056,7 +4056,7 @@
 			files = (
 				A136CC2F1DDFF39900D566B8 /* RenderCommand.cpp in Sources */,
 				A1D628FF1DDC452900AE91A2 /* Vec3.cpp in Sources */,
-				A1AB51BC1E474720002642FE /* GLStateCache.cpp in Sources */,
+				A1AB51BC1E474720002642FE /* GLProgramCache.cpp in Sources */,
 				A1D0908D1DD9F6E40030A95B /* Renderer.cpp in Sources */,
 				A1645C501D9BC94500AC5FE2 /* Size.cpp in Sources */,
 				A1873F5C1DBB55A70022CC16 /* Director.cpp in Sources */,

@@ -25,7 +25,9 @@ Director* Director::getInstance()
         s_director = new (std::nothrow) Director;
         
         assert(s_director);
-        s_director->init();
+        if (!s_director->init()) {
+            DY_SAFE_DELETE(s_director);
+        }
     }
     
     return s_director;
@@ -50,7 +52,7 @@ Director::~Director()
     s_director = nullptr;
 }
 
-void Director::init()
+bool Director::init()
 {
     // Delta time init.
     _deltaTime = 0;
@@ -63,6 +65,8 @@ void Director::init()
     resetMatrixStack();
     
     _renderer = new (std::nothrow) renderer::Renderer;
+    
+    return true;
 }
 
 void Director::setOpenGLView(GLView *view)
